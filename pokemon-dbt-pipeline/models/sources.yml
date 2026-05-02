@@ -9,6 +9,7 @@ sources:
       - name: pokemon_details__stats
       - name: pokemon_details__abilities
       - name: pokemon_species
+      - name: pokemon_species__names
       - name: pokemon_types
       - name: pokemon_abilities
       - name: pokemon_moves

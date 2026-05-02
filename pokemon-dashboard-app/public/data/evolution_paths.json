@@ -1,5 +1,905 @@
 [
   {
+    "from_pokemon": "charmander",
+    "to_pokemon": "charmeleon",
+    "evolution_trigger": null,
+    "chain_id": 2
+  },
+  {
+    "from_pokemon": "ekans",
+    "to_pokemon": "arbok",
+    "evolution_trigger": null,
+    "chain_id": 9
+  },
+  {
+    "from_pokemon": "pichu",
+    "to_pokemon": "pikachu",
+    "evolution_trigger": null,
+    "chain_id": 10
+  },
+  {
+    "from_pokemon": "onix",
+    "to_pokemon": "steelix",
+    "evolution_trigger": null,
+    "chain_id": 41
+  },
+  {
+    "from_pokemon": "magby",
+    "to_pokemon": "magmar",
+    "evolution_trigger": null,
+    "chain_id": 61
+  },
+  {
+    "from_pokemon": "kabuto",
+    "to_pokemon": "kabutops",
+    "evolution_trigger": null,
+    "chain_id": 70
+  },
+  {
+    "from_pokemon": "ledyba",
+    "to_pokemon": "ledian",
+    "evolution_trigger": null,
+    "chain_id": 84
+  },
+  {
+    "from_pokemon": "yanma",
+    "to_pokemon": "yanmega",
+    "evolution_trigger": null,
+    "chain_id": 95
+  },
+  {
+    "from_pokemon": "misdreavus",
+    "to_pokemon": "mismagius",
+    "evolution_trigger": null,
+    "chain_id": 98
+  },
+  {
+    "from_pokemon": "larvitar",
+    "to_pokemon": "pupitar",
+    "evolution_trigger": null,
+    "chain_id": 126
+  },
+  {
+    "from_pokemon": "whismur",
+    "to_pokemon": "loudred",
+    "evolution_trigger": null,
+    "chain_id": 145
+  },
+  {
+    "from_pokemon": "bidoof",
+    "to_pokemon": "bibarel",
+    "evolution_trigger": null,
+    "chain_id": 207
+  },
+  {
+    "from_pokemon": "kricketot",
+    "to_pokemon": "kricketune",
+    "evolution_trigger": null,
+    "chain_id": 208
+  },
+  {
+    "from_pokemon": "shinx",
+    "to_pokemon": "luxio",
+    "evolution_trigger": null,
+    "chain_id": 209
+  },
+  {
+    "from_pokemon": "sandile",
+    "to_pokemon": "krokorok",
+    "evolution_trigger": null,
+    "chain_id": 281
+  },
+  {
+    "from_pokemon": "tynamo",
+    "to_pokemon": "eelektrik",
+    "evolution_trigger": null,
+    "chain_id": 306
+  },
+  {
+    "from_pokemon": "deino",
+    "to_pokemon": "zweilous",
+    "evolution_trigger": null,
+    "chain_id": 323
+  },
+  {
+    "from_pokemon": "fletchling",
+    "to_pokemon": "fletchinder",
+    "evolution_trigger": null,
+    "chain_id": 341
+  },
+  {
+    "from_pokemon": "skiddo",
+    "to_pokemon": "gogoat",
+    "evolution_trigger": null,
+    "chain_id": 345
+  },
+  {
+    "from_pokemon": "rockruff",
+    "to_pokemon": "lycanroc",
+    "evolution_trigger": null,
+    "chain_id": 383
+  },
+  {
+    "from_pokemon": "type-null",
+    "to_pokemon": "silvally",
+    "evolution_trigger": null,
+    "chain_id": 399
+  },
+  {
+    "from_pokemon": "chewtle",
+    "to_pokemon": "drednaw",
+    "evolution_trigger": null,
+    "chain_id": 439
+  },
+  {
+    "from_pokemon": "meowth",
+    "to_pokemon": "persian",
+    "evolution_trigger": null,
+    "chain_id": 22
+  },
+  {
+    "from_pokemon": "cleffa",
+    "to_pokemon": "clefairy",
+    "evolution_trigger": null,
+    "chain_id": 14
+  },
+  {
+    "from_pokemon": "poliwag",
+    "to_pokemon": "poliwhirl",
+    "evolution_trigger": null,
+    "chain_id": 26
+  },
+  {
+    "from_pokemon": "abra",
+    "to_pokemon": "kadabra",
+    "evolution_trigger": null,
+    "chain_id": 27
+  },
+  {
+    "from_pokemon": "gastly",
+    "to_pokemon": "haunter",
+    "evolution_trigger": null,
+    "chain_id": 40
+  },
+  {
+    "from_pokemon": "krabby",
+    "to_pokemon": "kingler",
+    "evolution_trigger": null,
+    "chain_id": 43
+  },
+  {
+    "from_pokemon": "tangela",
+    "to_pokemon": "tangrowth",
+    "evolution_trigger": null,
+    "chain_id": 52
+  },
+  {
+    "from_pokemon": "omanyte",
+    "to_pokemon": "omastar",
+    "evolution_trigger": null,
+    "chain_id": 69
+  },
+  {
+    "from_pokemon": "spinarak",
+    "to_pokemon": "ariados",
+    "evolution_trigger": null,
+    "chain_id": 85
+  },
+  {
+    "from_pokemon": "snubbull",
+    "to_pokemon": "granbull",
+    "evolution_trigger": null,
+    "chain_id": 105
+  },
+  {
+    "from_pokemon": "seedot",
+    "to_pokemon": "nuzleaf",
+    "evolution_trigger": null,
+    "chain_id": 137
+  },
+  {
+    "from_pokemon": "electrike",
+    "to_pokemon": "manectric",
+    "evolution_trigger": null,
+    "chain_id": 153
+  },
+  {
+    "from_pokemon": "wailmer",
+    "to_pokemon": "wailord",
+    "evolution_trigger": null,
+    "chain_id": 161
+  },
+  {
+    "from_pokemon": "burmy",
+    "to_pokemon": "mothim",
+    "evolution_trigger": null,
+    "chain_id": 213
+  },
+  {
+    "from_pokemon": "snover",
+    "to_pokemon": "abomasnow",
+    "evolution_trigger": null,
+    "chain_id": 239
+  },
+  {
+    "from_pokemon": "litwick",
+    "to_pokemon": "lampent",
+    "evolution_trigger": null,
+    "chain_id": 308
+  },
+  {
+    "from_pokemon": "froakie",
+    "to_pokemon": "frogadier",
+    "evolution_trigger": null,
+    "chain_id": 339
+  },
+  {
+    "from_pokemon": "spritzee",
+    "to_pokemon": "aromatisse",
+    "evolution_trigger": null,
+    "chain_id": 350
+  },
+  {
+    "from_pokemon": "goomy",
+    "to_pokemon": "sliggoo",
+    "evolution_trigger": null,
+    "chain_id": 362
+  },
+  {
+    "from_pokemon": "rowlet",
+    "to_pokemon": "dartrix",
+    "evolution_trigger": null,
+    "chain_id": 374
+  },
+  {
+    "from_pokemon": "grookey",
+    "to_pokemon": "thwackey",
+    "evolution_trigger": null,
+    "chain_id": 430
+  },
+  {
+    "from_pokemon": "pawmi",
+    "to_pokemon": "pawmo",
+    "evolution_trigger": null,
+    "chain_id": 484
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "flareon",
+    "evolution_trigger": null,
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "vulpix",
+    "to_pokemon": "ninetales",
+    "evolution_trigger": null,
+    "chain_id": 15
+  },
+  {
+    "from_pokemon": "pineco",
+    "to_pokemon": "forretress",
+    "evolution_trigger": null,
+    "chain_id": 102
+  },
+  {
+    "from_pokemon": "teddiursa",
+    "to_pokemon": "ursaring",
+    "evolution_trigger": null,
+    "chain_id": 110
+  },
+  {
+    "from_pokemon": "remoraid",
+    "to_pokemon": "octillery",
+    "evolution_trigger": null,
+    "chain_id": 114
+  },
+  {
+    "from_pokemon": "piplup",
+    "to_pokemon": "prinplup",
+    "evolution_trigger": null,
+    "chain_id": 205
+  },
+  {
+    "from_pokemon": "croagunk",
+    "to_pokemon": "toxicroak",
+    "evolution_trigger": null,
+    "chain_id": 235
+  },
+  {
+    "from_pokemon": "phione",
+    "to_pokemon": "manaphy",
+    "evolution_trigger": null,
+    "chain_id": 250
+  },
+  {
+    "from_pokemon": "pidove",
+    "to_pokemon": "tranquill",
+    "evolution_trigger": null,
+    "chain_id": 266
+  },
+  {
+    "from_pokemon": "petilil",
+    "to_pokemon": "lilligant",
+    "evolution_trigger": null,
+    "chain_id": 279
+  },
+  {
+    "from_pokemon": "karrablast",
+    "to_pokemon": "escavalier",
+    "evolution_trigger": null,
+    "chain_id": 299
+  },
+  {
+    "from_pokemon": "foongus",
+    "to_pokemon": "amoonguss",
+    "evolution_trigger": null,
+    "chain_id": 300
+  },
+  {
+    "from_pokemon": "shelmet",
+    "to_pokemon": "accelgor",
+    "evolution_trigger": null,
+    "chain_id": 312
+  },
+  {
+    "from_pokemon": "honedge",
+    "to_pokemon": "doublade",
+    "evolution_trigger": null,
+    "chain_id": 349
+  },
+  {
+    "from_pokemon": "pumpkaboo",
+    "to_pokemon": "gourgeist",
+    "evolution_trigger": null,
+    "chain_id": 365
+  },
+  {
+    "from_pokemon": "dewpider",
+    "to_pokemon": "araquanid",
+    "evolution_trigger": null,
+    "chain_id": 387
+  },
+  {
+    "from_pokemon": "fomantis",
+    "to_pokemon": "lurantis",
+    "evolution_trigger": null,
+    "chain_id": 388
+  },
+  {
+    "from_pokemon": "jangmo-o",
+    "to_pokemon": "hakamo-o",
+    "evolution_trigger": null,
+    "chain_id": 408
+  },
+  {
+    "from_pokemon": "skwovet",
+    "to_pokemon": "greedent",
+    "evolution_trigger": null,
+    "chain_id": 433
+  },
+  {
+    "from_pokemon": "yamper",
+    "to_pokemon": "boltund",
+    "evolution_trigger": null,
+    "chain_id": 440
+  },
+  {
+    "from_pokemon": "sizzlipede",
+    "to_pokemon": "centiskorch",
+    "evolution_trigger": null,
+    "chain_id": 447
+  },
+  {
+    "from_pokemon": "smoliv",
+    "to_pokemon": "dolliv",
+    "evolution_trigger": null,
+    "chain_id": 487
+  },
+  {
+    "from_pokemon": "sneasel",
+    "to_pokemon": "weavile",
+    "evolution_trigger": null,
+    "chain_id": 109
+  },
+  {
+    "from_pokemon": "mankey",
+    "to_pokemon": "primeape",
+    "evolution_trigger": null,
+    "chain_id": 24
+  },
+  {
+    "from_pokemon": "magnemite",
+    "to_pokemon": "magneton",
+    "evolution_trigger": null,
+    "chain_id": 34
+  },
+  {
+    "from_pokemon": "shellder",
+    "to_pokemon": "cloyster",
+    "evolution_trigger": null,
+    "chain_id": 39
+  },
+  {
+    "from_pokemon": "lickitung",
+    "to_pokemon": "lickilicky",
+    "evolution_trigger": null,
+    "chain_id": 48
+  },
+  {
+    "from_pokemon": "chinchou",
+    "to_pokemon": "lanturn",
+    "evolution_trigger": null,
+    "chain_id": 86
+  },
+  {
+    "from_pokemon": "togepi",
+    "to_pokemon": "togetic",
+    "evolution_trigger": null,
+    "chain_id": 87
+  },
+  {
+    "from_pokemon": "sunkern",
+    "to_pokemon": "sunflora",
+    "evolution_trigger": null,
+    "chain_id": 94
+  },
+  {
+    "from_pokemon": "houndour",
+    "to_pokemon": "houndoom",
+    "evolution_trigger": null,
+    "chain_id": 118
+  },
+  {
+    "from_pokemon": "lotad",
+    "to_pokemon": "lombre",
+    "evolution_trigger": null,
+    "chain_id": 136
+  },
+  {
+    "from_pokemon": "slakoth",
+    "to_pokemon": "vigoroth",
+    "evolution_trigger": null,
+    "chain_id": 143
+  },
+  {
+    "from_pokemon": "meditite",
+    "to_pokemon": "medicham",
+    "evolution_trigger": null,
+    "chain_id": 152
+  },
+  {
+    "from_pokemon": "gulpin",
+    "to_pokemon": "swalot",
+    "evolution_trigger": null,
+    "chain_id": 159
+  },
+  {
+    "from_pokemon": "swablu",
+    "to_pokemon": "altaria",
+    "evolution_trigger": null,
+    "chain_id": 168
+  },
+  {
+    "from_pokemon": "starly",
+    "to_pokemon": "staravia",
+    "evolution_trigger": null,
+    "chain_id": 206
+  },
+  {
+    "from_pokemon": "timburr",
+    "to_pokemon": "gurdurr",
+    "evolution_trigger": null,
+    "chain_id": 272
+  },
+  {
+    "from_pokemon": "ducklett",
+    "to_pokemon": "swanna",
+    "evolution_trigger": null,
+    "chain_id": 295
+  },
+  {
+    "from_pokemon": "salandit",
+    "to_pokemon": "salazzle",
+    "evolution_trigger": null,
+    "chain_id": 390
+  },
+  {
+    "from_pokemon": "poipole",
+    "to_pokemon": "naganadel",
+    "evolution_trigger": null,
+    "chain_id": 424
+  },
+  {
+    "from_pokemon": "impidimp",
+    "to_pokemon": "morgrem",
+    "evolution_trigger": null,
+    "chain_id": 451
+  },
+  {
+    "from_pokemon": "tarountula",
+    "to_pokemon": "spidops",
+    "evolution_trigger": null,
+    "chain_id": 482
+  },
+  {
+    "from_pokemon": "nymble",
+    "to_pokemon": "lokix",
+    "evolution_trigger": null,
+    "chain_id": 483
+  },
+  {
+    "from_pokemon": "fidough",
+    "to_pokemon": "dachsbun",
+    "evolution_trigger": null,
+    "chain_id": 486
+  },
+  {
+    "from_pokemon": "poltchageist",
+    "to_pokemon": "sinistcha",
+    "evolution_trigger": null,
+    "chain_id": 539
+  },
+  {
+    "from_pokemon": "zubat",
+    "to_pokemon": "golbat",
+    "evolution_trigger": null,
+    "chain_id": 17
+  },
+  {
+    "from_pokemon": "cyndaquil",
+    "to_pokemon": "quilava",
+    "evolution_trigger": null,
+    "chain_id": 80
+  },
+  {
+    "from_pokemon": "natu",
+    "to_pokemon": "xatu",
+    "evolution_trigger": null,
+    "chain_id": 88
+  },
+  {
+    "from_pokemon": "dunsparce",
+    "to_pokemon": "dudunsparce",
+    "evolution_trigger": null,
+    "chain_id": 103
+  },
+  {
+    "from_pokemon": "gligar",
+    "to_pokemon": "gliscor",
+    "evolution_trigger": null,
+    "chain_id": 104
+  },
+  {
+    "from_pokemon": "surskit",
+    "to_pokemon": "masquerain",
+    "evolution_trigger": null,
+    "chain_id": 141
+  },
+  {
+    "from_pokemon": "trapinch",
+    "to_pokemon": "vibrava",
+    "evolution_trigger": null,
+    "chain_id": 166
+  },
+  {
+    "from_pokemon": "anorith",
+    "to_pokemon": "armaldo",
+    "evolution_trigger": null,
+    "chain_id": 177
+  },
+  {
+    "from_pokemon": "duskull",
+    "to_pokemon": "dusclops",
+    "evolution_trigger": null,
+    "chain_id": 182
+  },
+  {
+    "from_pokemon": "riolu",
+    "to_pokemon": "lucario",
+    "evolution_trigger": null,
+    "chain_id": 232
+  },
+  {
+    "from_pokemon": "venipede",
+    "to_pokemon": "whirlipede",
+    "evolution_trigger": null,
+    "chain_id": 277
+  },
+  {
+    "from_pokemon": "zorua",
+    "to_pokemon": "zoroark",
+    "evolution_trigger": null,
+    "chain_id": 291
+  },
+  {
+    "from_pokemon": "vullaby",
+    "to_pokemon": "mandibuzz",
+    "evolution_trigger": null,
+    "chain_id": 320
+  },
+  {
+    "from_pokemon": "noibat",
+    "to_pokemon": "noivern",
+    "evolution_trigger": null,
+    "chain_id": 367
+  },
+  {
+    "from_pokemon": "cetoddle",
+    "to_pokemon": "cetitan",
+    "evolution_trigger": null,
+    "chain_id": 511
+  },
+  {
+    "from_pokemon": "tyrogue",
+    "to_pokemon": "hitmonchan",
+    "evolution_trigger": null,
+    "chain_id": 47
+  },
+  {
+    "from_pokemon": "scyther",
+    "to_pokemon": "scizor",
+    "evolution_trigger": null,
+    "chain_id": 58
+  },
+  {
+    "from_pokemon": "wurmple",
+    "to_pokemon": "silcoon",
+    "evolution_trigger": null,
+    "chain_id": 135
+  },
+  {
+    "from_pokemon": "charcadet",
+    "to_pokemon": "armarouge",
+    "evolution_trigger": null,
+    "chain_id": 490
+  },
+  {
+    "from_pokemon": "spearow",
+    "to_pokemon": "fearow",
+    "evolution_trigger": null,
+    "chain_id": 8
+  },
+  {
+    "from_pokemon": "nidoran-f",
+    "to_pokemon": "nidorina",
+    "evolution_trigger": null,
+    "chain_id": 12
+  },
+  {
+    "from_pokemon": "farfetchd",
+    "to_pokemon": "sirfetchd",
+    "evolution_trigger": null,
+    "chain_id": 35
+  },
+  {
+    "from_pokemon": "voltorb",
+    "to_pokemon": "electrode",
+    "evolution_trigger": null,
+    "chain_id": 44
+  },
+  {
+    "from_pokemon": "tyrogue",
+    "to_pokemon": "hitmontop",
+    "evolution_trigger": null,
+    "chain_id": 47
+  },
+  {
+    "from_pokemon": "sentret",
+    "to_pokemon": "furret",
+    "evolution_trigger": null,
+    "chain_id": 82
+  },
+  {
+    "from_pokemon": "budew",
+    "to_pokemon": "roselia",
+    "evolution_trigger": null,
+    "chain_id": 158
+  },
+  {
+    "from_pokemon": "shieldon",
+    "to_pokemon": "bastiodon",
+    "evolution_trigger": null,
+    "chain_id": 212
+  },
+  {
+    "from_pokemon": "drifloon",
+    "to_pokemon": "drifblim",
+    "evolution_trigger": null,
+    "chain_id": 219
+  },
+  {
+    "from_pokemon": "gible",
+    "to_pokemon": "gabite",
+    "evolution_trigger": null,
+    "chain_id": 230
+  },
+  {
+    "from_pokemon": "trubbish",
+    "to_pokemon": "garbodor",
+    "evolution_trigger": null,
+    "chain_id": 290
+  },
+  {
+    "from_pokemon": "deerling",
+    "to_pokemon": "sawsbuck",
+    "evolution_trigger": null,
+    "chain_id": 297
+  },
+  {
+    "from_pokemon": "chespin",
+    "to_pokemon": "quilladin",
+    "evolution_trigger": null,
+    "chain_id": 337
+  },
+  {
+    "from_pokemon": "amaura",
+    "to_pokemon": "aurorus",
+    "evolution_trigger": null,
+    "chain_id": 358
+  },
+  {
+    "from_pokemon": "stufful",
+    "to_pokemon": "bewear",
+    "evolution_trigger": null,
+    "chain_id": 391
+  },
+  {
+    "from_pokemon": "blipbug",
+    "to_pokemon": "dottler",
+    "evolution_trigger": null,
+    "chain_id": 435
+  },
+  {
+    "from_pokemon": "hatenna",
+    "to_pokemon": "hattrem",
+    "evolution_trigger": null,
+    "chain_id": 450
+  },
+  {
+    "from_pokemon": "duraludon",
+    "to_pokemon": "archaludon",
+    "evolution_trigger": null,
+    "chain_id": 465
+  },
+  {
+    "from_pokemon": "shroodle",
+    "to_pokemon": "grafaiai",
+    "evolution_trigger": null,
+    "chain_id": 494
+  },
+  {
+    "from_pokemon": "capsakid",
+    "to_pokemon": "scovillain",
+    "evolution_trigger": null,
+    "chain_id": 498
+  },
+  {
+    "from_pokemon": "pidgey",
+    "to_pokemon": "pidgeotto",
+    "evolution_trigger": null,
+    "chain_id": 6
+  },
+  {
+    "from_pokemon": "ponyta",
+    "to_pokemon": "rapidash",
+    "evolution_trigger": null,
+    "chain_id": 32
+  },
+  {
+    "from_pokemon": "doduo",
+    "to_pokemon": "dodrio",
+    "evolution_trigger": null,
+    "chain_id": 36
+  },
+  {
+    "from_pokemon": "grimer",
+    "to_pokemon": "muk",
+    "evolution_trigger": null,
+    "chain_id": 38
+  },
+  {
+    "from_pokemon": "cubone",
+    "to_pokemon": "marowak",
+    "evolution_trigger": null,
+    "chain_id": 46
+  },
+  {
+    "from_pokemon": "happiny",
+    "to_pokemon": "chansey",
+    "evolution_trigger": null,
+    "chain_id": 51
+  },
+  {
+    "from_pokemon": "wynaut",
+    "to_pokemon": "wobbuffet",
+    "evolution_trigger": null,
+    "chain_id": 100
+  },
+  {
+    "from_pokemon": "qwilfish",
+    "to_pokemon": "overqwil",
+    "evolution_trigger": null,
+    "chain_id": 106
+  },
+  {
+    "from_pokemon": "mudkip",
+    "to_pokemon": "marshtomp",
+    "evolution_trigger": null,
+    "chain_id": 132
+  },
+  {
+    "from_pokemon": "poochyena",
+    "to_pokemon": "mightyena",
+    "evolution_trigger": null,
+    "chain_id": 133
+  },
+  {
+    "from_pokemon": "nincada",
+    "to_pokemon": "shedinja",
+    "evolution_trigger": null,
+    "chain_id": 144
+  },
+  {
+    "from_pokemon": "turtwig",
+    "to_pokemon": "grotle",
+    "evolution_trigger": null,
+    "chain_id": 203
+  },
+  {
+    "from_pokemon": "buizel",
+    "to_pokemon": "floatzel",
+    "evolution_trigger": null,
+    "chain_id": 216
+  },
+  {
+    "from_pokemon": "lillipup",
+    "to_pokemon": "herdier",
+    "evolution_trigger": null,
+    "chain_id": 260
+  },
+  {
+    "from_pokemon": "munna",
+    "to_pokemon": "musharna",
+    "evolution_trigger": null,
+    "chain_id": 265
+  },
+  {
+    "from_pokemon": "solosis",
+    "to_pokemon": "duosion",
+    "evolution_trigger": null,
+    "chain_id": 294
+  },
+  {
+    "from_pokemon": "larvesta",
+    "to_pokemon": "volcarona",
+    "evolution_trigger": null,
+    "chain_id": 324
+  },
+  {
+    "from_pokemon": "nickit",
+    "to_pokemon": "thievul",
+    "evolution_trigger": null,
+    "chain_id": 436
+  },
+  {
+    "from_pokemon": "sinistea",
+    "to_pokemon": "polteageist",
+    "evolution_trigger": null,
+    "chain_id": 449
+  },
+  {
+    "from_pokemon": "maschiff",
+    "to_pokemon": "mabosstiff",
+    "evolution_trigger": null,
+    "chain_id": 493
+  },
+  {
+    "from_pokemon": "snorunt",
+    "to_pokemon": "glalie",
+    "evolution_trigger": null,
+    "chain_id": 186
+  },
+  {
     "from_pokemon": "paras",
     "to_pokemon": "parasect",
     "evolution_trigger": null,
@@ -168,510 +1068,6 @@
     "chain_id": 504
   },
   {
-    "from_pokemon": "bulbasaur",
-    "to_pokemon": "ivysaur",
-    "evolution_trigger": null,
-    "chain_id": 1
-  },
-  {
-    "from_pokemon": "rattata",
-    "to_pokemon": "raticate",
-    "evolution_trigger": null,
-    "chain_id": 7
-  },
-  {
-    "from_pokemon": "geodude",
-    "to_pokemon": "graveler",
-    "evolution_trigger": null,
-    "chain_id": 31
-  },
-  {
-    "from_pokemon": "slowpoke",
-    "to_pokemon": "slowking",
-    "evolution_trigger": null,
-    "chain_id": 33
-  },
-  {
-    "from_pokemon": "elekid",
-    "to_pokemon": "electabuzz",
-    "evolution_trigger": null,
-    "chain_id": 60
-  },
-  {
-    "from_pokemon": "bonsly",
-    "to_pokemon": "sudowoodo",
-    "evolution_trigger": null,
-    "chain_id": 91
-  },
-  {
-    "from_pokemon": "makuhita",
-    "to_pokemon": "hariyama",
-    "evolution_trigger": null,
-    "chain_id": 146
-  },
-  {
-    "from_pokemon": "carvanha",
-    "to_pokemon": "sharpedo",
-    "evolution_trigger": null,
-    "chain_id": 160
-  },
-  {
-    "from_pokemon": "spheal",
-    "to_pokemon": "sealeo",
-    "evolution_trigger": null,
-    "chain_id": 187
-  },
-  {
-    "from_pokemon": "cherubi",
-    "to_pokemon": "cherrim",
-    "evolution_trigger": null,
-    "chain_id": 217
-  },
-  {
-    "from_pokemon": "hippopotas",
-    "to_pokemon": "hippowdon",
-    "evolution_trigger": null,
-    "chain_id": 233
-  },
-  {
-    "from_pokemon": "finneon",
-    "to_pokemon": "lumineon",
-    "evolution_trigger": null,
-    "chain_id": 237
-  },
-  {
-    "from_pokemon": "oshawott",
-    "to_pokemon": "dewott",
-    "evolution_trigger": null,
-    "chain_id": 258
-  },
-  {
-    "from_pokemon": "purrloin",
-    "to_pokemon": "liepard",
-    "evolution_trigger": null,
-    "chain_id": 261
-  },
-  {
-    "from_pokemon": "gothita",
-    "to_pokemon": "gothorita",
-    "evolution_trigger": null,
-    "chain_id": 293
-  },
-  {
-    "from_pokemon": "axew",
-    "to_pokemon": "fraxure",
-    "evolution_trigger": null,
-    "chain_id": 309
-  },
-  {
-    "from_pokemon": "golett",
-    "to_pokemon": "golurk",
-    "evolution_trigger": null,
-    "chain_id": 316
-  },
-  {
-    "from_pokemon": "rufflet",
-    "to_pokemon": "braviary",
-    "evolution_trigger": null,
-    "chain_id": 319
-  },
-  {
-    "from_pokemon": "scatterbug",
-    "to_pokemon": "spewpa",
-    "evolution_trigger": null,
-    "chain_id": 342
-  },
-  {
-    "from_pokemon": "litleo",
-    "to_pokemon": "pyroar",
-    "evolution_trigger": null,
-    "chain_id": 343
-  },
-  {
-    "from_pokemon": "pancham",
-    "to_pokemon": "pangoro",
-    "evolution_trigger": null,
-    "chain_id": 346
-  },
-  {
-    "from_pokemon": "wimpod",
-    "to_pokemon": "golisopod",
-    "evolution_trigger": null,
-    "chain_id": 396
-  },
-  {
-    "from_pokemon": "sobble",
-    "to_pokemon": "drizzile",
-    "evolution_trigger": null,
-    "chain_id": 432
-  },
-  {
-    "from_pokemon": "rookidee",
-    "to_pokemon": "corvisquire",
-    "evolution_trigger": null,
-    "chain_id": 434
-  },
-  {
-    "from_pokemon": "wooloo",
-    "to_pokemon": "dubwool",
-    "evolution_trigger": null,
-    "chain_id": 438
-  },
-  {
-    "from_pokemon": "lechonk",
-    "to_pokemon": "oinkologne",
-    "evolution_trigger": null,
-    "chain_id": 481
-  },
-  {
-    "from_pokemon": "greavard",
-    "to_pokemon": "houndstone",
-    "evolution_trigger": null,
-    "chain_id": 509
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "leafeon",
-    "evolution_trigger": null,
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "nidoran-m",
-    "to_pokemon": "nidorino",
-    "evolution_trigger": null,
-    "chain_id": 13
-  },
-  {
-    "from_pokemon": "totodile",
-    "to_pokemon": "croconaw",
-    "evolution_trigger": null,
-    "chain_id": 81
-  },
-  {
-    "from_pokemon": "nosepass",
-    "to_pokemon": "probopass",
-    "evolution_trigger": null,
-    "chain_id": 147
-  },
-  {
-    "from_pokemon": "shuppet",
-    "to_pokemon": "banette",
-    "evolution_trigger": null,
-    "chain_id": 181
-  },
-  {
-    "from_pokemon": "patrat",
-    "to_pokemon": "watchog",
-    "evolution_trigger": null,
-    "chain_id": 259
-  },
-  {
-    "from_pokemon": "mienfoo",
-    "to_pokemon": "mienshao",
-    "evolution_trigger": null,
-    "chain_id": 314
-  },
-  {
-    "from_pokemon": "bunnelby",
-    "to_pokemon": "diggersby",
-    "evolution_trigger": null,
-    "chain_id": 340
-  },
-  {
-    "from_pokemon": "espurr",
-    "to_pokemon": "meowstic",
-    "evolution_trigger": null,
-    "chain_id": 348
-  },
-  {
-    "from_pokemon": "mudbray",
-    "to_pokemon": "mudsdale",
-    "evolution_trigger": null,
-    "chain_id": 386
-  },
-  {
-    "from_pokemon": "scorbunny",
-    "to_pokemon": "raboot",
-    "evolution_trigger": null,
-    "chain_id": 431
-  },
-  {
-    "from_pokemon": "gossifleur",
-    "to_pokemon": "eldegoss",
-    "evolution_trigger": null,
-    "chain_id": 437
-  },
-  {
-    "from_pokemon": "arrokuda",
-    "to_pokemon": "barraskewda",
-    "evolution_trigger": null,
-    "chain_id": 445
-  },
-  {
-    "from_pokemon": "varoom",
-    "to_pokemon": "revavroom",
-    "evolution_trigger": null,
-    "chain_id": 505
-  },
-  {
-    "from_pokemon": "slowpoke",
-    "to_pokemon": "slowbro",
-    "evolution_trigger": null,
-    "chain_id": 33
-  },
-  {
-    "from_pokemon": "burmy",
-    "to_pokemon": "wormadam",
-    "evolution_trigger": null,
-    "chain_id": 213
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "espeon",
-    "evolution_trigger": null,
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "zubat",
-    "to_pokemon": "golbat",
-    "evolution_trigger": null,
-    "chain_id": 17
-  },
-  {
-    "from_pokemon": "cyndaquil",
-    "to_pokemon": "quilava",
-    "evolution_trigger": null,
-    "chain_id": 80
-  },
-  {
-    "from_pokemon": "natu",
-    "to_pokemon": "xatu",
-    "evolution_trigger": null,
-    "chain_id": 88
-  },
-  {
-    "from_pokemon": "dunsparce",
-    "to_pokemon": "dudunsparce",
-    "evolution_trigger": null,
-    "chain_id": 103
-  },
-  {
-    "from_pokemon": "gligar",
-    "to_pokemon": "gliscor",
-    "evolution_trigger": null,
-    "chain_id": 104
-  },
-  {
-    "from_pokemon": "surskit",
-    "to_pokemon": "masquerain",
-    "evolution_trigger": null,
-    "chain_id": 141
-  },
-  {
-    "from_pokemon": "trapinch",
-    "to_pokemon": "vibrava",
-    "evolution_trigger": null,
-    "chain_id": 166
-  },
-  {
-    "from_pokemon": "anorith",
-    "to_pokemon": "armaldo",
-    "evolution_trigger": null,
-    "chain_id": 177
-  },
-  {
-    "from_pokemon": "duskull",
-    "to_pokemon": "dusclops",
-    "evolution_trigger": null,
-    "chain_id": 182
-  },
-  {
-    "from_pokemon": "riolu",
-    "to_pokemon": "lucario",
-    "evolution_trigger": null,
-    "chain_id": 232
-  },
-  {
-    "from_pokemon": "venipede",
-    "to_pokemon": "whirlipede",
-    "evolution_trigger": null,
-    "chain_id": 277
-  },
-  {
-    "from_pokemon": "zorua",
-    "to_pokemon": "zoroark",
-    "evolution_trigger": null,
-    "chain_id": 291
-  },
-  {
-    "from_pokemon": "vullaby",
-    "to_pokemon": "mandibuzz",
-    "evolution_trigger": null,
-    "chain_id": 320
-  },
-  {
-    "from_pokemon": "noibat",
-    "to_pokemon": "noivern",
-    "evolution_trigger": null,
-    "chain_id": 367
-  },
-  {
-    "from_pokemon": "cetoddle",
-    "to_pokemon": "cetitan",
-    "evolution_trigger": null,
-    "chain_id": 511
-  },
-  {
-    "from_pokemon": "tyrogue",
-    "to_pokemon": "hitmonchan",
-    "evolution_trigger": null,
-    "chain_id": 47
-  },
-  {
-    "from_pokemon": "scyther",
-    "to_pokemon": "scizor",
-    "evolution_trigger": null,
-    "chain_id": 58
-  },
-  {
-    "from_pokemon": "wurmple",
-    "to_pokemon": "silcoon",
-    "evolution_trigger": null,
-    "chain_id": 135
-  },
-  {
-    "from_pokemon": "charcadet",
-    "to_pokemon": "armarouge",
-    "evolution_trigger": null,
-    "chain_id": 490
-  },
-  {
-    "from_pokemon": "pidgey",
-    "to_pokemon": "pidgeotto",
-    "evolution_trigger": null,
-    "chain_id": 6
-  },
-  {
-    "from_pokemon": "ponyta",
-    "to_pokemon": "rapidash",
-    "evolution_trigger": null,
-    "chain_id": 32
-  },
-  {
-    "from_pokemon": "doduo",
-    "to_pokemon": "dodrio",
-    "evolution_trigger": null,
-    "chain_id": 36
-  },
-  {
-    "from_pokemon": "grimer",
-    "to_pokemon": "muk",
-    "evolution_trigger": null,
-    "chain_id": 38
-  },
-  {
-    "from_pokemon": "cubone",
-    "to_pokemon": "marowak",
-    "evolution_trigger": null,
-    "chain_id": 46
-  },
-  {
-    "from_pokemon": "happiny",
-    "to_pokemon": "chansey",
-    "evolution_trigger": null,
-    "chain_id": 51
-  },
-  {
-    "from_pokemon": "wynaut",
-    "to_pokemon": "wobbuffet",
-    "evolution_trigger": null,
-    "chain_id": 100
-  },
-  {
-    "from_pokemon": "qwilfish",
-    "to_pokemon": "overqwil",
-    "evolution_trigger": null,
-    "chain_id": 106
-  },
-  {
-    "from_pokemon": "mudkip",
-    "to_pokemon": "marshtomp",
-    "evolution_trigger": null,
-    "chain_id": 132
-  },
-  {
-    "from_pokemon": "poochyena",
-    "to_pokemon": "mightyena",
-    "evolution_trigger": null,
-    "chain_id": 133
-  },
-  {
-    "from_pokemon": "nincada",
-    "to_pokemon": "shedinja",
-    "evolution_trigger": null,
-    "chain_id": 144
-  },
-  {
-    "from_pokemon": "turtwig",
-    "to_pokemon": "grotle",
-    "evolution_trigger": null,
-    "chain_id": 203
-  },
-  {
-    "from_pokemon": "buizel",
-    "to_pokemon": "floatzel",
-    "evolution_trigger": null,
-    "chain_id": 216
-  },
-  {
-    "from_pokemon": "lillipup",
-    "to_pokemon": "herdier",
-    "evolution_trigger": null,
-    "chain_id": 260
-  },
-  {
-    "from_pokemon": "munna",
-    "to_pokemon": "musharna",
-    "evolution_trigger": null,
-    "chain_id": 265
-  },
-  {
-    "from_pokemon": "solosis",
-    "to_pokemon": "duosion",
-    "evolution_trigger": null,
-    "chain_id": 294
-  },
-  {
-    "from_pokemon": "larvesta",
-    "to_pokemon": "volcarona",
-    "evolution_trigger": null,
-    "chain_id": 324
-  },
-  {
-    "from_pokemon": "nickit",
-    "to_pokemon": "thievul",
-    "evolution_trigger": null,
-    "chain_id": 436
-  },
-  {
-    "from_pokemon": "sinistea",
-    "to_pokemon": "polteageist",
-    "evolution_trigger": null,
-    "chain_id": 449
-  },
-  {
-    "from_pokemon": "maschiff",
-    "to_pokemon": "mabosstiff",
-    "evolution_trigger": null,
-    "chain_id": 493
-  },
-  {
-    "from_pokemon": "snorunt",
-    "to_pokemon": "glalie",
-    "evolution_trigger": null,
-    "chain_id": 186
-  },
-  {
     "from_pokemon": "machop",
     "to_pokemon": "machoke",
     "evolution_trigger": null,
@@ -806,942 +1202,6 @@
   {
     "from_pokemon": "eevee",
     "to_pokemon": "vaporeon",
-    "evolution_trigger": null,
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "mankey",
-    "to_pokemon": "primeape",
-    "evolution_trigger": null,
-    "chain_id": 24
-  },
-  {
-    "from_pokemon": "magnemite",
-    "to_pokemon": "magneton",
-    "evolution_trigger": null,
-    "chain_id": 34
-  },
-  {
-    "from_pokemon": "shellder",
-    "to_pokemon": "cloyster",
-    "evolution_trigger": null,
-    "chain_id": 39
-  },
-  {
-    "from_pokemon": "lickitung",
-    "to_pokemon": "lickilicky",
-    "evolution_trigger": null,
-    "chain_id": 48
-  },
-  {
-    "from_pokemon": "chinchou",
-    "to_pokemon": "lanturn",
-    "evolution_trigger": null,
-    "chain_id": 86
-  },
-  {
-    "from_pokemon": "togepi",
-    "to_pokemon": "togetic",
-    "evolution_trigger": null,
-    "chain_id": 87
-  },
-  {
-    "from_pokemon": "sunkern",
-    "to_pokemon": "sunflora",
-    "evolution_trigger": null,
-    "chain_id": 94
-  },
-  {
-    "from_pokemon": "houndour",
-    "to_pokemon": "houndoom",
-    "evolution_trigger": null,
-    "chain_id": 118
-  },
-  {
-    "from_pokemon": "lotad",
-    "to_pokemon": "lombre",
-    "evolution_trigger": null,
-    "chain_id": 136
-  },
-  {
-    "from_pokemon": "slakoth",
-    "to_pokemon": "vigoroth",
-    "evolution_trigger": null,
-    "chain_id": 143
-  },
-  {
-    "from_pokemon": "meditite",
-    "to_pokemon": "medicham",
-    "evolution_trigger": null,
-    "chain_id": 152
-  },
-  {
-    "from_pokemon": "gulpin",
-    "to_pokemon": "swalot",
-    "evolution_trigger": null,
-    "chain_id": 159
-  },
-  {
-    "from_pokemon": "swablu",
-    "to_pokemon": "altaria",
-    "evolution_trigger": null,
-    "chain_id": 168
-  },
-  {
-    "from_pokemon": "starly",
-    "to_pokemon": "staravia",
-    "evolution_trigger": null,
-    "chain_id": 206
-  },
-  {
-    "from_pokemon": "timburr",
-    "to_pokemon": "gurdurr",
-    "evolution_trigger": null,
-    "chain_id": 272
-  },
-  {
-    "from_pokemon": "ducklett",
-    "to_pokemon": "swanna",
-    "evolution_trigger": null,
-    "chain_id": 295
-  },
-  {
-    "from_pokemon": "salandit",
-    "to_pokemon": "salazzle",
-    "evolution_trigger": null,
-    "chain_id": 390
-  },
-  {
-    "from_pokemon": "poipole",
-    "to_pokemon": "naganadel",
-    "evolution_trigger": null,
-    "chain_id": 424
-  },
-  {
-    "from_pokemon": "impidimp",
-    "to_pokemon": "morgrem",
-    "evolution_trigger": null,
-    "chain_id": 451
-  },
-  {
-    "from_pokemon": "tarountula",
-    "to_pokemon": "spidops",
-    "evolution_trigger": null,
-    "chain_id": 482
-  },
-  {
-    "from_pokemon": "nymble",
-    "to_pokemon": "lokix",
-    "evolution_trigger": null,
-    "chain_id": 483
-  },
-  {
-    "from_pokemon": "fidough",
-    "to_pokemon": "dachsbun",
-    "evolution_trigger": null,
-    "chain_id": 486
-  },
-  {
-    "from_pokemon": "poltchageist",
-    "to_pokemon": "sinistcha",
-    "evolution_trigger": null,
-    "chain_id": 539
-  },
-  {
-    "from_pokemon": "squirtle",
-    "to_pokemon": "wartortle",
-    "evolution_trigger": null,
-    "chain_id": 3
-  },
-  {
-    "from_pokemon": "venonat",
-    "to_pokemon": "venomoth",
-    "evolution_trigger": null,
-    "chain_id": 20
-  },
-  {
-    "from_pokemon": "diglett",
-    "to_pokemon": "dugtrio",
-    "evolution_trigger": null,
-    "chain_id": 21
-  },
-  {
-    "from_pokemon": "psyduck",
-    "to_pokemon": "golduck",
-    "evolution_trigger": null,
-    "chain_id": 23
-  },
-  {
-    "from_pokemon": "tentacool",
-    "to_pokemon": "tentacruel",
-    "evolution_trigger": null,
-    "chain_id": 30
-  },
-  {
-    "from_pokemon": "seel",
-    "to_pokemon": "dewgong",
-    "evolution_trigger": null,
-    "chain_id": 37
-  },
-  {
-    "from_pokemon": "koffing",
-    "to_pokemon": "weezing",
-    "evolution_trigger": null,
-    "chain_id": 49
-  },
-  {
-    "from_pokemon": "horsea",
-    "to_pokemon": "seadra",
-    "evolution_trigger": null,
-    "chain_id": 54
-  },
-  {
-    "from_pokemon": "scyther",
-    "to_pokemon": "kleavor",
-    "evolution_trigger": null,
-    "chain_id": 58
-  },
-  {
-    "from_pokemon": "munchlax",
-    "to_pokemon": "snorlax",
-    "evolution_trigger": null,
-    "chain_id": 72
-  },
-  {
-    "from_pokemon": "aipom",
-    "to_pokemon": "ambipom",
-    "evolution_trigger": null,
-    "chain_id": 93
-  },
-  {
-    "from_pokemon": "taillow",
-    "to_pokemon": "swellow",
-    "evolution_trigger": null,
-    "chain_id": 138
-  },
-  {
-    "from_pokemon": "spoink",
-    "to_pokemon": "grumpig",
-    "evolution_trigger": null,
-    "chain_id": 164
-  },
-  {
-    "from_pokemon": "clamperl",
-    "to_pokemon": "gorebyss",
-    "evolution_trigger": null,
-    "chain_id": 188
-  },
-  {
-    "from_pokemon": "bagon",
-    "to_pokemon": "shelgon",
-    "evolution_trigger": null,
-    "chain_id": 191
-  },
-  {
-    "from_pokemon": "beldum",
-    "to_pokemon": "metang",
-    "evolution_trigger": null,
-    "chain_id": 192
-  },
-  {
-    "from_pokemon": "roggenrola",
-    "to_pokemon": "boldore",
-    "evolution_trigger": null,
-    "chain_id": 268
-  },
-  {
-    "from_pokemon": "woobat",
-    "to_pokemon": "swoobat",
-    "evolution_trigger": null,
-    "chain_id": 269
-  },
-  {
-    "from_pokemon": "joltik",
-    "to_pokemon": "galvantula",
-    "evolution_trigger": null,
-    "chain_id": 303
-  },
-  {
-    "from_pokemon": "ferroseed",
-    "to_pokemon": "ferrothorn",
-    "evolution_trigger": null,
-    "chain_id": 304
-  },
-  {
-    "from_pokemon": "cubchoo",
-    "to_pokemon": "beartic",
-    "evolution_trigger": null,
-    "chain_id": 310
-  },
-  {
-    "from_pokemon": "helioptile",
-    "to_pokemon": "heliolisk",
-    "evolution_trigger": null,
-    "chain_id": 356
-  },
-  {
-    "from_pokemon": "mareanie",
-    "to_pokemon": "toxapex",
-    "evolution_trigger": null,
-    "chain_id": 385
-  },
-  {
-    "from_pokemon": "rolycoly",
-    "to_pokemon": "carkol",
-    "evolution_trigger": null,
-    "chain_id": 441
-  },
-  {
-    "from_pokemon": "toxel",
-    "to_pokemon": "toxtricity",
-    "evolution_trigger": null,
-    "chain_id": 446
-  },
-  {
-    "from_pokemon": "flittle",
-    "to_pokemon": "espathra",
-    "evolution_trigger": null,
-    "chain_id": 500
-  },
-  {
-    "from_pokemon": "cleffa",
-    "to_pokemon": "clefairy",
-    "evolution_trigger": null,
-    "chain_id": 14
-  },
-  {
-    "from_pokemon": "poliwag",
-    "to_pokemon": "poliwhirl",
-    "evolution_trigger": null,
-    "chain_id": 26
-  },
-  {
-    "from_pokemon": "abra",
-    "to_pokemon": "kadabra",
-    "evolution_trigger": null,
-    "chain_id": 27
-  },
-  {
-    "from_pokemon": "gastly",
-    "to_pokemon": "haunter",
-    "evolution_trigger": null,
-    "chain_id": 40
-  },
-  {
-    "from_pokemon": "krabby",
-    "to_pokemon": "kingler",
-    "evolution_trigger": null,
-    "chain_id": 43
-  },
-  {
-    "from_pokemon": "tangela",
-    "to_pokemon": "tangrowth",
-    "evolution_trigger": null,
-    "chain_id": 52
-  },
-  {
-    "from_pokemon": "omanyte",
-    "to_pokemon": "omastar",
-    "evolution_trigger": null,
-    "chain_id": 69
-  },
-  {
-    "from_pokemon": "spinarak",
-    "to_pokemon": "ariados",
-    "evolution_trigger": null,
-    "chain_id": 85
-  },
-  {
-    "from_pokemon": "snubbull",
-    "to_pokemon": "granbull",
-    "evolution_trigger": null,
-    "chain_id": 105
-  },
-  {
-    "from_pokemon": "seedot",
-    "to_pokemon": "nuzleaf",
-    "evolution_trigger": null,
-    "chain_id": 137
-  },
-  {
-    "from_pokemon": "electrike",
-    "to_pokemon": "manectric",
-    "evolution_trigger": null,
-    "chain_id": 153
-  },
-  {
-    "from_pokemon": "wailmer",
-    "to_pokemon": "wailord",
-    "evolution_trigger": null,
-    "chain_id": 161
-  },
-  {
-    "from_pokemon": "burmy",
-    "to_pokemon": "mothim",
-    "evolution_trigger": null,
-    "chain_id": 213
-  },
-  {
-    "from_pokemon": "snover",
-    "to_pokemon": "abomasnow",
-    "evolution_trigger": null,
-    "chain_id": 239
-  },
-  {
-    "from_pokemon": "litwick",
-    "to_pokemon": "lampent",
-    "evolution_trigger": null,
-    "chain_id": 308
-  },
-  {
-    "from_pokemon": "froakie",
-    "to_pokemon": "frogadier",
-    "evolution_trigger": null,
-    "chain_id": 339
-  },
-  {
-    "from_pokemon": "spritzee",
-    "to_pokemon": "aromatisse",
-    "evolution_trigger": null,
-    "chain_id": 350
-  },
-  {
-    "from_pokemon": "goomy",
-    "to_pokemon": "sliggoo",
-    "evolution_trigger": null,
-    "chain_id": 362
-  },
-  {
-    "from_pokemon": "rowlet",
-    "to_pokemon": "dartrix",
-    "evolution_trigger": null,
-    "chain_id": 374
-  },
-  {
-    "from_pokemon": "grookey",
-    "to_pokemon": "thwackey",
-    "evolution_trigger": null,
-    "chain_id": 430
-  },
-  {
-    "from_pokemon": "pawmi",
-    "to_pokemon": "pawmo",
-    "evolution_trigger": null,
-    "chain_id": 484
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "flareon",
-    "evolution_trigger": null,
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "magikarp",
-    "to_pokemon": "gyarados",
-    "evolution_trigger": null,
-    "chain_id": 64
-  },
-  {
-    "from_pokemon": "porygon",
-    "to_pokemon": "porygon2",
-    "evolution_trigger": null,
-    "chain_id": 68
-  },
-  {
-    "from_pokemon": "mareep",
-    "to_pokemon": "flaaffy",
-    "evolution_trigger": null,
-    "chain_id": 89
-  },
-  {
-    "from_pokemon": "skitty",
-    "to_pokemon": "delcatty",
-    "evolution_trigger": null,
-    "chain_id": 148
-  },
-  {
-    "from_pokemon": "baltoy",
-    "to_pokemon": "claydol",
-    "evolution_trigger": null,
-    "chain_id": 175
-  },
-  {
-    "from_pokemon": "feebas",
-    "to_pokemon": "milotic",
-    "evolution_trigger": null,
-    "chain_id": 178
-  },
-  {
-    "from_pokemon": "pawniard",
-    "to_pokemon": "bisharp",
-    "evolution_trigger": null,
-    "chain_id": 317
-  },
-  {
-    "from_pokemon": "skrelp",
-    "to_pokemon": "dragalge",
-    "evolution_trigger": null,
-    "chain_id": 354
-  },
-  {
-    "from_pokemon": "sandygast",
-    "to_pokemon": "palossand",
-    "evolution_trigger": null,
-    "chain_id": 397
-  },
-  {
-    "from_pokemon": "clobbopus",
-    "to_pokemon": "grapploct",
-    "evolution_trigger": null,
-    "chain_id": 448
-  },
-  {
-    "from_pokemon": "quaxly",
-    "to_pokemon": "quaxwell",
-    "evolution_trigger": null,
-    "chain_id": 480
-  },
-  {
-    "from_pokemon": "tandemaus",
-    "to_pokemon": "maushold",
-    "evolution_trigger": null,
-    "chain_id": 485
-  },
-  {
-    "from_pokemon": "charcadet",
-    "to_pokemon": "ceruledge",
-    "evolution_trigger": null,
-    "chain_id": 490
-  },
-  {
-    "from_pokemon": "gimmighoul",
-    "to_pokemon": "gholdengo",
-    "evolution_trigger": null,
-    "chain_id": 528
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "glaceon",
-    "evolution_trigger": null,
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "yamask",
-    "to_pokemon": "cofagrigus",
-    "evolution_trigger": null,
-    "chain_id": 287
-  },
-  {
-    "from_pokemon": "vulpix",
-    "to_pokemon": "ninetales",
-    "evolution_trigger": null,
-    "chain_id": 15
-  },
-  {
-    "from_pokemon": "pineco",
-    "to_pokemon": "forretress",
-    "evolution_trigger": null,
-    "chain_id": 102
-  },
-  {
-    "from_pokemon": "teddiursa",
-    "to_pokemon": "ursaring",
-    "evolution_trigger": null,
-    "chain_id": 110
-  },
-  {
-    "from_pokemon": "remoraid",
-    "to_pokemon": "octillery",
-    "evolution_trigger": null,
-    "chain_id": 114
-  },
-  {
-    "from_pokemon": "piplup",
-    "to_pokemon": "prinplup",
-    "evolution_trigger": null,
-    "chain_id": 205
-  },
-  {
-    "from_pokemon": "croagunk",
-    "to_pokemon": "toxicroak",
-    "evolution_trigger": null,
-    "chain_id": 235
-  },
-  {
-    "from_pokemon": "phione",
-    "to_pokemon": "manaphy",
-    "evolution_trigger": null,
-    "chain_id": 250
-  },
-  {
-    "from_pokemon": "pidove",
-    "to_pokemon": "tranquill",
-    "evolution_trigger": null,
-    "chain_id": 266
-  },
-  {
-    "from_pokemon": "petilil",
-    "to_pokemon": "lilligant",
-    "evolution_trigger": null,
-    "chain_id": 279
-  },
-  {
-    "from_pokemon": "karrablast",
-    "to_pokemon": "escavalier",
-    "evolution_trigger": null,
-    "chain_id": 299
-  },
-  {
-    "from_pokemon": "foongus",
-    "to_pokemon": "amoonguss",
-    "evolution_trigger": null,
-    "chain_id": 300
-  },
-  {
-    "from_pokemon": "shelmet",
-    "to_pokemon": "accelgor",
-    "evolution_trigger": null,
-    "chain_id": 312
-  },
-  {
-    "from_pokemon": "honedge",
-    "to_pokemon": "doublade",
-    "evolution_trigger": null,
-    "chain_id": 349
-  },
-  {
-    "from_pokemon": "pumpkaboo",
-    "to_pokemon": "gourgeist",
-    "evolution_trigger": null,
-    "chain_id": 365
-  },
-  {
-    "from_pokemon": "dewpider",
-    "to_pokemon": "araquanid",
-    "evolution_trigger": null,
-    "chain_id": 387
-  },
-  {
-    "from_pokemon": "fomantis",
-    "to_pokemon": "lurantis",
-    "evolution_trigger": null,
-    "chain_id": 388
-  },
-  {
-    "from_pokemon": "jangmo-o",
-    "to_pokemon": "hakamo-o",
-    "evolution_trigger": null,
-    "chain_id": 408
-  },
-  {
-    "from_pokemon": "skwovet",
-    "to_pokemon": "greedent",
-    "evolution_trigger": null,
-    "chain_id": 433
-  },
-  {
-    "from_pokemon": "yamper",
-    "to_pokemon": "boltund",
-    "evolution_trigger": null,
-    "chain_id": 440
-  },
-  {
-    "from_pokemon": "sizzlipede",
-    "to_pokemon": "centiskorch",
-    "evolution_trigger": null,
-    "chain_id": 447
-  },
-  {
-    "from_pokemon": "smoliv",
-    "to_pokemon": "dolliv",
-    "evolution_trigger": null,
-    "chain_id": 487
-  },
-  {
-    "from_pokemon": "sneasel",
-    "to_pokemon": "weavile",
-    "evolution_trigger": null,
-    "chain_id": 109
-  },
-  {
-    "from_pokemon": "charmander",
-    "to_pokemon": "charmeleon",
-    "evolution_trigger": null,
-    "chain_id": 2
-  },
-  {
-    "from_pokemon": "ekans",
-    "to_pokemon": "arbok",
-    "evolution_trigger": null,
-    "chain_id": 9
-  },
-  {
-    "from_pokemon": "pichu",
-    "to_pokemon": "pikachu",
-    "evolution_trigger": null,
-    "chain_id": 10
-  },
-  {
-    "from_pokemon": "onix",
-    "to_pokemon": "steelix",
-    "evolution_trigger": null,
-    "chain_id": 41
-  },
-  {
-    "from_pokemon": "magby",
-    "to_pokemon": "magmar",
-    "evolution_trigger": null,
-    "chain_id": 61
-  },
-  {
-    "from_pokemon": "kabuto",
-    "to_pokemon": "kabutops",
-    "evolution_trigger": null,
-    "chain_id": 70
-  },
-  {
-    "from_pokemon": "ledyba",
-    "to_pokemon": "ledian",
-    "evolution_trigger": null,
-    "chain_id": 84
-  },
-  {
-    "from_pokemon": "yanma",
-    "to_pokemon": "yanmega",
-    "evolution_trigger": null,
-    "chain_id": 95
-  },
-  {
-    "from_pokemon": "misdreavus",
-    "to_pokemon": "mismagius",
-    "evolution_trigger": null,
-    "chain_id": 98
-  },
-  {
-    "from_pokemon": "larvitar",
-    "to_pokemon": "pupitar",
-    "evolution_trigger": null,
-    "chain_id": 126
-  },
-  {
-    "from_pokemon": "whismur",
-    "to_pokemon": "loudred",
-    "evolution_trigger": null,
-    "chain_id": 145
-  },
-  {
-    "from_pokemon": "bidoof",
-    "to_pokemon": "bibarel",
-    "evolution_trigger": null,
-    "chain_id": 207
-  },
-  {
-    "from_pokemon": "kricketot",
-    "to_pokemon": "kricketune",
-    "evolution_trigger": null,
-    "chain_id": 208
-  },
-  {
-    "from_pokemon": "shinx",
-    "to_pokemon": "luxio",
-    "evolution_trigger": null,
-    "chain_id": 209
-  },
-  {
-    "from_pokemon": "sandile",
-    "to_pokemon": "krokorok",
-    "evolution_trigger": null,
-    "chain_id": 281
-  },
-  {
-    "from_pokemon": "tynamo",
-    "to_pokemon": "eelektrik",
-    "evolution_trigger": null,
-    "chain_id": 306
-  },
-  {
-    "from_pokemon": "deino",
-    "to_pokemon": "zweilous",
-    "evolution_trigger": null,
-    "chain_id": 323
-  },
-  {
-    "from_pokemon": "fletchling",
-    "to_pokemon": "fletchinder",
-    "evolution_trigger": null,
-    "chain_id": 341
-  },
-  {
-    "from_pokemon": "skiddo",
-    "to_pokemon": "gogoat",
-    "evolution_trigger": null,
-    "chain_id": 345
-  },
-  {
-    "from_pokemon": "rockruff",
-    "to_pokemon": "lycanroc",
-    "evolution_trigger": null,
-    "chain_id": 383
-  },
-  {
-    "from_pokemon": "type-null",
-    "to_pokemon": "silvally",
-    "evolution_trigger": null,
-    "chain_id": 399
-  },
-  {
-    "from_pokemon": "chewtle",
-    "to_pokemon": "drednaw",
-    "evolution_trigger": null,
-    "chain_id": 439
-  },
-  {
-    "from_pokemon": "meowth",
-    "to_pokemon": "persian",
-    "evolution_trigger": null,
-    "chain_id": 22
-  },
-  {
-    "from_pokemon": "exeggcute",
-    "to_pokemon": "exeggutor",
-    "evolution_trigger": null,
-    "chain_id": 45
-  },
-  {
-    "from_pokemon": "rhyhorn",
-    "to_pokemon": "rhydon",
-    "evolution_trigger": null,
-    "chain_id": 50
-  },
-  {
-    "from_pokemon": "dratini",
-    "to_pokemon": "dragonair",
-    "evolution_trigger": null,
-    "chain_id": 76
-  },
-  {
-    "from_pokemon": "slugma",
-    "to_pokemon": "magcargo",
-    "evolution_trigger": null,
-    "chain_id": 111
-  },
-  {
-    "from_pokemon": "shroomish",
-    "to_pokemon": "breloom",
-    "evolution_trigger": null,
-    "chain_id": 142
-  },
-  {
-    "from_pokemon": "numel",
-    "to_pokemon": "camerupt",
-    "evolution_trigger": null,
-    "chain_id": 162
-  },
-  {
-    "from_pokemon": "barboach",
-    "to_pokemon": "whiscash",
-    "evolution_trigger": null,
-    "chain_id": 173
-  },
-  {
-    "from_pokemon": "chimchar",
-    "to_pokemon": "monferno",
-    "evolution_trigger": null,
-    "chain_id": 204
-  },
-  {
-    "from_pokemon": "cranidos",
-    "to_pokemon": "rampardos",
-    "evolution_trigger": null,
-    "chain_id": 211
-  },
-  {
-    "from_pokemon": "glameow",
-    "to_pokemon": "purugly",
-    "evolution_trigger": null,
-    "chain_id": 221
-  },
-  {
-    "from_pokemon": "bronzor",
-    "to_pokemon": "bronzong",
-    "evolution_trigger": null,
-    "chain_id": 224
-  },
-  {
-    "from_pokemon": "drilbur",
-    "to_pokemon": "excadrill",
-    "evolution_trigger": null,
-    "chain_id": 270
-  },
-  {
-    "from_pokemon": "scraggy",
-    "to_pokemon": "scrafty",
-    "evolution_trigger": null,
-    "chain_id": 285
-  },
-  {
-    "from_pokemon": "tirtouga",
-    "to_pokemon": "carracosta",
-    "evolution_trigger": null,
-    "chain_id": 288
-  },
-  {
-    "from_pokemon": "binacle",
-    "to_pokemon": "barbaracle",
-    "evolution_trigger": null,
-    "chain_id": 353
-  },
-  {
-    "from_pokemon": "crabrawler",
-    "to_pokemon": "crabominable",
-    "evolution_trigger": null,
-    "chain_id": 380
-  },
-  {
-    "from_pokemon": "morelull",
-    "to_pokemon": "shiinotic",
-    "evolution_trigger": null,
-    "chain_id": 389
-  },
-  {
-    "from_pokemon": "bounsweet",
-    "to_pokemon": "steenee",
-    "evolution_trigger": null,
-    "chain_id": 392
-  },
-  {
-    "from_pokemon": "silicobra",
-    "to_pokemon": "sandaconda",
-    "evolution_trigger": null,
-    "chain_id": 443
-  },
-  {
-    "from_pokemon": "kubfu",
-    "to_pokemon": "urshifu",
-    "evolution_trigger": null,
-    "chain_id": 470
-  },
-  {
-    "from_pokemon": "sprigatito",
-    "to_pokemon": "floragato",
-    "evolution_trigger": null,
-    "chain_id": 478
-  },
-  {
-    "from_pokemon": "tinkatink",
-    "to_pokemon": "tinkatuff",
-    "evolution_trigger": null,
-    "chain_id": 501
-  },
-  {
-    "from_pokemon": "clamperl",
-    "to_pokemon": "huntail",
-    "evolution_trigger": null,
-    "chain_id": 188
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "jolteon",
     "evolution_trigger": null,
     "chain_id": 67
   },
@@ -2058,124 +1518,1282 @@
     "chain_id": 442
   },
   {
-    "from_pokemon": "spearow",
-    "to_pokemon": "fearow",
+    "from_pokemon": "exeggcute",
+    "to_pokemon": "exeggutor",
     "evolution_trigger": null,
-    "chain_id": 8
+    "chain_id": 45
   },
   {
-    "from_pokemon": "nidoran-f",
-    "to_pokemon": "nidorina",
+    "from_pokemon": "rhyhorn",
+    "to_pokemon": "rhydon",
     "evolution_trigger": null,
-    "chain_id": 12
+    "chain_id": 50
   },
   {
-    "from_pokemon": "farfetchd",
-    "to_pokemon": "sirfetchd",
+    "from_pokemon": "dratini",
+    "to_pokemon": "dragonair",
     "evolution_trigger": null,
-    "chain_id": 35
+    "chain_id": 76
   },
   {
-    "from_pokemon": "voltorb",
-    "to_pokemon": "electrode",
+    "from_pokemon": "slugma",
+    "to_pokemon": "magcargo",
     "evolution_trigger": null,
-    "chain_id": 44
+    "chain_id": 111
   },
   {
-    "from_pokemon": "tyrogue",
-    "to_pokemon": "hitmontop",
+    "from_pokemon": "shroomish",
+    "to_pokemon": "breloom",
     "evolution_trigger": null,
-    "chain_id": 47
+    "chain_id": 142
   },
   {
-    "from_pokemon": "sentret",
-    "to_pokemon": "furret",
+    "from_pokemon": "numel",
+    "to_pokemon": "camerupt",
     "evolution_trigger": null,
-    "chain_id": 82
+    "chain_id": 162
   },
   {
-    "from_pokemon": "budew",
-    "to_pokemon": "roselia",
+    "from_pokemon": "barboach",
+    "to_pokemon": "whiscash",
+    "evolution_trigger": null,
+    "chain_id": 173
+  },
+  {
+    "from_pokemon": "chimchar",
+    "to_pokemon": "monferno",
+    "evolution_trigger": null,
+    "chain_id": 204
+  },
+  {
+    "from_pokemon": "cranidos",
+    "to_pokemon": "rampardos",
+    "evolution_trigger": null,
+    "chain_id": 211
+  },
+  {
+    "from_pokemon": "glameow",
+    "to_pokemon": "purugly",
+    "evolution_trigger": null,
+    "chain_id": 221
+  },
+  {
+    "from_pokemon": "bronzor",
+    "to_pokemon": "bronzong",
+    "evolution_trigger": null,
+    "chain_id": 224
+  },
+  {
+    "from_pokemon": "drilbur",
+    "to_pokemon": "excadrill",
+    "evolution_trigger": null,
+    "chain_id": 270
+  },
+  {
+    "from_pokemon": "scraggy",
+    "to_pokemon": "scrafty",
+    "evolution_trigger": null,
+    "chain_id": 285
+  },
+  {
+    "from_pokemon": "tirtouga",
+    "to_pokemon": "carracosta",
+    "evolution_trigger": null,
+    "chain_id": 288
+  },
+  {
+    "from_pokemon": "binacle",
+    "to_pokemon": "barbaracle",
+    "evolution_trigger": null,
+    "chain_id": 353
+  },
+  {
+    "from_pokemon": "crabrawler",
+    "to_pokemon": "crabominable",
+    "evolution_trigger": null,
+    "chain_id": 380
+  },
+  {
+    "from_pokemon": "morelull",
+    "to_pokemon": "shiinotic",
+    "evolution_trigger": null,
+    "chain_id": 389
+  },
+  {
+    "from_pokemon": "bounsweet",
+    "to_pokemon": "steenee",
+    "evolution_trigger": null,
+    "chain_id": 392
+  },
+  {
+    "from_pokemon": "silicobra",
+    "to_pokemon": "sandaconda",
+    "evolution_trigger": null,
+    "chain_id": 443
+  },
+  {
+    "from_pokemon": "kubfu",
+    "to_pokemon": "urshifu",
+    "evolution_trigger": null,
+    "chain_id": 470
+  },
+  {
+    "from_pokemon": "sprigatito",
+    "to_pokemon": "floragato",
+    "evolution_trigger": null,
+    "chain_id": 478
+  },
+  {
+    "from_pokemon": "tinkatink",
+    "to_pokemon": "tinkatuff",
+    "evolution_trigger": null,
+    "chain_id": 501
+  },
+  {
+    "from_pokemon": "clamperl",
+    "to_pokemon": "huntail",
+    "evolution_trigger": null,
+    "chain_id": 188
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "jolteon",
+    "evolution_trigger": null,
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "magikarp",
+    "to_pokemon": "gyarados",
+    "evolution_trigger": null,
+    "chain_id": 64
+  },
+  {
+    "from_pokemon": "porygon",
+    "to_pokemon": "porygon2",
+    "evolution_trigger": null,
+    "chain_id": 68
+  },
+  {
+    "from_pokemon": "mareep",
+    "to_pokemon": "flaaffy",
+    "evolution_trigger": null,
+    "chain_id": 89
+  },
+  {
+    "from_pokemon": "skitty",
+    "to_pokemon": "delcatty",
+    "evolution_trigger": null,
+    "chain_id": 148
+  },
+  {
+    "from_pokemon": "baltoy",
+    "to_pokemon": "claydol",
+    "evolution_trigger": null,
+    "chain_id": 175
+  },
+  {
+    "from_pokemon": "feebas",
+    "to_pokemon": "milotic",
+    "evolution_trigger": null,
+    "chain_id": 178
+  },
+  {
+    "from_pokemon": "pawniard",
+    "to_pokemon": "bisharp",
+    "evolution_trigger": null,
+    "chain_id": 317
+  },
+  {
+    "from_pokemon": "skrelp",
+    "to_pokemon": "dragalge",
+    "evolution_trigger": null,
+    "chain_id": 354
+  },
+  {
+    "from_pokemon": "sandygast",
+    "to_pokemon": "palossand",
+    "evolution_trigger": null,
+    "chain_id": 397
+  },
+  {
+    "from_pokemon": "clobbopus",
+    "to_pokemon": "grapploct",
+    "evolution_trigger": null,
+    "chain_id": 448
+  },
+  {
+    "from_pokemon": "quaxly",
+    "to_pokemon": "quaxwell",
+    "evolution_trigger": null,
+    "chain_id": 480
+  },
+  {
+    "from_pokemon": "tandemaus",
+    "to_pokemon": "maushold",
+    "evolution_trigger": null,
+    "chain_id": 485
+  },
+  {
+    "from_pokemon": "charcadet",
+    "to_pokemon": "ceruledge",
+    "evolution_trigger": null,
+    "chain_id": 490
+  },
+  {
+    "from_pokemon": "gimmighoul",
+    "to_pokemon": "gholdengo",
+    "evolution_trigger": null,
+    "chain_id": 528
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "glaceon",
+    "evolution_trigger": null,
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "yamask",
+    "to_pokemon": "cofagrigus",
+    "evolution_trigger": null,
+    "chain_id": 287
+  },
+  {
+    "from_pokemon": "bulbasaur",
+    "to_pokemon": "ivysaur",
+    "evolution_trigger": null,
+    "chain_id": 1
+  },
+  {
+    "from_pokemon": "rattata",
+    "to_pokemon": "raticate",
+    "evolution_trigger": null,
+    "chain_id": 7
+  },
+  {
+    "from_pokemon": "geodude",
+    "to_pokemon": "graveler",
+    "evolution_trigger": null,
+    "chain_id": 31
+  },
+  {
+    "from_pokemon": "slowpoke",
+    "to_pokemon": "slowking",
+    "evolution_trigger": null,
+    "chain_id": 33
+  },
+  {
+    "from_pokemon": "elekid",
+    "to_pokemon": "electabuzz",
+    "evolution_trigger": null,
+    "chain_id": 60
+  },
+  {
+    "from_pokemon": "bonsly",
+    "to_pokemon": "sudowoodo",
+    "evolution_trigger": null,
+    "chain_id": 91
+  },
+  {
+    "from_pokemon": "makuhita",
+    "to_pokemon": "hariyama",
+    "evolution_trigger": null,
+    "chain_id": 146
+  },
+  {
+    "from_pokemon": "carvanha",
+    "to_pokemon": "sharpedo",
+    "evolution_trigger": null,
+    "chain_id": 160
+  },
+  {
+    "from_pokemon": "spheal",
+    "to_pokemon": "sealeo",
+    "evolution_trigger": null,
+    "chain_id": 187
+  },
+  {
+    "from_pokemon": "cherubi",
+    "to_pokemon": "cherrim",
+    "evolution_trigger": null,
+    "chain_id": 217
+  },
+  {
+    "from_pokemon": "hippopotas",
+    "to_pokemon": "hippowdon",
+    "evolution_trigger": null,
+    "chain_id": 233
+  },
+  {
+    "from_pokemon": "finneon",
+    "to_pokemon": "lumineon",
+    "evolution_trigger": null,
+    "chain_id": 237
+  },
+  {
+    "from_pokemon": "oshawott",
+    "to_pokemon": "dewott",
+    "evolution_trigger": null,
+    "chain_id": 258
+  },
+  {
+    "from_pokemon": "purrloin",
+    "to_pokemon": "liepard",
+    "evolution_trigger": null,
+    "chain_id": 261
+  },
+  {
+    "from_pokemon": "gothita",
+    "to_pokemon": "gothorita",
+    "evolution_trigger": null,
+    "chain_id": 293
+  },
+  {
+    "from_pokemon": "axew",
+    "to_pokemon": "fraxure",
+    "evolution_trigger": null,
+    "chain_id": 309
+  },
+  {
+    "from_pokemon": "golett",
+    "to_pokemon": "golurk",
+    "evolution_trigger": null,
+    "chain_id": 316
+  },
+  {
+    "from_pokemon": "rufflet",
+    "to_pokemon": "braviary",
+    "evolution_trigger": null,
+    "chain_id": 319
+  },
+  {
+    "from_pokemon": "scatterbug",
+    "to_pokemon": "spewpa",
+    "evolution_trigger": null,
+    "chain_id": 342
+  },
+  {
+    "from_pokemon": "litleo",
+    "to_pokemon": "pyroar",
+    "evolution_trigger": null,
+    "chain_id": 343
+  },
+  {
+    "from_pokemon": "pancham",
+    "to_pokemon": "pangoro",
+    "evolution_trigger": null,
+    "chain_id": 346
+  },
+  {
+    "from_pokemon": "wimpod",
+    "to_pokemon": "golisopod",
+    "evolution_trigger": null,
+    "chain_id": 396
+  },
+  {
+    "from_pokemon": "sobble",
+    "to_pokemon": "drizzile",
+    "evolution_trigger": null,
+    "chain_id": 432
+  },
+  {
+    "from_pokemon": "rookidee",
+    "to_pokemon": "corvisquire",
+    "evolution_trigger": null,
+    "chain_id": 434
+  },
+  {
+    "from_pokemon": "wooloo",
+    "to_pokemon": "dubwool",
+    "evolution_trigger": null,
+    "chain_id": 438
+  },
+  {
+    "from_pokemon": "lechonk",
+    "to_pokemon": "oinkologne",
+    "evolution_trigger": null,
+    "chain_id": 481
+  },
+  {
+    "from_pokemon": "greavard",
+    "to_pokemon": "houndstone",
+    "evolution_trigger": null,
+    "chain_id": 509
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "leafeon",
+    "evolution_trigger": null,
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "squirtle",
+    "to_pokemon": "wartortle",
+    "evolution_trigger": null,
+    "chain_id": 3
+  },
+  {
+    "from_pokemon": "venonat",
+    "to_pokemon": "venomoth",
+    "evolution_trigger": null,
+    "chain_id": 20
+  },
+  {
+    "from_pokemon": "diglett",
+    "to_pokemon": "dugtrio",
+    "evolution_trigger": null,
+    "chain_id": 21
+  },
+  {
+    "from_pokemon": "psyduck",
+    "to_pokemon": "golduck",
+    "evolution_trigger": null,
+    "chain_id": 23
+  },
+  {
+    "from_pokemon": "tentacool",
+    "to_pokemon": "tentacruel",
+    "evolution_trigger": null,
+    "chain_id": 30
+  },
+  {
+    "from_pokemon": "seel",
+    "to_pokemon": "dewgong",
+    "evolution_trigger": null,
+    "chain_id": 37
+  },
+  {
+    "from_pokemon": "koffing",
+    "to_pokemon": "weezing",
+    "evolution_trigger": null,
+    "chain_id": 49
+  },
+  {
+    "from_pokemon": "horsea",
+    "to_pokemon": "seadra",
+    "evolution_trigger": null,
+    "chain_id": 54
+  },
+  {
+    "from_pokemon": "scyther",
+    "to_pokemon": "kleavor",
+    "evolution_trigger": null,
+    "chain_id": 58
+  },
+  {
+    "from_pokemon": "munchlax",
+    "to_pokemon": "snorlax",
+    "evolution_trigger": null,
+    "chain_id": 72
+  },
+  {
+    "from_pokemon": "aipom",
+    "to_pokemon": "ambipom",
+    "evolution_trigger": null,
+    "chain_id": 93
+  },
+  {
+    "from_pokemon": "taillow",
+    "to_pokemon": "swellow",
+    "evolution_trigger": null,
+    "chain_id": 138
+  },
+  {
+    "from_pokemon": "spoink",
+    "to_pokemon": "grumpig",
+    "evolution_trigger": null,
+    "chain_id": 164
+  },
+  {
+    "from_pokemon": "clamperl",
+    "to_pokemon": "gorebyss",
+    "evolution_trigger": null,
+    "chain_id": 188
+  },
+  {
+    "from_pokemon": "bagon",
+    "to_pokemon": "shelgon",
+    "evolution_trigger": null,
+    "chain_id": 191
+  },
+  {
+    "from_pokemon": "beldum",
+    "to_pokemon": "metang",
+    "evolution_trigger": null,
+    "chain_id": 192
+  },
+  {
+    "from_pokemon": "roggenrola",
+    "to_pokemon": "boldore",
+    "evolution_trigger": null,
+    "chain_id": 268
+  },
+  {
+    "from_pokemon": "woobat",
+    "to_pokemon": "swoobat",
+    "evolution_trigger": null,
+    "chain_id": 269
+  },
+  {
+    "from_pokemon": "joltik",
+    "to_pokemon": "galvantula",
+    "evolution_trigger": null,
+    "chain_id": 303
+  },
+  {
+    "from_pokemon": "ferroseed",
+    "to_pokemon": "ferrothorn",
+    "evolution_trigger": null,
+    "chain_id": 304
+  },
+  {
+    "from_pokemon": "cubchoo",
+    "to_pokemon": "beartic",
+    "evolution_trigger": null,
+    "chain_id": 310
+  },
+  {
+    "from_pokemon": "helioptile",
+    "to_pokemon": "heliolisk",
+    "evolution_trigger": null,
+    "chain_id": 356
+  },
+  {
+    "from_pokemon": "mareanie",
+    "to_pokemon": "toxapex",
+    "evolution_trigger": null,
+    "chain_id": 385
+  },
+  {
+    "from_pokemon": "rolycoly",
+    "to_pokemon": "carkol",
+    "evolution_trigger": null,
+    "chain_id": 441
+  },
+  {
+    "from_pokemon": "toxel",
+    "to_pokemon": "toxtricity",
+    "evolution_trigger": null,
+    "chain_id": 446
+  },
+  {
+    "from_pokemon": "flittle",
+    "to_pokemon": "espathra",
+    "evolution_trigger": null,
+    "chain_id": 500
+  },
+  {
+    "from_pokemon": "nidoran-m",
+    "to_pokemon": "nidorino",
+    "evolution_trigger": null,
+    "chain_id": 13
+  },
+  {
+    "from_pokemon": "totodile",
+    "to_pokemon": "croconaw",
+    "evolution_trigger": null,
+    "chain_id": 81
+  },
+  {
+    "from_pokemon": "nosepass",
+    "to_pokemon": "probopass",
+    "evolution_trigger": null,
+    "chain_id": 147
+  },
+  {
+    "from_pokemon": "shuppet",
+    "to_pokemon": "banette",
+    "evolution_trigger": null,
+    "chain_id": 181
+  },
+  {
+    "from_pokemon": "patrat",
+    "to_pokemon": "watchog",
+    "evolution_trigger": null,
+    "chain_id": 259
+  },
+  {
+    "from_pokemon": "mienfoo",
+    "to_pokemon": "mienshao",
+    "evolution_trigger": null,
+    "chain_id": 314
+  },
+  {
+    "from_pokemon": "bunnelby",
+    "to_pokemon": "diggersby",
+    "evolution_trigger": null,
+    "chain_id": 340
+  },
+  {
+    "from_pokemon": "espurr",
+    "to_pokemon": "meowstic",
+    "evolution_trigger": null,
+    "chain_id": 348
+  },
+  {
+    "from_pokemon": "mudbray",
+    "to_pokemon": "mudsdale",
+    "evolution_trigger": null,
+    "chain_id": 386
+  },
+  {
+    "from_pokemon": "scorbunny",
+    "to_pokemon": "raboot",
+    "evolution_trigger": null,
+    "chain_id": 431
+  },
+  {
+    "from_pokemon": "gossifleur",
+    "to_pokemon": "eldegoss",
+    "evolution_trigger": null,
+    "chain_id": 437
+  },
+  {
+    "from_pokemon": "arrokuda",
+    "to_pokemon": "barraskewda",
+    "evolution_trigger": null,
+    "chain_id": 445
+  },
+  {
+    "from_pokemon": "varoom",
+    "to_pokemon": "revavroom",
+    "evolution_trigger": null,
+    "chain_id": 505
+  },
+  {
+    "from_pokemon": "slowpoke",
+    "to_pokemon": "slowbro",
+    "evolution_trigger": null,
+    "chain_id": 33
+  },
+  {
+    "from_pokemon": "burmy",
+    "to_pokemon": "wormadam",
+    "evolution_trigger": null,
+    "chain_id": 213
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "espeon",
+    "evolution_trigger": null,
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "chansey",
+    "to_pokemon": "blissey",
+    "evolution_trigger": null,
+    "chain_id": 51
+  },
+  {
+    "from_pokemon": "marill",
+    "to_pokemon": "azumarill",
+    "evolution_trigger": null,
+    "chain_id": 90
+  },
+  {
+    "from_pokemon": "pupitar",
+    "to_pokemon": "tyranitar",
+    "evolution_trigger": null,
+    "chain_id": 126
+  },
+  {
+    "from_pokemon": "roselia",
+    "to_pokemon": "roserade",
     "evolution_trigger": null,
     "chain_id": 158
   },
   {
-    "from_pokemon": "shieldon",
-    "to_pokemon": "bastiodon",
+    "from_pokemon": "pignite",
+    "to_pokemon": "emboar",
     "evolution_trigger": null,
-    "chain_id": 212
+    "chain_id": 257
   },
   {
-    "from_pokemon": "drifloon",
-    "to_pokemon": "drifblim",
+    "from_pokemon": "gurdurr",
+    "to_pokemon": "conkeldurr",
     "evolution_trigger": null,
-    "chain_id": 219
+    "chain_id": 272
   },
   {
-    "from_pokemon": "gible",
-    "to_pokemon": "gabite",
+    "from_pokemon": "torracat",
+    "to_pokemon": "incineroar",
+    "evolution_trigger": null,
+    "chain_id": 375
+  },
+  {
+    "from_pokemon": "hakamo-o",
+    "to_pokemon": "kommo-o",
+    "evolution_trigger": null,
+    "chain_id": 408
+  },
+  {
+    "from_pokemon": "dipplin",
+    "to_pokemon": "hydrapple",
+    "evolution_trigger": null,
+    "chain_id": 442
+  },
+  {
+    "from_pokemon": "primeape",
+    "to_pokemon": "annihilape",
+    "evolution_trigger": null,
+    "chain_id": 24
+  },
+  {
+    "from_pokemon": "weepinbell",
+    "to_pokemon": "victreebel",
+    "evolution_trigger": null,
+    "chain_id": 29
+  },
+  {
+    "from_pokemon": "flaaffy",
+    "to_pokemon": "ampharos",
+    "evolution_trigger": null,
+    "chain_id": 89
+  },
+  {
+    "from_pokemon": "grovyle",
+    "to_pokemon": "sceptile",
+    "evolution_trigger": null,
+    "chain_id": 130
+  },
+  {
+    "from_pokemon": "gabite",
+    "to_pokemon": "garchomp",
     "evolution_trigger": null,
     "chain_id": 230
   },
   {
-    "from_pokemon": "trubbish",
-    "to_pokemon": "garbodor",
+    "from_pokemon": "servine",
+    "to_pokemon": "serperior",
     "evolution_trigger": null,
-    "chain_id": 290
+    "chain_id": 256
   },
   {
-    "from_pokemon": "deerling",
-    "to_pokemon": "sawsbuck",
+    "from_pokemon": "tranquill",
+    "to_pokemon": "unfezant",
     "evolution_trigger": null,
-    "chain_id": 297
+    "chain_id": 266
   },
   {
-    "from_pokemon": "chespin",
-    "to_pokemon": "quilladin",
+    "from_pokemon": "arctibax",
+    "to_pokemon": "baxcalibur",
+    "evolution_trigger": null,
+    "chain_id": 527
+  },
+  {
+    "from_pokemon": "clefairy",
+    "to_pokemon": "clefable",
+    "evolution_trigger": null,
+    "chain_id": 14
+  },
+  {
+    "from_pokemon": "golbat",
+    "to_pokemon": "crobat",
+    "evolution_trigger": null,
+    "chain_id": 17
+  },
+  {
+    "from_pokemon": "poliwhirl",
+    "to_pokemon": "poliwrath",
+    "evolution_trigger": null,
+    "chain_id": 26
+  },
+  {
+    "from_pokemon": "electabuzz",
+    "to_pokemon": "electivire",
+    "evolution_trigger": null,
+    "chain_id": 60
+  },
+  {
+    "from_pokemon": "quilava",
+    "to_pokemon": "typhlosion",
+    "evolution_trigger": null,
+    "chain_id": 80
+  },
+  {
+    "from_pokemon": "prinplup",
+    "to_pokemon": "empoleon",
+    "evolution_trigger": null,
+    "chain_id": 205
+  },
+  {
+    "from_pokemon": "krokorok",
+    "to_pokemon": "krookodile",
+    "evolution_trigger": null,
+    "chain_id": 281
+  },
+  {
+    "from_pokemon": "quilladin",
+    "to_pokemon": "chesnaught",
     "evolution_trigger": null,
     "chain_id": 337
   },
   {
-    "from_pokemon": "amaura",
-    "to_pokemon": "aurorus",
+    "from_pokemon": "thwackey",
+    "to_pokemon": "rillaboom",
     "evolution_trigger": null,
-    "chain_id": 358
+    "chain_id": 430
   },
   {
-    "from_pokemon": "stufful",
-    "to_pokemon": "bewear",
+    "from_pokemon": "floragato",
+    "to_pokemon": "meowscarada",
     "evolution_trigger": null,
-    "chain_id": 391
+    "chain_id": 478
   },
   {
-    "from_pokemon": "blipbug",
-    "to_pokemon": "dottler",
+    "from_pokemon": "poliwhirl",
+    "to_pokemon": "politoed",
     "evolution_trigger": null,
-    "chain_id": 435
+    "chain_id": 26
   },
   {
-    "from_pokemon": "hatenna",
-    "to_pokemon": "hattrem",
+    "from_pokemon": "porygon2",
+    "to_pokemon": "porygon-z",
+    "evolution_trigger": null,
+    "chain_id": 68
+  },
+  {
+    "from_pokemon": "skiploom",
+    "to_pokemon": "jumpluff",
+    "evolution_trigger": null,
+    "chain_id": 92
+  },
+  {
+    "from_pokemon": "dusclops",
+    "to_pokemon": "dusknoir",
+    "evolution_trigger": null,
+    "chain_id": 182
+  },
+  {
+    "from_pokemon": "luxio",
+    "to_pokemon": "luxray",
+    "evolution_trigger": null,
+    "chain_id": 209
+  },
+  {
+    "from_pokemon": "klang",
+    "to_pokemon": "klinklang",
+    "evolution_trigger": null,
+    "chain_id": 305
+  },
+  {
+    "from_pokemon": "hattrem",
+    "to_pokemon": "hatterene",
     "evolution_trigger": null,
     "chain_id": 450
   },
   {
-    "from_pokemon": "duraludon",
-    "to_pokemon": "archaludon",
+    "from_pokemon": "wartortle",
+    "to_pokemon": "blastoise",
     "evolution_trigger": null,
-    "chain_id": 465
+    "chain_id": 3
   },
   {
-    "from_pokemon": "shroodle",
-    "to_pokemon": "grafaiai",
+    "from_pokemon": "metapod",
+    "to_pokemon": "butterfree",
     "evolution_trigger": null,
-    "chain_id": 494
+    "chain_id": 4
   },
   {
-    "from_pokemon": "capsakid",
-    "to_pokemon": "scovillain",
+    "from_pokemon": "herdier",
+    "to_pokemon": "stoutland",
     "evolution_trigger": null,
-    "chain_id": 498
+    "chain_id": 260
+  },
+  {
+    "from_pokemon": "monferno",
+    "to_pokemon": "infernape",
+    "evolution_trigger": null,
+    "chain_id": 204
+  },
+  {
+    "from_pokemon": "duosion",
+    "to_pokemon": "reuniclus",
+    "evolution_trigger": null,
+    "chain_id": 294
+  },
+  {
+    "from_pokemon": "sliggoo",
+    "to_pokemon": "goodra",
+    "evolution_trigger": null,
+    "chain_id": 362
+  },
+  {
+    "from_pokemon": "brionne",
+    "to_pokemon": "primarina",
+    "evolution_trigger": null,
+    "chain_id": 376
+  },
+  {
+    "from_pokemon": "raboot",
+    "to_pokemon": "cinderace",
+    "evolution_trigger": null,
+    "chain_id": 431
+  },
+  {
+    "from_pokemon": "pidgeotto",
+    "to_pokemon": "pidgeot",
+    "evolution_trigger": null,
+    "chain_id": 6
+  },
+  {
+    "from_pokemon": "nuzleaf",
+    "to_pokemon": "shiftry",
+    "evolution_trigger": null,
+    "chain_id": 137
+  },
+  {
+    "from_pokemon": "vibrava",
+    "to_pokemon": "flygon",
+    "evolution_trigger": null,
+    "chain_id": 166
+  },
+  {
+    "from_pokemon": "sealeo",
+    "to_pokemon": "walrein",
+    "evolution_trigger": null,
+    "chain_id": 187
+  },
+  {
+    "from_pokemon": "lampent",
+    "to_pokemon": "chandelure",
+    "evolution_trigger": null,
+    "chain_id": 308
+  },
+  {
+    "from_pokemon": "kirlia",
+    "to_pokemon": "gallade",
+    "evolution_trigger": null,
+    "chain_id": 140
+  },
+  {
+    "from_pokemon": "cosmoem",
+    "to_pokemon": "lunala",
+    "evolution_trigger": null,
+    "chain_id": 413
+  },
+  {
+    "from_pokemon": "nidorina",
+    "to_pokemon": "nidoqueen",
+    "evolution_trigger": null,
+    "chain_id": 12
+  },
+  {
+    "from_pokemon": "rhydon",
+    "to_pokemon": "rhyperior",
+    "evolution_trigger": null,
+    "chain_id": 50
+  },
+  {
+    "from_pokemon": "floette",
+    "to_pokemon": "florges",
+    "evolution_trigger": null,
+    "chain_id": 344
+  },
+  {
+    "from_pokemon": "trumbeak",
+    "to_pokemon": "toucannon",
+    "evolution_trigger": null,
+    "chain_id": 377
+  },
+  {
+    "from_pokemon": "dottler",
+    "to_pokemon": "orbeetle",
+    "evolution_trigger": null,
+    "chain_id": 435
+  },
+  {
+    "from_pokemon": "naclstack",
+    "to_pokemon": "garganacl",
+    "evolution_trigger": null,
+    "chain_id": 489
+  },
+  {
+    "from_pokemon": "gloom",
+    "to_pokemon": "bellossom",
+    "evolution_trigger": null,
+    "chain_id": 18
+  },
+  {
+    "from_pokemon": "haunter",
+    "to_pokemon": "gengar",
+    "evolution_trigger": null,
+    "chain_id": 40
+  },
+  {
+    "from_pokemon": "marshtomp",
+    "to_pokemon": "swampert",
+    "evolution_trigger": null,
+    "chain_id": 132
+  },
+  {
+    "from_pokemon": "cascoon",
+    "to_pokemon": "dustox",
+    "evolution_trigger": null,
+    "chain_id": 135
+  },
+  {
+    "from_pokemon": "kirlia",
+    "to_pokemon": "gardevoir",
+    "evolution_trigger": null,
+    "chain_id": 140
+  },
+  {
+    "from_pokemon": "lairon",
+    "to_pokemon": "aggron",
+    "evolution_trigger": null,
+    "chain_id": 151
+  },
+  {
+    "from_pokemon": "cosmoem",
+    "to_pokemon": "solgaleo",
+    "evolution_trigger": null,
+    "chain_id": 413
+  },
+  {
+    "from_pokemon": "drakloak",
+    "to_pokemon": "dragapult",
+    "evolution_trigger": null,
+    "chain_id": 466
+  },
+  {
+    "from_pokemon": "magneton",
+    "to_pokemon": "magnezone",
+    "evolution_trigger": null,
+    "chain_id": 34
+  },
+  {
+    "from_pokemon": "togetic",
+    "to_pokemon": "togekiss",
+    "evolution_trigger": null,
+    "chain_id": 87
+  },
+  {
+    "from_pokemon": "vigoroth",
+    "to_pokemon": "slaking",
+    "evolution_trigger": null,
+    "chain_id": 143
+  },
+  {
+    "from_pokemon": "metang",
+    "to_pokemon": "metagross",
+    "evolution_trigger": null,
+    "chain_id": 192
+  },
+  {
+    "from_pokemon": "machoke",
+    "to_pokemon": "machamp",
+    "evolution_trigger": null,
+    "chain_id": 28
+  },
+  {
+    "from_pokemon": "seadra",
+    "to_pokemon": "kingdra",
+    "evolution_trigger": null,
+    "chain_id": 54
+  },
+  {
+    "from_pokemon": "dewott",
+    "to_pokemon": "samurott",
+    "evolution_trigger": null,
+    "chain_id": 258
+  },
+  {
+    "from_pokemon": "whirlipede",
+    "to_pokemon": "scolipede",
+    "evolution_trigger": null,
+    "chain_id": 277
+  },
+  {
+    "from_pokemon": "bisharp",
+    "to_pokemon": "kingambit",
+    "evolution_trigger": null,
+    "chain_id": 317
+  },
+  {
+    "from_pokemon": "charjabug",
+    "to_pokemon": "vikavolt",
+    "evolution_trigger": null,
+    "chain_id": 379
+  },
+  {
+    "from_pokemon": "nidorino",
+    "to_pokemon": "nidoking",
+    "evolution_trigger": null,
+    "chain_id": 13
+  },
+  {
+    "from_pokemon": "jigglypuff",
+    "to_pokemon": "wigglytuff",
+    "evolution_trigger": null,
+    "chain_id": 16
+  },
+  {
+    "from_pokemon": "kadabra",
+    "to_pokemon": "alakazam",
+    "evolution_trigger": null,
+    "chain_id": 27
+  },
+  {
+    "from_pokemon": "combusken",
+    "to_pokemon": "blaziken",
+    "evolution_trigger": null,
+    "chain_id": 131
+  },
+  {
+    "from_pokemon": "grotle",
+    "to_pokemon": "torterra",
+    "evolution_trigger": null,
+    "chain_id": 203
+  },
+  {
+    "from_pokemon": "staravia",
+    "to_pokemon": "staraptor",
+    "evolution_trigger": null,
+    "chain_id": 206
+  },
+  {
+    "from_pokemon": "swadloon",
+    "to_pokemon": "leavanny",
+    "evolution_trigger": null,
+    "chain_id": 276
+  },
+  {
+    "from_pokemon": "frogadier",
+    "to_pokemon": "greninja",
+    "evolution_trigger": null,
+    "chain_id": 339
+  },
+  {
+    "from_pokemon": "doublade",
+    "to_pokemon": "aegislash",
+    "evolution_trigger": null,
+    "chain_id": 349
+  },
+  {
+    "from_pokemon": "dartrix",
+    "to_pokemon": "decidueye",
+    "evolution_trigger": null,
+    "chain_id": 374
+  },
+  {
+    "from_pokemon": "steenee",
+    "to_pokemon": "tsareena",
+    "evolution_trigger": null,
+    "chain_id": 392
+  },
+  {
+    "from_pokemon": "morgrem",
+    "to_pokemon": "grimmsnarl",
+    "evolution_trigger": null,
+    "chain_id": 451
+  },
+  {
+    "from_pokemon": "graveler",
+    "to_pokemon": "golem",
+    "evolution_trigger": null,
+    "chain_id": 31
+  },
+  {
+    "from_pokemon": "magmar",
+    "to_pokemon": "magmortar",
+    "evolution_trigger": null,
+    "chain_id": 61
+  },
+  {
+    "from_pokemon": "bayleef",
+    "to_pokemon": "meganium",
+    "evolution_trigger": null,
+    "chain_id": 79
+  },
+  {
+    "from_pokemon": "shelgon",
+    "to_pokemon": "salamence",
+    "evolution_trigger": null,
+    "chain_id": 191
+  },
+  {
+    "from_pokemon": "gothorita",
+    "to_pokemon": "gothitelle",
+    "evolution_trigger": null,
+    "chain_id": 293
+  },
+  {
+    "from_pokemon": "vanillish",
+    "to_pokemon": "vanilluxe",
+    "evolution_trigger": null,
+    "chain_id": 296
+  },
+  {
+    "from_pokemon": "fraxure",
+    "to_pokemon": "haxorus",
+    "evolution_trigger": null,
+    "chain_id": 309
+  },
+  {
+    "from_pokemon": "crocalor",
+    "to_pokemon": "skeledirge",
+    "evolution_trigger": null,
+    "chain_id": 479
+  },
+  {
+    "from_pokemon": "pawmo",
+    "to_pokemon": "pawmot",
+    "evolution_trigger": null,
+    "chain_id": 484
+  },
+  {
+    "from_pokemon": "ivysaur",
+    "to_pokemon": "venusaur",
+    "evolution_trigger": null,
+    "chain_id": 1
+  },
+  {
+    "from_pokemon": "kakuna",
+    "to_pokemon": "beedrill",
+    "evolution_trigger": null,
+    "chain_id": 5
+  },
+  {
+    "from_pokemon": "dragonair",
+    "to_pokemon": "dragonite",
+    "evolution_trigger": null,
+    "chain_id": 76
+  },
+  {
+    "from_pokemon": "croconaw",
+    "to_pokemon": "feraligatr",
+    "evolution_trigger": null,
+    "chain_id": 81
+  },
+  {
+    "from_pokemon": "boldore",
+    "to_pokemon": "gigalith",
+    "evolution_trigger": null,
+    "chain_id": 268
+  },
+  {
+    "from_pokemon": "zweilous",
+    "to_pokemon": "hydreigon",
+    "evolution_trigger": null,
+    "chain_id": 323
+  },
+  {
+    "from_pokemon": "braixen",
+    "to_pokemon": "delphox",
+    "evolution_trigger": null,
+    "chain_id": 338
+  },
+  {
+    "from_pokemon": "dolliv",
+    "to_pokemon": "arboliva",
+    "evolution_trigger": null,
+    "chain_id": 487
+  },
+  {
+    "from_pokemon": "silcoon",
+    "to_pokemon": "beautifly",
+    "evolution_trigger": null,
+    "chain_id": 135
   },
   {
     "from_pokemon": "gloom",
@@ -2256,294 +2874,6 @@
     "chain_id": 501
   },
   {
-    "from_pokemon": "wartortle",
-    "to_pokemon": "blastoise",
-    "evolution_trigger": null,
-    "chain_id": 3
-  },
-  {
-    "from_pokemon": "metapod",
-    "to_pokemon": "butterfree",
-    "evolution_trigger": null,
-    "chain_id": 4
-  },
-  {
-    "from_pokemon": "herdier",
-    "to_pokemon": "stoutland",
-    "evolution_trigger": null,
-    "chain_id": 260
-  },
-  {
-    "from_pokemon": "chansey",
-    "to_pokemon": "blissey",
-    "evolution_trigger": null,
-    "chain_id": 51
-  },
-  {
-    "from_pokemon": "marill",
-    "to_pokemon": "azumarill",
-    "evolution_trigger": null,
-    "chain_id": 90
-  },
-  {
-    "from_pokemon": "pupitar",
-    "to_pokemon": "tyranitar",
-    "evolution_trigger": null,
-    "chain_id": 126
-  },
-  {
-    "from_pokemon": "roselia",
-    "to_pokemon": "roserade",
-    "evolution_trigger": null,
-    "chain_id": 158
-  },
-  {
-    "from_pokemon": "pignite",
-    "to_pokemon": "emboar",
-    "evolution_trigger": null,
-    "chain_id": 257
-  },
-  {
-    "from_pokemon": "gurdurr",
-    "to_pokemon": "conkeldurr",
-    "evolution_trigger": null,
-    "chain_id": 272
-  },
-  {
-    "from_pokemon": "torracat",
-    "to_pokemon": "incineroar",
-    "evolution_trigger": null,
-    "chain_id": 375
-  },
-  {
-    "from_pokemon": "hakamo-o",
-    "to_pokemon": "kommo-o",
-    "evolution_trigger": null,
-    "chain_id": 408
-  },
-  {
-    "from_pokemon": "dipplin",
-    "to_pokemon": "hydrapple",
-    "evolution_trigger": null,
-    "chain_id": 442
-  },
-  {
-    "from_pokemon": "ivysaur",
-    "to_pokemon": "venusaur",
-    "evolution_trigger": null,
-    "chain_id": 1
-  },
-  {
-    "from_pokemon": "kakuna",
-    "to_pokemon": "beedrill",
-    "evolution_trigger": null,
-    "chain_id": 5
-  },
-  {
-    "from_pokemon": "dragonair",
-    "to_pokemon": "dragonite",
-    "evolution_trigger": null,
-    "chain_id": 76
-  },
-  {
-    "from_pokemon": "croconaw",
-    "to_pokemon": "feraligatr",
-    "evolution_trigger": null,
-    "chain_id": 81
-  },
-  {
-    "from_pokemon": "boldore",
-    "to_pokemon": "gigalith",
-    "evolution_trigger": null,
-    "chain_id": 268
-  },
-  {
-    "from_pokemon": "zweilous",
-    "to_pokemon": "hydreigon",
-    "evolution_trigger": null,
-    "chain_id": 323
-  },
-  {
-    "from_pokemon": "braixen",
-    "to_pokemon": "delphox",
-    "evolution_trigger": null,
-    "chain_id": 338
-  },
-  {
-    "from_pokemon": "dolliv",
-    "to_pokemon": "arboliva",
-    "evolution_trigger": null,
-    "chain_id": 487
-  },
-  {
-    "from_pokemon": "silcoon",
-    "to_pokemon": "beautifly",
-    "evolution_trigger": null,
-    "chain_id": 135
-  },
-  {
-    "from_pokemon": "nidorina",
-    "to_pokemon": "nidoqueen",
-    "evolution_trigger": null,
-    "chain_id": 12
-  },
-  {
-    "from_pokemon": "rhydon",
-    "to_pokemon": "rhyperior",
-    "evolution_trigger": null,
-    "chain_id": 50
-  },
-  {
-    "from_pokemon": "floette",
-    "to_pokemon": "florges",
-    "evolution_trigger": null,
-    "chain_id": 344
-  },
-  {
-    "from_pokemon": "trumbeak",
-    "to_pokemon": "toucannon",
-    "evolution_trigger": null,
-    "chain_id": 377
-  },
-  {
-    "from_pokemon": "dottler",
-    "to_pokemon": "orbeetle",
-    "evolution_trigger": null,
-    "chain_id": 435
-  },
-  {
-    "from_pokemon": "naclstack",
-    "to_pokemon": "garganacl",
-    "evolution_trigger": null,
-    "chain_id": 489
-  },
-  {
-    "from_pokemon": "gloom",
-    "to_pokemon": "bellossom",
-    "evolution_trigger": null,
-    "chain_id": 18
-  },
-  {
-    "from_pokemon": "monferno",
-    "to_pokemon": "infernape",
-    "evolution_trigger": null,
-    "chain_id": 204
-  },
-  {
-    "from_pokemon": "duosion",
-    "to_pokemon": "reuniclus",
-    "evolution_trigger": null,
-    "chain_id": 294
-  },
-  {
-    "from_pokemon": "sliggoo",
-    "to_pokemon": "goodra",
-    "evolution_trigger": null,
-    "chain_id": 362
-  },
-  {
-    "from_pokemon": "brionne",
-    "to_pokemon": "primarina",
-    "evolution_trigger": null,
-    "chain_id": 376
-  },
-  {
-    "from_pokemon": "raboot",
-    "to_pokemon": "cinderace",
-    "evolution_trigger": null,
-    "chain_id": 431
-  },
-  {
-    "from_pokemon": "pidgeotto",
-    "to_pokemon": "pidgeot",
-    "evolution_trigger": null,
-    "chain_id": 6
-  },
-  {
-    "from_pokemon": "nuzleaf",
-    "to_pokemon": "shiftry",
-    "evolution_trigger": null,
-    "chain_id": 137
-  },
-  {
-    "from_pokemon": "vibrava",
-    "to_pokemon": "flygon",
-    "evolution_trigger": null,
-    "chain_id": 166
-  },
-  {
-    "from_pokemon": "sealeo",
-    "to_pokemon": "walrein",
-    "evolution_trigger": null,
-    "chain_id": 187
-  },
-  {
-    "from_pokemon": "lampent",
-    "to_pokemon": "chandelure",
-    "evolution_trigger": null,
-    "chain_id": 308
-  },
-  {
-    "from_pokemon": "kirlia",
-    "to_pokemon": "gallade",
-    "evolution_trigger": null,
-    "chain_id": 140
-  },
-  {
-    "from_pokemon": "cosmoem",
-    "to_pokemon": "lunala",
-    "evolution_trigger": null,
-    "chain_id": 413
-  },
-  {
-    "from_pokemon": "primeape",
-    "to_pokemon": "annihilape",
-    "evolution_trigger": null,
-    "chain_id": 24
-  },
-  {
-    "from_pokemon": "weepinbell",
-    "to_pokemon": "victreebel",
-    "evolution_trigger": null,
-    "chain_id": 29
-  },
-  {
-    "from_pokemon": "flaaffy",
-    "to_pokemon": "ampharos",
-    "evolution_trigger": null,
-    "chain_id": 89
-  },
-  {
-    "from_pokemon": "grovyle",
-    "to_pokemon": "sceptile",
-    "evolution_trigger": null,
-    "chain_id": 130
-  },
-  {
-    "from_pokemon": "gabite",
-    "to_pokemon": "garchomp",
-    "evolution_trigger": null,
-    "chain_id": 230
-  },
-  {
-    "from_pokemon": "servine",
-    "to_pokemon": "serperior",
-    "evolution_trigger": null,
-    "chain_id": 256
-  },
-  {
-    "from_pokemon": "tranquill",
-    "to_pokemon": "unfezant",
-    "evolution_trigger": null,
-    "chain_id": 266
-  },
-  {
-    "from_pokemon": "arctibax",
-    "to_pokemon": "baxcalibur",
-    "evolution_trigger": null,
-    "chain_id": 527
-  },
-  {
     "from_pokemon": "charmeleon",
     "to_pokemon": "charizard",
     "evolution_trigger": null,
@@ -2572,335 +2902,5 @@
     "to_pokemon": "corviknight",
     "evolution_trigger": null,
     "chain_id": 434
-  },
-  {
-    "from_pokemon": "porygon2",
-    "to_pokemon": "porygon-z",
-    "evolution_trigger": null,
-    "chain_id": 68
-  },
-  {
-    "from_pokemon": "skiploom",
-    "to_pokemon": "jumpluff",
-    "evolution_trigger": null,
-    "chain_id": 92
-  },
-  {
-    "from_pokemon": "dusclops",
-    "to_pokemon": "dusknoir",
-    "evolution_trigger": null,
-    "chain_id": 182
-  },
-  {
-    "from_pokemon": "luxio",
-    "to_pokemon": "luxray",
-    "evolution_trigger": null,
-    "chain_id": 209
-  },
-  {
-    "from_pokemon": "klang",
-    "to_pokemon": "klinklang",
-    "evolution_trigger": null,
-    "chain_id": 305
-  },
-  {
-    "from_pokemon": "hattrem",
-    "to_pokemon": "hatterene",
-    "evolution_trigger": null,
-    "chain_id": 450
-  },
-  {
-    "from_pokemon": "magneton",
-    "to_pokemon": "magnezone",
-    "evolution_trigger": null,
-    "chain_id": 34
-  },
-  {
-    "from_pokemon": "togetic",
-    "to_pokemon": "togekiss",
-    "evolution_trigger": null,
-    "chain_id": 87
-  },
-  {
-    "from_pokemon": "vigoroth",
-    "to_pokemon": "slaking",
-    "evolution_trigger": null,
-    "chain_id": 143
-  },
-  {
-    "from_pokemon": "metang",
-    "to_pokemon": "metagross",
-    "evolution_trigger": null,
-    "chain_id": 192
-  },
-  {
-    "from_pokemon": "nidorino",
-    "to_pokemon": "nidoking",
-    "evolution_trigger": null,
-    "chain_id": 13
-  },
-  {
-    "from_pokemon": "jigglypuff",
-    "to_pokemon": "wigglytuff",
-    "evolution_trigger": null,
-    "chain_id": 16
-  },
-  {
-    "from_pokemon": "kadabra",
-    "to_pokemon": "alakazam",
-    "evolution_trigger": null,
-    "chain_id": 27
-  },
-  {
-    "from_pokemon": "combusken",
-    "to_pokemon": "blaziken",
-    "evolution_trigger": null,
-    "chain_id": 131
-  },
-  {
-    "from_pokemon": "grotle",
-    "to_pokemon": "torterra",
-    "evolution_trigger": null,
-    "chain_id": 203
-  },
-  {
-    "from_pokemon": "staravia",
-    "to_pokemon": "staraptor",
-    "evolution_trigger": null,
-    "chain_id": 206
-  },
-  {
-    "from_pokemon": "swadloon",
-    "to_pokemon": "leavanny",
-    "evolution_trigger": null,
-    "chain_id": 276
-  },
-  {
-    "from_pokemon": "frogadier",
-    "to_pokemon": "greninja",
-    "evolution_trigger": null,
-    "chain_id": 339
-  },
-  {
-    "from_pokemon": "doublade",
-    "to_pokemon": "aegislash",
-    "evolution_trigger": null,
-    "chain_id": 349
-  },
-  {
-    "from_pokemon": "dartrix",
-    "to_pokemon": "decidueye",
-    "evolution_trigger": null,
-    "chain_id": 374
-  },
-  {
-    "from_pokemon": "steenee",
-    "to_pokemon": "tsareena",
-    "evolution_trigger": null,
-    "chain_id": 392
-  },
-  {
-    "from_pokemon": "morgrem",
-    "to_pokemon": "grimmsnarl",
-    "evolution_trigger": null,
-    "chain_id": 451
-  },
-  {
-    "from_pokemon": "haunter",
-    "to_pokemon": "gengar",
-    "evolution_trigger": null,
-    "chain_id": 40
-  },
-  {
-    "from_pokemon": "marshtomp",
-    "to_pokemon": "swampert",
-    "evolution_trigger": null,
-    "chain_id": 132
-  },
-  {
-    "from_pokemon": "cascoon",
-    "to_pokemon": "dustox",
-    "evolution_trigger": null,
-    "chain_id": 135
-  },
-  {
-    "from_pokemon": "kirlia",
-    "to_pokemon": "gardevoir",
-    "evolution_trigger": null,
-    "chain_id": 140
-  },
-  {
-    "from_pokemon": "lairon",
-    "to_pokemon": "aggron",
-    "evolution_trigger": null,
-    "chain_id": 151
-  },
-  {
-    "from_pokemon": "cosmoem",
-    "to_pokemon": "solgaleo",
-    "evolution_trigger": null,
-    "chain_id": 413
-  },
-  {
-    "from_pokemon": "drakloak",
-    "to_pokemon": "dragapult",
-    "evolution_trigger": null,
-    "chain_id": 466
-  },
-  {
-    "from_pokemon": "clefairy",
-    "to_pokemon": "clefable",
-    "evolution_trigger": null,
-    "chain_id": 14
-  },
-  {
-    "from_pokemon": "golbat",
-    "to_pokemon": "crobat",
-    "evolution_trigger": null,
-    "chain_id": 17
-  },
-  {
-    "from_pokemon": "poliwhirl",
-    "to_pokemon": "poliwrath",
-    "evolution_trigger": null,
-    "chain_id": 26
-  },
-  {
-    "from_pokemon": "electabuzz",
-    "to_pokemon": "electivire",
-    "evolution_trigger": null,
-    "chain_id": 60
-  },
-  {
-    "from_pokemon": "quilava",
-    "to_pokemon": "typhlosion",
-    "evolution_trigger": null,
-    "chain_id": 80
-  },
-  {
-    "from_pokemon": "prinplup",
-    "to_pokemon": "empoleon",
-    "evolution_trigger": null,
-    "chain_id": 205
-  },
-  {
-    "from_pokemon": "krokorok",
-    "to_pokemon": "krookodile",
-    "evolution_trigger": null,
-    "chain_id": 281
-  },
-  {
-    "from_pokemon": "quilladin",
-    "to_pokemon": "chesnaught",
-    "evolution_trigger": null,
-    "chain_id": 337
-  },
-  {
-    "from_pokemon": "thwackey",
-    "to_pokemon": "rillaboom",
-    "evolution_trigger": null,
-    "chain_id": 430
-  },
-  {
-    "from_pokemon": "floragato",
-    "to_pokemon": "meowscarada",
-    "evolution_trigger": null,
-    "chain_id": 478
-  },
-  {
-    "from_pokemon": "poliwhirl",
-    "to_pokemon": "politoed",
-    "evolution_trigger": null,
-    "chain_id": 26
-  },
-  {
-    "from_pokemon": "graveler",
-    "to_pokemon": "golem",
-    "evolution_trigger": null,
-    "chain_id": 31
-  },
-  {
-    "from_pokemon": "magmar",
-    "to_pokemon": "magmortar",
-    "evolution_trigger": null,
-    "chain_id": 61
-  },
-  {
-    "from_pokemon": "bayleef",
-    "to_pokemon": "meganium",
-    "evolution_trigger": null,
-    "chain_id": 79
-  },
-  {
-    "from_pokemon": "shelgon",
-    "to_pokemon": "salamence",
-    "evolution_trigger": null,
-    "chain_id": 191
-  },
-  {
-    "from_pokemon": "gothorita",
-    "to_pokemon": "gothitelle",
-    "evolution_trigger": null,
-    "chain_id": 293
-  },
-  {
-    "from_pokemon": "vanillish",
-    "to_pokemon": "vanilluxe",
-    "evolution_trigger": null,
-    "chain_id": 296
-  },
-  {
-    "from_pokemon": "fraxure",
-    "to_pokemon": "haxorus",
-    "evolution_trigger": null,
-    "chain_id": 309
-  },
-  {
-    "from_pokemon": "crocalor",
-    "to_pokemon": "skeledirge",
-    "evolution_trigger": null,
-    "chain_id": 479
-  },
-  {
-    "from_pokemon": "pawmo",
-    "to_pokemon": "pawmot",
-    "evolution_trigger": null,
-    "chain_id": 484
-  },
-  {
-    "from_pokemon": "machoke",
-    "to_pokemon": "machamp",
-    "evolution_trigger": null,
-    "chain_id": 28
-  },
-  {
-    "from_pokemon": "seadra",
-    "to_pokemon": "kingdra",
-    "evolution_trigger": null,
-    "chain_id": 54
-  },
-  {
-    "from_pokemon": "dewott",
-    "to_pokemon": "samurott",
-    "evolution_trigger": null,
-    "chain_id": 258
-  },
-  {
-    "from_pokemon": "whirlipede",
-    "to_pokemon": "scolipede",
-    "evolution_trigger": null,
-    "chain_id": 277
-  },
-  {
-    "from_pokemon": "bisharp",
-    "to_pokemon": "kingambit",
-    "evolution_trigger": null,
-    "chain_id": 317
-  },
-  {
-    "from_pokemon": "charjabug",
-    "to_pokemon": "vikavolt",
-    "evolution_trigger": null,
-    "chain_id": 379
   }
 ]

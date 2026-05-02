@@ -931,18 +931,13 @@ export default function OriginsPage() {
               </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              {/* Map Layout */}
+            <div className="flex flex-col lg:flex-row gap-8 items-start mb-16">
               <div className="w-full lg:w-1/2 aspect-square relative bg-[var(--surface-light)] rounded-3xl border border-[var(--card-border)] overflow-hidden glass">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(var(--text-primary)_1px,transparent_1px)] [background-size:20px_20px]" />
-
-                {/* Abstract Regions */}
                 <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/20 rounded-tl-3xl rounded-br-3xl border border-blue-500/30" />
                 <div className="absolute top-1/3 right-1/4 w-40 h-24 bg-purple-500/20 rounded-tr-3xl rounded-bl-3xl border border-purple-500/30" />
                 <div className="absolute bottom-1/4 left-1/3 w-36 h-36 bg-red-500/20 rounded-full border border-red-500/30" />
                 <div className="absolute bottom-1/3 right-1/4 w-24 h-32 bg-yellow-500/20 rounded-lg border border-yellow-500/30 rotate-12" />
-
-                {/* Pins */}
                 <div
                   className={`region-pin top-[30%] left-[30%] ${activeRegion === 'kalos' ? 'region-pin-selected' : ''}`}
                   onClick={() => setActiveRegion('kalos')}
@@ -975,13 +970,11 @@ export default function OriginsPage() {
                     Galar
                   </span>
                 </div>
-
                 <div className="absolute bottom-4 left-0 w-full text-center text-[var(--text-muted)] text-xs font-[family-name:var(--font-pixel)] pointer-events-none">
                   Select a region
                 </div>
               </div>
 
-              {/* Region Info */}
               <div className="w-full lg:w-1/2 min-h-[400px]">
                 <AnimatePresence mode="wait">
                   {activeRegion === 'kalos' && (
@@ -1110,6 +1103,141 @@ export default function OriginsPage() {
                     </div>
                   )}
                 </AnimatePresence>
+              </div>
+            </div>
+
+            <div className="border-t border-[var(--card-border)] pt-12">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="glass p-6 md:p-10 border border-[var(--card-border)] bg-[var(--surface)]/40 mb-10"
+              >
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                  <div className="shrink-0">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/vi/4/4f/Satoshi-Anime_Pokemon.png"
+                      alt="Satoshi (Ash Ketchum)"
+                      className="w-40 h-40 md:w-52 md:h-52 object-contain drop-shadow-xl"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="text-center md:text-left">
+                    <h3 className="text-lg md:text-xl font-[family-name:var(--font-pixel)] text-[var(--accent)] mb-3">
+                      Satoshi (Ash Ketchum)
+                    </h3>
+                    <p className="text-[var(--text-secondary)] leading-relaxed text-sm md:text-base mb-4">
+                      The most iconic Pokemon Trainer in history. From Pallet Town, he set out on a
+                      journey to become a Pokemon Master, traveling across countless regions,
+                      forging unbreakable bonds with his Pokemon, and inspiring generations of
+                      trainers to follow their dreams.
+                    </p>
+                    <a
+                      href="https://bulbapedia.bulbagarden.net/wiki/Ash_Ketchum"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--card-border)] bg-[var(--surface)] hover:bg-[var(--surface-hover)] hover:border-[var(--accent)] transition-all duration-300 text-xs font-[family-name:var(--font-pixel)] tracking-wider text-[var(--text-primary)]"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                      </svg>
+                      Learn more about Ash
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  {
+                    name: 'Red',
+                    role: 'The Silent Legend',
+                    region: 'Kanto',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Red_(game)',
+                  },
+                  {
+                    name: 'Blue',
+                    role: 'The Rival',
+                    region: 'Kanto',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Blue_(game)',
+                  },
+                  {
+                    name: 'Cynthia',
+                    role: 'Sinnoh Champion',
+                    region: 'Sinnoh',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Cynthia',
+                  },
+                  {
+                    name: 'Leon',
+                    role: 'The Unbeatable',
+                    region: 'Galar',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Leon',
+                  },
+                  {
+                    name: 'Steven',
+                    role: 'Hoenn Champion',
+                    region: 'Hoenn',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Steven_Stone',
+                  },
+                  {
+                    name: 'Lance',
+                    role: 'Dragon Master',
+                    region: 'Johto',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Lance',
+                  },
+                  {
+                    name: 'Diantha',
+                    role: 'Kalos Champion',
+                    region: 'Kalos',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Diantha',
+                  },
+                  {
+                    name: 'Iris',
+                    role: 'Unova Champion',
+                    region: 'Unova',
+                    url: 'https://bulbapedia.bulbagarden.net/wiki/Iris',
+                  },
+                ].map((trainer, i) => (
+                  <motion.a
+                    key={trainer.name}
+                    href={trainer.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    viewport={{ once: true }}
+                    className="glass p-4 bg-[var(--surface)]/40 border border-[var(--card-border)] hover:border-[var(--accent)] hover:bg-[var(--surface-hover)] transition-all duration-300 group"
+                  >
+                    <div className="text-[10px] text-[var(--accent)] font-[family-name:var(--font-pixel)] tracking-wider mb-1 uppercase">
+                      {trainer.region}
+                    </div>
+                    <h4 className="text-sm font-bold text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent)] transition-colors">
+                      {trainer.name}
+                    </h4>
+                    <p className="text-[11px] text-[var(--text-muted)]">{trainer.role}</p>
+                    <div className="mt-3 flex items-center gap-1 text-[10px] text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors">
+                      <svg
+                        width="10"
+                        height="10"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                      </svg>
+                      View profile
+                    </div>
+                  </motion.a>
+                ))}
               </div>
             </div>
           </div>

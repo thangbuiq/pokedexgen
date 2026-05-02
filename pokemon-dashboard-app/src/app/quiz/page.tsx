@@ -106,30 +106,27 @@ function ConfettiParticle({ delay, color, left }: { delay: number; color: string
 function StreakFire({ streak }: { streak: number }) {
   if (streak < 2) return null
   const intensity = Math.min(streak, 10)
-  const size = 16 + intensity * 2
+  const glowColor = streak >= 5 ? '#ef4444' : streak >= 3 ? '#f59e0b' : '#fbbf24'
   return (
-    <div className="flex items-center gap-1 whitespace-nowrap">
+    <div className="flex items-center gap-1.5 animate-pulse">
       <svg
-        width={size}
-        height={size}
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
         className="shrink-0"
-        style={{ color: streak >= 5 ? 'var(--type-fire)' : 'var(--type-electric)' }}
+        style={{ color: glowColor }}
       >
         <path
           d="M12 23c-4 0-7-3-7-7 0-3 2-5 4-7 1-1 2-3 2-5 0 2 2 4 3 5 1-2 2-4 2-6 0 3 3 6 4 8 1 2 1 3 1 5 0 4-3 7-7 7z"
           fill="currentColor"
-          opacity={0.8 + intensity * 0.02}
+          opacity={0.9}
         />
       </svg>
       <span
-        className="font-[family-name:var(--font-pixel)] text-[10px] sm:text-xs tracking-wider"
+        className="font-[family-name:var(--font-pixel)] text-[10px] tracking-wider uppercase"
         style={{
-          color: streak >= 5 ? 'var(--type-fire)' : 'var(--type-electric)',
-          textShadow:
-            streak >= 5
-              ? '0 0 8px var(--type-fire), 0 0 16px var(--type-fire)'
-              : '0 0 6px var(--type-electric)',
+          color: glowColor,
+          textShadow: `0 0 6px ${glowColor}, 0 0 12px ${glowColor}`,
         }}
       >
         {streak >= 10
@@ -363,7 +360,14 @@ export default function QuizPage() {
       </HowToGuide>
 
       {/* ── Score Bar ─────────────────────────────────────────────────────── */}
-      <div className="glass rounded-xl p-4 mb-6">
+      <div
+        className={[
+          'glass rounded-xl p-4 mb-6 transition-all duration-500 border',
+          streak >= 2
+            ? 'border-orange-400/60 shadow-[0_0_20px_rgba(251,146,60,0.25),inset_0_0_12px_rgba(251,146,60,0.08)]'
+            : 'border-[var(--card-border)]',
+        ].join(' ')}
+      >
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-4 sm:gap-5 min-w-0">
             <div className="flex items-center gap-2 shrink-0">
@@ -393,7 +397,13 @@ export default function QuizPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               <div>
-                <p className="text-[var(--text-primary)] font-bold text-lg leading-none">
+                <p
+                  className="font-bold text-lg leading-none transition-colors duration-300"
+                  style={{
+                    color:
+                      streak >= 5 ? '#ef4444' : streak >= 2 ? '#f59e0b' : 'var(--text-primary)',
+                  }}
+                >
                   {streak}
                 </p>
                 <p className="text-[var(--text-muted)] text-[10px] font-[family-name:var(--font-pixel)] tracking-wider">
@@ -525,12 +535,7 @@ export default function QuizPage() {
                 loading="eager"
                 priority
                 unoptimized
-                className={[
-                  'pointer-events-none select-none',
-                  !currentPokemon.sprite_url ? 'brightness-0 opacity-50' : '',
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
+                className="pointer-events-none select-none"
                 draggable={false}
                 onContextMenu={(e) => e.preventDefault()}
               />

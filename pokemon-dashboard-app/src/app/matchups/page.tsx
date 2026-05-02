@@ -1192,6 +1192,51 @@ export default function MatchupsPage() {
             ))}
           </div>
 
+          <div className="glass rounded-xl p-4 border border-[var(--card-border)] bg-[var(--surface)]/40">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg
+                  className="w-4 h-4 text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div className="space-y-2">
+                <h4 className="text-xs font-[family-name:var(--font-pixel)] tracking-wider text-[var(--text-secondary)] uppercase">
+                  About Defensive Multiplier
+                </h4>
+                <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                  The defensive multiplier shows how much damage your team takes from each attacking
+                  type on average. For each attacking type, we multiply the effectiveness against
+                  every Pokemon&apos;s types, then average across your team.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <span className="px-2 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-400 font-mono">
+                    &lt; 1.0 = Resist
+                  </span>
+                  <span className="px-2 py-1 rounded bg-[var(--surface)] border border-[var(--card-border)] text-[var(--text-muted)] font-mono">
+                    1.0 = Neutral
+                  </span>
+                  <span className="px-2 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-400 font-mono">
+                    &gt; 1.0 = Weak
+                  </span>
+                </div>
+                <p className="text-[11px] text-[var(--text-muted)]">
+                  Example: Water vs Charizard (Fire/Flying) = 2.0x (Water is super effective against
+                  Fire)
+                </p>
+              </div>
+            </div>
+          </div>
+
           {filledCount > 0 && (
             <div className="space-y-6 animate-[fade-in_0.3s_ease-out]">
               <TeamAnalysis selected={filledTeam} />

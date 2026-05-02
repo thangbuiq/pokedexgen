@@ -27,6 +27,7 @@ select
     p.weight,
     p.sprite_url,
     s.color,
+    s.japanese_name,
     t.type_names,
     st.hp,
     st.attack,

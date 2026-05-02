@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+
 import { motion } from 'framer-motion'
 import {
   RadarChart,
@@ -167,6 +168,7 @@ const TYPE_EFFECTIVENESS: Partial<Record<PokemonType, Partial<Record<PokemonType
 interface PokemonRow {
   id: number
   name: string
+  japanese_name?: string
   height: number
   weight: number
   sprite_url: string
@@ -311,15 +313,12 @@ function EvolutionGraph({
   }
 
   return (
-    <div className="flex lg:flex-col items-start gap-2 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pb-2 lg:pb-0 lg:max-h-[60vh] lg:pr-2 custom-scrollbar">
+    <div className="flex flex-col items-stretch gap-2 overflow-y-auto max-h-[60vh] pr-2 custom-scrollbar">
       {stages.map((stage, stageIdx) => {
         const stageNodes = stageMap.get(stage) ?? []
         const isLast = stageIdx === stages.length - 1
         return (
-          <div
-            key={stage}
-            className="flex lg:flex-col items-center lg:items-stretch gap-2 shrink-0 w-full"
-          >
+          <div key={stage} className="flex flex-col items-stretch gap-2 w-full">
             <div
               className="grid gap-2"
               style={{
@@ -376,7 +375,7 @@ function EvolutionGraph({
               })}
             </div>
             {!isLast && (
-              <div className="flex items-center justify-center text-[var(--text-muted)] shrink-0 px-1 lg:px-0 lg:py-1">
+              <div className="flex items-center justify-center text-[var(--text-muted)] shrink-0 py-1">
                 <svg
                   width="14"
                   height="14"
@@ -384,9 +383,8 @@ function EvolutionGraph({
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
-                  className="transform lg:rotate-90"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+                  <path d="M12 5v14M5 12l7 7 7-7" />
                 </svg>
               </div>
             )}
@@ -428,6 +426,11 @@ function useJSONQuery<T>(jsonFile: string) {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
+function getUrlParam(name: string): string | null {
+  if (typeof window === 'undefined') return null
+  return new URL(window.location.href).searchParams.get(name)
+}
+
 export default function Home() {
   const [search, setSearch] = useState('')
   const [activeTypes, setActiveTypes] = useState<Set<PokemonType>>(new Set())
@@ -440,6 +443,17 @@ export default function Home() {
   useEffect(() => {
     setVisibleCount(52)
   }, [search, activeTypes, sortBy])
+
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    if (!selected) {
+      url.searchParams.delete('id')
+    } else {
+      url.searchParams.set('id', String(selected.id))
+    }
+    window.history.replaceState({}, '', url)
+  }, [selected])
+
   useEffect(() => {
     if (selected) {
       document.body.style.overflow = 'hidden'
@@ -465,6 +479,26 @@ export default function Home() {
     }
     return map
   }, [data])
+
+  const pokemonById = useMemo(() => {
+    const map = new Map<number, PokemonRow>()
+    for (const pokemon of data ?? []) {
+      if (!map.has(pokemon.id)) {
+        map.set(pokemon.id, pokemon)
+      }
+    }
+    return map
+  }, [data])
+
+  useEffect(() => {
+    if (!data.length) return
+    const idParam = getUrlParam('id')
+    if (!idParam) return
+    const id = parseInt(idParam, 10)
+    if (Number.isNaN(id)) return
+    const pokemon = pokemonById.get(id)
+    if (pokemon) setSelected(pokemon)
+  }, [data, pokemonById])
 
   const evolutionChain = useMemo<EvolutionChainNode[]>(() => {
     if (!selected || !evolutionTree || evolutionTree.length === 0) return []
@@ -594,7 +628,9 @@ export default function Home() {
     // Search filter
     if (search) {
       const q = search.toLowerCase()
-      result = result.filter((p) => p.name.toLowerCase().includes(q))
+      result = result.filter(
+        (p) => p.name.toLowerCase().includes(q) || p.japanese_name?.toLowerCase().includes(q)
+      )
     }
 
     // Type filter
@@ -760,31 +796,42 @@ export default function Home() {
               key={type}
               onClick={() => toggleType(type)}
               className={[
-                'px-3 py-1.5 rounded-full text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider transition-all duration-300 border-2',
-                isActive ? 'scale-105 animate-pulse-glow' : 'hover:scale-105 hover:brightness-125',
+                'px-3 py-1.5 rounded-full text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider transition-all duration-300 border-2 flex items-center gap-1.5',
+                isActive ? 'scale-105 brightness-110' : 'hover:scale-105 hover:brightness-125',
               ].join(' ')}
               style={{
                 backgroundColor: color,
                 color: '#fff',
-                borderColor: color,
+                borderColor: isActive ? '#a855f7' : color,
                 boxShadow: isActive
-                  ? `0 0 20px ${color}90, 0 0 40px ${color}50, inset 0 0 12px rgba(255,255,255,0.2)`
+                  ? `0 0 0 2px ${color}60, 0 0 20px ${color}80, 0 0 8px #a855f7`
                   : `0 0 8px ${color}40`,
                 textShadow: '0 1px 2px rgba(0,0,0,0.5)',
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
                   e.currentTarget.style.boxShadow = `0 0 16px ${color}60, 0 0 32px ${color}30`
-                  e.currentTarget.style.borderColor = `${color}`
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
                   e.currentTarget.style.boxShadow = `0 0 8px ${color}40`
-                  e.currentTarget.style.borderColor = color
                 }
               }}
             >
+              {isActive && (
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  className="shrink-0"
+                >
+                  <path d="M5 12l5 5L20 7" />
+                </svg>
+              )}
               {type}
             </button>
           )
@@ -836,6 +883,12 @@ export default function Home() {
                   <h3 className="text-[var(--text-primary)] font-semibold text-sm capitalize mb-0.5 group-hover:text-[var(--text-secondary)] transition-colors duration-300">
                     {pokemon.name}
                   </h3>
+
+                  {pokemon.japanese_name && (
+                    <p className="text-[var(--text-muted)] text-[10px] mb-0.5 font-[family-name:var(--font-pixel)] tracking-wider">
+                      {pokemon.japanese_name}
+                    </p>
+                  )}
 
                   <p className="text-[var(--text-muted)] text-[10px] mb-2 font-[family-name:var(--font-pixel)] tracking-wider">
                     #{String(pokemon.id).padStart(3, '0')}
@@ -990,6 +1043,11 @@ export default function Home() {
                   <h2 className="text-2xl font-bold text-[var(--text-primary)] capitalize mb-1">
                     {selected.name}
                   </h2>
+                  {selected.japanese_name && (
+                    <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider mb-1">
+                      {selected.japanese_name}
+                    </p>
+                  )}
                   <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider">
                     #{String(selected.id).padStart(3, '0')}
                   </p>
