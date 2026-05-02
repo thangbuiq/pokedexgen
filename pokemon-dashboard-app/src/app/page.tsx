@@ -842,7 +842,7 @@ export default function Home() {
       <p className="text-[var(--text-muted)] text-xs mb-4">{filtered.length} Pokemon found</p>
 
       {/* ── Pokemon Grid ──────────────────────────────────────────────── */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
         {filtered.slice(0, visibleCount).map((pokemon, index) => {
           const types = parseTypes(pokemon)
           const primary = primaryTypeOf(pokemon)
