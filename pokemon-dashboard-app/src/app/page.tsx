@@ -245,24 +245,6 @@ function getTypeEffectiveness(attacker: PokemonType, defender: PokemonType): num
   return TYPE_EFFECTIVENESS[attacker]?.[defender] ?? 1
 }
 
-function getOffenseProfileMultiplier(attackerTypes: PokemonType[], defender: PokemonType): number {
-  if (attackerTypes.length === 0) return 1
-
-  const [primaryType, ...secondaryTypes] = attackerTypes
-  const primaryMultiplier = getTypeEffectiveness(primaryType, defender)
-
-  if (primaryMultiplier !== 1) {
-    return primaryMultiplier
-  }
-
-  const boostedFromSecondary = secondaryTypes.reduce((best, attackerType) => {
-    const candidate = getTypeEffectiveness(attackerType, defender)
-    return candidate > 1 ? Math.max(best, candidate) : best
-  }, 1)
-
-  return boostedFromSecondary
-}
-
 function MatchupTooltip({
   active,
   payload,
@@ -577,22 +559,18 @@ export default function Home() {
     return selectedMoves.filter((m) => m.move_name.replace(/-/g, ' ').toLowerCase().includes(q))
   }, [selectedMoves, moveSearch])
 
-  const matchupBuckets = useMemo(() => {
-    if (!selected)
-      return { x2: [] as PokemonType[], x05: [] as PokemonType[], x0: [] as PokemonType[] }
+  const typeDefenses = useMemo(() => {
+    if (!selected) return {} as Record<PokemonType, number>
 
-    const attackerTypes = parseTypes(selected)
-    const values = ALL_TYPES.map((defenderType) => {
-      const multiplier = getOffenseProfileMultiplier(attackerTypes, defenderType)
-
-      return { defenderType, multiplier }
+    const defenderTypes = parseTypes(selected)
+    const result = {} as Record<PokemonType, number>
+    ALL_TYPES.forEach((attackingType) => {
+      result[attackingType] = defenderTypes.reduce(
+        (m, defType) => m * getTypeEffectiveness(attackingType, defType),
+        1
+      )
     })
-
-    return {
-      x2: values.filter((item) => item.multiplier === 2).map((item) => item.defenderType),
-      x05: values.filter((item) => item.multiplier === 0.5).map((item) => item.defenderType),
-      x0: values.filter((item) => item.multiplier === 0).map((item) => item.defenderType),
-    }
+    return result
   }, [selected])
 
   // Animate detail stat bars after mount
@@ -1174,40 +1152,68 @@ export default function Home() {
 
                 <div className="mb-0">
                   <h3 className="text-[var(--text-primary)] text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-2">
-                    Type Matchup
+                    Type defenses
                   </h3>
                   <p className="text-[11px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-3">
-                    OFFENSE PROFILE (USING THIS POKEMON&apos;S TYPES)
+                    The effectiveness of each type on{' '}
+                    <span className="italic">
+                      {selected?.name.charAt(0).toUpperCase()}
+                      {selected?.name.slice(1)}
+                    </span>
+                    .
                   </p>
 
-                  <div className="space-y-2.5">
-                    {[
-                      { label: '2x', key: 'x2' as const },
-                      { label: '1/2x', key: 'x05' as const },
-                      { label: '0x', key: 'x0' as const },
-                    ].map(({ label, key }) => {
-                      const types = matchupBuckets[key]
-                      return (
-                        <div
-                          key={label}
-                          className="flex items-start gap-2 rounded-lg border border-[var(--card-border)] bg-[var(--surface-hover)] px-2.5 py-2"
-                        >
-                          <span className="text-[11px] text-[var(--text-primary)] font-[family-name:var(--font-pixel)] tracking-wider min-w-[38px]">
-                            {label}
-                          </span>
-                          <span className="text-[var(--text-secondary)] text-sm leading-6">→</span>
-                          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
-                            {types.length > 0 ? (
-                              types.map((type) => <Badge key={`${label}-${type}`} type={type} />)
-                            ) : (
-                              <span className="text-[11px] text-[var(--text-muted)] font-[family-name:var(--font-pixel)] tracking-wider">
-                                NONE
-                              </span>
-                            )}
+                  <div className="space-y-3">
+                    {[ALL_TYPES.slice(0, 9), ALL_TYPES.slice(9)].map((rowTypes, rowIdx) => (
+                      <div
+                        key={rowIdx}
+                        className="grid grid-cols-9 gap-px rounded-lg overflow-hidden border border-[var(--card-border)]"
+                      >
+                        {rowTypes.map((type) => (
+                          <div
+                            key={type}
+                            className="flex items-center justify-center h-9 text-[10px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
+                            style={{ backgroundColor: typeColorMap[type] }}
+                          >
+                            {type.slice(0, 3)}
                           </div>
-                        </div>
-                      )
-                    })}
+                        ))}
+                        {rowTypes.map((type) => {
+                          const mult = typeDefenses[type] ?? 1
+                          const isSuperEffective = mult > 1
+                          const isNotVeryEffective = mult < 1 && mult > 0
+                          const isImmune = mult === 0
+                          const isNeutral = mult === 1
+
+                          let cellBg = 'bg-[var(--surface-primary)]'
+                          let cellText = 'text-[var(--text-muted)]'
+                          let label = ''
+
+                          if (isImmune) {
+                            cellBg = 'bg-[#1a1a2e]'
+                            cellText = 'text-[var(--text-muted)]'
+                            label = '0'
+                          } else if (isSuperEffective) {
+                            cellBg = mult >= 4 ? 'bg-[#2d6a1e]' : 'bg-[#4a8c3f]'
+                            cellText = 'text-white'
+                            label = mult >= 4 ? '4' : '2'
+                          } else if (isNotVeryEffective) {
+                            cellBg = mult <= 0.25 ? 'bg-[#8b2500]' : 'bg-[#a0522d]'
+                            cellText = 'text-white'
+                            label = mult <= 0.25 ? '¼' : '½'
+                          }
+
+                          return (
+                            <div
+                              key={`${type}-val`}
+                              className={`flex items-center justify-center h-9 ${cellBg} ${cellText} text-xs font-[family-name:var(--font-pixel)] font-bold`}
+                            >
+                              {isNeutral ? '' : label}
+                            </div>
+                          )
+                        })}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
