@@ -489,6 +489,7 @@ function HomeContent() {
     const seen = new Set<number>()
     let result = data.filter((p) => {
       if (seen.has(p.id)) return false
+      if (!p.sprite_url) return false
       seen.add(p.id)
       return true
     })
@@ -943,7 +944,7 @@ function HomeContent() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-lg" />
 
           <div
-            className="relative glass bg-white/95 dark:bg-[var(--surface)] rounded-2xl p-6 sm:p-8 max-w-2xl lg:max-w-6xl xl:max-w-7xl w-full max-h-[90vh] overflow-y-auto animate-[slide-in_0.3s_ease-out] custom-scrollbar"
+            className="relative glass bg-white/95 dark:bg-[var(--surface)] rounded-2xl p-6 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full max-h-[90vh] overflow-y-auto animate-[slide-in_0.3s_ease-out] custom-scrollbar"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -1023,23 +1024,44 @@ function HomeContent() {
               <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
                 <div className="flex flex-col items-center mb-6">
                   <div className="relative mb-4">
-                    <div
-                      className="absolute inset-0 rounded-full opacity-30 scale-150"
+                    <motion.div
+                      className="absolute inset-0 rounded-full scale-150"
                       style={{
                         background: `radial-gradient(circle at center, ${typeColorMap[primaryTypeOf(selected)]}60 0%, transparent 70%)`,
                       }}
+                      animate={{
+                        opacity: [0.2, 0.4, 0.2],
+                        scale: [1.4, 1.6, 1.4],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
                     />
-                    <Image
-                      src={OFFICIAL_ARTWORK(selected.id)}
-                      alt={selected.name}
-                      width={180}
-                      height={180}
-                      className={[
-                        'relative z-10 transition-transform duration-500 hover:scale-110 drop-shadow-2xl',
-                        isSpriteMissing(selected.id) ? 'brightness-0 opacity-50' : '',
-                      ].join(' ')}
-                      unoptimized
-                    />
+                    <motion.div
+                      className="relative z-10"
+                      animate={{
+                        y: [0, -8, 0],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
+                    >
+                      <Image
+                        src={OFFICIAL_ARTWORK(selected.id)}
+                        alt={selected.name}
+                        width={180}
+                        height={180}
+                        className={[
+                          'transition-transform duration-500 hover:scale-110 drop-shadow-2xl',
+                          isSpriteMissing(selected.id) ? 'brightness-0 opacity-50' : '',
+                        ].join(' ')}
+                        unoptimized
+                      />
+                    </motion.div>
                   </div>
 
                   <h2 className="text-2xl font-bold text-[var(--text-primary)] capitalize mb-1">
@@ -1175,11 +1197,11 @@ function HomeContent() {
                 </div>
 
                 <div className="mb-0">
-                  <h3 className="text-[var(--text-primary)] text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-2">
+                  <h3 className="text-[var(--text-primary)] text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-1">
                     Type defenses
                   </h3>
-                  <p className="text-[11px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-3">
-                    The effectiveness of each type on{' '}
+                  <p className="text-[9px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-2">
+                    Effectiveness of each type on{' '}
                     <span className="italic">
                       {selected?.name.charAt(0).toUpperCase()}
                       {selected?.name.slice(1)}
@@ -1187,7 +1209,7 @@ function HomeContent() {
                     .
                   </p>
 
-                  <div className="space-y-3">
+                  <div className="space-y-1">
                     {[ALL_TYPES.slice(0, 9), ALL_TYPES.slice(9)].map((rowTypes, rowIdx) => (
                       <div
                         key={rowIdx}
@@ -1196,7 +1218,7 @@ function HomeContent() {
                         {rowTypes.map((type) => (
                           <div
                             key={type}
-                            className="flex items-center justify-center h-9 text-[10px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
+                            className="flex items-center justify-center h-7 text-[8px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
                             style={{ backgroundColor: typeColorMap[type] }}
                           >
                             {type.slice(0, 3)}
@@ -1230,7 +1252,7 @@ function HomeContent() {
                           return (
                             <div
                               key={`${type}-val`}
-                              className={`flex items-center justify-center h-9 ${cellBg} ${cellText} text-xs font-[family-name:var(--font-pixel)] font-bold`}
+                              className={`flex items-center justify-center h-7 ${cellBg} ${cellText} text-[10px] font-[family-name:var(--font-pixel)] font-bold`}
                             >
                               {isNeutral ? '' : label}
                             </div>
@@ -1240,28 +1262,30 @@ function HomeContent() {
                     ))}
                   </div>
                 </div>
-
-                <div className="mt-4 pt-4 border-t border-[var(--card-border)]">
-                  <PokemonFightSim player={selected} allPokemon={data ?? []} />
-                </div>
               </div>
 
-              {/* ── Right Column: Evolution Chain ── */}
-              <div className="lg:col-span-3 flex flex-col order-2 lg:order-3 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)]">
-                <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-3">
-                  Evolution Chain
-                </h3>
-                {evolutionChain.length > 0 ? (
-                  <EvolutionGraph
-                    nodes={evolutionChain}
-                    selectedName={selected.name}
-                    onSelect={(pokemon) => {
-                      if (pokemon) setSelected(pokemon)
-                    }}
-                  />
-                ) : (
-                  <p className="text-[var(--text-muted)] text-xs">No evolution data</p>
-                )}
+              {/* ── Right Column: Evolution Chain & Fight Sim ── */}
+              <div className="lg:col-span-3 flex flex-col order-2 lg:order-3 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)] gap-6">
+                <div>
+                  <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-3">
+                    Evolution Chain
+                  </h3>
+                  {evolutionChain.length > 0 ? (
+                    <EvolutionGraph
+                      nodes={evolutionChain}
+                      selectedName={selected.name}
+                      onSelect={(pokemon) => {
+                        if (pokemon) setSelected(pokemon)
+                      }}
+                    />
+                  ) : (
+                    <p className="text-[var(--text-muted)] text-xs">No evolution data</p>
+                  )}
+                </div>
+
+                <div>
+                  <PokemonFightSim player={selected} allPokemon={data ?? []} />
+                </div>
               </div>
             </div>
           </div>

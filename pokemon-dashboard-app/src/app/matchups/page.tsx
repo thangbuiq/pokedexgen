@@ -466,10 +466,10 @@ function PokemonTypeMatchup({ pokemon, color }: { pokemon: PokemonData; color: s
           return (
             <span
               key={m.type}
-              className="text-[10px] px-1.5 py-0.5 rounded font-mono text-white"
+              className="text-[10px] px-1.5 py-0.5 rounded font-[family-name:var(--font-pixel)] text-white"
               style={{ backgroundColor: bg }}
             >
-              {m.type}: {m.multiplier === 0.5 ? '1/2' : m.multiplier}x
+              {m.type.slice(0, 3)}: {m.multiplier === 0.5 ? '1/2' : m.multiplier}x
             </span>
           )
         })}
@@ -752,7 +752,7 @@ function CoverageGrid({ selected }: { selected: PokemonData[] }) {
           return (
             <div key={t} className={styles.coverageCard}>
               <div className={styles.coverageHeader}>
-                <span className={styles.typeName}>{t}</span>
+                <span className={styles.typeName}>{t.slice(0, 3)}</span>
                 <span className={styles.badge} style={{ background: color }}>
                   {' '}
                 </span>
@@ -989,7 +989,7 @@ export default function MatchupsPage() {
                         className={styles.smallType}
                         style={{ background: typeColorMap[t] ?? '#999' }}
                       >
-                        {t.charAt(0).toUpperCase() + t.slice(1)}
+                        {t.slice(0, 3).toUpperCase()}
                       </span>
                     ))}
                   </span>
@@ -1028,10 +1028,10 @@ export default function MatchupsPage() {
                         {p.types.map((t) => (
                           <span
                             key={t}
-                            className={styles.typeBadge}
+                            className={styles.smallType}
                             style={{ background: typeColorMap[t] ?? '#999' }}
                           >
-                            {t}
+                            {t.toUpperCase()}
                           </span>
                         ))}
                       </div>
@@ -1041,7 +1041,7 @@ export default function MatchupsPage() {
                     </div>
                   </div>
                   <button className={styles.removeBtn} onClick={() => removePokemonFromSlot(idx)}>
-                    ×
+                    x
                   </button>
                 </div>
               ) : (

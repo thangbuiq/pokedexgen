@@ -11,9 +11,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pokexgen.vercel.app'),
-  title: 'pokeXgen · Pokedex for Next-gen',
+  title: 'pokeXgen - The Next-Gen Pokédex for Pokémon Data, Matchups & Team Strategy',
   description:
-    'The next-gen Pokédex for exploring Pokémon data, matchups, and team strategy. Built by a fan, for fans.',
+    'Explore every Pokémon with deep stats, evolution chains, type matchups, and team building tools. Your all-in-one battle HQ powered by modern data engineering.',
   keywords: [
     'pokemon',
     'pokedex',
@@ -23,11 +23,19 @@ export const metadata: Metadata = {
     'next-gen pokedex',
   ],
   openGraph: {
-    title: 'pokeXgen · Pokedex for Next-gen',
+    title: 'pokeXgen - The Next-Gen Pokédex for Pokémon Data, Matchups & Team Strategy',
     description:
-      'The next-gen Pokédex for exploring Pokémon data, matchups, and team strategy. Built by a fan, for fans.',
+      'Explore every Pokémon with deep stats, evolution chains, type matchups, and team building tools. Your all-in-one battle HQ powered by modern data engineering.',
     type: 'website',
     siteName: 'pokeXgen',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'pokeXgen - The Next-Gen Pokédex',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
