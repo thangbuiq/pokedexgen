@@ -10,6 +10,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pokexgen.vercel.app'),
   title: 'pokeXgen · Pokedex for Next-gen',
   description:
     'The next-gen Pokédex for exploring Pokémon data, matchups, and team strategy. Built by a fan, for fans.',

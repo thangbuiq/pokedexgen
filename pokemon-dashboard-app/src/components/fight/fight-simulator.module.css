@@ -1,0 +1,718 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.selectors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .selectors {
+    grid-template-columns: 1fr;
+  }
+}
+
+.selectorTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.selectorTrigger:hover {
+  border-color: var(--text-secondary);
+  background: var(--surface-hover);
+}
+
+.selectorSelected {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.selectorSprite {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.selectorInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.selectorName {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.selectorTypes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.selectorPlaceholder {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.selectorChevron {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--text-muted);
+}
+
+.selectorDropdown {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.selectorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.selectorLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.selectorClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.selectorClose:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.selectorSearch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.searchIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.searchClear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.375rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.searchClear:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.selectorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+  padding: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.selectorOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: var(--surface-hover);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.selectorOption:hover {
+  border-color: var(--card-border);
+  background: var(--surface);
+}
+
+.optionSprite {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.optionName {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.optionTypes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.optionType {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectorEmpty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.arenaWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.arena {
+  aspect-ratio: 16/9;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .arena {
+    aspect-ratio: auto;
+    min-height: 280px;
+  }
+}
+
+.arenaEmpty {
+  aspect-ratio: 16/9;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .arenaEmpty {
+    aspect-ratio: auto;
+    min-height: 200px;
+  }
+}
+
+.arenaPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+}
+
+.arenaIcon {
+  font-size: 2rem;
+}
+
+.arenaText {
+  font-size: 0.875rem;
+}
+
+.arenaSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arenaPokemon {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arenaGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  opacity: 0.3;
+  transform: scale(1.5);
+}
+
+.arenaSprite {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.arenaName {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: var(--font-pixel);
+  letter-spacing: 0.05em;
+}
+
+.arenaTypes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.hpBarContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 150px;
+}
+
+.hpBarLabel {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  width: 1.5rem;
+}
+
+.hpBar {
+  flex: 1;
+  height: 0.5rem;
+  background: var(--surface-hover);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.hpBarFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease-out;
+}
+
+.hpBarValue {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  width: 1.5rem;
+  text-align: right;
+}
+
+.scoreBadge {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-top: 0.25rem;
+}
+
+.arenaDivider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.vsText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-pixel);
+  letter-spacing: 0.1em;
+}
+
+.vsIcon {
+  font-size: 1.5rem;
+}
+
+.vsResult {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-pixel);
+  letter-spacing: 0.05em;
+}
+
+.vsWin {
+  color: #22c55e;
+}
+
+.vsLose {
+  color: #ef4444;
+}
+
+.vsDraw {
+  color: var(--text-muted);
+}
+
+.analysis {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.analysisCard {
+  padding: 1rem;
+}
+
+.analysisTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-family: var(--font-pixel);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.typeComparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .typeComparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+.typeSide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.typeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.typeHeaderSprite {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.typeHeaderText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.typePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.typePill {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.625rem;
+}
+
+.typePillBadge {
+  font-size: 0.5rem;
+  padding: 0.125rem 0.375rem;
+}
+
+.typePillArrow {
+  opacity: 0.7;
+}
+
+.typePillMultiplier {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.statsComparison {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 3rem 1fr 2.5rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .statRow {
+    grid-template-columns: 2rem 1fr 2.5rem 1fr 2rem;
+  }
+}
+
+.statValue {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  text-align: center;
+}
+
+.statValueWin {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.statValueLose {
+  color: var(--text-secondary);
+}
+
+.statBarContainer {
+  display: flex;
+  align-items: center;
+}
+
+.statBarBg {
+  width: 100%;
+  height: 0.5rem;
+  background: var(--surface-hover);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.statBarPlayer {
+  height: 100%;
+  border-radius: 9999px 0 0 9999px;
+  transition: width 0.7s ease-out;
+}
+
+.statBarOpponent {
+  height: 100%;
+  border-radius: 0 9999px 9999px 0;
+  transition: width 0.7s ease-out;
+}
+
+.statLabel {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  font-family: var(--font-pixel);
+  letter-spacing: 0.05em;
+}
+
+.bstRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--card-border);
+  margin-top: 0.5rem;
+}
+
+.bstValue {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.bstLabel {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-family: var(--font-pixel);
+  letter-spacing: 0.05em;
+}
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recommendationsTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: var(--font-pixel);
+  letter-spacing: 0.05em;
+}
+
+.recommendationsList {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+
+.recommendationsList::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendationCard {
+  flex-shrink: 0;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.75rem;
+  background: var(--surface-hover);
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.recommendationCard:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.recommendationSpriteContainer {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+}
+
+.recommendationGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  opacity: 0.2;
+}
+
+.recommendationSprite {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.recommendationCard:hover .recommendationSprite {
+  transform: scale(1.1);
+}
+
+.recommendationName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.recommendationTypes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.recommendationScore {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.recommendationScoreBar {
+  flex: 1;
+  height: 0.375rem;
+  background: var(--surface);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.recommendationScoreFill {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  border-radius: 9999px;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+}
+
+.recommendationScoreValue {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: #22c55e;
+  font-family: var(--font-mono);
+}

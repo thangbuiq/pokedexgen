@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useMemo, useCallback, useEffect } from 'react'
+import { useState, useMemo, useCallback, useEffect, useRef, Suspense } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 import { motion } from 'framer-motion'
 import {
@@ -20,29 +21,15 @@ import { HowToGuide } from '@/components/ui/HowToGuide'
 import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { isSpriteMissing, getSpriteUrl as OFFICIAL_ARTWORK } from '@/lib/sprites'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
+import { PokemonFightSim } from '@/components/fight/PokemonFightSim'
+import {
+  ALL_TYPES,
+  TYPE_EFFECTIVENESS,
+  getEffectiveness,
+  multiplierLabel,
+} from '@/lib/type-effectiveness'
 
 // ─── Constants ───────────────────────────────────────────────────────────────
-
-const ALL_TYPES: PokemonType[] = [
-  'normal',
-  'fire',
-  'water',
-  'grass',
-  'electric',
-  'ice',
-  'fighting',
-  'poison',
-  'ground',
-  'flying',
-  'psychic',
-  'bug',
-  'rock',
-  'ghost',
-  'dragon',
-  'dark',
-  'steel',
-  'fairy',
-]
 
 type SortKey = 'id' | 'name' | 'total_stats'
 
@@ -65,103 +52,6 @@ const STAT_META: {
 ]
 
 const STAT_MAX = 255
-
-const TYPE_EFFECTIVENESS: Partial<Record<PokemonType, Partial<Record<PokemonType, number>>>> = {
-  normal: { rock: 0.5, ghost: 0, steel: 0.5 },
-  fire: {
-    fire: 0.5,
-    water: 0.5,
-    grass: 2,
-    ice: 2,
-    bug: 2,
-    rock: 0.5,
-    dragon: 0.5,
-    steel: 2,
-  },
-  water: { fire: 2, water: 0.5, grass: 0.5, ground: 2, rock: 2, dragon: 0.5 },
-  electric: { water: 2, electric: 0.5, grass: 0.5, ground: 0, flying: 2, dragon: 0.5 },
-  grass: {
-    fire: 0.5,
-    water: 2,
-    grass: 0.5,
-    poison: 0.5,
-    ground: 2,
-    flying: 0.5,
-    bug: 0.5,
-    rock: 2,
-    dragon: 0.5,
-    steel: 0.5,
-  },
-  ice: {
-    fire: 0.5,
-    water: 0.5,
-    grass: 2,
-    ground: 2,
-    flying: 2,
-    dragon: 2,
-    steel: 0.5,
-  },
-  fighting: {
-    normal: 2,
-    ice: 2,
-    poison: 0.5,
-    flying: 0.5,
-    psychic: 0.5,
-    bug: 0.5,
-    rock: 2,
-    ghost: 0,
-    dark: 2,
-    steel: 2,
-    fairy: 0.5,
-  },
-  poison: {
-    grass: 2,
-    poison: 0.5,
-    ground: 0.5,
-    rock: 0.5,
-    ghost: 0.5,
-    steel: 0,
-    fairy: 2,
-  },
-  ground: {
-    fire: 2,
-    electric: 2,
-    grass: 0.5,
-    poison: 2,
-    flying: 0,
-    bug: 0.5,
-    rock: 2,
-    steel: 2,
-  },
-  flying: { electric: 0.5, grass: 2, fighting: 2, bug: 2, rock: 0.5, steel: 0.5 },
-  psychic: { fighting: 2, poison: 2, psychic: 0.5, dark: 0, steel: 0.5 },
-  bug: {
-    fire: 0.5,
-    grass: 2,
-    fighting: 0.5,
-    poison: 0.5,
-    flying: 0.5,
-    psychic: 2,
-    ghost: 0.5,
-    dark: 2,
-    steel: 0.5,
-    fairy: 0.5,
-  },
-  rock: { fire: 2, ice: 2, fighting: 0.5, ground: 0.5, flying: 2, bug: 2, steel: 0.5 },
-  ghost: { normal: 0, psychic: 2, ghost: 2, dark: 0.5 },
-  dragon: { dragon: 2, steel: 0.5, fairy: 0 },
-  dark: { fighting: 0.5, psychic: 2, ghost: 2, dark: 0.5, fairy: 0.5 },
-  steel: {
-    fire: 0.5,
-    water: 0.5,
-    electric: 0.5,
-    ice: 2,
-    rock: 2,
-    steel: 0.5,
-    fairy: 2,
-  },
-  fairy: { fire: 0.5, fighting: 2, poison: 0.5, dragon: 2, dark: 2, steel: 0.5 },
-}
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -239,10 +129,6 @@ function parseTypes(p: PokemonRow): PokemonType[] {
 
 function primaryTypeOf(p: PokemonRow): PokemonType {
   return parseTypes(p)[0] ?? 'normal'
-}
-
-function getTypeEffectiveness(attacker: PokemonType, defender: PokemonType): number {
-  return TYPE_EFFECTIVENESS[attacker]?.[defender] ?? 1
 }
 
 function MatchupTooltip({
@@ -406,14 +292,8 @@ function useJSONQuery<T>(jsonFile: string) {
   return { data, loading, error, refetch: fetchData }
 }
 
-// ─── Component ───────────────────────────────────────────────────────────────
-
-function getUrlParam(name: string): string | null {
-  if (typeof window === 'undefined') return null
-  return new URL(window.location.href).searchParams.get(name)
-}
-
-export default function Home() {
+function HomeContent() {
+  const searchParams = useSearchParams()
   const [search, setSearch] = useState('')
   const [activeTypes, setActiveTypes] = useState<Set<PokemonType>>(new Set())
   const [sortBy, setSortBy] = useState<SortKey>('id')
@@ -421,12 +301,21 @@ export default function Home() {
   const [detailReady, setDetailReady] = useState(false)
   const [moveSearch, setMoveSearch] = useState('')
   const [visibleCount, setVisibleCount] = useState(52)
+  const [showMatrix, setShowMatrix] = useState(false)
+  const [fightOpponent, setFightOpponent] = useState<PokemonRow | null>(null)
+  const [showFightSim, setShowFightSim] = useState(false)
 
   useEffect(() => {
     setVisibleCount(52)
   }, [search, activeTypes, sortBy])
 
+  const hasSetInitialSelected = useRef(false)
+
   useEffect(() => {
+    if (!hasSetInitialSelected.current) {
+      hasSetInitialSelected.current = true
+      return
+    }
     const url = new URL(window.location.href)
     if (!selected) {
       url.searchParams.delete('id')
@@ -474,7 +363,8 @@ export default function Home() {
 
   useEffect(() => {
     if (!data.length) return
-    const idParam = getUrlParam('id')
+    const urlParams = new URLSearchParams(window.location.search)
+    const idParam = urlParams.get('id')
     if (!idParam) return
     const id = parseInt(idParam, 10)
     if (Number.isNaN(id)) return
@@ -566,7 +456,7 @@ export default function Home() {
     const result = {} as Record<PokemonType, number>
     ALL_TYPES.forEach((attackingType) => {
       result[attackingType] = defenderTypes.reduce(
-        (m, defType) => m * getTypeEffectiveness(attackingType, defType),
+        (m, defType) => m * getEffectiveness(attackingType, defType),
         1
       )
     })
@@ -623,6 +513,114 @@ export default function Home() {
       return a.id - b.id
     })
   }, [data, search, activeTypes, sortBy])
+
+  function cellStyles(multiplier: number): { backgroundColor: string; color: string } {
+    if (multiplier === 0) return { backgroundColor: '#201122', color: '#FFFFFF' }
+    if (multiplier === 0.5) return { backgroundColor: '#8B1A1A', color: '#FFFFFF' }
+    if (multiplier === 1) return { backgroundColor: 'var(--surface)', color: '#7f7f7f' }
+    return { backgroundColor: '#166534', color: '#FFFFFF' }
+  }
+
+  const typeMatchupMatrix = useMemo(
+    () =>
+      ALL_TYPES.map((attacker) =>
+        ALL_TYPES.map((defender) => ({
+          attacker,
+          defender,
+          multiplier: getEffectiveness(attacker, defender),
+        }))
+      ),
+    []
+  )
+
+  function TypeMatchupTab() {
+    const guideItems = [
+      { multiplier: 2, description: 'Super effective' },
+      { multiplier: 1, description: 'Normal damage' },
+      { multiplier: 0.5, description: 'Not very effective' },
+      { multiplier: 0, description: 'Immune' },
+    ] as const
+
+    return (
+      <div className="space-y-4 animate-[fade-in_0.3s_ease-out] mb-8">
+        <div className="grid gap-2 grid-cols-4 text-[10px]">
+          {guideItems.map((item) => {
+            const styles = cellStyles(item.multiplier)
+            return (
+              <div
+                key={item.multiplier}
+                className="rounded border border-[var(--card-border)] px-2 py-1.5 font-[family-name:var(--font-pixel)] tracking-wider text-center"
+                style={{ backgroundColor: styles.backgroundColor, color: styles.color }}
+              >
+                <span className="font-semibold">{multiplierLabel(item.multiplier)}x</span>
+                <span className="block text-[9px] opacity-80 mt-0.5">{item.description}</span>
+              </div>
+            )
+          })}
+        </div>
+
+        <Card className="overflow-hidden p-2">
+          <div className="overflow-auto">
+            <table className="min-w-max w-full border-collapse text-[9px] font-[family-name:var(--font-pixel)] tracking-wider">
+              <thead>
+                <tr>
+                  <th className="sticky left-0 z-20 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-[var(--text-secondary)]">
+                    ATK\DEF
+                  </th>
+                  {ALL_TYPES.map((type) => (
+                    <th
+                      key={type}
+                      className="sticky top-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-0.5 py-1"
+                    >
+                      <span
+                        className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
+                        style={{
+                          backgroundColor: typeColorMap[type],
+                          textShadow: '0 1px 1px rgba(0,0,0,0.4)',
+                        }}
+                      >
+                        {type.slice(0, 3)}
+                      </span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {typeMatchupMatrix.map((row, rowIndex) => (
+                  <tr key={ALL_TYPES[rowIndex]}>
+                    <th className="sticky left-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-left">
+                      <span
+                        className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
+                        style={{
+                          backgroundColor: typeColorMap[ALL_TYPES[rowIndex]],
+                          textShadow: '0 1px 1px rgba(0,0,0,0.4)',
+                        }}
+                      >
+                        {ALL_TYPES[rowIndex].slice(0, 3)}
+                      </span>
+                    </th>
+                    {row.map((cell) => {
+                      const styles = cellStyles(cell.multiplier)
+                      return (
+                        <td
+                          key={`${cell.attacker}-${cell.defender}`}
+                          className="border border-[var(--card-border)] px-0.5 py-1 text-center font-semibold text-white"
+                          style={styles}
+                          title={`${cell.attacker} vs ${cell.defender}: ${multiplierLabel(cell.multiplier)}x`}
+                        >
+                          {multiplierLabel(cell.multiplier)}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    )
+  }
 
   // ─── Loading / Error ────────────────────────────────────────────────────
 
@@ -699,9 +697,35 @@ export default function Home() {
         </p>
       </div>
 
+      {/* ── Type Matrix Toggle ──────────────────────────────────────────── */}
+      <div className="flex justify-center mb-4">
+        <button
+          onClick={() => setShowMatrix(!showMatrix)}
+          className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-200 ${
+            showMatrix
+              ? 'bg-blue-500 text-white border-blue-500 shadow-md shadow-blue-500/30'
+              : 'bg-[var(--surface)] text-[var(--text-secondary)] border-[var(--card-border)] hover:text-blue-600 hover:border-blue-500/50'
+          }`}
+        >
+          <svg
+            className="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            {showMatrix ? <path d="M19 9l-7 7-7-7" /> : <path d="M9 5l7 7-7 7" />}
+          </svg>
+          {showMatrix ? 'Hide Type Matrix' : 'Show Type Matrix'}
+        </button>
+      </div>
+
+      {showMatrix && <TypeMatchupTab />}
+
       <HowToGuide title="Pokédex Guide">
         Search or filter by type, then click any Pokémon to view stats, type matchups, evolution
-        chain, and moves. Use the sort buttons to reorder by ID, name, or total stats.
+        chain, moves, and fight simulation. Use the sort buttons to reorder by ID, name, or total
+        stats.
       </HowToGuide>
 
       {/* ── Search & Sort ──────────────────────────────────────────────── */}
@@ -1216,6 +1240,10 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
+
+                <div className="mt-4 pt-4 border-t border-[var(--card-border)]">
+                  <PokemonFightSim player={selected} allPokemon={data ?? []} />
+                </div>
               </div>
 
               {/* ── Right Column: Evolution Chain ── */}
@@ -1240,5 +1268,22 @@ export default function Home() {
         </div>
       )}
     </div>
+  )
+}
+
+export default function Home() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex flex-col items-center justify-center py-32 gap-4">
+          <div className="w-12 h-12 rounded-full border-4 border-[var(--card-border)] border-t-[var(--accent)] animate-spin" />
+          <p className="text-[var(--text-secondary)] text-sm font-[family-name:var(--font-pixel)] tracking-wider">
+            LOADING...
+          </p>
+        </div>
+      }
+    >
+      <HomeContent />
+    </Suspense>
   )
 }

@@ -1242,6 +1242,30 @@ export default function OriginsPage() {
             </div>
           </div>
         </section>
+
+        <section className="relative py-20 flex flex-col items-center justify-center border-t border-[var(--card-border)]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <p className="text-sm text-[var(--text-muted)] mb-4 font-[family-name:var(--font-pixel)] tracking-wider">
+              Continue your journey
+            </p>
+            <motion.a
+              href="/"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[var(--accent)] text-white font-[family-name:var(--font-pixel)] text-sm tracking-wider shadow-lg shadow-[var(--accent)]/30 hover:shadow-[var(--accent)]/50 transition-shadow"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img src="/pokeball.png" alt="pokeball" className="w-6 h-6" />
+              Back to Pokédex
+            </motion.a>
+          </motion.div>
+        </section>
       </main>
     </div>
   )

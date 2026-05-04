@@ -782,120 +782,7 @@ function multiplierLabel(multiplier: number): string {
   return `${multiplier}`
 }
 
-function cellStyles(multiplier: number): { backgroundColor: string; color: string } {
-  if (multiplier === 0) return { backgroundColor: '#201122', color: '#FFFFFF' }
-  if (multiplier === 0.5) return { backgroundColor: '#8B1A1A', color: '#FFFFFF' }
-  if (multiplier === 1) return { backgroundColor: 'var(--surface)', color: '#7f7f7fff' }
-  return { backgroundColor: '#166534', color: '#FFFFFF' }
-}
-
-function TypeMatrixTab() {
-  const guideItems = [
-    { multiplier: 2, description: 'Super effective. Strong damage.' },
-    { multiplier: 1, description: 'Normal damage. No modifier.' },
-    { multiplier: 0.5, description: 'Not very effective. Reduced damage.' },
-    { multiplier: 0, description: 'Immune. No damage lands.' },
-  ] as const
-
-  const matrix = useMemo(
-    () =>
-      ALL_TYPES.map((attacker) =>
-        ALL_TYPES.map((defender) => ({
-          attacker,
-          defender,
-          multiplier: getEffectiveness(attacker, defender),
-        }))
-      ),
-    []
-  )
-
-  return (
-    <div className="space-y-8 animate-[fade-in_0.3s_ease-out]">
-      <div className="text-center space-y-3 mb-6">
-        <h2 className="text-xl font-[family-name:var(--font-pixel)] tracking-wider text-[var(--text-primary)]">
-          Type Matchup Matrix
-        </h2>
-        <p className="text-sm text-[var(--text-muted)] max-w-2xl mx-auto">
-          Read across the row to see how one attacking type performs against each defending type.
-        </p>
-      </div>
-
-      <HowToGuide title="Type Matchup Guide">
-        Green cells mean super effective (2x). Red cells mean not very effective (0.5x) or no effect
-        (0x). White cells are neutral (1x). Use this to plan your team coverage.
-      </HowToGuide>
-
-      <Card className="space-y-4">
-        <h2 className="text-sm font-[family-name:var(--font-pixel)] tracking-wider text-[var(--text-secondary)]">
-          Notes
-        </h2>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
-          {guideItems.map((item) => {
-            const styles = cellStyles(item.multiplier)
-            return (
-              <div
-                key={item.multiplier}
-                className="rounded-lg border border-[var(--card-border)] p-3 font-[family-name:var(--font-pixel)] tracking-wider"
-                style={{ backgroundColor: styles.backgroundColor, color: styles.color }}
-              >
-                <div className="font-semibold mb-1">{multiplierLabel(item.multiplier)}</div>
-                <div>{item.description}</div>
-              </div>
-            )
-          })}
-        </div>
-      </Card>
-
-      <Card className="overflow-hidden">
-        <div className="overflow-auto">
-          <table className="min-w-max w-full border-collapse text-xs font-[family-name:var(--font-pixel)] tracking-wider">
-            <thead>
-              <tr>
-                <th className="sticky left-0 z-20 bg-[var(--surface)] border border-[var(--card-border)] px-2 py-2 text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wider">
-                  ATK\DEF
-                </th>
-                {ALL_TYPES.map((type) => (
-                  <th
-                    key={type}
-                    className="sticky top-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-2 py-2"
-                  >
-                    <Badge type={type} />
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {matrix.map((row, rowIndex) => (
-                <tr key={ALL_TYPES[rowIndex]}>
-                  <th className="sticky left-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-2 py-2 text-left">
-                    <Badge type={ALL_TYPES[rowIndex]} />
-                  </th>
-                  {row.map((cell) => {
-                    const styles = cellStyles(cell.multiplier)
-                    return (
-                      <td
-                        key={`${cell.attacker}-${cell.defender}`}
-                        className="border border-[var(--card-border)] px-2 py-2 text-center font-semibold text-white"
-                        style={styles}
-                        title={`${cell.attacker} vs ${cell.defender}: ${multiplierLabel(cell.multiplier)}`}
-                      >
-                        {multiplierLabel(cell.multiplier)}
-                      </td>
-                    )
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
-    </div>
-  )
-}
-
 export default function MatchupsPage() {
-  const [activeTab, setActiveTab] = useState<'builder' | 'matrix'>('builder')
-
   const {
     data: rawPokemon,
     loading: dataLoading,
@@ -1039,218 +926,189 @@ export default function MatchupsPage() {
         </p>
       </div>
 
-      <div className="flex justify-center mb-8">
-        <div className="inline-flex bg-[var(--surface)] rounded-lg p-1 border border-[var(--card-border)]">
-          <button
-            onClick={() => setActiveTab('builder')}
-            className={`px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
-              activeTab === 'builder'
-                ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30'
-                : 'text-[var(--text-secondary)] hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20'
+      <div className="animate-[fade-in_0.3s_ease-out] space-y-6">
+        <HowToGuide title="Team Builder Guide">
+          Click any Pokemon from the board below to add it to your team (max 6). Filter the board by
+          typing a name or type. Analyze competitive roles, speed tiers, and coverage.
+        </HowToGuide>
+
+        {toast && (
+          <div
+            className={`fixed top-20 left-1/2 -translate-x-1/2 z-[60] px-4 py-2.5 rounded-lg text-sm font-medium shadow-lg border transition-all duration-300 ${
+              toast.type === 'success'
+                ? 'bg-emerald-500/90 text-white border-emerald-400/50'
+                : 'bg-red-500/90 text-white border-red-400/50'
             }`}
           >
-            Team Builder
-          </button>
-          <button
-            onClick={() => setActiveTab('matrix')}
-            className={`px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
-              activeTab === 'matrix'
-                ? 'bg-blue-500 text-white shadow-md shadow-blue-500/30'
-                : 'text-[var(--text-secondary)] hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20'
-            }`}
-          >
-            Type Matrix
-          </button>
-        </div>
-      </div>
-
-      {activeTab === 'builder' ? (
-        <div className="animate-[fade-in_0.3s_ease-out] space-y-6">
-          <HowToGuide title="Team Builder Guide">
-            Click any Pokemon from the board below to add it to your team (max 6). Filter the board
-            by typing a name or type. Analyze competitive roles, speed tiers, and coverage.
-          </HowToGuide>
-
-          {toast && (
-            <div
-              className={`fixed top-20 left-1/2 -translate-x-1/2 z-[60] px-4 py-2.5 rounded-lg text-sm font-medium shadow-lg border transition-all duration-300 ${
-                toast.type === 'success'
-                  ? 'bg-emerald-500/90 text-white border-emerald-400/50'
-                  : 'bg-red-500/90 text-white border-red-400/50'
-              }`}
-            >
-              {toast.message}
-            </div>
-          )}
-
-          <div className={styles.gridToolbar}>
-            <div className={styles.searchBox}>
-              <input
-                placeholder="Filter Pokemon board by name or type..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className={styles.searchInput}
-              />
-            </div>
-            <div className="flex gap-2">
-              <button className={styles.copyBtn} onClick={copyTeamText}>
-                Copy Team
-              </button>
-            </div>
+            {toast.message}
           </div>
+        )}
 
-          <div className={styles.boardContainer}>
-            <div className={styles.boardGrid}>
-              {availablePokemons.length > 0 ? (
-                availablePokemons.map((p) => (
-                  <button
-                    key={p.id}
-                    className={`${styles.boardCard} ${p.isDuplicate ? styles.boardCardDisabled : ''}`}
-                    onClick={() => handleAddPokemon(p)}
-                    disabled={p.isDuplicate}
-                  >
+        <div className={styles.gridToolbar}>
+          <div className={styles.searchBox}>
+            <input
+              placeholder="Filter Pokemon board by name or type..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className={styles.searchInput}
+            />
+          </div>
+          <div className="flex gap-2">
+            <button className={styles.copyBtn} onClick={copyTeamText}>
+              Copy Team
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.boardContainer}>
+          <div className={styles.boardGrid}>
+            {availablePokemons.length > 0 ? (
+              availablePokemons.map((p) => (
+                <button
+                  key={p.id}
+                  className={`${styles.boardCard} ${p.isDuplicate ? styles.boardCardDisabled : ''}`}
+                  onClick={() => handleAddPokemon(p)}
+                  disabled={p.isDuplicate}
+                >
+                  <img
+                    src={getSpriteUrl(p.id)}
+                    alt={p.name}
+                    className={styles.boardSprite}
+                    style={{
+                      filter: isSpriteMissing(p.id) ? 'brightness(0) opacity(0.5)' : 'none',
+                    }}
+                    onError={(e) => {
+                      ;(e.target as HTMLImageElement).src = ''
+                    }}
+                  />
+                  <span className={styles.boardName}>{p.name}</span>
+                  <span className={styles.boardTypes}>
+                    {p.types.map((t) => (
+                      <span
+                        key={t}
+                        className={styles.smallType}
+                        style={{ background: typeColorMap[t] ?? '#999' }}
+                      >
+                        {t.charAt(0).toUpperCase() + t.slice(1)}
+                      </span>
+                    ))}
+                  </span>
+                  {p.isDuplicate && <span className={styles.boardDuplicate}>In Team</span>}
+                </button>
+              ))
+            ) : (
+              <div className="col-span-full text-center text-sm text-[var(--text-muted)] py-8">
+                No Pokemon match your filter
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <h2 className={styles.sectionTitle}>Your Team</h2>
+          <span className="text-xs text-[var(--text-muted)]">{filledCount}/6</span>
+        </div>
+        <div className={styles.teamGrid}>
+          {team.map((p, idx) => (
+            <div key={idx} className={styles.slot} aria-label={`Slot ${idx + 1}`}>
+              {p ? (
+                <div className={styles.slotContent}>
+                  <div className={styles.slotTop}>
                     <img
+                      className={styles.sprite}
                       src={getSpriteUrl(p.id)}
                       alt={p.name}
-                      className={styles.boardSprite}
                       style={{
                         filter: isSpriteMissing(p.id) ? 'brightness(0) opacity(0.5)' : 'none',
                       }}
-                      onError={(e) => {
-                        ;(e.target as HTMLImageElement).src = ''
-                      }}
                     />
-                    <span className={styles.boardName}>{p.name}</span>
-                    <span className={styles.boardTypes}>
-                      {p.types.map((t) => (
-                        <span
-                          key={t}
-                          className={styles.smallType}
-                          style={{ background: typeColorMap[t] ?? '#999' }}
-                        >
-                          {t.charAt(0).toUpperCase() + t.slice(1)}
-                        </span>
-                      ))}
-                    </span>
-                    {p.isDuplicate && <span className={styles.boardDuplicate}>In Team</span>}
+                    <div className={styles.slotInfo}>
+                      <div className={styles.slotName}>{p.name}</div>
+                      <div className={styles.slotTypes}>
+                        {p.types.map((t) => (
+                          <span
+                            key={t}
+                            className={styles.typeBadge}
+                            style={{ background: typeColorMap[t] ?? '#999' }}
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="text-[9px] mt-1 text-[var(--text-muted)] border border-[var(--card-border)] rounded px-1.5 py-0.5 inline-block bg-[var(--surface)]">
+                        {inferRole(p)}
+                      </div>
+                    </div>
+                  </div>
+                  <button className={styles.removeBtn} onClick={() => removePokemonFromSlot(idx)}>
+                    ×
                   </button>
-                ))
+                </div>
               ) : (
-                <div className="col-span-full text-center text-sm text-[var(--text-muted)] py-8">
-                  No Pokemon match your filter
+                <div className={styles.slotEmpty}>
+                  <span className={styles.plus}>+</span>
                 </div>
               )}
             </div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <h2 className={styles.sectionTitle}>Your Team</h2>
-            <span className="text-xs text-[var(--text-muted)]">{filledCount}/6</span>
-          </div>
-          <div className={styles.teamGrid}>
-            {team.map((p, idx) => (
-              <div key={idx} className={styles.slot} aria-label={`Slot ${idx + 1}`}>
-                {p ? (
-                  <div className={styles.slotContent}>
-                    <div className={styles.slotTop}>
-                      <img
-                        className={styles.sprite}
-                        src={getSpriteUrl(p.id)}
-                        alt={p.name}
-                        style={{
-                          filter: isSpriteMissing(p.id) ? 'brightness(0) opacity(0.5)' : 'none',
-                        }}
-                      />
-                      <div className={styles.slotInfo}>
-                        <div className={styles.slotName}>{p.name}</div>
-                        <div className={styles.slotTypes}>
-                          {p.types.map((t) => (
-                            <span
-                              key={t}
-                              className={styles.typeBadge}
-                              style={{ background: typeColorMap[t] ?? '#999' }}
-                            >
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="text-[9px] mt-1 text-[var(--text-muted)] border border-[var(--card-border)] rounded px-1.5 py-0.5 inline-block bg-[var(--surface)]">
-                          {inferRole(p)}
-                        </div>
-                      </div>
-                    </div>
-                    <button className={styles.removeBtn} onClick={() => removePokemonFromSlot(idx)}>
-                      ×
-                    </button>
-                  </div>
-                ) : (
-                  <div className={styles.slotEmpty}>
-                    <span className={styles.plus}>+</span>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="glass rounded-xl p-4 border border-[var(--card-border)] bg-[var(--surface)]/40">
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                <svg
-                  className="w-4 h-4 text-blue-400"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <div className="space-y-2">
-                <h4 className="text-xs font-[family-name:var(--font-pixel)] tracking-wider text-[var(--text-secondary)] uppercase">
-                  About Defensive Multiplier
-                </h4>
-                <p className="text-sm text-[var(--text-muted)] leading-relaxed">
-                  The defensive multiplier shows how much damage your team takes from each attacking
-                  type on average. For each attacking type, we multiply the effectiveness against
-                  every Pokemon&apos;s types, then average across your team.
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs">
-                  <span className="px-2 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-400 font-mono">
-                    &lt; 1.0 = Resist
-                  </span>
-                  <span className="px-2 py-1 rounded bg-[var(--surface)] border border-[var(--card-border)] text-[var(--text-muted)] font-mono">
-                    1.0 = Neutral
-                  </span>
-                  <span className="px-2 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-400 font-mono">
-                    &gt; 1.0 = Weak
-                  </span>
-                </div>
-                <p className="text-[11px] text-[var(--text-muted)]">
-                  Example: Water vs Charizard (Fire/Flying) = 2.0x (Water is super effective against
-                  Fire)
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {filledCount > 0 && (
-            <div className="space-y-6 animate-[fade-in_0.3s_ease-out]">
-              <TeamAnalysis selected={filledTeam} />
-              <CoverageAnalysis selected={filledTeam} />
-              <CoverageGrid selected={filledTeam} />
-              <CompetitiveInsights selected={filledTeam} />
-              <TypeMatchupSection selected={filledTeam} />
-              <MovesSection selected={filledTeam} />
-            </div>
-          )}
+          ))}
         </div>
-      ) : (
-        <TypeMatrixTab />
-      )}
+
+        <div className="glass rounded-xl p-4 border border-[var(--card-border)] bg-[var(--surface)]/40">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+              <svg
+                className="w-4 h-4 text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-xs font-[family-name:var(--font-pixel)] tracking-wider text-[var(--text-secondary)] uppercase">
+                About Defensive Multiplier
+              </h4>
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                The defensive multiplier shows how much damage your team takes from each attacking
+                type on average. For each attacking type, we multiply the effectiveness against
+                every Pokemon&apos;s types, then average across your team.
+              </p>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <span className="px-2 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-400 font-mono">
+                  &lt; 1.0 = Resist
+                </span>
+                <span className="px-2 py-1 rounded bg-[var(--surface)] border border-[var(--card-border)] text-[var(--text-muted)] font-mono">
+                  1.0 = Neutral
+                </span>
+                <span className="px-2 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-400 font-mono">
+                  &gt; 1.0 = Weak
+                </span>
+              </div>
+              <p className="text-[11px] text-[var(--text-muted)]">
+                Example: Water vs Charizard (Fire/Flying) = 2.0x (Water is super effective against
+                Fire)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {filledCount > 0 && (
+          <div className="space-y-6 animate-[fade-in_0.3s_ease-out]">
+            <TeamAnalysis selected={filledTeam} />
+            <CoverageAnalysis selected={filledTeam} />
+            <CoverageGrid selected={filledTeam} />
+            <CompetitiveInsights selected={filledTeam} />
+            <TypeMatchupSection selected={filledTeam} />
+            <MovesSection selected={filledTeam} />
+          </div>
+        )}
+      </div>
     </div>
   )
 }
