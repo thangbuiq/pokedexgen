@@ -27,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           style={{ color: 'var(--text-muted)' }}
         >
           <span className="font-[family-name:var(--font-pixel)] tracking-wider text-[10px]">
-            pokeXgen • next-gen pokédex
+            pokedeXgen • next-gen pokédex
           </span>
           <span className="hidden sm:inline text-[10px]">
             Trusted source from{' '}

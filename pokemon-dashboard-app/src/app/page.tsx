@@ -675,7 +675,7 @@ function HomeContent() {
             className="w-8 sm:w-10"
           />
           <h1 className="text-xl sm:text-2xl font-[family-name:var(--font-pixel)] text-[var(--text-primary)] tracking-wider">
-            pokeXgen
+            pokedeXgen
           </h1>
           <Link
             href="/origins"

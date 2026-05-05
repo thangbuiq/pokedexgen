@@ -173,11 +173,11 @@ export default function OriginsPage() {
       >
         <img
           src="/pokeball.png"
-          alt="pokeXgen"
+          alt="pokedeXgen"
           className="w-5 h-5 hover:rotate-12 transition-transform"
         />
         <span className="text-[10px] font-[family-name:var(--font-pixel)] text-white tracking-wider hidden sm:inline">
-          pokeXgen
+          pokedeXgen
         </span>
         <span className="flex items-center gap-1 ml-1 px-2 py-0.5 rounded-md bg-purple-500/10 border border-purple-400/20 text-[9px] font-[family-name:var(--font-pixel)] text-purple-300 whitespace-nowrap">
           <svg

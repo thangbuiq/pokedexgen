@@ -99,14 +99,14 @@ export function Navigation() {
           <Link href="/" className="flex items-center gap-3 group shrink-0">
             <Image
               src="/pokeball.png"
-              alt="pokeXgen"
+              alt="pokedeXgen"
               width={40}
               height={40}
               className="w-9 h-9 sm:w-11 sm:h-11 group-hover:rotate-16 transition-transform duration-300"
             />
             <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 leading-none">
               <span className="font-[family-name:var(--font-pixel)] text-[10px] sm:text-xs tracking-wider text-[var(--text-primary)]">
-                pokeXgen
+                pokedeXgen
               </span>
               <span className="hidden sm:inline text-[9px] sm:text-[10px] tracking-wide text-[var(--text-muted)]">
                 Pokédex Next Gen

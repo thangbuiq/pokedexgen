@@ -10,8 +10,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pokexgen.vercel.app'),
-  title: 'pokeXgen - The Next-Gen Pokédex for Pokémon Data, Matchups & Team Strategy',
+  metadataBase: new URL('https://pokedexgen.vercel.app'),
+  title: 'pokedeXgen - Next-Gen Pokédex',
   description:
     'Explore every Pokémon with deep stats, evolution chains, type matchups, and team building tools. Your all-in-one battle HQ powered by modern data engineering.',
   keywords: [
@@ -23,17 +23,17 @@ export const metadata: Metadata = {
     'next-gen pokedex',
   ],
   openGraph: {
-    title: 'pokeXgen - The Next-Gen Pokédex for Pokémon Data, Matchups & Team Strategy',
+    title: 'pokedeXgen - Next-Gen Pokédex for Pokémon Data, Matchups & Team Strategy',
     description:
       'Explore every Pokémon with deep stats, evolution chains, type matchups, and team building tools. Your all-in-one battle HQ powered by modern data engineering.',
     type: 'website',
-    siteName: 'pokeXgen',
+    siteName: 'pokedeXgen',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'pokeXgen - The Next-Gen Pokédex',
+        alt: 'pokedeXgen - The Next-Gen Pokédex',
       },
     ],
   },
