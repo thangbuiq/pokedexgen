@@ -334,3 +334,34 @@ select option {
   background: rgba(99, 102, 241, 0.3);
   color: var(--text-primary);
 }
+
+/* ─── Mobile Responsive Utilities ───────────────────────────────────────────── */
+
+/* Safe area insets for notched phones (iPhone X+, etc.) */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Tighter container on very small screens */
+@media (max-width: 400px) {
+  .container-centered {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Ensure modal overlays respect safe areas */
+.modal-fullscreen-mobile {
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .modal-fullscreen-mobile {
+    padding: 1rem;
+  }
+}

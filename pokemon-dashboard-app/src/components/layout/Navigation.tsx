@@ -193,7 +193,7 @@ export function Navigation() {
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className={[
-                    'flex items-center gap-4 px-4 py-3.5 rounded-lg text-base transition-all duration-200',
+                    'flex items-center gap-4 px-4 py-4 rounded-lg text-base transition-all duration-200 min-h-[48px]',
                     isActive
                       ? 'bg-[var(--surface-light)] text-[var(--text-primary)]'
                       : 'text-[var(--text-secondary)] hover:bg-[var(--surface)] hover:text-[var(--text-primary)]',

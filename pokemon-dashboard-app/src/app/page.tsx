@@ -22,12 +22,7 @@ import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { isSpriteMissing, getSpriteUrl as OFFICIAL_ARTWORK } from '@/lib/sprites'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { PokemonFightSim } from '@/components/fight/PokemonFightSim'
-import {
-  ALL_TYPES,
-  TYPE_EFFECTIVENESS,
-  getEffectiveness,
-  multiplierLabel,
-} from '@/lib/type-effectiveness'
+import { ALL_TYPES, getEffectiveness, multiplierLabel } from '@/lib/type-effectiveness'
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -302,8 +297,7 @@ function HomeContent() {
   const [moveSearch, setMoveSearch] = useState('')
   const [visibleCount, setVisibleCount] = useState(52)
   const [showMatrix, setShowMatrix] = useState(false)
-  const [fightOpponent, setFightOpponent] = useState<PokemonRow | null>(null)
-  const [showFightSim, setShowFightSim] = useState(false)
+  const [showTypeFilter, setShowTypeFilter] = useState(false)
 
   useEffect(() => {
     setVisibleCount(52)
@@ -502,9 +496,12 @@ function HomeContent() {
       )
     }
 
-    // Type filter
+    // Type filter (AND logic — must match ALL selected types)
     if (activeTypes.size > 0) {
-      result = result.filter((p) => parseTypes(p).some((t) => activeTypes.has(t)))
+      result = result.filter((p) => {
+        const pokemonTypes = parseTypes(p)
+        return [...activeTypes].every((t) => pokemonTypes.includes(t))
+      })
     }
 
     // Sort
@@ -790,7 +787,91 @@ function HomeContent() {
       </div>
 
       {/* ── Type Filter Pills ──────────────────────────────────────────── */}
-      <div className="flex flex-wrap gap-2 mb-6">
+
+      {/* Mobile: toggle button + collapsible badge grid */}
+      <div className="sm:hidden mb-4">
+        <button
+          onClick={() => setShowTypeFilter(!showTypeFilter)}
+          className={[
+            'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider transition-all duration-300 border-2',
+            showTypeFilter
+              ? 'bg-[var(--accent)] text-white border-[var(--accent)] shadow-[0_0_16px_var(--accent-glow)]'
+              : 'bg-[var(--surface)] text-[var(--text-secondary)] border-[var(--card-border)] hover:border-[var(--accent)] hover:text-[var(--text-primary)]',
+          ].join(' ')}
+        >
+          <svg
+            className={`w-3.5 h-3.5 transition-transform duration-200 ${showTypeFilter ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+          Filter by Type
+          {activeTypes.size > 0 && (
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white/20 text-[9px] font-bold">
+              {activeTypes.size}
+            </span>
+          )}
+        </button>
+
+        {showTypeFilter && (
+          <div className="mt-3 grid grid-cols-3 gap-2 animate-[slide-in_0.2s_ease-out]">
+            {ALL_TYPES.map((type) => {
+              const isActive = activeTypes.has(type)
+              const color = typeColorMap[type]
+              return (
+                <button
+                  key={type}
+                  onClick={() => toggleType(type)}
+                  className={[
+                    'flex items-center justify-center gap-1.5 rounded-full px-2 py-1.5 text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider transition-all duration-200',
+                    isActive
+                      ? 'ring-2 ring-offset-1 ring-purple-400 scale-105'
+                      : 'opacity-80 hover:opacity-100 hover:scale-105',
+                  ].join(' ')}
+                  style={{
+                    backgroundColor: color,
+                    color: '#fff',
+                    boxShadow: isActive
+                      ? `0 0 12px ${color}80, 0 0 4px #a855f7`
+                      : `0 0 6px ${color}30`,
+                    border: `1px solid ${color}`,
+                    textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+                  }}
+                >
+                  {isActive && (
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      className="shrink-0"
+                    >
+                      <path d="M5 12l5 5L20 7" />
+                    </svg>
+                  )}
+                  {type}
+                </button>
+              )
+            })}
+            {activeTypes.size > 0 && (
+              <button
+                onClick={() => setActiveTypes(new Set())}
+                className="col-span-3 mt-1 py-1.5 rounded-lg text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider text-[var(--text-muted)] border border-dashed border-[var(--card-border)] hover:text-[var(--text-primary)] hover:border-[var(--accent)] transition-all"
+              >
+                Clear all filters
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Desktop: inline flex-wrap badges (unchanged) */}
+      <div className="hidden sm:flex flex-wrap gap-2 mb-6">
         {ALL_TYPES.map((type) => {
           const isActive = activeTypes.has(type)
           const color = typeColorMap[type]
@@ -845,7 +926,7 @@ function HomeContent() {
       <p className="text-[var(--text-muted)] text-xs mb-4">{filtered.length} Pokemon found</p>
 
       {/* ── Pokemon Grid ──────────────────────────────────────────────── */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
         {filtered.slice(0, visibleCount).map((pokemon, index) => {
           const types = parseTypes(pokemon)
           const primary = primaryTypeOf(pokemon)
@@ -938,353 +1019,368 @@ function HomeContent() {
       {/* ── Detail Modal ───────────────────────────────────────────────── */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center modal-fullscreen-mobile"
           onClick={() => setSelected(null)}
         >
           <div className="absolute inset-0 bg-black/50 backdrop-blur-lg" />
 
           <div
-            className="relative glass bg-white/95 dark:bg-[var(--surface)] rounded-2xl p-6 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full max-h-[90vh] overflow-y-auto animate-[slide-in_0.3s_ease-out] custom-scrollbar"
+            className="relative glass bg-white/95 dark:bg-[var(--surface)] sm:rounded-2xl rounded-t-2xl p-0 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full max-h-[100dvh] sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors z-10"
-              aria-label="Close detail view"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
+            {/* ── Sticky Close Header ── */}
+            <div className="sticky top-0 z-20 flex items-center justify-between px-4 py-3 sm:px-0 sm:py-0 sm:absolute sm:top-4 sm:right-4 sm:left-auto bg-white/90 dark:bg-[var(--surface)]/90 backdrop-blur-md sm:backdrop-blur-none sm:bg-transparent border-b border-[var(--card-border)] sm:border-0 shrink-0">
+              <span className="text-sm font-bold text-[var(--text-primary)] capitalize sm:hidden truncate mr-4">
+                {selected.name}
+                <span className="text-[var(--text-muted)] font-normal ml-2">
+                  #{String(selected.id).padStart(3, '0')}
+                </span>
+              </span>
+              <button
+                onClick={() => setSelected(null)}
+                className="flex items-center justify-center w-11 h-11 sm:w-8 sm:h-8 rounded-full sm:rounded-lg bg-[var(--surface-hover)] sm:bg-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--surface)] transition-colors shrink-0"
+                aria-label="Close detail view"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
-            <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-10 mt-2">
-              {/* ── Left Column: Moves ── */}
-              <div className="lg:col-span-3 flex flex-col order-3 lg:order-1 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)]">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-[var(--text-primary)] text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider">
-                    Moves
-                  </h3>
-                  <span
-                    className="text-[10px] text-[var(--text-muted)] font-mono cursor-help"
-                    title="power / accuracy / pp"
-                  >
-                    power / acc / pp
-                  </span>
-                </div>
-                {selectedMoves.length > 0 && (
-                  <div className="mb-2">
-                    <input
-                      type="text"
-                      value={moveSearch}
-                      onChange={(e) => setMoveSearch(e.target.value)}
-                      placeholder="Search moves..."
-                      className="w-full pl-2.5 pr-2 py-1 rounded-md glass text-xs text-[var(--text-primary)] placeholder-[var(--text-muted)] outline-none focus:ring-1 focus:ring-[var(--type-fighting)]"
-                    />
+            <div className="flex-1 overflow-y-auto p-4 sm:p-0 sm:mt-2">
+              <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+                {/* ── Left Column: Moves ── */}
+                <div className="lg:col-span-3 flex flex-col order-3 lg:order-1 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)]">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-[var(--text-primary)] text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider">
+                      Moves
+                    </h3>
+                    <span
+                      className="text-[10px] text-[var(--text-muted)] font-mono cursor-help"
+                      title="power / accuracy / pp"
+                    >
+                      power / acc / pp
+                    </span>
                   </div>
-                )}
-                {filteredMoves.length > 0 ? (
-                  <div className="flex flex-col gap-1.5 max-h-48 lg:max-h-[60vh] lg:flex-1 overflow-y-auto pr-1 custom-scrollbar">
-                    {filteredMoves.map((move) => (
-                      <div
-                        key={`move-${selected.id}-${move.move_name}`}
-                        className="flex items-center justify-between px-2.5 py-1.5 rounded-md bg-[var(--surface-hover)] border border-[var(--card-border)]"
-                      >
-                        <div className="flex items-center gap-2 min-w-0">
-                          <Badge
-                            type={(move.move_type ?? 'normal') as PokemonType}
-                            className="shrink-0"
-                          />
-                          <span className="text-xs text-[var(--text-primary)] capitalize font-medium truncate">
-                            {move.move_name.replace(/-/g, ' ')}
+                  {selectedMoves.length > 0 && (
+                    <div className="mb-2">
+                      <input
+                        type="text"
+                        value={moveSearch}
+                        onChange={(e) => setMoveSearch(e.target.value)}
+                        placeholder="Search moves..."
+                        className="w-full pl-2.5 pr-2 py-1 rounded-md glass text-xs text-[var(--text-primary)] placeholder-[var(--text-muted)] outline-none focus:ring-1 focus:ring-[var(--type-fighting)]"
+                      />
+                    </div>
+                  )}
+                  {filteredMoves.length > 0 ? (
+                    <div className="flex flex-col gap-1.5 max-h-48 lg:max-h-[60vh] lg:flex-1 overflow-y-auto pr-1 custom-scrollbar">
+                      {filteredMoves.map((move) => (
+                        <div
+                          key={`move-${selected.id}-${move.move_name}`}
+                          className="flex items-center justify-between px-2.5 py-1.5 rounded-md bg-[var(--surface-hover)] border border-[var(--card-border)]"
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <Badge
+                              type={(move.move_type ?? 'normal') as PokemonType}
+                              className="shrink-0"
+                            />
+                            <span className="text-xs text-[var(--text-primary)] capitalize font-medium truncate">
+                              {move.move_name.replace(/-/g, ' ')}
+                            </span>
+                          </div>
+                          <span
+                            className="text-[10px] text-[var(--text-muted)] font-mono shrink-0 ml-2 cursor-help"
+                            title="power / accuracy / pp"
+                          >
+                            {move.power ?? '-'} / {move.accuracy ?? '-'} / {move.pp ?? '-'}pp
                           </span>
                         </div>
-                        <span
-                          className="text-[10px] text-[var(--text-muted)] font-mono shrink-0 ml-2 cursor-help"
-                          title="power / accuracy / pp"
-                        >
-                          {move.power ?? '-'} / {move.accuracy ?? '-'} / {move.pp ?? '-'}pp
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-[var(--text-muted)] text-xs">
-                    {moveSearch ? 'No moves match your search' : 'No moves data available'}
-                  </p>
-                )}
-              </div>
-
-              {/* ── Center Column: Info & Stats ── */}
-              <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
-                <div className="flex flex-col items-center mb-6">
-                  <div className="relative mb-4">
-                    <motion.div
-                      className="absolute inset-0 rounded-full scale-150"
-                      style={{
-                        background: `radial-gradient(circle at center, ${typeColorMap[primaryTypeOf(selected)]}60 0%, transparent 70%)`,
-                      }}
-                      animate={{
-                        opacity: [0.2, 0.4, 0.2],
-                        scale: [1.4, 1.6, 1.4],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }}
-                    />
-                    <motion.div
-                      className="relative z-10"
-                      animate={{
-                        y: [0, -8, 0],
-                      }}
-                      transition={{
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }}
-                    >
-                      <Image
-                        src={OFFICIAL_ARTWORK(selected.id)}
-                        alt={selected.name}
-                        width={180}
-                        height={180}
-                        className={[
-                          'transition-transform duration-500 hover:scale-110 drop-shadow-2xl',
-                          isSpriteMissing(selected.id) ? 'brightness-0 opacity-50' : '',
-                        ].join(' ')}
-                        unoptimized
-                      />
-                    </motion.div>
-                  </div>
-
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)] capitalize mb-1">
-                    {selected.name}
-                  </h2>
-                  {selected.japanese_name && (
-                    <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider mb-1">
-                      {selected.japanese_name}
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-[var(--text-muted)] text-xs">
+                      {moveSearch ? 'No moves match your search' : 'No moves data available'}
                     </p>
                   )}
-                  <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider">
-                    #{String(selected.id).padStart(3, '0')}
-                  </p>
-
-                  <div className="flex gap-2 mt-3">
-                    {parseTypes(selected).map((type) => (
-                      <Badge key={`${selected.id}-${type}`} type={type} />
-                    ))}
-                  </div>
-
-                  <div className="flex gap-8 mt-4 text-sm">
-                    <div className="text-center">
-                      <p className="text-[var(--text-muted)] text-xs mb-0.5">Height</p>
-                      <p className="text-[var(--text-primary)] font-semibold">
-                        {(selected.height / 10).toFixed(1)} m
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-[var(--text-muted)] text-xs mb-0.5">Weight</p>
-                      <p className="text-[var(--text-primary)] font-semibold">
-                        {(selected.weight / 10).toFixed(1)} kg
-                      </p>
-                    </div>
-                  </div>
                 </div>
 
-                <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-                  <div>
-                    <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-2">
-                      Radar
-                    </h3>
-
-                    <div className="w-full min-w-0 h-[220px] min-h-[220px]">
-                      <ResponsiveContainer
-                        key={`radar-${selected.id}`}
-                        width="100%"
-                        height="100%"
-                        minWidth={0}
-                        minHeight={220}
+                {/* ── Center Column: Info & Stats ── */}
+                <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
+                  <div className="flex flex-col items-center mb-6">
+                    <div className="relative mb-4">
+                      <motion.div
+                        className="absolute inset-0 rounded-full scale-150"
+                        style={{
+                          background: `radial-gradient(circle at center, ${typeColorMap[primaryTypeOf(selected)]}60 0%, transparent 70%)`,
+                        }}
+                        animate={{
+                          opacity: [0.2, 0.4, 0.2],
+                          scale: [1.4, 1.6, 1.4],
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        }}
+                      />
+                      <motion.div
+                        className="relative z-10"
+                        animate={{
+                          y: [0, -8, 0],
+                        }}
+                        transition={{
+                          duration: 2.5,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        }}
                       >
-                        <RadarChart data={radarData} cx="50%" cy="50%" outerRadius="68%">
-                          <PolarGrid stroke="var(--card-border)" strokeDasharray="3 3" />
-                          <PolarAngleAxis
-                            dataKey="stat"
-                            tick={{ fill: 'var(--text-secondary)', fontSize: 11, fontWeight: 600 }}
-                          />
-                          <PolarRadiusAxis
-                            angle={90}
-                            domain={[0, STAT_MAX]}
-                            tick={{ fill: 'var(--text-muted)', fontSize: 10 }}
-                            tickCount={6}
-                            axisLine={false}
-                          />
-                          <Radar
-                            name={selected.name}
-                            dataKey="value"
-                            stroke={typeColorMap[primaryTypeOf(selected)]}
-                            fill={typeColorMap[primaryTypeOf(selected)]}
-                            fillOpacity={0.2}
-                            strokeWidth={2}
-                            dot={{ r: 3, fill: typeColorMap[primaryTypeOf(selected)] }}
-                            activeDot={{
-                              r: 5,
-                              fill: typeColorMap[primaryTypeOf(selected)],
-                              stroke: '#fff',
-                              strokeWidth: 1,
-                            }}
-                          />
-                          <Tooltip content={<MatchupTooltip />} />
-                        </RadarChart>
-                      </ResponsiveContainer>
+                        <Image
+                          src={OFFICIAL_ARTWORK(selected.id)}
+                          alt={selected.name}
+                          width={180}
+                          height={180}
+                          className={[
+                            'transition-transform duration-500 hover:scale-110 drop-shadow-2xl',
+                            isSpriteMissing(selected.id) ? 'brightness-0 opacity-50' : '',
+                          ].join(' ')}
+                          unoptimized
+                        />
+                      </motion.div>
                     </div>
-                  </div>
 
-                  <div>
-                    <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-6">
-                      Base Stats
-                    </h3>
+                    <h2 className="text-2xl font-bold text-[var(--text-primary)] capitalize mb-1">
+                      {selected.name}
+                    </h2>
+                    {selected.japanese_name && (
+                      <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider mb-1">
+                        {selected.japanese_name}
+                      </p>
+                    )}
+                    <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider">
+                      #{String(selected.id).padStart(3, '0')}
+                    </p>
 
-                    <div className="space-y-3">
-                      {STAT_META.map(({ key, label }) => {
-                        const value = selected[key] as number
-                        const pct = Math.min((value / STAT_MAX) * 100, 100)
-                        const color = typeColorMap[primaryTypeOf(selected)]
+                    <div className="flex gap-2 mt-3">
+                      {parseTypes(selected).map((type) => (
+                        <Badge key={`${selected.id}-${type}`} type={type} />
+                      ))}
+                    </div>
 
-                        return (
-                          <div key={key} className="flex items-center gap-3">
-                            <span className="text-[var(--text-secondary)] text-xs w-14 text-right font-semibold shrink-0">
-                              {label}
-                            </span>
-                            <div className="flex-1 h-2 rounded-full bg-[var(--surface-hover)] overflow-hidden">
-                              <div
-                                className="h-full rounded-full"
-                                style={{
-                                  width: detailReady ? `${pct}%` : '0%',
-                                  background: `linear-gradient(90deg, ${color}80, ${color})`,
-                                  boxShadow: detailReady ? `0 0 8px ${color}40` : 'none',
-                                  transition: 'width 0.7s ease-out, box-shadow 0.7s ease-out',
-                                }}
-                              />
-                            </div>
-                            <span className="text-[var(--text-secondary)] text-xs w-8 text-right font-mono shrink-0">
-                              {value}
-                            </span>
-                          </div>
-                        )
-                      })}
-
-                      <div className="flex items-center gap-3 pt-3 border-t border-[var(--card-border)]">
-                        <span className="text-[var(--text-secondary)] text-xs w-14 text-right font-bold shrink-0">
-                          TOTAL
-                        </span>
-                        <div className="flex-1" />
-                        <span
-                          className="text-sm font-bold shrink-0"
-                          style={{ color: typeColorMap[primaryTypeOf(selected)] }}
-                        >
-                          {selected.total_stats}
-                        </span>
+                    <div className="flex gap-8 mt-4 text-sm">
+                      <div className="text-center">
+                        <p className="text-[var(--text-muted)] text-xs mb-0.5">Height</p>
+                        <p className="text-[var(--text-primary)] font-semibold">
+                          {(selected.height / 10).toFixed(1)} m
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-[var(--text-muted)] text-xs mb-0.5">Weight</p>
+                        <p className="text-[var(--text-primary)] font-semibold">
+                          {(selected.weight / 10).toFixed(1)} kg
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="mb-0">
-                  <h3 className="text-[var(--text-primary)] text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-1">
-                    Type defenses
-                  </h3>
-                  <p className="text-[9px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-2">
-                    Effectiveness of each type on{' '}
-                    <span className="italic">
-                      {selected?.name.charAt(0).toUpperCase()}
-                      {selected?.name.slice(1)}
-                    </span>
-                    .
-                  </p>
+                  <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 items-start">
+                    <div>
+                      <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-2">
+                        Radar
+                      </h3>
 
-                  <div className="space-y-1">
-                    {[ALL_TYPES.slice(0, 9), ALL_TYPES.slice(9)].map((rowTypes, rowIdx) => (
-                      <div
-                        key={rowIdx}
-                        className="grid grid-cols-9 gap-px rounded-lg overflow-hidden border border-[var(--card-border)]"
-                      >
-                        {rowTypes.map((type) => (
-                          <div
-                            key={type}
-                            className="flex items-center justify-center h-7 text-[8px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
-                            style={{ backgroundColor: typeColorMap[type] }}
-                          >
-                            {type.slice(0, 3)}
-                          </div>
-                        ))}
-                        {rowTypes.map((type) => {
-                          const mult = typeDefenses[type] ?? 1
-                          const isSuperEffective = mult > 1
-                          const isNotVeryEffective = mult < 1 && mult > 0
-                          const isImmune = mult === 0
-                          const isNeutral = mult === 1
+                      <div className="w-full min-w-0 h-[220px] min-h-[220px]">
+                        <ResponsiveContainer
+                          key={`radar-${selected.id}`}
+                          width="100%"
+                          height="100%"
+                          minWidth={0}
+                          minHeight={220}
+                        >
+                          <RadarChart data={radarData} cx="50%" cy="50%" outerRadius="68%">
+                            <PolarGrid stroke="var(--card-border)" strokeDasharray="3 3" />
+                            <PolarAngleAxis
+                              dataKey="stat"
+                              tick={{
+                                fill: 'var(--text-secondary)',
+                                fontSize: 11,
+                                fontWeight: 600,
+                              }}
+                            />
+                            <PolarRadiusAxis
+                              angle={90}
+                              domain={[0, STAT_MAX]}
+                              tick={{ fill: 'var(--text-muted)', fontSize: 10 }}
+                              tickCount={6}
+                              axisLine={false}
+                            />
+                            <Radar
+                              name={selected.name}
+                              dataKey="value"
+                              stroke={typeColorMap[primaryTypeOf(selected)]}
+                              fill={typeColorMap[primaryTypeOf(selected)]}
+                              fillOpacity={0.2}
+                              strokeWidth={2}
+                              dot={{ r: 3, fill: typeColorMap[primaryTypeOf(selected)] }}
+                              activeDot={{
+                                r: 5,
+                                fill: typeColorMap[primaryTypeOf(selected)],
+                                stroke: '#fff',
+                                strokeWidth: 1,
+                              }}
+                            />
+                            <Tooltip content={<MatchupTooltip />} />
+                          </RadarChart>
+                        </ResponsiveContainer>
+                      </div>
+                    </div>
 
-                          let cellBg = 'bg-[var(--surface-primary)]'
-                          let cellText = 'text-[var(--text-muted)]'
-                          let label = ''
+                    <div>
+                      <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-6">
+                        Base Stats
+                      </h3>
 
-                          if (isImmune) {
-                            cellBg = 'bg-[#1a1a2e]'
-                            cellText = 'text-[var(--text-muted)]'
-                            label = '0'
-                          } else if (isSuperEffective) {
-                            cellBg = mult >= 4 ? 'bg-[#2d6a1e]' : 'bg-[#4a8c3f]'
-                            cellText = 'text-white'
-                            label = mult >= 4 ? '4' : '2'
-                          } else if (isNotVeryEffective) {
-                            cellBg = mult <= 0.25 ? 'bg-[#8b2500]' : 'bg-[#a0522d]'
-                            cellText = 'text-white'
-                            label = mult <= 0.25 ? '¼' : '½'
-                          }
+                      <div className="space-y-3">
+                        {STAT_META.map(({ key, label }) => {
+                          const value = selected[key] as number
+                          const pct = Math.min((value / STAT_MAX) * 100, 100)
+                          const color = typeColorMap[primaryTypeOf(selected)]
 
                           return (
-                            <div
-                              key={`${type}-val`}
-                              className={`flex items-center justify-center h-7 ${cellBg} ${cellText} text-[10px] font-[family-name:var(--font-pixel)] font-bold`}
-                            >
-                              {isNeutral ? '' : label}
+                            <div key={key} className="flex items-center gap-3">
+                              <span className="text-[var(--text-secondary)] text-xs w-14 text-right font-semibold shrink-0">
+                                {label}
+                              </span>
+                              <div className="flex-1 h-2 rounded-full bg-[var(--surface-hover)] overflow-hidden">
+                                <div
+                                  className="h-full rounded-full"
+                                  style={{
+                                    width: detailReady ? `${pct}%` : '0%',
+                                    background: `linear-gradient(90deg, ${color}80, ${color})`,
+                                    boxShadow: detailReady ? `0 0 8px ${color}40` : 'none',
+                                    transition: 'width 0.7s ease-out, box-shadow 0.7s ease-out',
+                                  }}
+                                />
+                              </div>
+                              <span className="text-[var(--text-secondary)] text-xs w-8 text-right font-mono shrink-0">
+                                {value}
+                              </span>
                             </div>
                           )
                         })}
+
+                        <div className="flex items-center gap-3 pt-3 border-t border-[var(--card-border)]">
+                          <span className="text-[var(--text-secondary)] text-xs w-14 text-right font-bold shrink-0">
+                            TOTAL
+                          </span>
+                          <div className="flex-1" />
+                          <span
+                            className="text-sm font-bold shrink-0"
+                            style={{ color: typeColorMap[primaryTypeOf(selected)] }}
+                          >
+                            {selected.total_stats}
+                          </span>
+                        </div>
                       </div>
-                    ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-0">
+                    <h3 className="text-[var(--text-primary)] text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-1">
+                      Type defenses
+                    </h3>
+                    <p className="text-[9px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-2">
+                      Effectiveness of each type on{' '}
+                      <span className="italic">
+                        {selected?.name.charAt(0).toUpperCase()}
+                        {selected?.name.slice(1)}
+                      </span>
+                      .
+                    </p>
+
+                    <div className="space-y-1 overflow-x-auto">
+                      {[ALL_TYPES.slice(0, 9), ALL_TYPES.slice(9)].map((rowTypes, rowIdx) => (
+                        <div
+                          key={rowIdx}
+                          className="grid grid-cols-9 gap-px rounded-lg overflow-hidden border border-[var(--card-border)]"
+                        >
+                          {rowTypes.map((type) => (
+                            <div
+                              key={type}
+                              className="flex items-center justify-center h-7 text-[8px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
+                              style={{ backgroundColor: typeColorMap[type] }}
+                            >
+                              {type.slice(0, 3)}
+                            </div>
+                          ))}
+                          {rowTypes.map((type) => {
+                            const mult = typeDefenses[type] ?? 1
+                            const isSuperEffective = mult > 1
+                            const isNotVeryEffective = mult < 1 && mult > 0
+                            const isImmune = mult === 0
+                            const isNeutral = mult === 1
+
+                            let cellBg = 'bg-[var(--surface-primary)]'
+                            let cellText = 'text-[var(--text-muted)]'
+                            let label = ''
+
+                            if (isImmune) {
+                              cellBg = 'bg-[#1a1a2e]'
+                              cellText = 'text-[var(--text-muted)]'
+                              label = '0'
+                            } else if (isSuperEffective) {
+                              cellBg = mult >= 4 ? 'bg-[#2d6a1e]' : 'bg-[#4a8c3f]'
+                              cellText = 'text-white'
+                              label = mult >= 4 ? '4' : '2'
+                            } else if (isNotVeryEffective) {
+                              cellBg = mult <= 0.25 ? 'bg-[#8b2500]' : 'bg-[#a0522d]'
+                              cellText = 'text-white'
+                              label = mult <= 0.25 ? '¼' : '½'
+                            }
+
+                            return (
+                              <div
+                                key={`${type}-val`}
+                                className={`flex items-center justify-center h-7 ${cellBg} ${cellText} text-[10px] font-[family-name:var(--font-pixel)] font-bold`}
+                              >
+                                {isNeutral ? '' : label}
+                              </div>
+                            )
+                          })}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* ── Right Column: Evolution Chain & Fight Sim ── */}
-              <div className="lg:col-span-3 flex flex-col order-2 lg:order-3 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)] gap-6">
-                <div>
-                  <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-3">
-                    Evolution Chain
-                  </h3>
-                  {evolutionChain.length > 0 ? (
-                    <EvolutionGraph
-                      nodes={evolutionChain}
-                      selectedName={selected.name}
-                      onSelect={(pokemon) => {
-                        if (pokemon) setSelected(pokemon)
-                      }}
-                    />
-                  ) : (
-                    <p className="text-[var(--text-muted)] text-xs">No evolution data</p>
-                  )}
-                </div>
+                {/* ── Right Column: Evolution Chain & Fight Sim ── */}
+                <div className="lg:col-span-3 flex flex-col order-2 lg:order-3 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)] gap-6">
+                  <div>
+                    <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-3">
+                      Evolution Chain
+                    </h3>
+                    {evolutionChain.length > 0 ? (
+                      <EvolutionGraph
+                        nodes={evolutionChain}
+                        selectedName={selected.name}
+                        onSelect={(pokemon) => {
+                          if (pokemon) setSelected(pokemon)
+                        }}
+                      />
+                    ) : (
+                      <p className="text-[var(--text-muted)] text-xs">No evolution data</p>
+                    )}
+                  </div>
 
-                <div>
-                  <PokemonFightSim player={selected} allPokemon={data ?? []} />
+                  <div>
+                    <PokemonFightSim player={selected} allPokemon={data ?? []} />
+                  </div>
                 </div>
               </div>
             </div>

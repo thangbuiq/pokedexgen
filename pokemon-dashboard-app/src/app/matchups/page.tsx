@@ -26,7 +26,6 @@ interface PokemonData {
 
 const MAX_STAT = 255
 const COMPARISON_COLORS = ['#ff6b35', '#3b82f6', '#22c55e', '#facc15', '#ec4899', '#67e8f9']
-const MAX_SELECTED = 6
 
 function parseTypes(type_names: string): PokemonType[] {
   return [

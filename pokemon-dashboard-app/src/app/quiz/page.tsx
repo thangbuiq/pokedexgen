@@ -20,14 +20,6 @@ interface PokemonRow {
 type Difficulty = 'easy' | 'hard'
 type GameState = 'guessing' | 'revealed'
 
-// ─── Query ────────────────────────────────────────────────────────────────────
-
-const POKEMON_QUERY = `
-  SELECT id, name, sprite_url, type_names
-  FROM pokemon_db.dim_pokemon
-  ORDER BY id
-`
-
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function shuffleArray<T>(arr: T[]): T[] {
