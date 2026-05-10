@@ -24,7 +24,6 @@ interface PokemonData {
   types: PokemonType[]
 }
 
-const MAX_STAT = 255
 const COMPARISON_COLORS = ['#ff6b35', '#3b82f6', '#22c55e', '#facc15', '#ec4899', '#67e8f9']
 
 function parseTypes(type_names: string): PokemonType[] {
@@ -605,7 +604,7 @@ function TeamAnalysis({ selected }: { selected: PokemonData[] }) {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <Card className="flex flex-col gap-3 p-4 bg-[var(--surface-light)] border border-[var(--card-border)]">
         <div className="text-xs font-[family-name:var(--font-pixel)] text-[var(--text-secondary)] uppercase tracking-wider border-b border-[var(--card-border)] pb-2 flex justify-between">
-          <span>Offensive & Speed</span>
+          <span>Offensive &amp; Speed</span>
           <span
             className={
               offensiveScore > 75
@@ -643,7 +642,7 @@ function TeamAnalysis({ selected }: { selected: PokemonData[] }) {
 
       <Card className="flex flex-col gap-3 p-4 bg-[var(--surface-light)] border border-[var(--card-border)]">
         <div className="text-xs font-[family-name:var(--font-pixel)] text-[var(--text-secondary)] uppercase tracking-wider border-b border-[var(--card-border)] pb-2 flex justify-between">
-          <span>Defensive & Synergy</span>
+          <span>Defensive &amp; Synergy</span>
           <span
             className={
               synergyScore > 75
@@ -773,15 +772,16 @@ function CoverageGrid({ selected }: { selected: PokemonData[] }) {
   )
 }
 
-function multiplierLabel(multiplier: number): string {
-  if (multiplier === 0) return '0'
-  if (multiplier === 0.5) return '1/2'
-  if (multiplier === 1) return '1'
-  if (multiplier === 2) return '2'
-  return `${multiplier}`
-}
-
 export default function MatchupsPage() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
   const {
     data: rawPokemon,
     loading: dataLoading,
@@ -884,6 +884,31 @@ export default function MatchupsPage() {
     } catch {}
   }
 
+  if (isMobile) {
+    return (
+      <div className="flex flex-col items-center justify-center py-16 px-4 text-center gap-6">
+        <img
+          src="/sprites/pokemon/other/official-artwork/25.png"
+          alt="Pikachu"
+          className="w-32 h-32 object-contain animate-bounce"
+          loading="eager"
+        />
+        <div className="space-y-2 max-w-xs">
+          <h2 className="text-lg font-bold text-[var(--text-primary)] font-[family-name:var(--font-pixel)] tracking-wider">
+            Desktop Only
+          </h2>
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            The Team Builder requires a larger screen for the full experience. Please access this
+            page on your desktop.
+          </p>
+          <p className="text-[10px] text-[var(--text-muted)] font-[family-name:var(--font-pixel)] tracking-wider">
+            - Pikachu
+          </p>
+        </div>
+      </div>
+    )
+  }
+
   if (dataLoading) {
     return (
       <div className="flex flex-col items-center justify-center py-32 gap-4">
@@ -916,12 +941,12 @@ export default function MatchupsPage() {
             className="w-8 sm:w-10"
           />
           <h1 className="text-xl sm:text-2xl font-[family-name:var(--font-pixel)] text-[var(--text-primary)] tracking-wider">
-            Matchups & Analysis
+            Matchups &amp; Analysis
           </h1>
         </div>
         <p className="text-[var(--text-muted)] text-sm max-w-lg mx-auto">
-          Build your team, compare stats with competitive tiers, analyze bulk & speed, and master
-          type effectiveness.
+          Build your team, compare stats with competitive tiers, analyze bulk &amp; speed, and
+          master type effectiveness.
         </p>
       </div>
 
@@ -1076,7 +1101,7 @@ export default function MatchupsPage() {
               <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 The defensive multiplier shows how much damage your team takes from each attacking
                 type on average. For each attacking type, we multiply the effectiveness against
-                every Pokemon&apos;s types, then average across your team.
+                every Pokemon\u2019s types, then average across your team.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="px-2 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-400 font-mono">

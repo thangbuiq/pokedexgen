@@ -60,7 +60,7 @@ describe('LoadingSpinner', () => {
   })
 
   it('renders centered in container', () => {
-    const { container } = render(<LoadingSpinner />)
+    render(<LoadingSpinner />)
 
     const spinner = screen.getByRole('status', { name: /loading/i })
     expect(spinner).toHaveClass('flex', 'items-center', 'justify-center')

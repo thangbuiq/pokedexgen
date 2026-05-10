@@ -335,7 +335,7 @@ select option {
   color: var(--text-primary);
 }
 
-/* ─── Mobile Responsive Utilities ───────────────────────────────────────────── */
+/* ==─ Mobile Responsive Utilities ============================================─ */
 
 /* Safe area insets for notched phones (iPhone X+, etc.) */
 @supports (padding: env(safe-area-inset-bottom)) {

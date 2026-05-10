@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useRef, useEffect } from 'react'
+import { useState, useMemo, useRef, useEffect, useDeferredValue, useCallback } from 'react'
 import { Badge } from '@/components/ui/Badge'
 import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { ALL_TYPES, getEffectiveness, multiplierLabel } from '@/lib/type-effectiveness'
@@ -26,6 +26,7 @@ interface PokemonFightSimProps {
 }
 
 const STAT_MAX = 255
+const DROPDOWN_VISIBLE_LIMIT = 50
 
 function parseTypes(type_names: string): PokemonType[] {
   return [
@@ -196,19 +197,24 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
   const [search, setSearch] = useState('')
   const [showDropdown, setShowDropdown] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const searchRef = useRef<HTMLInputElement>(null)
+
+  const deferredSearch = useDeferredValue(search)
 
   const playerTypes = parseTypes(player.type_names)
   const playerColor = typeColorMap[playerTypes[0]]
 
   const filtered = useMemo(() => {
-    if (!search) return allPokemon.filter((p) => p.id !== player.id)
-    const q = search.toLowerCase()
+    if (!deferredSearch) return allPokemon.filter((p) => p.id !== player.id)
+    const q = deferredSearch.toLowerCase()
     return allPokemon.filter(
       (p) =>
         p.id !== player.id &&
         (p.name.toLowerCase().includes(q) || p.type_names.toLowerCase().includes(q))
     )
-  }, [allPokemon, search, player.id])
+  }, [allPokemon, deferredSearch, player.id])
+
+  const visibleItems = useMemo(() => filtered.slice(0, DROPDOWN_VISIBLE_LIMIT), [filtered])
 
   const recommendations = useMemo(() => {
     if (!opponent) return []
@@ -221,11 +227,33 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
         setShowDropdown(false)
       }
     }
+    function handleTouchOutside(e: TouchEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setShowDropdown(false)
+      }
+    }
     if (showDropdown) {
       document.addEventListener('mousedown', handleClickOutside)
-      return () => document.removeEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchstart', handleTouchOutside, { passive: true })
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+        document.removeEventListener('touchstart', handleTouchOutside)
+      }
     }
   }, [showDropdown])
+
+  useEffect(() => {
+    if (showDropdown && searchRef.current) {
+      const timer = setTimeout(() => searchRef.current?.focus(), 50)
+      return () => clearTimeout(timer)
+    }
+  }, [showDropdown])
+
+  const handleSelectOpponent = useCallback((p: PokemonData) => {
+    setOpponent(p)
+    setShowDropdown(false)
+    setSearch('')
+  }, [])
 
   return (
     <div className={styles.fightSim} ref={dropdownRef}>
@@ -253,6 +281,8 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
                   src={getSpriteUrl(opponent.id)}
                   alt={opponent.name}
                   className={styles.opponentSprite}
+                  draggable={false}
+                  loading="eager"
                   style={{
                     filter: isSpriteMissing(opponent.id) ? 'brightness(0) opacity(0.5)' : undefined,
                   }}
@@ -266,6 +296,8 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
                   src={getSpriteUrl(player.id)}
                   alt={player.name}
                   className={styles.playerSprite}
+                  draggable={false}
+                  loading="eager"
                   style={{
                     filter: isSpriteMissing(player.id) ? 'brightness(0) opacity(0.5)' : undefined,
                   }}
@@ -286,7 +318,12 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
         <div className={styles.textBox}>
           <div className={styles.selectorArea}>
             <button
+              type="button"
               onClick={() => setShowDropdown(!showDropdown)}
+              onTouchEnd={(e) => {
+                e.preventDefault()
+                setShowDropdown(!showDropdown)
+              }}
               className={styles.selectorTrigger}
             >
               {opponent ? (
@@ -295,6 +332,8 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
                     src={getSpriteUrl(opponent.id)}
                     alt={opponent.name}
                     className={styles.selectorSprite}
+                    draggable={false}
+                    loading="eager"
                     style={{
                       filter: isSpriteMissing(opponent.id) ? 'brightness(0) opacity(0.5)' : 'none',
                     }}
@@ -330,15 +369,19 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
                     <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" strokeWidth={2} />
                   </svg>
                   <input
+                    ref={searchRef}
                     type="text"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search Pokemon..."
                     className={styles.searchInput}
-                    autoFocus
                   />
                   {search && (
-                    <button onClick={() => setSearch('')} className={styles.searchClear}>
+                    <button
+                      type="button"
+                      onClick={() => setSearch('')}
+                      className={styles.searchClear}
+                    >
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -351,13 +394,14 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
                   )}
                 </div>
                 <div className={styles.selectorList}>
-                  {filtered.map((p) => (
+                  {visibleItems.map((p) => (
                     <button
                       key={p.id}
-                      onClick={() => {
-                        setOpponent(p)
-                        setShowDropdown(false)
-                        setSearch('')
+                      type="button"
+                      onClick={() => handleSelectOpponent(p)}
+                      onTouchEnd={(e) => {
+                        e.preventDefault()
+                        handleSelectOpponent(p)
                       }}
                       className={styles.selectorListItem}
                     >
@@ -365,6 +409,8 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
                         src={getSpriteUrl(p.id)}
                         alt={p.name}
                         className={styles.listSprite}
+                        draggable={false}
+                        loading="eager"
                         style={{
                           filter: isSpriteMissing(p.id) ? 'brightness(0) opacity(0.5)' : 'none',
                         }}
@@ -377,6 +423,11 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
                       </div>
                     </button>
                   ))}
+                  {filtered.length > DROPDOWN_VISIBLE_LIMIT && (
+                    <div className={styles.selectorEmpty}>
+                      +{filtered.length - DROPDOWN_VISIBLE_LIMIT} more. Narrow your search.
+                    </div>
+                  )}
                 </div>
                 {filtered.length === 0 && (
                   <div className={styles.selectorEmpty}>No Pokemon found</div>
@@ -466,6 +517,7 @@ export function PokemonFightSim({ player, allPokemon }: PokemonFightSimProps) {
               </div>
 
               <button
+                type="button"
                 onClick={() => {
                   setOpponent(null)
                   setShowDropdown(false)

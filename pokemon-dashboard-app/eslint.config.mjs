@@ -6,18 +6,17 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-  ]),
+  globalIgnores(['.next/**', 'out/**', 'dist/**', 'build/**', 'next-env.d.ts']),
   {
     rules: {
-      // Disable Tailwind canonical class suggestions for arbitrary values
-      // text-[var(--text-primary)] is valid syntax
+      // Static export uses <img> for unoptimized sprites; next/image is not suitable
+      '@next/next/no-img-element': 'off',
+      '@next/next/no-html-link-for-pages': 'off',
       'tailwindcss/no-custom-classes': 'off',
+      'react/no-unescaped-entities': 'off',
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/purity': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
 ])

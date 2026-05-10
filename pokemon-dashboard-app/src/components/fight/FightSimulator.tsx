@@ -4,7 +4,6 @@ import { useState, useMemo, useCallback } from 'react'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { HowToGuide } from '@/components/ui/HowToGuide'
-import { PokemonSprite } from '@/components/ui/PokemonSprite'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import {
@@ -153,6 +152,7 @@ function PokemonSelector({
               style={{
                 filter: isSpriteMissing(selected.id) ? 'brightness(0) opacity(0.5)' : 'none',
               }}
+              loading="eager"
             />
             <div className={styles.selectorInfo}>
               <span className={styles.selectorName}>{selected.name}</span>
@@ -226,6 +226,7 @@ function PokemonSelector({
               style={{
                 filter: isSpriteMissing(p.id) ? 'brightness(0) opacity(0.5)' : 'none',
               }}
+              loading="eager"
             />
             <span className={styles.optionName}>{p.name}</span>
             <div className={styles.optionTypes}>
@@ -291,6 +292,7 @@ function BattleArena({
             style={{
               filter: isSpriteMissing(player.id) ? 'brightness(0) opacity(0.5)' : 'none',
             }}
+            loading="eager"
           />
         </div>
         <h4 className={styles.arenaName} style={{ color: COMPARISON_COLORS[0] }}>
@@ -352,6 +354,7 @@ function BattleArena({
             style={{
               filter: isSpriteMissing(opponent.id) ? 'brightness(0) opacity(0.5)' : 'none',
             }}
+            loading="eager"
           />
         </div>
         <h4 className={styles.arenaName} style={{ color: COMPARISON_COLORS[1] }}>
@@ -422,6 +425,7 @@ function TypeEffectivenessComparison({
             src={getSpriteUrl(player.id)}
             alt={player.name}
             className={styles.typeHeaderSprite}
+            loading="eager"
           />
           <span className={styles.typeHeaderText} style={{ color: COMPARISON_COLORS[0] }}>
             {player.name} →
@@ -430,6 +434,7 @@ function TypeEffectivenessComparison({
             src={getSpriteUrl(opponent.id)}
             alt={opponent.name}
             className={styles.typeHeaderSprite}
+            loading="eager"
           />
         </div>
         <div className={styles.typePills}>
@@ -458,6 +463,7 @@ function TypeEffectivenessComparison({
             src={getSpriteUrl(opponent.id)}
             alt={opponent.name}
             className={styles.typeHeaderSprite}
+            loading="eager"
           />
           <span className={styles.typeHeaderText} style={{ color: COMPARISON_COLORS[1] }}>
             {opponent.name} →
@@ -466,6 +472,7 @@ function TypeEffectivenessComparison({
             src={getSpriteUrl(player.id)}
             alt={player.name}
             className={styles.typeHeaderSprite}
+            loading="eager"
           />
         </div>
         <div className={styles.typePills}>
@@ -634,6 +641,7 @@ function CounterRecommendations({
                   style={{
                     filter: isSpriteMissing(pokemon.id) ? 'brightness(0) opacity(0.5)' : 'none',
                   }}
+                  loading="eager"
                 />
               </div>
               <span className={styles.recommendationName}>{pokemon.name}</span>

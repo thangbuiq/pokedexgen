@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useCallback } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const SECTIONS = [
   { id: 'creator', title: 'Creator' },
@@ -124,25 +124,23 @@ export default function OriginsPage() {
   const [activeSection, setActiveSection] = useState('creator')
 
   // For section tracking
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const sections = SECTIONS.map((s) => document.getElementById(s.id))
     const scrollPosition = window.scrollY + window.innerHeight / 3
 
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = sections[i]
       if (section && section.offsetTop <= scrollPosition) {
-        if (activeSection !== SECTIONS[i].id) {
-          setActiveSection(SECTIONS[i].id)
-        }
+        setActiveSection(SECTIONS[i].id)
         break
       }
     }
-  }
+  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [activeSection])
+  }, [handleScroll])
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id)

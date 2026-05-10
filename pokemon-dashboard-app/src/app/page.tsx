@@ -22,9 +22,10 @@ import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { isSpriteMissing, getSpriteUrl as OFFICIAL_ARTWORK } from '@/lib/sprites'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { PokemonFightSim } from '@/components/fight/PokemonFightSim'
+import { AIChatbot } from '@/components/ai/AIChatbot'
 import { ALL_TYPES, getEffectiveness, multiplierLabel } from '@/lib/type-effectiveness'
 
-// ─── Constants ───────────────────────────────────────────────────────────────
+// ==─ Constants ==============================================================─
 
 type SortKey = 'id' | 'name' | 'total_stats'
 
@@ -48,7 +49,7 @@ const STAT_META: {
 
 const STAT_MAX = 255
 
-// ─── Types ──────────────────────────────────────────────────────────────────
+// ==─ Types ==================================================================
 
 interface PokemonRow {
   id: number
@@ -108,7 +109,7 @@ interface RadarStatPoint {
   fullMark: number
 }
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
+// ==─ Helpers ================================================================─
 
 function parseTypes(p: PokemonRow): PokemonType[] {
   const raw = p.types || p.type_names || ''
@@ -287,8 +288,108 @@ function useJSONQuery<T>(jsonFile: string) {
   return { data, loading, error, refetch: fetchData }
 }
 
+function cellStyles(multiplier: number): { backgroundColor: string; color: string } {
+  if (multiplier === 0) return { backgroundColor: '#201122', color: '#FFFFFF' }
+  if (multiplier === 0.5) return { backgroundColor: '#8B1A1A', color: '#FFFFFF' }
+  if (multiplier === 1) return { backgroundColor: 'var(--surface)', color: '#7f7f7f' }
+  return { backgroundColor: '#166534', color: '#FFFFFF' }
+}
+
+function TypeMatchupTab({
+  typeMatchupMatrix,
+}: {
+  typeMatchupMatrix: { attacker: PokemonType; defender: PokemonType; multiplier: number }[][]
+}) {
+  const guideItems = [
+    { multiplier: 2, description: 'Super effective' },
+    { multiplier: 1, description: 'Normal damage' },
+    { multiplier: 0.5, description: 'Not very effective' },
+    { multiplier: 0, description: 'Immune' },
+  ] as const
+
+  return (
+    <div className="space-y-4 animate-[fade-in_0.3s_ease-out] mb-8">
+      <div className="grid gap-2 grid-cols-4 text-[10px]">
+        {guideItems.map((item) => {
+          const styles = cellStyles(item.multiplier)
+          return (
+            <div
+              key={item.multiplier}
+              className="rounded border border-[var(--card-border)] px-2 py-1.5 font-[family-name:var(--font-pixel)] tracking-wider text-center"
+              style={{ backgroundColor: styles.backgroundColor, color: styles.color }}
+            >
+              <span className="font-semibold">{multiplierLabel(item.multiplier)}x</span>
+              <span className="block text-[9px] opacity-80 mt-0.5">{item.description}</span>
+            </div>
+          )
+        })}
+      </div>
+
+      <Card className="overflow-hidden p-2">
+        <div className="overflow-auto">
+          <table className="min-w-max w-full border-collapse text-[9px] font-[family-name:var(--font-pixel)] tracking-wider">
+            <thead>
+              <tr>
+                <th className="sticky left-0 z-20 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-[var(--text-secondary)]">
+                  ATK\DEF
+                </th>
+                {ALL_TYPES.map((type) => (
+                  <th
+                    key={type}
+                    className="sticky top-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-0.5 py-1"
+                  >
+                    <span
+                      className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
+                      style={{
+                        backgroundColor: typeColorMap[type],
+                        textShadow: '0 1px 1px rgba(0,0,0,0.4)',
+                      }}
+                    >
+                      {type.slice(0, 3)}
+                    </span>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {typeMatchupMatrix.map((row, rowIndex) => (
+                <tr key={ALL_TYPES[rowIndex]}>
+                  <th className="sticky left-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-left">
+                    <span
+                      className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
+                      style={{
+                        backgroundColor: typeColorMap[ALL_TYPES[rowIndex]],
+                        textShadow: '0 1px 1px rgba(0,0,0,0.4)',
+                      }}
+                    >
+                      {ALL_TYPES[rowIndex].slice(0, 3)}
+                    </span>
+                  </th>
+                  {row.map((cell) => {
+                    const styles = cellStyles(cell.multiplier)
+                    return (
+                      <td
+                        key={`${cell.attacker}-${cell.defender}`}
+                        className="border border-[var(--card-border)] px-0.5 py-1 text-center font-semibold text-white"
+                        style={styles}
+                        title={`${cell.attacker} vs ${cell.defender}: ${multiplierLabel(cell.multiplier)}x`}
+                      >
+                        {multiplierLabel(cell.multiplier)}
+                      </td>
+                    )
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Card>
+    </div>
+  )
+}
+
 function HomeContent() {
-  const searchParams = useSearchParams()
+  useSearchParams() // required for Suspense boundary - reads URL params below
   const [search, setSearch] = useState('')
   const [activeTypes, setActiveTypes] = useState<Set<PokemonType>>(new Set())
   const [sortBy, setSortBy] = useState<SortKey>('id')
@@ -298,6 +399,7 @@ function HomeContent() {
   const [visibleCount, setVisibleCount] = useState(52)
   const [showMatrix, setShowMatrix] = useState(false)
   const [showTypeFilter, setShowTypeFilter] = useState(false)
+  const [isChatOpen, setIsChatOpen] = useState(false)
 
   useEffect(() => {
     setVisibleCount(52)
@@ -457,6 +559,20 @@ function HomeContent() {
     return result
   }, [selected])
 
+  const perTypeOffenses = useMemo(() => {
+    if (!selected) return {} as Record<PokemonType, Record<PokemonType, number>>
+
+    const attackerTypes = parseTypes(selected)
+    const result = {} as Record<PokemonType, Record<PokemonType, number>>
+    attackerTypes.forEach((atkType) => {
+      result[atkType] = {} as Record<PokemonType, number>
+      ALL_TYPES.forEach((defendingType) => {
+        result[atkType][defendingType] = getEffectiveness(atkType, defendingType)
+      })
+    })
+    return result
+  }, [selected])
+
   // Animate detail stat bars after mount
   useEffect(() => {
     if (selected) {
@@ -496,7 +612,7 @@ function HomeContent() {
       )
     }
 
-    // Type filter (AND logic — must match ALL selected types)
+    // Type filter (AND logic - must match ALL selected types)
     if (activeTypes.size > 0) {
       result = result.filter((p) => {
         const pokemonTypes = parseTypes(p)
@@ -512,13 +628,6 @@ function HomeContent() {
     })
   }, [data, search, activeTypes, sortBy])
 
-  function cellStyles(multiplier: number): { backgroundColor: string; color: string } {
-    if (multiplier === 0) return { backgroundColor: '#201122', color: '#FFFFFF' }
-    if (multiplier === 0.5) return { backgroundColor: '#8B1A1A', color: '#FFFFFF' }
-    if (multiplier === 1) return { backgroundColor: 'var(--surface)', color: '#7f7f7f' }
-    return { backgroundColor: '#166534', color: '#FFFFFF' }
-  }
-
   const typeMatchupMatrix = useMemo(
     () =>
       ALL_TYPES.map((attacker) =>
@@ -531,96 +640,7 @@ function HomeContent() {
     []
   )
 
-  function TypeMatchupTab() {
-    const guideItems = [
-      { multiplier: 2, description: 'Super effective' },
-      { multiplier: 1, description: 'Normal damage' },
-      { multiplier: 0.5, description: 'Not very effective' },
-      { multiplier: 0, description: 'Immune' },
-    ] as const
-
-    return (
-      <div className="space-y-4 animate-[fade-in_0.3s_ease-out] mb-8">
-        <div className="grid gap-2 grid-cols-4 text-[10px]">
-          {guideItems.map((item) => {
-            const styles = cellStyles(item.multiplier)
-            return (
-              <div
-                key={item.multiplier}
-                className="rounded border border-[var(--card-border)] px-2 py-1.5 font-[family-name:var(--font-pixel)] tracking-wider text-center"
-                style={{ backgroundColor: styles.backgroundColor, color: styles.color }}
-              >
-                <span className="font-semibold">{multiplierLabel(item.multiplier)}x</span>
-                <span className="block text-[9px] opacity-80 mt-0.5">{item.description}</span>
-              </div>
-            )
-          })}
-        </div>
-
-        <Card className="overflow-hidden p-2">
-          <div className="overflow-auto">
-            <table className="min-w-max w-full border-collapse text-[9px] font-[family-name:var(--font-pixel)] tracking-wider">
-              <thead>
-                <tr>
-                  <th className="sticky left-0 z-20 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-[var(--text-secondary)]">
-                    ATK\DEF
-                  </th>
-                  {ALL_TYPES.map((type) => (
-                    <th
-                      key={type}
-                      className="sticky top-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-0.5 py-1"
-                    >
-                      <span
-                        className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
-                        style={{
-                          backgroundColor: typeColorMap[type],
-                          textShadow: '0 1px 1px rgba(0,0,0,0.4)',
-                        }}
-                      >
-                        {type.slice(0, 3)}
-                      </span>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {typeMatchupMatrix.map((row, rowIndex) => (
-                  <tr key={ALL_TYPES[rowIndex]}>
-                    <th className="sticky left-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-left">
-                      <span
-                        className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
-                        style={{
-                          backgroundColor: typeColorMap[ALL_TYPES[rowIndex]],
-                          textShadow: '0 1px 1px rgba(0,0,0,0.4)',
-                        }}
-                      >
-                        {ALL_TYPES[rowIndex].slice(0, 3)}
-                      </span>
-                    </th>
-                    {row.map((cell) => {
-                      const styles = cellStyles(cell.multiplier)
-                      return (
-                        <td
-                          key={`${cell.attacker}-${cell.defender}`}
-                          className="border border-[var(--card-border)] px-0.5 py-1 text-center font-semibold text-white"
-                          style={styles}
-                          title={`${cell.attacker} vs ${cell.defender}: ${multiplierLabel(cell.multiplier)}x`}
-                        >
-                          {multiplierLabel(cell.multiplier)}
-                        </td>
-                      )
-                    })}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Card>
-      </div>
-    )
-  }
-
-  // ─── Loading / Error ────────────────────────────────────────────────────
+  // ==─ Loading / Error ====================================================
 
   if (loading) {
     return (
@@ -657,11 +677,11 @@ function HomeContent() {
     )
   }
 
-  // ─── Render ──────────────────────────────────────────────────────────────
+  // ==─ Render ==============================================================
 
   return (
     <div>
-      {/* ── Header ──────────────────────────────────────────────────────── */}
+      {/* == Header ======================================================== */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-3 mb-2">
           <Image
@@ -695,7 +715,7 @@ function HomeContent() {
         </p>
       </div>
 
-      {/* ── Type Matrix Toggle ──────────────────────────────────────────── */}
+      {/* == Type Matrix Toggle ============================================ */}
       <div className="flex justify-center mb-4">
         <button
           onClick={() => setShowMatrix(!showMatrix)}
@@ -718,7 +738,7 @@ function HomeContent() {
         </button>
       </div>
 
-      {showMatrix && <TypeMatchupTab />}
+      {showMatrix && <TypeMatchupTab typeMatchupMatrix={typeMatchupMatrix} />}
 
       <HowToGuide title="Pokédex Guide">
         Search or filter by type, then click any Pokémon to view stats, type matchups, evolution
@@ -726,7 +746,7 @@ function HomeContent() {
         stats.
       </HowToGuide>
 
-      {/* ── Search & Sort ──────────────────────────────────────────────── */}
+      {/* == Search & Sort ================================================ */}
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <div className="relative flex-1">
           <svg
@@ -786,7 +806,7 @@ function HomeContent() {
         </div>
       </div>
 
-      {/* ── Type Filter Pills ──────────────────────────────────────────── */}
+      {/* == Type Filter Pills ============================================ */}
 
       {/* Mobile: toggle button + collapsible badge grid */}
       <div className="sm:hidden mb-4">
@@ -922,10 +942,10 @@ function HomeContent() {
         })}
       </div>
 
-      {/* ── Results Count ──────────────────────────────────────────────── */}
+      {/* == Results Count ================================================ */}
       <p className="text-[var(--text-muted)] text-xs mb-4">{filtered.length} Pokemon found</p>
 
-      {/* ── Pokemon Grid ──────────────────────────────────────────────── */}
+      {/* == Pokemon Grid ================================================ */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
         {filtered.slice(0, visibleCount).map((pokemon, index) => {
           const types = parseTypes(pokemon)
@@ -1008,7 +1028,7 @@ function HomeContent() {
         </div>
       )}
 
-      {/* ── Empty State ────────────────────────────────────────────────── */}
+      {/* == Empty State ================================================== */}
       {filtered.length === 0 && !loading && (
         <div className="text-center py-20">
           <p className="text-[var(--text-muted)] text-lg mb-2">No Pokemon found</p>
@@ -1016,7 +1036,7 @@ function HomeContent() {
         </div>
       )}
 
-      {/* ── Detail Modal ───────────────────────────────────────────────── */}
+      {/* == Detail Modal ================================================─ */}
       {selected && (
         <div
           className="fixed inset-0 z-50 flex items-end sm:items-center justify-center modal-fullscreen-mobile"
@@ -1028,7 +1048,7 @@ function HomeContent() {
             className="relative glass bg-white/95 dark:bg-[var(--surface)] sm:rounded-2xl rounded-t-2xl p-0 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full max-h-[100dvh] sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* ── Sticky Close Header ── */}
+            {/* == Sticky Close Header == */}
             <div className="sticky top-0 z-20 flex items-center justify-between px-4 py-3 sm:px-0 sm:py-0 sm:absolute sm:top-4 sm:right-4 sm:left-auto bg-white/90 dark:bg-[var(--surface)]/90 backdrop-blur-md sm:backdrop-blur-none sm:bg-transparent border-b border-[var(--card-border)] sm:border-0 shrink-0">
               <span className="text-sm font-bold text-[var(--text-primary)] capitalize sm:hidden truncate mr-4">
                 {selected.name}
@@ -1055,7 +1075,7 @@ function HomeContent() {
 
             <div className="flex-1 overflow-y-auto p-4 sm:p-0 sm:mt-2">
               <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-                {/* ── Left Column: Moves ── */}
+                {/* == Left Column: Moves == */}
                 <div className="lg:col-span-3 flex flex-col order-3 lg:order-1 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)]">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-[var(--text-primary)] text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider">
@@ -1111,18 +1131,18 @@ function HomeContent() {
                   )}
                 </div>
 
-                {/* ── Center Column: Info & Stats ── */}
+                {/* == Center Column: Info & Stats == */}
                 <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
                   <div className="flex flex-col items-center mb-6">
-                    <div className="relative mb-4">
+                    <div className="relative mb-4 overflow-visible">
                       <motion.div
-                        className="absolute inset-0 rounded-full scale-150"
+                        className="absolute inset-0 rounded-full scale-110"
                         style={{
                           background: `radial-gradient(circle at center, ${typeColorMap[primaryTypeOf(selected)]}60 0%, transparent 70%)`,
                         }}
                         animate={{
-                          opacity: [0.2, 0.4, 0.2],
-                          scale: [1.4, 1.6, 1.4],
+                          opacity: [0.15, 0.3, 0.15],
+                          scale: [1.1, 1.2, 1.1],
                         }}
                         transition={{
                           duration: 3,
@@ -1133,7 +1153,7 @@ function HomeContent() {
                       <motion.div
                         className="relative z-10"
                         animate={{
-                          y: [0, -8, 0],
+                          y: [0, -4, 0],
                         }}
                         transition={{
                           duration: 2.5,
@@ -1147,7 +1167,7 @@ function HomeContent() {
                           width={180}
                           height={180}
                           className={[
-                            'transition-transform duration-500 hover:scale-110 drop-shadow-2xl',
+                            'transition-transform duration-500 hover:scale-110 drop-shadow-lg',
                             isSpriteMissing(selected.id) ? 'brightness-0 opacity-50' : '',
                           ].join(' ')}
                           unoptimized
@@ -1357,9 +1377,86 @@ function HomeContent() {
                       ))}
                     </div>
                   </div>
+
+                  <div className="mb-0 mt-4">
+                    <h3 className="text-[var(--text-primary)] text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-1">
+                      Type offenses
+                    </h3>
+                    <p className="text-[9px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-2">
+                      Effectiveness of{' '}
+                      <span className="italic">
+                        {selected?.name.charAt(0).toUpperCase()}
+                        {selected?.name.slice(1)}
+                      </span>
+                      &apos;s types against each defending type.
+                    </p>
+
+                    {parseTypes(selected!).map((atkType) => {
+                      const offenses = perTypeOffenses[atkType]
+                      return (
+                        <div key={atkType} className="mb-3">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <Badge type={atkType} />
+                          </div>
+                          <div className="space-y-1 overflow-x-auto">
+                            {[ALL_TYPES.slice(0, 9), ALL_TYPES.slice(9)].map((rowTypes, rowIdx) => (
+                              <div
+                                key={rowIdx}
+                                className="grid grid-cols-9 gap-px rounded-lg overflow-hidden border border-[var(--card-border)]"
+                              >
+                                {rowTypes.map((type) => (
+                                  <div
+                                    key={type}
+                                    className="flex items-center justify-center h-7 text-[8px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
+                                    style={{ backgroundColor: typeColorMap[type] }}
+                                  >
+                                    {type.slice(0, 3)}
+                                  </div>
+                                ))}
+                                {rowTypes.map((type) => {
+                                  const mult = offenses[type] ?? 1
+                                  const isSuperEffective = mult > 1
+                                  const isNotVeryEffective = mult < 1 && mult > 0
+                                  const isImmune = mult === 0
+                                  const isNeutral = mult === 1
+
+                                  let cellBg = 'bg-[var(--surface-primary)]'
+                                  let cellText = 'text-[var(--text-muted)]'
+                                  let label = ''
+
+                                  if (isImmune) {
+                                    cellBg = 'bg-[#1a1a2e]'
+                                    cellText = 'text-[var(--text-muted)]'
+                                    label = '0'
+                                  } else if (isSuperEffective) {
+                                    cellBg = mult >= 4 ? 'bg-[#2d6a1e]' : 'bg-[#4a8c3f]'
+                                    cellText = 'text-white'
+                                    label = mult >= 4 ? '4' : '2'
+                                  } else if (isNotVeryEffective) {
+                                    cellBg = mult <= 0.25 ? 'bg-[#8b2500]' : 'bg-[#a0522d]'
+                                    cellText = 'text-white'
+                                    label = mult <= 0.25 ? '¼' : '½'
+                                  }
+
+                                  return (
+                                    <div
+                                      key={`off-${atkType}-${type}-val`}
+                                      className={`flex items-center justify-center h-7 ${cellBg} ${cellText} text-[10px] font-[family-name:var(--font-pixel)] font-bold`}
+                                    >
+                                      {isNeutral ? '' : label}
+                                    </div>
+                                  )
+                                })}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
 
-                {/* ── Right Column: Evolution Chain & Fight Sim ── */}
+                {/* == Right Column: Evolution Chain & Fight Sim == */}
                 <div className="lg:col-span-3 flex flex-col order-2 lg:order-3 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)] gap-6">
                   <div>
                     <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-3">
@@ -1387,6 +1484,8 @@ function HomeContent() {
           </div>
         </div>
       )}
+
+      <AIChatbot isOpen={isChatOpen} onToggle={() => setIsChatOpen((o) => !o)} />
     </div>
   )
 }

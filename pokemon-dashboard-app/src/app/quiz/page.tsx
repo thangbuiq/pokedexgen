@@ -8,7 +8,7 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { getSpriteUrl, isSpriteMissing } from '@/lib/sprites'
 
-// ─── Types ───────────────────────────────────────────────────────────────────
+// ==─ Types ==================================================================─
 
 interface PokemonRow {
   id: number
@@ -20,7 +20,7 @@ interface PokemonRow {
 type Difficulty = 'easy' | 'hard'
 type GameState = 'guessing' | 'revealed'
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
+// ==─ Helpers ================================================================─
 
 function shuffleArray<T>(arr: T[]): T[] {
   const shuffled = [...arr]
@@ -74,9 +74,10 @@ function useJSONQuery<T>(jsonFile: string) {
   return { data, loading, error, refetch: fetchData }
 }
 
-// ─── Confetti Particle ────────────────────────────────────────────────────────
+// ==─ Confetti Particle ========================================================
 
 function ConfettiParticle({ delay, color, left }: { delay: number; color: string; left: number }) {
+  const yOffset = -80 - Math.random() * 120
   return (
     <div
       className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full animate-[confetti-burst_0.8s_ease-out_forwards]"
@@ -86,18 +87,17 @@ function ConfettiParticle({ delay, color, left }: { delay: number; color: string
           backgroundColor: color,
           left: `${left}%`,
           '--confetti-x': `${(left - 50) * 3}px`,
-          '--confetti-y': `${-80 - Math.random() * 120}px`,
+          '--confetti-y': `${yOffset}px`,
         } as React.CSSProperties
       }
     />
   )
 }
 
-// ─── Streak Fire ──────────────────────────────────────────────────────────────
+// ==─ Streak Fire ==============================================================
 
 function StreakFire({ streak }: { streak: number }) {
   if (streak < 2) return null
-  const intensity = Math.min(streak, 10)
   const glowColor = streak >= 5 ? '#ef4444' : streak >= 3 ? '#f59e0b' : '#fbbf24'
   return (
     <div className="flex items-center gap-1.5 animate-pulse">
@@ -135,7 +135,7 @@ function StreakFire({ streak }: { streak: number }) {
   )
 }
 
-// ─── Main Page ────────────────────────────────────────────────────────────────
+// ==─ Main Page ================================================================
 
 export default function QuizPage() {
   const { data: rawData, loading, error } = useJSONQuery<PokemonRow>('pokemon.json')
@@ -266,7 +266,7 @@ export default function QuizPage() {
     return () => window.removeEventListener('keydown', handler)
   }, [gameState, nextPokemon])
 
-  // ─── Loading / Error ────────────────────────────────────────────────────
+  // ==─ Loading / Error ====================================================
 
   if (loading) {
     return (
@@ -305,7 +305,7 @@ export default function QuizPage() {
 
   if (!currentPokemon) return null
 
-  // ─── Derived values ─────────────────────────────────────────────────────
+  // ==─ Derived values ====================================================─
 
   const pokemonTypes = parseTypes(currentPokemon.type_names)
   const uniqueTypes = [...new Set(pokemonTypes)]
@@ -313,7 +313,7 @@ export default function QuizPage() {
   const primaryColor = typeColorMap[primaryType]
   const accuracy = totalGuesses > 0 ? Math.round((score / totalGuesses) * 100) : 0
 
-  // ─── Confetti colors ────────────────────────────────────────────────────
+  // ==─ Confetti colors ====================================================
 
   const confettiColors = [
     'var(--type-fire)',
@@ -326,11 +326,11 @@ export default function QuizPage() {
     '#facc15',
   ]
 
-  // ─── Render ──────────────────────────────────────────────────────────────
+  // ==─ Render ==============================================================
 
   return (
     <div>
-      {/* ── Header ──────────────────────────────────────────────────────── */}
+      {/* == Header ======================================================== */}
       <div className="mb-8 sm:mb-10">
         <div className="flex items-center gap-3 mb-2">
           <div>
@@ -351,7 +351,7 @@ export default function QuizPage() {
         choice. Hard mode requires typing the exact name. Build streaks for bonus flair!
       </HowToGuide>
 
-      {/* ── Score Bar ─────────────────────────────────────────────────────── */}
+      {/* == Score Bar ======================================================─ */}
       <div
         className={[
           'glass rounded-xl p-4 mb-6 transition-all duration-500 border',
@@ -435,7 +435,7 @@ export default function QuizPage() {
         </div>
       </div>
 
-      {/* ── Difficulty Toggle ─────────────────────────────────────────────── */}
+      {/* == Difficulty Toggle ==============================================─ */}
       <div className="flex items-center justify-center gap-2 mb-6">
         <span className="text-[var(--text-muted)] text-xs font-[family-name:var(--font-pixel)] tracking-wider mr-2">
           DIFFICULTY
@@ -474,7 +474,7 @@ export default function QuizPage() {
         </button>
       </div>
 
-      {/* ── Silhouette Card ───────────────────────────────────────────────── */}
+      {/* == Silhouette Card ================================================─ */}
       <div className="relative">
         <Card pokemonType="ghost" className="relative overflow-hidden">
           {/* Background glow */}
@@ -611,7 +611,7 @@ export default function QuizPage() {
               </div>
             )}
 
-            {/* ── Easy Mode: Multiple Choice ──────────────────────────────── */}
+            {/* == Easy Mode: Multiple Choice ================================ */}
             {difficulty === 'easy' && gameState === 'guessing' && (
               <div className="grid grid-cols-2 gap-3 w-full max-w-md">
                 {options.map((option) => (
@@ -628,7 +628,7 @@ export default function QuizPage() {
               </div>
             )}
 
-            {/* ── Hard Mode: Text Input ────────────────────────────────────── */}
+            {/* == Hard Mode: Text Input ====================================== */}
             {difficulty === 'hard' && gameState === 'guessing' && (
               <div className="w-full max-w-sm">
                 <div className="relative">
@@ -660,7 +660,7 @@ export default function QuizPage() {
               </div>
             )}
 
-            {/* ── Action Buttons ────────────────────────────────────────────── */}
+            {/* == Action Buttons ============================================== */}
             <div className="flex items-center gap-3 mt-6">
               {gameState === 'guessing' ? (
                 <>
@@ -691,7 +691,7 @@ export default function QuizPage() {
           </div>
         </Card>
 
-        {/* ── Best Streak Badge ────────────────────────────────────────────── */}
+        {/* == Best Streak Badge ============================================== */}
         {bestStreak > 0 && (
           <div className="mt-4 flex items-center justify-center gap-2">
             <svg
@@ -708,7 +708,7 @@ export default function QuizPage() {
         )}
       </div>
 
-      {/* ── How to Play ────────────────────────────────────────────────────── */}
+      {/* == How to Play ====================================================== */}
       <div className="mt-8 glass rounded-xl p-5">
         <h3 className="text-xs font-[family-name:var(--font-pixel)] text-[var(--type-ghost)] tracking-wider mb-3">
           HOW TO PLAY
