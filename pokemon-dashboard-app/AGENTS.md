@@ -14,13 +14,13 @@ pokemon-dashboard-app/
 
 ## Where to Look
 
-| Task          | Location                    | Notes                       |
-| ------------- | --------------------------- | --------------------------- |
-| Add page      | `src/app/[route]/page.tsx`  | Must include `"use client"` |
-| Query data    | `src/lib/data/json-hooks.ts`| `useJSONQuery<T>(jsonFile)` |
-| UI components | `src/components/ui/`        | Tested with Vitest          |
-| Type colors   | `src/lib/design-tokens.ts`  | 18 Pokemon type hex colors  |
-| Sprite URLs   | `src/lib/sprites.ts`        | `getSpriteUrl(id)`          |
+| Task          | Location                     | Notes                       |
+| ------------- | ---------------------------- | --------------------------- |
+| Add page      | `src/app/[route]/page.tsx`   | Must include `"use client"` |
+| Query data    | `src/lib/data/json-hooks.ts` | `useJSONQuery<T>(jsonFile)` |
+| UI components | `src/components/ui/`         | Tested with Vitest          |
+| Type colors   | `src/lib/design-tokens.ts`   | 18 Pokemon type hex colors  |
+| Sprite URLs   | `src/lib/sprites.ts`         | `getSpriteUrl(id)`          |
 
 ## Conventions
 

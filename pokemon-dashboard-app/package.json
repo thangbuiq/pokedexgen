@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "bunx --bun serve dist -l 3000",
-    "preview": "bunx --bun serve dist -l 3000",
+    "start": "next start",
+    "preview": "next start",
     "lint": "eslint",
     "test": "vitest run"
   },

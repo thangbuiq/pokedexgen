@@ -1,8 +1,6 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  distDir: 'dist',
   serverExternalPackages: ['@duckdb/duckdb-wasm'],
   turbopack: {},
   webpack: (config) => {
