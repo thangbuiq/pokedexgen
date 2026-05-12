@@ -1,45 +1,20 @@
-interface ChatMessage {
-  role: 'user' | 'assistant'
-  content: string
-}
-
-interface ChatRequest {
-  message: string
-  conversationHistory: ChatMessage[]
-}
-
-interface ChatSuccessResponse {
-  response: string
-  usage?: {
-    prompt: number
-    completion: number
-    total: number
-  }
-}
-
-interface ChatErrorResponse {
-  error: string
-}
-
-type ChatResult =
-  | { ok: true; response: string; usage?: ChatSuccessResponse['usage'] }
-  | { ok: false; error: string; status?: number }
+import type {
+  ChatMessage,
+  ChatResult,
+  ChatRequest,
+  ChatSuccessResponse,
+  ChatErrorResponse,
+} from './types/chat'
 
 const REQUEST_TIMEOUT_MS = 30000
 
-export async function fetchChatResponse(
-  message: string,
-  conversationHistory: ChatMessage[] = []
-): Promise<ChatResult> {
+export async function fetchChatResponse(messages: ChatMessage[]): Promise<ChatResult> {
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
 
   try {
     const payload: ChatRequest = {
-      message: message.trim().slice(0, 800),
-      conversationHistory: conversationHistory
-        .filter((m) => m.content.trim().length > 0)
-        .slice(-10),
+      messages: messages.filter((m) => m.content.trim().length > 0).slice(-20),
     }
 
     const response = await fetch('/api/chat', {

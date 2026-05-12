@@ -22,6 +22,11 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   const [error, setError] = useState<string | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const hasAutoScrolled = useRef(false)
+  const messagesRef = useRef<ChatMessageType[]>([WELCOME_MESSAGE])
+
+  useEffect(() => {
+    messagesRef.current = messages
+  }, [messages])
 
   const scrollToBottom = useCallback(() => {
     if (scrollRef.current) {
@@ -46,26 +51,27 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
     }
   }, [isOpen])
 
-  const handleSend = useCallback(
-    async (message: string) => {
-      setError(null)
-      const userMessage: ChatMessageType = { role: 'user', content: message }
-      setMessages((prev) => [...prev, userMessage])
-      setIsLoading(true)
+  const handleSend = useCallback(async (message: string) => {
+    setError(null)
+    const userMessage: ChatMessageType = { role: 'user', content: message }
+    setMessages((prev) => [...prev, userMessage])
+    setIsLoading(true)
 
-      const history = messages.filter((m) => m !== WELCOME_MESSAGE)
-      const result = await fetchChatResponse(message, history)
+    const history = messagesRef.current.filter((m) => m !== WELCOME_MESSAGE)
 
+    try {
+      const result = await fetchChatResponse([...history, userMessage])
+      setIsLoading(false)
       if (result.ok) {
         setMessages((prev) => [...prev, { role: 'assistant', content: result.response }])
       } else {
         setError(result.error)
       }
-
+    } catch {
       setIsLoading(false)
-    },
-    [messages]
-  )
+      setError('Something went wrong. Please try again.')
+    }
+  }, [])
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
