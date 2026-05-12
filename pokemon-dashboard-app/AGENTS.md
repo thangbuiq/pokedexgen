@@ -8,9 +8,8 @@ Next.js 16 static export with client-side JSON data.
 pokemon-dashboard-app/
 ├── src/app/              # App Router pages (all "use client")
 ├── src/components/       # layout/, ui/ (Card, Badge, Button, etc.)
-├── src/lib/              # design-tokens.ts, duckdb/ (hooks, queries), types/
-├── public/pokemon.db     # Static DuckDB file (data source)
-└── public/data/          # JSON exports from pipeline
+├── src/lib/              # design-tokens.ts, data/ (json-hooks), sprites.ts
+└── public/data/          # JSON exports from pipeline (data source)
 ```
 
 ## Where to Look
@@ -18,10 +17,10 @@ pokemon-dashboard-app/
 | Task          | Location                    | Notes                       |
 | ------------- | --------------------------- | --------------------------- |
 | Add page      | `src/app/[route]/page.tsx`  | Must include `"use client"` |
-| Query data    | `src/lib/duckdb/hooks.ts`   | `useDuckDBQuery<T>(sql)`    |
+| Query data    | `src/lib/data/json-hooks.ts`| `useJSONQuery<T>(jsonFile)` |
 | UI components | `src/components/ui/`        | Tested with Vitest          |
 | Type colors   | `src/lib/design-tokens.ts`  | 18 Pokemon type hex colors  |
-| Sprite URLs   | `src/lib/duckdb/queries.ts` | `getSpriteUrl(id)`          |
+| Sprite URLs   | `src/lib/sprites.ts`        | `getSpriteUrl(id)`          |
 
 ## Conventions
 
@@ -34,7 +33,7 @@ pokemon-dashboard-app/
 
 ## Anti-Patterns
 
-- **Don't forget `public/pokemon.db`** - Build fails at runtime if `just export` wasn't run
+- **Don't forget `public/data/` JSON files** - Build fails at runtime if data export wasn't run
 - **Never commit `.next/` or `dist/`** - Build artifacts
 
 ## Commands
