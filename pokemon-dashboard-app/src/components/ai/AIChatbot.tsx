@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { ChatMessage } from '@/components/ai/ChatMessage'
 import { ChatInput } from '@/components/ai/ChatInput'
 import { fetchChatResponse, type ChatMessage as ChatMessageType } from '@/lib/ai-client'
@@ -102,27 +103,45 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 rounded-t-2xl">
           <div className="flex items-center gap-2.5">
             <div className="relative">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--accent)] to-purple-500 flex items-center justify-center">
-                <svg
-                  className="w-4 h-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
-                  />
-                </svg>
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center shadow-lg shadow-red-500/30">
+                <Image
+                  src="/pokeball.png"
+                  alt="Pokeball"
+                  width={24}
+                  height={24}
+                  className="object-contain drop-shadow-sm"
+                  unoptimized
+                />
               </div>
-              <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-400 border-2 border-[var(--background)]" />
+              <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-400 border-2 border-[var(--background)] animate-pulse" />
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-[var(--text-primary)]">Pokemon AI</h3>
-              <p className="text-[10px] text-[var(--text-muted)]">
-                {isLoading ? 'Thinking...' : 'Online'}
+              <h3 className="text-sm font-bold text-[var(--text-primary)] tracking-tight">
+                Pokemon AI
+              </h3>
+              <p className="text-[10px] text-[var(--text-muted)] font-medium">
+                {isLoading ? (
+                  <span className="flex items-center gap-1">
+                    <span
+                      className="w-1 h-1 rounded-full bg-yellow-400 animate-bounce"
+                      style={{ animationDelay: '0ms' }}
+                    />
+                    <span
+                      className="w-1 h-1 rounded-full bg-yellow-400 animate-bounce"
+                      style={{ animationDelay: '150ms' }}
+                    />
+                    <span
+                      className="w-1 h-1 rounded-full bg-yellow-400 animate-bounce"
+                      style={{ animationDelay: '300ms' }}
+                    />
+                    Thinking
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                    Online
+                  </span>
+                )}
               </p>
             </div>
           </div>
@@ -231,19 +250,15 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
           ].join(' ')}
           aria-label="Open AI Pokemon Assistant"
         >
-          <svg
-            className="w-5 h-5 shrink-0 animate-pulse"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
-            />
-          </svg>
+          <Image
+            src="/pokeball.png"
+            alt="Pokeball"
+            width={22}
+            height={22}
+            className="shrink-0 object-contain animate-bounce"
+            style={{ animationDuration: '2s' }}
+            unoptimized
+          />
           <span className="font-semibold whitespace-nowrap">Ask &rsquo;em all</span>
         </button>
       )}

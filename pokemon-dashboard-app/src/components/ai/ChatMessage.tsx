@@ -1,6 +1,8 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useMemo, useEffect, useState } from 'react'
+import { PokemonCard } from './PokemonCard'
+import { getPokemonId, getPokemonInfo, loadPokemonLookup } from '@/lib/pokemon-lookup'
 
 interface ChatMessageProps {
   role: 'user' | 'assistant'
@@ -23,10 +25,8 @@ function getScalingBadgeStyle(mult: string): { bg: string; text: string; label: 
 function renderMarkdown(text: string): string {
   let html = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-  html = html.replace(
-    /\*\*(.+?)\*\*/g,
-    '<strong class="font-bold text-purple-600 dark:text-purple-400">$1</strong>'
-  )
+  // Bold — RED for Pokemon theme
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-red-500">$1</strong>')
   html = html.replace(/\*(.+?)\*/g, '<em class="italic text-purple-500/80">$1</em>')
   html = html.replace(
     /`([^`]+)`/g,
@@ -50,10 +50,158 @@ function renderMarkdown(text: string): string {
   return html
 }
 
+function linkifyPokemonNames(html: string): string {
+  // Find Pokemon names in the already-rendered HTML and wrap them in links
+  // We operate on the text content, not the HTML tags
+  const tempDiv = document.createElement('div')
+  tempDiv.innerHTML = html
+
+  function walk(node: Node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent || ''
+      let result = text
+
+      // Find all Pokemon names and replace with links
+      const names = new Map<string, number>()
+      const words = text.split(/(\s+)/)
+      for (const word of words) {
+        const clean = word.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()
+        if (clean.length < 3) continue
+        const id = getPokemonId(clean)
+        if (id !== undefined) {
+          names.set(word, id)
+        }
+      }
+
+      // Replace from longest to shortest to avoid partial matches
+      const sorted = [...names.entries()].sort((a, b) => b[0].length - a[0].length)
+      for (const [name, id] of sorted) {
+        const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        result = result.replace(
+          new RegExp(`(?<!<[^>]*)\\b${escaped}\\b`, 'g'),
+          `<a href="https://pokedexgen.vercel.app/?id=${id}" target="_blank" rel="noopener noreferrer" class="text-red-400 hover:text-red-300 underline font-semibold transition-colors">${name}</a>`
+        )
+      }
+
+      if (result !== text) {
+        const wrapper = document.createElement('span')
+        wrapper.innerHTML = result
+        node.parentNode?.replaceChild(wrapper, node)
+      }
+    } else {
+      for (const child of Array.from(node.childNodes)) {
+        walk(child)
+      }
+    }
+  }
+
+  for (const child of Array.from(tempDiv.childNodes)) {
+    walk(child)
+  }
+
+  return tempDiv.innerHTML
+}
+
+function extractPokemonFromContent(content: string): Array<{
+  id: number
+  name: string
+  types: string[]
+  stats: {
+    hp: number
+    attack: number
+    defense: number
+    special_attack: number
+    special_defense: number
+    speed: number
+    total: number
+  }
+  height?: number
+  weight?: number
+}> {
+  const found = new Map<number, ReturnType<typeof getPokemonInfo>>()
+
+  // Try to find Pokemon names in the text
+  const words = content.split(/\s+/)
+  for (const word of words) {
+    const clean = word.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()
+    if (clean.length < 3) continue
+    const id = getPokemonId(clean)
+    if (id !== undefined && !found.has(id)) {
+      const info = getPokemonInfo(id)
+      if (info) found.set(id, info)
+    }
+  }
+
+  // Also try to parse any JSON blocks that might contain structured Pokemon data
+  try {
+    const jsonMatches = content.match(/\{[\s\S]*?"name"[\s\S]*?\}/g)
+    if (jsonMatches) {
+      for (const match of jsonMatches) {
+        try {
+          const parsed = JSON.parse(match)
+          if (parsed.name && parsed.id) {
+            const info = getPokemonInfo(parsed.id)
+            if (info && !found.has(parsed.id)) {
+              found.set(parsed.id, info)
+            }
+          }
+          if (Array.isArray(parsed)) {
+            for (const item of parsed) {
+              if (item.name && item.id) {
+                const info = getPokemonInfo(item.id)
+                if (info && !found.has(item.id)) {
+                  found.set(item.id, info)
+                }
+              }
+            }
+          }
+        } catch {
+          // ignore
+        }
+      }
+    }
+  } catch {
+    // ignore
+  }
+
+  return [...found.values()].filter(Boolean) as Array<{
+    id: number
+    name: string
+    types: string[]
+    stats: {
+      hp: number
+      attack: number
+      defense: number
+      special_attack: number
+      special_defense: number
+      speed: number
+      total: number
+    }
+    height?: number
+    weight?: number
+  }>
+}
+
 export function ChatMessage({ role, content }: ChatMessageProps) {
   const isUser = role === 'user'
+  const [linkedHtml, setLinkedHtml] = useState('')
 
-  const renderedContent = useMemo(() => renderMarkdown(content), [content])
+  // Load Pokemon lookup on mount
+  useEffect(() => {
+    loadPokemonLookup().catch(() => {})
+  }, [])
+
+  const baseHtml = useMemo(() => renderMarkdown(content), [content])
+
+  // Client-side only: linkify Pokemon names
+  useEffect(() => {
+    setLinkedHtml(linkifyPokemonNames(baseHtml))
+  }, [baseHtml])
+
+  const mentionedPokemon = useMemo(() => {
+    if (isUser) return []
+    return extractPokemonFromContent(content)
+  }, [content, isUser])
 
   return (
     <div
@@ -62,7 +210,7 @@ export function ChatMessage({ role, content }: ChatMessageProps) {
     >
       <div
         className={[
-          'max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed break-words',
+          'max-w-[90%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed break-words',
           isUser
             ? 'bg-[var(--accent)] text-white rounded-br-md'
             : 'bg-[var(--surface-hover)] text-[var(--text-secondary)] rounded-bl-md border border-[var(--card-border)]',
@@ -71,10 +219,24 @@ export function ChatMessage({ role, content }: ChatMessageProps) {
         {isUser ? (
           <p className="whitespace-pre-wrap">{content}</p>
         ) : (
-          <div
-            className="text-[13px] leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: renderedContent }}
-          />
+          <>
+            <div
+              className="text-[13px] leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: linkedHtml || baseHtml }}
+            />
+            {mentionedPokemon.length > 0 && (
+              <div className="mt-3 pt-2 border-t border-white/10">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/40 mb-1.5">
+                  Related Pokemon
+                </p>
+                <div className="space-y-2">
+                  {mentionedPokemon.map((p) => (
+                    <PokemonCard key={p.id} {...p} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>
