@@ -51,7 +51,7 @@ export function PokemonCard({ id, name, types, stats, height, weight }: PokemonC
   const accentColor = getTypeColor(types[0] || 'normal')
 
   return (
-    <div className="rounded-xl border border-black/20 dark:border-white/10 my-2 bg-white/90 dark:bg-transparent">
+    <div className="rounded-xl border border-[var(--card-border)] my-2 bg-[var(--surface)]">
       <div className="flex items-start gap-3 p-3">
         {/* Sprite */}
         <div className="shrink-0 relative">
@@ -103,10 +103,10 @@ export function PokemonCard({ id, name, types, stats, height, weight }: PokemonC
               { label: 'SPD', value: stats.speed, max: 180 },
             ].map((s) => (
               <div key={s.label} className="flex items-center gap-1.5">
-                <span className="text-[9px] font-bold w-6 text-right text-black/80 dark:text-white/60">
+                <span className="text-[9px] font-bold w-6 text-right text-[var(--text-muted)]">
                   {s.label}
                 </span>
-                <div className="flex-1 h-1.5 rounded-full bg-black/15 dark:bg-white/10 overflow-hidden">
+                <div className="flex-1 h-1.5 rounded-full bg-[var(--surface-hover)] overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-500"
                     style={{
@@ -115,25 +115,11 @@ export function PokemonCard({ id, name, types, stats, height, weight }: PokemonC
                     }}
                   />
                 </div>
-                <span className="text-[9px] font-mono w-5 text-right text-black/80 dark:text-white/80">
+                <span className="text-[9px] font-mono w-5 text-right text-[var(--text-primary)]">
                   {s.value}
                 </span>
               </div>
             ))}
-          </div>
-
-          {/* Total + physical */}
-          <div className="flex items-center justify-between mt-2 pt-1.5 border-t border-black/15 dark:border-white/10">
-            <span className="text-[10px] text-black/70 dark:text-white/50">
-              Total: <span className="font-bold text-black dark:text-white/80">{stats.total}</span>
-            </span>
-            {(height || weight) && (
-              <span className="text-[10px] text-black/60 dark:text-white/40">
-                {height && `${(height / 10).toFixed(1)}m`}
-                {height && weight && ' · '}
-                {weight && `${(weight / 10).toFixed(1)}kg`}
-              </span>
-            )}
           </div>
         </div>
       </div>

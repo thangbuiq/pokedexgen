@@ -113,7 +113,6 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
                   unoptimized
                 />
               </div>
-              <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-400 border-2 border-[var(--background)] animate-pulse" />
             </div>
             <div>
               <h3 className="text-sm font-bold text-[var(--text-primary)] tracking-tight">

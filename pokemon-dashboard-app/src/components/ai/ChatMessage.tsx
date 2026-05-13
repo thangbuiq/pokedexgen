@@ -225,8 +225,8 @@ export function ChatMessage({ role, content }: ChatMessageProps) {
               dangerouslySetInnerHTML={{ __html: linkedHtml || baseHtml }}
             />
             {mentionedPokemon.length > 0 && (
-              <div className="mt-3 pt-2 border-t border-black/15 dark:border-white/10">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-black/40 dark:text-white/40 mb-1.5">
+              <div className="mt-3 pt-2 border-t border-[var(--card-border)]">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-1.5">
                   Related Pokemon
                 </p>
                 <div className="space-y-2">
