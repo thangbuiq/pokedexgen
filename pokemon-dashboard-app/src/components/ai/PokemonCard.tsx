@@ -125,8 +125,7 @@ export function PokemonCard({ id, name, types, stats, height, weight }: PokemonC
           {/* Total + physical */}
           <div className="flex items-center justify-between mt-2 pt-1.5 border-t border-black/15 dark:border-white/10">
             <span className="text-[10px] text-black/70 dark:text-white/50">
-              Total:{' '}
-              <span className="font-bold text-black dark:text-white/80">{stats.total}</span>
+              Total: <span className="font-bold text-black dark:text-white/80">{stats.total}</span>
             </span>
             {(height || weight) && (
               <span className="text-[10px] text-black/60 dark:text-white/40">
