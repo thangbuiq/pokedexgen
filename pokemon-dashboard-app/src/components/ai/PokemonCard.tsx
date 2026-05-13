@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { StatRadar } from './StatRadar'
 import { Badge } from '@/components/ui/Badge'
 import { getSpriteUrl } from '@/lib/sprites'
 import { type PokemonType } from '@/lib/design-tokens'
@@ -52,13 +51,7 @@ export function PokemonCard({ id, name, types, stats, height, weight }: PokemonC
   const accentColor = getTypeColor(types[0] || 'normal')
 
   return (
-    <div
-      className="rounded-xl overflow-hidden border border-white/10 my-2"
-      style={{
-        background: `linear-gradient(135deg, ${accentColor}20 0%, rgba(30,30,40,0.95) 60%)`,
-        boxShadow: `0 4px 20px ${accentColor}30`,
-      }}
-    >
+    <div className="rounded-xl border border-white/10 my-2 bg-transparent">
       <div className="flex items-start gap-3 p-3">
         {/* Sprite */}
         <div className="shrink-0 relative">
@@ -139,20 +132,6 @@ export function PokemonCard({ id, name, types, stats, height, weight }: PokemonC
             )}
           </div>
         </div>
-      </div>
-
-      {/* Radar chart */}
-      <div className="flex justify-center pb-2">
-        <StatRadar
-          hp={stats.hp}
-          attack={stats.attack}
-          defense={stats.defense}
-          special_attack={stats.special_attack}
-          special_defense={stats.special_defense}
-          speed={stats.speed}
-          size={130}
-          color={accentColor}
-        />
       </div>
     </div>
   )
