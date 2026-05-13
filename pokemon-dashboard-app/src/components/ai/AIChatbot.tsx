@@ -89,7 +89,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
 
       <div
         className={[
-          'fixed z-50 flex flex-col bg-[var(--background)]',
+          'fixed z-[200] flex flex-col bg-[var(--background)]',
           'border border-[var(--card-border)] shadow-2xl',
           'transition-all duration-300 ease-in-out',
           isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none',
@@ -103,12 +103,12 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 rounded-t-2xl">
           <div className="flex items-center gap-2.5">
             <div className="relative">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center shadow-lg shadow-red-500/30">
+              <div className="w-9 h-9 flex items-center justify-center">
                 <Image
                   src="/pokeball.png"
                   alt="Pokeball"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                   className="object-contain drop-shadow-sm"
                   unoptimized
                 />
@@ -237,7 +237,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         <button
           onClick={onToggle}
           className={[
-            'fixed z-40 bottom-5 right-5',
+            'fixed z-[200] bottom-5 right-5',
             'flex items-center gap-2',
             'px-4 py-2.5 rounded-full',
             'bg-gradient-to-r from-[var(--accent)] to-purple-500',
