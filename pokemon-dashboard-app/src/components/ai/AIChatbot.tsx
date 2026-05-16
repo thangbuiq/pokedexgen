@@ -232,7 +232,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
           <div className="h-4" />
         </div>
 
-        <div className="shrink-0 px-4 py-3 border-t border-[var(--card-border)] bg-[var(--background)]">
+        <div className="shrink-0 px-4 py-3 border-t border-[var(--card-border)] bg-transparent">
           <ChatInput onSend={handleSend} isLoading={isLoading} />
         </div>
       </div>
