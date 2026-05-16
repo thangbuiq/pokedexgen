@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useCallback, useEffect, useRef, Suspense } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
 import { motion } from 'framer-motion'
@@ -23,9 +22,9 @@ import { isSpriteMissing, getSpriteUrl as OFFICIAL_ARTWORK } from '@/lib/sprites
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { PokemonFightSim } from '@/components/fight/PokemonFightSim'
 import { AIChatbot } from '@/components/ai/AIChatbot'
-import { ALL_TYPES, getEffectiveness, multiplierLabel } from '@/lib/type-effectiveness'
+import { ALL_TYPES, getEffectiveness } from '@/lib/type-effectiveness'
 
-// ==─ Constants ==============================================================─
+// ===== Constants =================================================================
 
 type SortKey = 'id' | 'name' | 'total_stats'
 
@@ -49,7 +48,7 @@ const STAT_META: {
 
 const STAT_MAX = 255
 
-// ==─ Types ==================================================================
+// ===== Types ==================================================================
 
 interface PokemonRow {
   id: number
@@ -109,7 +108,7 @@ interface RadarStatPoint {
   fullMark: number
 }
 
-// ==─ Helpers ================================================================─
+// ===== Helpers ===================================================================
 
 function parseTypes(p: PokemonRow): PokemonType[] {
   const raw = p.types || p.type_names || ''
@@ -288,106 +287,6 @@ function useJSONQuery<T>(jsonFile: string) {
   return { data, loading, error, refetch: fetchData }
 }
 
-function cellStyles(multiplier: number): { backgroundColor: string; color: string } {
-  if (multiplier === 0) return { backgroundColor: '#201122', color: '#FFFFFF' }
-  if (multiplier === 0.5) return { backgroundColor: '#8B1A1A', color: '#FFFFFF' }
-  if (multiplier === 1) return { backgroundColor: 'var(--surface)', color: '#7f7f7f' }
-  return { backgroundColor: '#166534', color: '#FFFFFF' }
-}
-
-function TypeMatchupTab({
-  typeMatchupMatrix,
-}: {
-  typeMatchupMatrix: { attacker: PokemonType; defender: PokemonType; multiplier: number }[][]
-}) {
-  const guideItems = [
-    { multiplier: 2, description: 'Super effective' },
-    { multiplier: 1, description: 'Normal damage' },
-    { multiplier: 0.5, description: 'Not very effective' },
-    { multiplier: 0, description: 'Immune' },
-  ] as const
-
-  return (
-    <div className="space-y-4 animate-[fade-in_0.3s_ease-out] mb-8">
-      <div className="grid gap-2 grid-cols-4 text-[10px]">
-        {guideItems.map((item) => {
-          const styles = cellStyles(item.multiplier)
-          return (
-            <div
-              key={item.multiplier}
-              className="rounded border border-[var(--card-border)] px-2 py-1.5 font-[family-name:var(--font-pixel)] tracking-wider text-center"
-              style={{ backgroundColor: styles.backgroundColor, color: styles.color }}
-            >
-              <span className="font-semibold">{multiplierLabel(item.multiplier)}x</span>
-              <span className="block text-[9px] opacity-80 mt-0.5">{item.description}</span>
-            </div>
-          )
-        })}
-      </div>
-
-      <Card className="overflow-hidden p-2">
-        <div className="overflow-auto">
-          <table className="min-w-max w-full border-collapse text-[9px] font-[family-name:var(--font-pixel)] tracking-wider">
-            <thead>
-              <tr>
-                <th className="sticky left-0 z-20 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-[var(--text-secondary)]">
-                  ATK\DEF
-                </th>
-                {ALL_TYPES.map((type) => (
-                  <th
-                    key={type}
-                    className="sticky top-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-0.5 py-1"
-                  >
-                    <span
-                      className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
-                      style={{
-                        backgroundColor: typeColorMap[type],
-                        textShadow: '0 1px 1px rgba(0,0,0,0.4)',
-                      }}
-                    >
-                      {type.slice(0, 3)}
-                    </span>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {typeMatchupMatrix.map((row, rowIndex) => (
-                <tr key={ALL_TYPES[rowIndex]}>
-                  <th className="sticky left-0 z-10 bg-[var(--surface)] border border-[var(--card-border)] px-1 py-1 text-left">
-                    <span
-                      className="inline-flex items-center justify-center rounded px-1 py-0.5 text-[8px] font-bold text-white uppercase"
-                      style={{
-                        backgroundColor: typeColorMap[ALL_TYPES[rowIndex]],
-                        textShadow: '0 1px 1px rgba(0,0,0,0.4)',
-                      }}
-                    >
-                      {ALL_TYPES[rowIndex].slice(0, 3)}
-                    </span>
-                  </th>
-                  {row.map((cell) => {
-                    const styles = cellStyles(cell.multiplier)
-                    return (
-                      <td
-                        key={`${cell.attacker}-${cell.defender}`}
-                        className="border border-[var(--card-border)] px-0.5 py-1 text-center font-semibold text-white"
-                        style={styles}
-                        title={`${cell.attacker} vs ${cell.defender}: ${multiplierLabel(cell.multiplier)}x`}
-                      >
-                        {multiplierLabel(cell.multiplier)}
-                      </td>
-                    )
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
-    </div>
-  )
-}
-
 function HomeContent() {
   useSearchParams() // required for Suspense boundary - reads URL params below
   const [search, setSearch] = useState('')
@@ -397,7 +296,7 @@ function HomeContent() {
   const [detailReady, setDetailReady] = useState(false)
   const [moveSearch, setMoveSearch] = useState('')
   const [visibleCount, setVisibleCount] = useState(24)
-  const [showMatrix, setShowMatrix] = useState(false)
+
   const [showTypeFilter, setShowTypeFilter] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(false)
 
@@ -628,19 +527,7 @@ function HomeContent() {
     })
   }, [data, search, activeTypes, sortBy])
 
-  const typeMatchupMatrix = useMemo(
-    () =>
-      ALL_TYPES.map((attacker) =>
-        ALL_TYPES.map((defender) => ({
-          attacker,
-          defender,
-          multiplier: getEffectiveness(attacker, defender),
-        }))
-      ),
-    []
-  )
-
-  // ==─ Loading / Error ====================================================
+  // ===== Loading / Error ====================================================
 
   if (loading) {
     return (
@@ -677,69 +564,10 @@ function HomeContent() {
     )
   }
 
-  // ==─ Render ==============================================================
+  // ===== Render ==============================================================
 
   return (
     <div>
-      {/* == Header ======================================================== */}
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-3 mb-2">
-          <Image
-            src="/pokeball.png"
-            alt="Pokeball"
-            width={40}
-            height={40}
-            className="w-8 sm:w-10"
-          />
-          <h1 className="text-xl sm:text-2xl font-[family-name:var(--font-pixel)] text-[var(--text-primary)] tracking-wider">
-            pokedeXgen
-          </h1>
-          <Link
-            href="/origins"
-            className="group relative ml-2"
-            title="Explore the origins of the Pokémon universe"
-          >
-            <img
-              src="/sprites/pokemon/other/official-artwork/493.png"
-              alt="Arceus"
-              className="w-8 h-8 sm:w-10 sm:h-10 object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.6)]"
-            />
-            <span className="absolute -top-2 -right-[3.5rem] sm:-right-20 bg-[var(--accent)] text-white text-[9px] sm:text-[10px] font-[family-name:var(--font-pixel)] px-2 py-1 rounded-full shadow-lg rotate-12 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300 whitespace-nowrap pointer-events-none">
-              Origins
-              <span className="absolute -bottom-1 left-2 w-2 h-2 bg-[var(--accent)] rotate-45" />
-            </span>
-          </Link>
-        </div>
-        <p className="text-[var(--text-muted)] text-base sm:text-lg">
-          A next-gen Pokédex for exploring Pokémon data, evolutions, and matchup strategy.
-        </p>
-      </div>
-
-      {/* == Type Matrix Toggle ============================================ */}
-      <div className="flex justify-center mb-4">
-        <button
-          onClick={() => setShowMatrix(!showMatrix)}
-          className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-200 ${
-            showMatrix
-              ? 'bg-blue-500 text-white border-blue-500 shadow-md shadow-blue-500/30'
-              : 'bg-[var(--surface)] text-[var(--text-secondary)] border-[var(--card-border)] hover:text-blue-600 hover:border-blue-500/50'
-          }`}
-        >
-          <svg
-            className="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            {showMatrix ? <path d="M19 9l-7 7-7-7" /> : <path d="M9 5l7 7-7 7" />}
-          </svg>
-          {showMatrix ? 'Hide Type Matrix' : 'Show Type Matrix'}
-        </button>
-      </div>
-
-      {showMatrix && <TypeMatchupTab typeMatchupMatrix={typeMatchupMatrix} />}
-
       <HowToGuide title="Pokédex Guide">
         Search or filter by type, then click any Pokémon to view stats, type matchups, evolution
         chain, moves, and fight simulation. Use the sort buttons to reorder by ID, name, or total
@@ -1036,7 +864,7 @@ function HomeContent() {
         </div>
       )}
 
-      {/* == Detail Modal ================================================─ */}
+      {/* == Detail Modal =================================================== */}
       {selected && (
         <div
           className="fixed inset-0 z-50 flex items-end sm:items-center justify-center modal-fullscreen-mobile"
@@ -1045,7 +873,7 @@ function HomeContent() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-lg" />
 
           <div
-            className="relative glass bg-white/95 dark:bg-[var(--surface)] sm:rounded-2xl rounded-none p-0 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full max-h-[100dvh] sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
+            className="relative glass bg-white/95 dark:bg-[var(--surface)] !rounded-none sm:!rounded-2xl p-0 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full h-full sm:h-auto sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* == Sticky Close Header == */}
@@ -1073,7 +901,7 @@ function HomeContent() {
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4 sm:p-0 sm:mt-2">
+            <div className="flex-1 overflow-y-auto overscroll-none p-4 sm:p-0 sm:mt-2">
               <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
                 {/* == Left Column: Moves == */}
                 <div className="lg:col-span-3 flex flex-col order-3 lg:order-1 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)]">

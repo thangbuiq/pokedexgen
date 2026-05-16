@@ -48,6 +48,11 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
 
   useEffect(() => {
     if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
       document.body.style.overflow = ''
     }
   }, [isOpen])
@@ -93,14 +98,14 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
           'border border-[var(--card-border)] shadow-2xl',
           'transition-all duration-300 ease-in-out',
           isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none',
-          'inset-0 m-0 rounded-none',
-          'sm:inset-auto sm:bottom-5 sm:right-5 sm:w-[400px] sm:max-h-[560px] sm:h-auto sm:rounded-2xl',
+          'inset-0 m-0 !rounded-none',
+          'sm:inset-auto sm:bottom-5 sm:right-5 sm:w-[400px] sm:max-h-[560px] sm:h-auto sm:!rounded-2xl',
         ].join(' ')}
         role="complementary"
         aria-label="AI Pokemon Assistant"
         onKeyDown={handleKeyDown}
       >
-        <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 sm:rounded-t-2xl rounded-none">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 sm:!rounded-t-2xl !rounded-none">
           <div className="flex items-center gap-2.5">
             <div className="relative">
               <div className="w-9 h-9 flex items-center justify-center">
@@ -164,7 +169,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
 
         <div
           ref={scrollRef}
-          className="flex-1 overflow-y-auto px-4 py-3 custom-scrollbar"
+          className="flex-1 overflow-y-auto overscroll-none px-4 py-3 custom-scrollbar"
           role="log"
           aria-live="polite"
         >

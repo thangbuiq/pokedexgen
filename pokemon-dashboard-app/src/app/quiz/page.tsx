@@ -8,7 +8,7 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { getSpriteUrl, isSpriteMissing } from '@/lib/sprites'
 
-// ==─ Types ==================================================================─
+// ===== Types =====================================================================
 
 interface PokemonRow {
   id: number
@@ -20,7 +20,7 @@ interface PokemonRow {
 type Difficulty = 'easy' | 'hard'
 type GameState = 'guessing' | 'revealed'
 
-// ==─ Helpers ================================================================─
+// ===== Helpers ===================================================================
 
 function shuffleArray<T>(arr: T[]): T[] {
   const shuffled = [...arr]
@@ -74,7 +74,7 @@ function useJSONQuery<T>(jsonFile: string) {
   return { data, loading, error, refetch: fetchData }
 }
 
-// ==─ Confetti Particle ========================================================
+// ===== Confetti Particle ========================================================
 
 function ConfettiParticle({ delay, color, left }: { delay: number; color: string; left: number }) {
   const yOffset = -80 - Math.random() * 120
@@ -94,7 +94,7 @@ function ConfettiParticle({ delay, color, left }: { delay: number; color: string
   )
 }
 
-// ==─ Streak Fire ==============================================================
+// ===== Streak Fire ==============================================================
 
 function StreakFire({ streak }: { streak: number }) {
   if (streak < 2) return null
@@ -135,7 +135,7 @@ function StreakFire({ streak }: { streak: number }) {
   )
 }
 
-// ==─ Main Page ================================================================
+// ===== Main Page ================================================================
 
 export default function QuizPage() {
   const { data: rawData, loading, error } = useJSONQuery<PokemonRow>('pokemon.json')
@@ -266,7 +266,7 @@ export default function QuizPage() {
     return () => window.removeEventListener('keydown', handler)
   }, [gameState, nextPokemon])
 
-  // ==─ Loading / Error ====================================================
+  // ===== Loading / Error ====================================================
 
   if (loading) {
     return (
@@ -305,7 +305,7 @@ export default function QuizPage() {
 
   if (!currentPokemon) return null
 
-  // ==─ Derived values ====================================================─
+  // ===== Derived values =======================================================
 
   const pokemonTypes = parseTypes(currentPokemon.type_names)
   const uniqueTypes = [...new Set(pokemonTypes)]
@@ -313,7 +313,7 @@ export default function QuizPage() {
   const primaryColor = typeColorMap[primaryType]
   const accuracy = totalGuesses > 0 ? Math.round((score / totalGuesses) * 100) : 0
 
-  // ==─ Confetti colors ====================================================
+  // ===== Confetti colors ====================================================
 
   const confettiColors = [
     'var(--type-fire)',
@@ -326,7 +326,7 @@ export default function QuizPage() {
     '#facc15',
   ]
 
-  // ==─ Render ==============================================================
+  // ===== Render ==============================================================
 
   return (
     <div>
@@ -351,7 +351,7 @@ export default function QuizPage() {
         choice. Hard mode requires typing the exact name. Build streaks for bonus flair!
       </HowToGuide>
 
-      {/* == Score Bar ======================================================─ */}
+      {/* == Score Bar ========================================================= */}
       <div
         className={[
           'glass rounded-xl p-4 mb-6 transition-all duration-500 border',
@@ -435,7 +435,7 @@ export default function QuizPage() {
         </div>
       </div>
 
-      {/* == Difficulty Toggle ==============================================─ */}
+      {/* == Difficulty Toggle ================================================= */}
       <div className="flex items-center justify-center gap-2 mb-6">
         <span className="text-[var(--text-muted)] text-xs font-[family-name:var(--font-pixel)] tracking-wider mr-2">
           DIFFICULTY
@@ -474,7 +474,7 @@ export default function QuizPage() {
         </button>
       </div>
 
-      {/* == Silhouette Card ================================================─ */}
+      {/* == Silhouette Card =================================================== */}
       <div className="relative">
         <Card pokemonType="ghost" className="relative overflow-hidden">
           {/* Background glow */}
