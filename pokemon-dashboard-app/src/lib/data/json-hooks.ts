@@ -2,12 +2,16 @@
 
 import { useState, useEffect, useCallback } from 'react'
 
-export function useJSONQuery<T>(jsonFile: string) {
+export function useJSONQuery<T>(jsonFile: string, enabled: boolean = true) {
   const [data, setData] = useState<T[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
 
   const fetchData = useCallback(async () => {
+    if (!enabled) {
+      setLoading(false)
+      return
+    }
     try {
       setLoading(true)
       setError(null)
@@ -22,11 +26,11 @@ export function useJSONQuery<T>(jsonFile: string) {
     } finally {
       setLoading(false)
     }
-  }, [jsonFile])
+  }, [jsonFile, enabled])
 
   useEffect(() => {
     fetchData()
   }, [fetchData])
 
-  return { data, loading, error, refetch: fetchData }
+  return { data, loading: enabled ? loading : false, error, refetch: fetchData }
 }

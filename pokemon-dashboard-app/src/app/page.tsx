@@ -67,6 +67,11 @@ interface PokemonRow {
   speed: number
   total_stats: number
   types: string
+  // Pre-computed fields for performance
+  parsedTypes?: PokemonType[]
+  primaryType?: PokemonType
+  lowerName?: string
+  lowerJpName?: string
 }
 
 interface EvolutionTreeRow {
@@ -111,6 +116,7 @@ interface RadarStatPoint {
 // ===== Helpers ===================================================================
 
 function parseTypes(p: PokemonRow): PokemonType[] {
+  if (p.parsedTypes) return p.parsedTypes
   const raw = p.types || p.type_names || ''
   return [
     ...new Set(
@@ -123,6 +129,7 @@ function parseTypes(p: PokemonRow): PokemonType[] {
 }
 
 function primaryTypeOf(p: PokemonRow): PokemonType {
+  if (p.primaryType) return p.primaryType
   return parseTypes(p)[0] ?? 'normal'
 }
 
@@ -258,12 +265,16 @@ function EvolutionGraph({
   )
 }
 
-function useJSONQuery<T>(jsonFile: string) {
+function useJSONQuery<T>(jsonFile: string, enabled: boolean = true) {
   const [data, setData] = useState<T[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
 
   const fetchData = useCallback(async () => {
+    if (!enabled) {
+      setLoading(false)
+      return
+    }
     try {
       setLoading(true)
       setError(null)
@@ -278,13 +289,13 @@ function useJSONQuery<T>(jsonFile: string) {
     } finally {
       setLoading(false)
     }
-  }, [jsonFile])
+  }, [jsonFile, enabled])
 
   useEffect(() => {
     fetchData()
   }, [fetchData])
 
-  return { data, loading, error, refetch: fetchData }
+  return { data, loading: enabled ? loading : false, error, refetch: fetchData }
 }
 
 function HomeContent() {
@@ -332,13 +343,35 @@ function HomeContent() {
   }, [selected])
 
   const { data, loading, error } = useJSONQuery<PokemonRow>('pokemon.json')
-  const { data: evolutionTree } = useJSONQuery<EvolutionTreeRow>('evolution_tree.json')
-  const { data: evolutionPaths } = useJSONQuery<EvolutionPathRow>('evolution_paths.json')
-  const { data: pokemonMovesData } = useJSONQuery<PokemonMoveRow>('pokemon_moves.json')
+  const { data: evolutionTree } = useJSONQuery<EvolutionTreeRow>('evolution_tree.json', !!selected)
+  const { data: evolutionPaths } = useJSONQuery<EvolutionPathRow>('evolution_paths.json', !!selected)
+  const { data: pokemonMovesData } = useJSONQuery<PokemonMoveRow>('pokemon_moves.json', !!selected)
+
+  const enrichedData = useMemo(() => {
+    if (!data) return []
+    const seen = new Set<number>()
+    const result: PokemonRow[] = []
+
+    for (const p of data) {
+      if (seen.has(p.id)) continue
+      if (!p.sprite_url) continue
+      seen.add(p.id)
+
+      const parsed = parseTypes(p)
+      result.push({
+        ...p,
+        parsedTypes: parsed,
+        primaryType: parsed[0] ?? 'normal',
+        lowerName: p.name.toLowerCase(),
+        lowerJpName: p.japanese_name?.toLowerCase() ?? '',
+      })
+    }
+    return result
+  }, [data])
 
   const pokemonByName = useMemo(() => {
     const map = new Map<string, PokemonRow>()
-    for (const pokemon of data ?? []) {
+    for (const pokemon of enrichedData) {
       if (!map.has(pokemon.name)) {
         map.set(pokemon.name, pokemon)
       }
@@ -348,16 +381,16 @@ function HomeContent() {
 
   const pokemonById = useMemo(() => {
     const map = new Map<number, PokemonRow>()
-    for (const pokemon of data ?? []) {
+    for (const pokemon of enrichedData) {
       if (!map.has(pokemon.id)) {
         map.set(pokemon.id, pokemon)
       }
     }
     return map
-  }, [data])
+  }, [enrichedData])
 
   useEffect(() => {
-    if (!data.length) return
+    if (!enrichedData.length) return
     const urlParams = new URLSearchParams(window.location.search)
     const idParam = urlParams.get('id')
     if (!idParam) return
@@ -365,7 +398,7 @@ function HomeContent() {
     if (Number.isNaN(id)) return
     const pokemon = pokemonById.get(id)
     if (pokemon) setSelected(pokemon)
-  }, [data, pokemonById])
+  }, [enrichedData, pokemonById])
 
   const evolutionChain = useMemo<EvolutionChainNode[]>(() => {
     if (!selected || !evolutionTree || evolutionTree.length === 0) return []
@@ -492,40 +525,30 @@ function HomeContent() {
   }, [])
 
   const filtered = useMemo(() => {
-    if (!data) return []
-
-    // Deduplicate by ID (Next.js dev mode may cause double rendering)
-    const seen = new Set<number>()
-    let result = data.filter((p) => {
-      if (seen.has(p.id)) return false
-      if (!p.sprite_url) return false
-      seen.add(p.id)
-      return true
-    })
+    let result = enrichedData
 
     // Search filter
     if (search) {
       const q = search.toLowerCase()
       result = result.filter(
-        (p) => p.name.toLowerCase().includes(q) || p.japanese_name?.toLowerCase().includes(q)
+        (p) => p.lowerName!.includes(q) || p.lowerJpName!.includes(q)
       )
     }
 
     // Type filter (AND logic - must match ALL selected types)
     if (activeTypes.size > 0) {
       result = result.filter((p) => {
-        const pokemonTypes = parseTypes(p)
-        return [...activeTypes].every((t) => pokemonTypes.includes(t))
+        return [...activeTypes].every((t) => p.parsedTypes!.includes(t))
       })
     }
 
     // Sort
     return [...result].sort((a, b) => {
-      if (sortBy === 'name') return a.name.localeCompare(b.name)
+      if (sortBy === 'name') return a.lowerName!.localeCompare(b.lowerName!)
       if (sortBy === 'total_stats') return b.total_stats - a.total_stats
       return a.id - b.id
     })
-  }, [data, search, activeTypes, sortBy])
+  }, [enrichedData, search, activeTypes, sortBy])
 
   // ===== Loading / Error ====================================================
 

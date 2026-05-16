@@ -78,12 +78,30 @@ function extractErrorInfo(err: unknown): { message: string; status?: number } {
   return { message: 'Unknown error occurred' }
 }
 
+const ipRateLimit = new Map<string, { count: number; resetTime: number }>()
+
 export async function POST(request: NextRequest) {
   if (!OPENAI_API_KEY) {
     return NextResponse.json(
       { error: 'AI API key not configured. Please set OPENAI_API_KEY in your environment.' },
       { status: 500 }
     )
+  }
+
+  // Basic in-memory rate limiting (Note: limited effectiveness in serverless environments)
+  const ip = request.headers.get('x-forwarded-for') || 'anonymous'
+  const now = Date.now()
+  const limitRecord = ipRateLimit.get(ip)
+  if (limitRecord && limitRecord.resetTime > now) {
+    if (limitRecord.count > 20) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
+    }
+    limitRecord.count++
+  } else {
+    ipRateLimit.set(ip, { count: 1, resetTime: now + 60000 }) // 20 requests per minute
   }
 
   let clientMessages: ClientMessage[]
