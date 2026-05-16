@@ -344,7 +344,10 @@ function HomeContent() {
 
   const { data, loading, error } = useJSONQuery<PokemonRow>('pokemon.json')
   const { data: evolutionTree } = useJSONQuery<EvolutionTreeRow>('evolution_tree.json', !!selected)
-  const { data: evolutionPaths } = useJSONQuery<EvolutionPathRow>('evolution_paths.json', !!selected)
+  const { data: evolutionPaths } = useJSONQuery<EvolutionPathRow>(
+    'evolution_paths.json',
+    !!selected
+  )
   const { data: pokemonMovesData } = useJSONQuery<PokemonMoveRow>('pokemon_moves.json', !!selected)
 
   const enrichedData = useMemo(() => {
@@ -530,9 +533,7 @@ function HomeContent() {
     // Search filter
     if (search) {
       const q = search.toLowerCase()
-      result = result.filter(
-        (p) => p.lowerName!.includes(q) || p.lowerJpName!.includes(q)
-      )
+      result = result.filter((p) => p.lowerName!.includes(q) || p.lowerJpName!.includes(q))
     }
 
     // Type filter (AND logic - must match ALL selected types)
