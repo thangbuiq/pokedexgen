@@ -111,7 +111,7 @@ export function ChatInput({ onSend, isLoading }: ChatInputProps) {
           placeholder={isLoading ? 'Thinking...' : 'Ask about Pokemon...'}
           disabled={isLoading}
           maxLength={800}
-          className="flex-1 border-none outline-none text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] py-2 min-w-0 select-none selection:bg-transparent"
+          className="flex-1 border-none outline-none text-[16px] sm:text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] py-2 min-w-0 select-none selection:bg-transparent"
           style={{ background: 'none', border: 'none', boxShadow: 'none', borderRadius: 0 }}
           aria-label="Chat message input"
           autoComplete="off"

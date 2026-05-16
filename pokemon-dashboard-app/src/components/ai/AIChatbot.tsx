@@ -100,7 +100,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         aria-label="AI Pokemon Assistant"
         onKeyDown={handleKeyDown}
       >
-        <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 rounded-t-2xl">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 sm:rounded-t-2xl rounded-none">
           <div className="flex items-center gap-2.5">
             <div className="relative">
               <div className="w-9 h-9 flex items-center justify-center">

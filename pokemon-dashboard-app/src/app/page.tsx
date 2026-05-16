@@ -396,13 +396,13 @@ function HomeContent() {
   const [selected, setSelected] = useState<PokemonRow | null>(null)
   const [detailReady, setDetailReady] = useState(false)
   const [moveSearch, setMoveSearch] = useState('')
-  const [visibleCount, setVisibleCount] = useState(52)
+  const [visibleCount, setVisibleCount] = useState(24)
   const [showMatrix, setShowMatrix] = useState(false)
   const [showTypeFilter, setShowTypeFilter] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(false)
 
   useEffect(() => {
-    setVisibleCount(52)
+    setVisibleCount(24)
   }, [search, activeTypes, sortBy])
 
   const hasSetInitialSelected = useRef(false)
@@ -767,7 +767,7 @@ function HomeContent() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search Pokemon..."
-            className="w-full pl-10 pr-10 py-2.5 rounded-lg glass text-[var(--text-primary)] text-sm placeholder-[var(--text-muted)] focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-[var(--card-border)] transition-all"
+            className="w-full pl-10 pr-10 py-2.5 rounded-lg glass text-[16px] sm:text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-[var(--card-border)] transition-all"
           />
           {search && (
             <button
@@ -957,7 +957,7 @@ function HomeContent() {
               key={pokemon.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: Math.min(index * 0.05, 0.5) }}
+              transition={{ duration: 0.3, delay: Math.min((index % 24) * 0.05, 0.5) }}
             >
               <Card pokemonType={primary} hover className="cursor-pointer group h-full">
                 <button
@@ -1020,7 +1020,7 @@ function HomeContent() {
       {visibleCount < filtered.length && (
         <div className="flex justify-center mt-8 mb-4">
           <button
-            onClick={() => setVisibleCount((c) => c + 52)}
+            onClick={() => setVisibleCount((c) => c + 24)}
             className="px-6 py-3 rounded-xl glass text-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--surface)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
           >
             Show next...
@@ -1045,7 +1045,7 @@ function HomeContent() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-lg" />
 
           <div
-            className="relative glass bg-white/95 dark:bg-[var(--surface)] sm:rounded-2xl rounded-t-2xl p-0 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full max-h-[100dvh] sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
+            className="relative glass bg-white/95 dark:bg-[var(--surface)] sm:rounded-2xl rounded-none p-0 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full max-h-[100dvh] sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* == Sticky Close Header == */}
@@ -1095,7 +1095,7 @@ function HomeContent() {
                         value={moveSearch}
                         onChange={(e) => setMoveSearch(e.target.value)}
                         placeholder="Search moves..."
-                        className="w-full pl-2.5 pr-2 py-1 rounded-md glass text-xs text-[var(--text-primary)] placeholder-[var(--text-muted)] outline-none focus:ring-1 focus:ring-[var(--type-fighting)]"
+                        className="w-full pl-2.5 pr-2 py-1 rounded-md glass text-[16px] sm:text-xs text-[var(--text-primary)] placeholder-[var(--text-muted)] outline-none focus:ring-1 focus:ring-[var(--type-fighting)]"
                       />
                     </div>
                   )}
