@@ -16,4 +16,5 @@ sources:
       - name: pokemon_details__moves
       - name: evolution_chains
       - name: evolution_chains__chain__evolves_to
+      - name: evolution_chains__chain__evolves_to__evolution_details
       - name: evolution_chains__chain__evolves_to__evolves_to

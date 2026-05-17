@@ -18,6 +18,10 @@ export type PokemonType =
   | 'steel'
   | 'fairy'
 
+/**
+ * Canonical type color map — these values MUST match the CSS variables in globals.css.
+ * If you change a color here, update --type-{name} in globals.css too.
+ */
 export const typeColorMap: Record<PokemonType, string> = {
   normal: '#A8A77A',
   fire: '#EE8130',

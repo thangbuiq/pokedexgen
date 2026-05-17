@@ -1,28 +1,19 @@
 'use client'
 
 import { useState, useMemo, useCallback, useEffect, useRef, Suspense } from 'react'
-import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 
-import { motion } from 'framer-motion'
-import {
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Radar,
-  ResponsiveContainer,
-  Tooltip,
-} from 'recharts'
-import { Card } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
 import { HowToGuide } from '@/components/ui/HowToGuide'
-import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
-import { isSpriteMissing, getSpriteUrl as OFFICIAL_ARTWORK } from '@/lib/sprites'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
-import { PokemonFightSim } from '@/components/fight/PokemonFightSim'
+import { PokemonGridSkeleton } from '@/components/ui/Skeleton'
+import { PokemonGrid } from '@/components/pokedex/PokemonGrid'
+import { PokemonDetailModal } from '@/components/pokedex/PokemonDetailModal'
 import { AIChatbot } from '@/components/ai/AIChatbot'
-import { ALL_TYPES, getEffectiveness } from '@/lib/type-effectiveness'
+import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
+import { type PokemonRow } from '@/lib/types/pokemon'
+import { parseTypes } from '@/lib/utils/pokemon'
+import { useJSONQuery } from '@/lib/hooks/useJSONQuery'
+import { ALL_TYPES } from '@/lib/type-effectiveness'
 
 // ===== Constants =================================================================
 
@@ -34,269 +25,7 @@ const SORT_OPTIONS: { key: SortKey; label: string }[] = [
   { key: 'total_stats', label: 'Stats' },
 ]
 
-const STAT_META: {
-  key: 'hp' | 'attack' | 'defense' | 'special_attack' | 'special_defense' | 'speed'
-  label: string
-}[] = [
-  { key: 'hp', label: 'HP' },
-  { key: 'attack', label: 'ATK' },
-  { key: 'defense', label: 'DEF' },
-  { key: 'special_attack', label: 'SP.ATK' },
-  { key: 'special_defense', label: 'SP.DEF' },
-  { key: 'speed', label: 'SPD' },
-]
-
-const STAT_MAX = 255
-
-// ===== Types ==================================================================
-
-interface PokemonRow {
-  id: number
-  name: string
-  japanese_name?: string
-  height: number
-  weight: number
-  sprite_url: string
-  color: string
-  type_names: string
-  hp: number
-  attack: number
-  defense: number
-  special_attack: number
-  special_defense: number
-  speed: number
-  total_stats: number
-  types: string
-  // Pre-computed fields for performance
-  parsedTypes?: PokemonType[]
-  primaryType?: PokemonType
-  lowerName?: string
-  lowerJpName?: string
-}
-
-interface EvolutionTreeRow {
-  chain_id: number
-  stage: number
-  evolves_from: string | null
-  species_name?: string
-  name?: string
-}
-
-interface EvolutionPathRow {
-  from_pokemon: string
-  to_pokemon: string
-  evolution_trigger: string | null
-  chain_id: number
-}
-
-interface PokemonMoveRow {
-  pokemon_id: number
-  move_name: string
-  move_type: string
-  power: number | null
-  accuracy: number | null
-  pp: number | null
-  damage_class: string
-}
-
-interface EvolutionChainNode {
-  name: string
-  stage: number
-  evolvesFrom: string | null
-  trigger: string | null
-  pokemon: PokemonRow | null
-}
-
-interface RadarStatPoint {
-  stat: string
-  value: number
-  fullMark: number
-}
-
-// ===== Helpers ===================================================================
-
-function parseTypes(p: PokemonRow): PokemonType[] {
-  if (p.parsedTypes) return p.parsedTypes
-  const raw = p.types || p.type_names || ''
-  return [
-    ...new Set(
-      raw
-        .split(',')
-        .map((t) => t.trim().toLowerCase())
-        .filter((t): t is PokemonType => t in typeColorMap)
-    ),
-  ]
-}
-
-function primaryTypeOf(p: PokemonRow): PokemonType {
-  if (p.primaryType) return p.primaryType
-  return parseTypes(p)[0] ?? 'normal'
-}
-
-function MatchupTooltip({
-  active,
-  payload,
-}: {
-  active?: boolean
-  payload?: Array<{ value: number }>
-}) {
-  if (!active || !payload?.length) return null
-  return (
-    <div className="glass rounded-lg px-3 py-2 text-xs border border-[var(--card-border)]">
-      <p className="text-[var(--text-secondary)]">Base stat value</p>
-      <p className="text-[var(--text-primary)] font-semibold">{payload[0]?.value}</p>
-    </div>
-  )
-}
-
-function EvolutionGraph({
-  nodes,
-  selectedName,
-  onSelect,
-}: {
-  nodes: EvolutionChainNode[]
-  selectedName: string
-  onSelect: (pokemon: PokemonRow | null) => void
-}) {
-  const stageMap = useMemo(() => {
-    const map = new Map<number, EvolutionChainNode[]>()
-    for (const node of nodes) {
-      const list = map.get(node.stage) ?? []
-      list.push(node)
-      map.set(node.stage, list)
-    }
-    for (const list of map.values()) {
-      list.sort((a, b) => a.name.localeCompare(b.name))
-    }
-    return map
-  }, [nodes])
-
-  const stages = useMemo(() => {
-    return Array.from(stageMap.keys()).sort((a, b) => a - b)
-  }, [stageMap])
-
-  const getSprite = (node: EvolutionChainNode) => {
-    if (node.pokemon) {
-      return OFFICIAL_ARTWORK(node.pokemon.id)
-    }
-    return null
-  }
-
-  return (
-    <div className="flex flex-col items-stretch gap-2 overflow-y-auto max-h-[60vh] pr-2 custom-scrollbar">
-      {stages.map((stage, stageIdx) => {
-        const stageNodes = stageMap.get(stage) ?? []
-        const isLast = stageIdx === stages.length - 1
-        return (
-          <div key={stage} className="flex flex-col items-stretch gap-2 w-full">
-            <div
-              className="grid gap-2"
-              style={{
-                gridTemplateColumns: `repeat(${Math.min(stageNodes.length, 3)}, minmax(0, 1fr))`,
-              }}
-            >
-              {stageNodes.map((node) => {
-                const isCurrent = node.name === selectedName.toLowerCase()
-                const sprite = getSprite(node)
-                const primary = node.pokemon ? primaryTypeOf(node.pokemon) : 'normal'
-                return (
-                  <button
-                    key={node.name}
-                    onClick={() => onSelect(node.pokemon)}
-                    disabled={!node.pokemon}
-                    className={[
-                      'flex items-center gap-2 px-2 py-1.5 rounded-lg border transition-all duration-300',
-                      node.pokemon
-                        ? 'hover:border-[var(--text-secondary)] hover:bg-[var(--surface)]'
-                        : 'opacity-70 cursor-default',
-                    ].join(' ')}
-                    style={{
-                      borderColor: isCurrent ? typeColorMap[primary] : 'var(--card-border)',
-                      boxShadow: isCurrent ? `0 0 10px ${typeColorMap[primary]}40` : 'none',
-                    }}
-                  >
-                    {sprite ? (
-                      <img
-                        src={sprite}
-                        alt={node.name}
-                        className={[
-                          'w-8 h-8 object-contain shrink-0',
-                          node.pokemon && isSpriteMissing(node.pokemon.id)
-                            ? 'brightness-0 opacity-50'
-                            : '',
-                        ].join(' ')}
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-8 h-8 rounded-full bg-[var(--card-border)] shrink-0" />
-                    )}
-                    <div className="flex flex-col items-start min-w-0">
-                      <span className="text-[10px] text-[var(--text-primary)] capitalize font-semibold truncate">
-                        {node.name}
-                      </span>
-                      {node.trigger && (
-                        <span className="text-[9px] text-[var(--text-muted)] capitalize truncate">
-                          {node.trigger}
-                        </span>
-                      )}
-                    </div>
-                  </button>
-                )
-              })}
-            </div>
-            {!isLast && (
-              <div className="flex items-center justify-center text-[var(--text-muted)] shrink-0 py-1">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path d="M12 5v14M5 12l7 7 7-7" />
-                </svg>
-              </div>
-            )}
-          </div>
-        )
-      })}
-    </div>
-  )
-}
-
-function useJSONQuery<T>(jsonFile: string, enabled: boolean = true) {
-  const [data, setData] = useState<T[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<Error | null>(null)
-
-  const fetchData = useCallback(async () => {
-    if (!enabled) {
-      setLoading(false)
-      return
-    }
-    try {
-      setLoading(true)
-      setError(null)
-      const response = await fetch(`/data/${jsonFile}`)
-      if (!response.ok) {
-        throw new Error(`Failed to load ${jsonFile}: ${response.status}`)
-      }
-      const json = await response.json()
-      setData(json as T[])
-    } catch (err) {
-      setError(err instanceof Error ? err : new Error(String(err)))
-    } finally {
-      setLoading(false)
-    }
-  }, [jsonFile, enabled])
-
-  useEffect(() => {
-    fetchData()
-  }, [fetchData])
-
-  return { data, loading: enabled ? loading : false, error, refetch: fetchData }
-}
+// ===== Main Component =========================================================
 
 function HomeContent() {
   useSearchParams() // required for Suspense boundary - reads URL params below
@@ -304,18 +33,13 @@ function HomeContent() {
   const [activeTypes, setActiveTypes] = useState<Set<PokemonType>>(new Set())
   const [sortBy, setSortBy] = useState<SortKey>('id')
   const [selected, setSelected] = useState<PokemonRow | null>(null)
-  const [detailReady, setDetailReady] = useState(false)
-  const [moveSearch, setMoveSearch] = useState('')
-  const [visibleCount, setVisibleCount] = useState(24)
 
   const [showTypeFilter, setShowTypeFilter] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(false)
 
-  useEffect(() => {
-    setVisibleCount(24)
-  }, [search, activeTypes, sortBy])
-
   const hasSetInitialSelected = useRef(false)
+
+  // ===== URL sync ============================================================
 
   useEffect(() => {
     if (!hasSetInitialSelected.current) {
@@ -331,24 +55,9 @@ function HomeContent() {
     window.history.replaceState({}, '', url)
   }, [selected])
 
-  useEffect(() => {
-    if (selected) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [selected])
+  // ===== Data ================================================================
 
   const { data, loading, error } = useJSONQuery<PokemonRow>('pokemon.json')
-  const { data: evolutionTree } = useJSONQuery<EvolutionTreeRow>('evolution_tree.json', !!selected)
-  const { data: evolutionPaths } = useJSONQuery<EvolutionPathRow>(
-    'evolution_paths.json',
-    !!selected
-  )
-  const { data: pokemonMovesData } = useJSONQuery<PokemonMoveRow>('pokemon_moves.json', !!selected)
 
   const enrichedData = useMemo(() => {
     if (!data) return []
@@ -360,7 +69,7 @@ function HomeContent() {
       if (!p.sprite_url) continue
       seen.add(p.id)
 
-      const parsed = parseTypes(p)
+      const parsed = parseTypes(p.types || p.type_names || '')
       result.push({
         ...p,
         parsedTypes: parsed,
@@ -380,7 +89,7 @@ function HomeContent() {
       }
     }
     return map
-  }, [data])
+  }, [enrichedData])
 
   const pokemonById = useMemo(() => {
     const map = new Map<number, PokemonRow>()
@@ -391,6 +100,8 @@ function HomeContent() {
     }
     return map
   }, [enrichedData])
+
+  // ===== Initial selection from URL ==========================================
 
   useEffect(() => {
     if (!enrichedData.length) return
@@ -403,120 +114,7 @@ function HomeContent() {
     if (pokemon) setSelected(pokemon)
   }, [enrichedData, pokemonById])
 
-  const evolutionChain = useMemo<EvolutionChainNode[]>(() => {
-    if (!selected || !evolutionTree || evolutionTree.length === 0) return []
-
-    const selectedName = selected.name.toLowerCase()
-    const normalizeName = (row: EvolutionTreeRow) =>
-      (row.species_name ?? row.name ?? '').toLowerCase()
-    const selectedNode = evolutionTree.find((row) => normalizeName(row) === selectedName)
-
-    if (!selectedNode) return []
-
-    const chainRows = evolutionTree.filter((row) => row.chain_id === selectedNode.chain_id)
-    const triggerByTarget = new Map<string, string | null>()
-
-    for (const edge of evolutionPaths ?? []) {
-      if (edge.chain_id === selectedNode.chain_id) {
-        triggerByTarget.set(edge.to_pokemon.toLowerCase(), edge.evolution_trigger)
-      }
-    }
-
-    const deduped = new Map<string, EvolutionChainNode>()
-
-    for (const row of chainRows) {
-      const name = normalizeName(row)
-      if (!name) continue
-
-      const current = deduped.get(name)
-      const candidate: EvolutionChainNode = {
-        name,
-        stage: row.stage,
-        evolvesFrom: row.evolves_from,
-        trigger: triggerByTarget.get(name) ?? null,
-        pokemon: pokemonByName.get(name) ?? null,
-      }
-
-      if (!current) {
-        deduped.set(name, candidate)
-        continue
-      }
-
-      deduped.set(name, {
-        ...current,
-        stage: Math.min(current.stage, candidate.stage),
-        evolvesFrom: current.evolvesFrom ?? candidate.evolvesFrom,
-        trigger: current.trigger ?? candidate.trigger,
-        pokemon: current.pokemon ?? candidate.pokemon,
-      })
-    }
-
-    return [...deduped.values()].sort((a, b) => {
-      if (a.stage !== b.stage) return a.stage - b.stage
-      const aId = a.pokemon?.id ?? Number.MAX_SAFE_INTEGER
-      const bId = b.pokemon?.id ?? Number.MAX_SAFE_INTEGER
-      if (aId !== bId) return aId - bId
-      return a.name.localeCompare(b.name)
-    })
-  }, [selected, evolutionTree, evolutionPaths, pokemonByName])
-
-  const radarData = useMemo<RadarStatPoint[]>(() => {
-    if (!selected) return []
-    return STAT_META.map(({ key, label }) => ({
-      stat: label,
-      value: selected[key],
-      fullMark: STAT_MAX,
-    }))
-  }, [selected])
-
-  const selectedMoves = useMemo(() => {
-    if (!selected || !pokemonMovesData) return []
-    return pokemonMovesData.filter((m) => m.pokemon_id === selected.id)
-  }, [selected, pokemonMovesData])
-
-  const filteredMoves = useMemo(() => {
-    const q = moveSearch.trim().toLowerCase()
-    if (!q) return selectedMoves
-    return selectedMoves.filter((m) => m.move_name.replace(/-/g, ' ').toLowerCase().includes(q))
-  }, [selectedMoves, moveSearch])
-
-  const typeDefenses = useMemo(() => {
-    if (!selected) return {} as Record<PokemonType, number>
-
-    const defenderTypes = parseTypes(selected)
-    const result = {} as Record<PokemonType, number>
-    ALL_TYPES.forEach((attackingType) => {
-      result[attackingType] = defenderTypes.reduce(
-        (m, defType) => m * getEffectiveness(attackingType, defType),
-        1
-      )
-    })
-    return result
-  }, [selected])
-
-  const perTypeOffenses = useMemo(() => {
-    if (!selected) return {} as Record<PokemonType, Record<PokemonType, number>>
-
-    const attackerTypes = parseTypes(selected)
-    const result = {} as Record<PokemonType, Record<PokemonType, number>>
-    attackerTypes.forEach((atkType) => {
-      result[atkType] = {} as Record<PokemonType, number>
-      ALL_TYPES.forEach((defendingType) => {
-        result[atkType][defendingType] = getEffectiveness(atkType, defendingType)
-      })
-    })
-    return result
-  }, [selected])
-
-  // Animate detail stat bars after mount
-  useEffect(() => {
-    if (selected) {
-      setDetailReady(false)
-      const raf = requestAnimationFrame(() => setDetailReady(true))
-      return () => cancelAnimationFrame(raf)
-    }
-    setDetailReady(false)
-  }, [selected])
+  // ===== Filtering & Sorting =================================================
 
   const toggleType = useCallback((type: PokemonType) => {
     setActiveTypes((prev) => {
@@ -530,10 +128,21 @@ function HomeContent() {
   const filtered = useMemo(() => {
     let result = enrichedData
 
-    // Search filter
+    // Fuzzy-ish search (includes + handles common misspellings via substring matching)
     if (search) {
       const q = search.toLowerCase()
-      result = result.filter((p) => p.lowerName!.includes(q) || p.lowerJpName!.includes(q))
+      result = result.filter((p) => {
+        if (p.lowerName!.includes(q)) return true
+        if (p.lowerJpName!.includes(q)) return true
+        // Simple fuzzy: check if all characters appear in order
+        let idx = 0
+        for (const char of q) {
+          idx = p.lowerName!.indexOf(char, idx)
+          if (idx === -1) return false
+          idx++
+        }
+        return true
+      })
     }
 
     // Type filter (AND logic - must match ALL selected types)
@@ -555,11 +164,19 @@ function HomeContent() {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center py-32 gap-4">
-        <LoadingSpinner size={64} />
-        <p className="text-[var(--text-secondary)] text-sm font-[family-name:var(--font-pixel)] tracking-wider">
-          LOADING POKEMON...
-        </p>
+      <div>
+        <div className="flex flex-col sm:flex-row gap-3 mb-6">
+          <div className="flex-1 h-11 rounded-lg bg-[var(--surface-hover)] animate-pulse" />
+          <div className="flex gap-1.5">
+            {SORT_OPTIONS.map(({ key }) => (
+              <div
+                key={key}
+                className="w-14 h-10 rounded-lg bg-[var(--surface-hover)] animate-pulse"
+              />
+            ))}
+          </div>
+        </div>
+        <PokemonGridSkeleton count={12} />
       </div>
     )
   }
@@ -620,6 +237,7 @@ function HomeContent() {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search Pokemon..."
             className="w-full pl-10 pr-10 py-2.5 rounded-lg glass text-[16px] sm:text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-[var(--card-border)] transition-all"
+            aria-label="Search Pokemon by name"
           />
           {search && (
             <button
@@ -640,7 +258,7 @@ function HomeContent() {
           )}
         </div>
 
-        <div className="flex gap-1.5">
+        <div className="flex gap-1.5" role="group" aria-label="Sort options">
           {SORT_OPTIONS.map(({ key, label }) => (
             <button
               key={key}
@@ -651,6 +269,7 @@ function HomeContent() {
                   ? 'glass text-[var(--text-primary)] border-[var(--card-border)] shadow-[0_0_10px_var(--card-border)]'
                   : 'text-[var(--text-muted)] hover:text-[var(--text-secondary)] border-transparent hover:bg-[var(--surface)]',
               ].join(' ')}
+              aria-pressed={sortBy === key}
             >
               {label}
             </button>
@@ -670,6 +289,8 @@ function HomeContent() {
               ? 'bg-[var(--accent)] text-white border-[var(--accent)] shadow-[0_0_16px_var(--accent-glow)]'
               : 'bg-[var(--surface)] text-[var(--text-secondary)] border-[var(--card-border)] hover:border-[var(--accent)] hover:text-[var(--text-primary)]',
           ].join(' ')}
+          aria-expanded={showTypeFilter}
+          aria-controls="mobile-type-filter"
         >
           <svg
             className={`w-3.5 h-3.5 transition-transform duration-200 ${showTypeFilter ? 'rotate-180' : ''}`}
@@ -689,7 +310,10 @@ function HomeContent() {
         </button>
 
         {showTypeFilter && (
-          <div className="mt-3 grid grid-cols-3 gap-2 animate-[slide-in_0.2s_ease-out]">
+          <div
+            id="mobile-type-filter"
+            className="mt-3 grid grid-cols-3 gap-2 animate-[slide-in_0.2s_ease-out]"
+          >
             {ALL_TYPES.map((type) => {
               const isActive = activeTypes.has(type)
               const color = typeColorMap[type]
@@ -712,6 +336,7 @@ function HomeContent() {
                     border: `1px solid ${color}`,
                     textShadow: '0 1px 2px rgba(0,0,0,0.5)',
                   }}
+                  aria-pressed={isActive}
                 >
                   {isActive && (
                     <svg
@@ -742,8 +367,8 @@ function HomeContent() {
         )}
       </div>
 
-      {/* Desktop: inline flex-wrap badges (unchanged) */}
-      <div className="hidden sm:flex flex-wrap gap-2 mb-6">
+      {/* Desktop: inline flex-wrap badges */}
+      <div className="hidden sm:flex flex-wrap gap-2 mb-6" role="group" aria-label="Type filters">
         {ALL_TYPES.map((type) => {
           const isActive = activeTypes.has(type)
           const color = typeColorMap[type]
@@ -764,6 +389,7 @@ function HomeContent() {
                   : `0 0 8px ${color}40`,
                 textShadow: '0 1px 2px rgba(0,0,0,0.5)',
               }}
+              aria-pressed={isActive}
               onMouseEnter={(e) => {
                 if (!isActive) {
                   e.currentTarget.style.boxShadow = `0 0 16px ${color}60, 0 0 32px ${color}30`
@@ -794,547 +420,18 @@ function HomeContent() {
         })}
       </div>
 
-      {/* == Results Count ================================================ */}
-      <p className="text-[var(--text-muted)] text-xs mb-4">{filtered.length} Pokemon found</p>
-
       {/* == Pokemon Grid ================================================ */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
-        {filtered.slice(0, visibleCount).map((pokemon, index) => {
-          const types = parseTypes(pokemon)
-          const primary = primaryTypeOf(pokemon)
-          const primaryColor = typeColorMap[primary]
-
-          return (
-            <motion.div
-              key={pokemon.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: Math.min((index % 24) * 0.05, 0.5) }}
-            >
-              <Card pokemonType={primary} hover className="cursor-pointer group h-full">
-                <button
-                  onClick={() => setSelected(pokemon)}
-                  className="w-full text-left bg-transparent border-0 p-0 m-0 cursor-pointer"
-                >
-                  <div className="relative w-full aspect-square mb-3 flex items-center justify-center overflow-hidden rounded-lg">
-                    <div
-                      className="absolute inset-0 opacity-20 group-hover:opacity-35 transition-opacity duration-500"
-                      style={{
-                        background: `radial-gradient(circle at center, ${primaryColor}50 0%, transparent 70%)`,
-                      }}
-                    />
-                    <Image
-                      src={OFFICIAL_ARTWORK(pokemon.id)}
-                      alt={pokemon.name}
-                      width={120}
-                      height={120}
-                      className={[
-                        'relative z-10 group-hover:scale-110 transition-transform duration-500',
-                        isSpriteMissing(pokemon.id) ? 'brightness-0 opacity-50' : '',
-                      ].join(' ')}
-                      unoptimized
-                    />
-                  </div>
-
-                  <h3 className="text-[var(--text-primary)] font-semibold text-sm capitalize mb-0.5 group-hover:text-[var(--text-secondary)] transition-colors duration-300">
-                    {pokemon.name}
-                  </h3>
-
-                  {pokemon.japanese_name && (
-                    <p className="text-[var(--text-muted)] text-[10px] mb-0.5 font-[family-name:var(--font-pixel)] tracking-wider">
-                      {pokemon.japanese_name}
-                    </p>
-                  )}
-
-                  <p className="text-[var(--text-muted)] text-[10px] mb-2 font-[family-name:var(--font-pixel)] tracking-wider">
-                    #{String(pokemon.id).padStart(3, '0')}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-3">
-                    {types.map((type) => (
-                      <Badge key={`${pokemon.id}-${type}`} type={type} />
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between pt-2 border-t border-[var(--card-border)]">
-                    <span className="text-[var(--text-muted)] text-xs">Total</span>
-                    <span className="text-sm font-bold" style={{ color: primaryColor }}>
-                      {pokemon.total_stats}
-                    </span>
-                  </div>
-                </button>
-              </Card>
-            </motion.div>
-          )
-        })}
-      </div>
-
-      {visibleCount < filtered.length && (
-        <div className="flex justify-center mt-8 mb-4">
-          <button
-            onClick={() => setVisibleCount((c) => c + 24)}
-            className="px-6 py-3 rounded-xl glass text-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--surface)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
-          >
-            Show next...
-          </button>
-        </div>
-      )}
-
-      {/* == Empty State ================================================== */}
-      {filtered.length === 0 && !loading && (
-        <div className="text-center py-20">
-          <p className="text-[var(--text-muted)] text-lg mb-2">No Pokemon found</p>
-          <p className="text-[var(--text-muted)] text-sm">Try adjusting your search or filters</p>
-        </div>
-      )}
+      <PokemonGrid pokemon={filtered} onSelect={(p) => setSelected(p)} />
 
       {/* == Detail Modal =================================================== */}
       {selected && (
-        <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center modal-fullscreen-mobile"
-          onClick={() => setSelected(null)}
-        >
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-lg" />
-
-          <div
-            className="relative glass bg-white/95 dark:bg-[var(--surface)] !rounded-none sm:!rounded-2xl p-0 sm:p-8 max-w-3xl lg:max-w-7xl xl:max-w-[95vw] w-full h-full sm:h-auto sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* == Sticky Close Header == */}
-            <div className="sticky top-0 z-20 flex items-center justify-between px-4 py-3 sm:px-0 sm:py-0 sm:absolute sm:top-4 sm:right-4 sm:left-auto bg-white/90 dark:bg-[var(--surface)]/90 backdrop-blur-md sm:backdrop-blur-none sm:bg-transparent border-b border-[var(--card-border)] sm:border-0 shrink-0">
-              <span className="text-sm font-bold text-[var(--text-primary)] capitalize sm:hidden truncate mr-4">
-                {selected.name}
-                <span className="text-[var(--text-muted)] font-normal ml-2">
-                  #{String(selected.id).padStart(3, '0')}
-                </span>
-              </span>
-              <button
-                onClick={() => setSelected(null)}
-                className="flex items-center justify-center w-11 h-11 sm:w-8 sm:h-8 rounded-full sm:rounded-lg bg-[var(--surface-hover)] sm:bg-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--surface)] transition-colors shrink-0"
-                aria-label="Close detail view"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="flex-1 overflow-y-auto overscroll-none p-4 sm:p-0 sm:mt-2">
-              <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-                {/* == Left Column: Moves == */}
-                <div className="lg:col-span-3 flex flex-col order-3 lg:order-1 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)]">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-[var(--text-primary)] text-xs font-[family-name:var(--font-pixel)] uppercase tracking-wider">
-                      Moves
-                    </h3>
-                    <span
-                      className="text-[10px] text-[var(--text-muted)] font-mono cursor-help"
-                      title="power / accuracy / pp"
-                    >
-                      power / acc / pp
-                    </span>
-                  </div>
-                  {selectedMoves.length > 0 && (
-                    <div className="mb-2">
-                      <input
-                        type="text"
-                        value={moveSearch}
-                        onChange={(e) => setMoveSearch(e.target.value)}
-                        placeholder="Search moves..."
-                        className="w-full pl-2.5 pr-2 py-1 rounded-md glass text-[16px] sm:text-xs text-[var(--text-primary)] placeholder-[var(--text-muted)] outline-none focus:ring-1 focus:ring-[var(--type-fighting)]"
-                      />
-                    </div>
-                  )}
-                  {filteredMoves.length > 0 ? (
-                    <div className="flex flex-col gap-1.5 max-h-48 lg:max-h-[60vh] lg:flex-1 overflow-y-auto pr-1 custom-scrollbar">
-                      {filteredMoves.map((move) => (
-                        <div
-                          key={`move-${selected.id}-${move.move_name}`}
-                          className="flex items-center justify-between px-2.5 py-1.5 rounded-md bg-[var(--surface-hover)] border border-[var(--card-border)]"
-                        >
-                          <div className="flex items-center gap-2 min-w-0">
-                            <Badge
-                              type={(move.move_type ?? 'normal') as PokemonType}
-                              className="shrink-0"
-                            />
-                            <span className="text-xs text-[var(--text-primary)] capitalize font-medium truncate">
-                              {move.move_name.replace(/-/g, ' ')}
-                            </span>
-                          </div>
-                          <span
-                            className="text-[10px] text-[var(--text-muted)] font-mono shrink-0 ml-2 cursor-help"
-                            title="power / accuracy / pp"
-                          >
-                            {move.power ?? '-'} / {move.accuracy ?? '-'} / {move.pp ?? '-'}pp
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-[var(--text-muted)] text-xs">
-                      {moveSearch ? 'No moves match your search' : 'No moves data available'}
-                    </p>
-                  )}
-                </div>
-
-                {/* == Center Column: Info & Stats == */}
-                <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
-                  <div className="flex flex-col items-center mb-6">
-                    <div className="relative mb-4 overflow-visible">
-                      <motion.div
-                        className="absolute inset-0 rounded-full scale-110"
-                        style={{
-                          background: `radial-gradient(circle at center, ${typeColorMap[primaryTypeOf(selected)]}60 0%, transparent 70%)`,
-                        }}
-                        animate={{
-                          opacity: [0.15, 0.3, 0.15],
-                          scale: [1.1, 1.2, 1.1],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: 'easeInOut',
-                        }}
-                      />
-                      <motion.div
-                        className="relative z-10"
-                        animate={{
-                          y: [0, -4, 0],
-                        }}
-                        transition={{
-                          duration: 2.5,
-                          repeat: Infinity,
-                          ease: 'easeInOut',
-                        }}
-                      >
-                        <Image
-                          src={OFFICIAL_ARTWORK(selected.id)}
-                          alt={selected.name}
-                          width={180}
-                          height={180}
-                          className={[
-                            'transition-transform duration-500 hover:scale-110 drop-shadow-lg',
-                            isSpriteMissing(selected.id) ? 'brightness-0 opacity-50' : '',
-                          ].join(' ')}
-                          unoptimized
-                        />
-                      </motion.div>
-                    </div>
-
-                    <h2 className="text-2xl font-bold text-[var(--text-primary)] capitalize mb-1">
-                      {selected.name}
-                    </h2>
-                    {selected.japanese_name && (
-                      <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider mb-1">
-                        {selected.japanese_name}
-                      </p>
-                    )}
-                    <p className="text-[var(--text-muted)] text-sm font-[family-name:var(--font-pixel)] tracking-wider">
-                      #{String(selected.id).padStart(3, '0')}
-                    </p>
-
-                    <div className="flex gap-2 mt-3">
-                      {parseTypes(selected).map((type) => (
-                        <Badge key={`${selected.id}-${type}`} type={type} />
-                      ))}
-                    </div>
-
-                    <div className="flex gap-8 mt-4 text-sm">
-                      <div className="text-center">
-                        <p className="text-[var(--text-muted)] text-xs mb-0.5">Height</p>
-                        <p className="text-[var(--text-primary)] font-semibold">
-                          {(selected.height / 10).toFixed(1)} m
-                        </p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-[var(--text-muted)] text-xs mb-0.5">Weight</p>
-                        <p className="text-[var(--text-primary)] font-semibold">
-                          {(selected.weight / 10).toFixed(1)} kg
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 items-start">
-                    <div>
-                      <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-2">
-                        Radar
-                      </h3>
-
-                      <div className="w-full min-w-0 h-[220px] min-h-[220px]">
-                        <ResponsiveContainer
-                          key={`radar-${selected.id}`}
-                          width="100%"
-                          height="100%"
-                          minWidth={0}
-                          minHeight={220}
-                        >
-                          <RadarChart data={radarData} cx="50%" cy="50%" outerRadius="68%">
-                            <PolarGrid stroke="var(--card-border)" strokeDasharray="3 3" />
-                            <PolarAngleAxis
-                              dataKey="stat"
-                              tick={{
-                                fill: 'var(--text-secondary)',
-                                fontSize: 11,
-                                fontWeight: 600,
-                              }}
-                            />
-                            <PolarRadiusAxis
-                              angle={90}
-                              domain={[0, STAT_MAX]}
-                              tick={{ fill: 'var(--text-muted)', fontSize: 10 }}
-                              tickCount={6}
-                              axisLine={false}
-                            />
-                            <Radar
-                              name={selected.name}
-                              dataKey="value"
-                              stroke={typeColorMap[primaryTypeOf(selected)]}
-                              fill={typeColorMap[primaryTypeOf(selected)]}
-                              fillOpacity={0.2}
-                              strokeWidth={2}
-                              dot={{ r: 3, fill: typeColorMap[primaryTypeOf(selected)] }}
-                              activeDot={{
-                                r: 5,
-                                fill: typeColorMap[primaryTypeOf(selected)],
-                                stroke: '#fff',
-                                strokeWidth: 1,
-                              }}
-                            />
-                            <Tooltip content={<MatchupTooltip />} />
-                          </RadarChart>
-                        </ResponsiveContainer>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-6">
-                        Base Stats
-                      </h3>
-
-                      <div className="space-y-3">
-                        {STAT_META.map(({ key, label }) => {
-                          const value = selected[key] as number
-                          const pct = Math.min((value / STAT_MAX) * 100, 100)
-                          const color = typeColorMap[primaryTypeOf(selected)]
-
-                          return (
-                            <div key={key} className="flex items-center gap-3">
-                              <span className="text-[var(--text-secondary)] text-xs w-14 text-right font-semibold shrink-0">
-                                {label}
-                              </span>
-                              <div className="flex-1 h-2 rounded-full bg-[var(--surface-hover)] overflow-hidden">
-                                <div
-                                  className="h-full rounded-full"
-                                  style={{
-                                    width: detailReady ? `${pct}%` : '0%',
-                                    background: `linear-gradient(90deg, ${color}80, ${color})`,
-                                    boxShadow: detailReady ? `0 0 8px ${color}40` : 'none',
-                                    transition: 'width 0.7s ease-out, box-shadow 0.7s ease-out',
-                                  }}
-                                />
-                              </div>
-                              <span className="text-[var(--text-secondary)] text-xs w-8 text-right font-mono shrink-0">
-                                {value}
-                              </span>
-                            </div>
-                          )
-                        })}
-
-                        <div className="flex items-center gap-3 pt-3 border-t border-[var(--card-border)]">
-                          <span className="text-[var(--text-secondary)] text-xs w-14 text-right font-bold shrink-0">
-                            TOTAL
-                          </span>
-                          <div className="flex-1" />
-                          <span
-                            className="text-sm font-bold shrink-0"
-                            style={{ color: typeColorMap[primaryTypeOf(selected)] }}
-                          >
-                            {selected.total_stats}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mb-0">
-                    <h3 className="text-[var(--text-primary)] text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-1">
-                      Type defenses
-                    </h3>
-                    <p className="text-[9px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-2">
-                      Effectiveness of each type on{' '}
-                      <span className="italic">
-                        {selected?.name.charAt(0).toUpperCase()}
-                        {selected?.name.slice(1)}
-                      </span>
-                      .
-                    </p>
-
-                    <div className="space-y-1 overflow-x-auto">
-                      {[ALL_TYPES.slice(0, 9), ALL_TYPES.slice(9)].map((rowTypes, rowIdx) => (
-                        <div
-                          key={rowIdx}
-                          className="grid grid-cols-9 gap-px rounded-lg overflow-hidden border border-[var(--card-border)]"
-                        >
-                          {rowTypes.map((type) => (
-                            <div
-                              key={type}
-                              className="flex items-center justify-center h-7 text-[8px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
-                              style={{ backgroundColor: typeColorMap[type] }}
-                            >
-                              {type.slice(0, 3)}
-                            </div>
-                          ))}
-                          {rowTypes.map((type) => {
-                            const mult = typeDefenses[type] ?? 1
-                            const isSuperEffective = mult > 1
-                            const isNotVeryEffective = mult < 1 && mult > 0
-                            const isImmune = mult === 0
-                            const isNeutral = mult === 1
-
-                            let cellBg = 'bg-[var(--surface-primary)]'
-                            let cellText = 'text-[var(--text-muted)]'
-                            let label = ''
-
-                            if (isImmune) {
-                              cellBg = 'bg-[#1a1a2e]'
-                              cellText = 'text-[var(--text-muted)]'
-                              label = '0'
-                            } else if (isSuperEffective) {
-                              cellBg = mult >= 4 ? 'bg-[#2d6a1e]' : 'bg-[#4a8c3f]'
-                              cellText = 'text-white'
-                              label = mult >= 4 ? '4' : '2'
-                            } else if (isNotVeryEffective) {
-                              cellBg = mult <= 0.25 ? 'bg-[#8b2500]' : 'bg-[#a0522d]'
-                              cellText = 'text-white'
-                              label = mult <= 0.25 ? '¼' : '½'
-                            }
-
-                            return (
-                              <div
-                                key={`${type}-val`}
-                                className={`flex items-center justify-center h-7 ${cellBg} ${cellText} text-[10px] font-[family-name:var(--font-pixel)] font-bold`}
-                              >
-                                {isNeutral ? '' : label}
-                              </div>
-                            )
-                          })}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mb-0 mt-4">
-                    <h3 className="text-[var(--text-primary)] text-[10px] font-[family-name:var(--font-pixel)] uppercase tracking-wider mb-1">
-                      Type offenses
-                    </h3>
-                    <p className="text-[9px] text-[var(--text-secondary)] font-[family-name:var(--font-pixel)] tracking-wide mb-2">
-                      Effectiveness of{' '}
-                      <span className="italic">
-                        {selected?.name.charAt(0).toUpperCase()}
-                        {selected?.name.slice(1)}
-                      </span>
-                      &apos;s types against each defending type.
-                    </p>
-
-                    {parseTypes(selected!).map((atkType) => {
-                      const offenses = perTypeOffenses[atkType]
-                      return (
-                        <div key={atkType} className="mb-3">
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <Badge type={atkType} />
-                          </div>
-                          <div className="space-y-1 overflow-x-auto">
-                            {[ALL_TYPES.slice(0, 9), ALL_TYPES.slice(9)].map((rowTypes, rowIdx) => (
-                              <div
-                                key={rowIdx}
-                                className="grid grid-cols-9 gap-px rounded-lg overflow-hidden border border-[var(--card-border)]"
-                              >
-                                {rowTypes.map((type) => (
-                                  <div
-                                    key={type}
-                                    className="flex items-center justify-center h-7 text-[8px] font-[family-name:var(--font-pixel)] font-bold text-white uppercase tracking-wider"
-                                    style={{ backgroundColor: typeColorMap[type] }}
-                                  >
-                                    {type.slice(0, 3)}
-                                  </div>
-                                ))}
-                                {rowTypes.map((type) => {
-                                  const mult = offenses[type] ?? 1
-                                  const isSuperEffective = mult > 1
-                                  const isNotVeryEffective = mult < 1 && mult > 0
-                                  const isImmune = mult === 0
-                                  const isNeutral = mult === 1
-
-                                  let cellBg = 'bg-[var(--surface-primary)]'
-                                  let cellText = 'text-[var(--text-muted)]'
-                                  let label = ''
-
-                                  if (isImmune) {
-                                    cellBg = 'bg-[#1a1a2e]'
-                                    cellText = 'text-[var(--text-muted)]'
-                                    label = '0'
-                                  } else if (isSuperEffective) {
-                                    cellBg = mult >= 4 ? 'bg-[#2d6a1e]' : 'bg-[#4a8c3f]'
-                                    cellText = 'text-white'
-                                    label = mult >= 4 ? '4' : '2'
-                                  } else if (isNotVeryEffective) {
-                                    cellBg = mult <= 0.25 ? 'bg-[#8b2500]' : 'bg-[#a0522d]'
-                                    cellText = 'text-white'
-                                    label = mult <= 0.25 ? '¼' : '½'
-                                  }
-
-                                  return (
-                                    <div
-                                      key={`off-${atkType}-${type}-val`}
-                                      className={`flex items-center justify-center h-7 ${cellBg} ${cellText} text-[10px] font-[family-name:var(--font-pixel)] font-bold`}
-                                    >
-                                      {isNeutral ? '' : label}
-                                    </div>
-                                  )
-                                })}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-
-                {/* == Right Column: Evolution Chain & Fight Sim == */}
-                <div className="lg:col-span-3 flex flex-col order-2 lg:order-3 pt-6 lg:pt-0 border-t lg:border-t-0 border-[var(--card-border)] gap-6">
-                  <div>
-                    <h3 className="text-[var(--text-secondary)] text-xs font-semibold uppercase tracking-wider mb-3">
-                      Evolution Chain
-                    </h3>
-                    {evolutionChain.length > 0 ? (
-                      <EvolutionGraph
-                        nodes={evolutionChain}
-                        selectedName={selected.name}
-                        onSelect={(pokemon) => {
-                          if (pokemon) setSelected(pokemon)
-                        }}
-                      />
-                    ) : (
-                      <p className="text-[var(--text-muted)] text-xs">No evolution data</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <PokemonFightSim player={selected} allPokemon={data ?? []} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <PokemonDetailModal
+          selected={selected}
+          allPokemon={data ?? []}
+          pokemonByName={pokemonByName}
+          onClose={() => setSelected(null)}
+          onSelectPokemon={(pokemon) => setSelected(pokemon as PokemonRow)}
+        />
       )}
 
       <AIChatbot isOpen={isChatOpen} onToggle={() => setIsChatOpen((o) => !o)} />
@@ -1347,7 +444,7 @@ export default function Home() {
     <Suspense
       fallback={
         <div className="flex flex-col items-center justify-center py-32 gap-4">
-          <div className="w-12 h-12 rounded-full border-4 border-[var(--card-border)] border-t-[var(--accent)] animate-spin" />
+          <LoadingSpinner size={64} />
           <p className="text-[var(--text-secondary)] text-sm font-[family-name:var(--font-pixel)] tracking-wider">
             LOADING...
           </p>

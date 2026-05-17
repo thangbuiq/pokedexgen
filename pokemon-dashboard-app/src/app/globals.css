@@ -24,24 +24,25 @@
   --bg-gradient-2: rgba(239, 68, 68, 0.02);
   --bg-dots: rgba(0, 0, 0, 0.06);
 
-  --type-fire: #ff6b35;
-  --type-water: #3b82f6;
-  --type-grass: #22c55e;
-  --type-electric: #facc15;
-  --type-psychic: #ec4899;
-  --type-ice: #67e8f9;
-  --type-dragon: #8b5cf6;
-  --type-dark: #6b7280;
-  --type-fairy: #f472b6;
-  --type-fighting: #ef4444;
-  --type-ghost: #a855f7;
-  --type-steel: #94a3b8;
-  --type-flying: #93c5fd;
-  --type-poison: #a855f7;
-  --type-ground: #d97706;
-  --type-rock: #a16207;
-  --type-bug: #84cc16;
-  --type-normal: #9ca3af;
+  /* These MUST match the values in lib/design-tokens.ts typeColorMap */
+  --type-normal: #a8a77a;
+  --type-fire: #ee8130;
+  --type-water: #6390f0;
+  --type-grass: #7ac74c;
+  --type-electric: #f7d02c;
+  --type-ice: #96d9d6;
+  --type-fighting: #c22e28;
+  --type-poison: #a33ea1;
+  --type-ground: #e2bf65;
+  --type-flying: #a98ff3;
+  --type-psychic: #f95587;
+  --type-bug: #a6b91a;
+  --type-rock: #b6a136;
+  --type-ghost: #735797;
+  --type-dragon: #6f35fc;
+  --type-dark: #705746;
+  --type-steel: #b7b7ce;
+  --type-fairy: #d685ad;
 }
 
 .dark {
@@ -366,5 +367,16 @@ select option {
 @media (min-width: 640px) {
   .modal-fullscreen-mobile {
     padding: 1rem;
+  }
+}
+
+/* Accessibility: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import './origins.css'
 
 const SECTIONS = [
   { id: 'creator', title: 'Creator' },
@@ -190,47 +191,7 @@ export default function OriginsPage() {
           Back to Pokédex
         </span>
       </a>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        @keyframes pulse-glow-arceus {
-          0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 255, 200, 0.4)); transform: scale(1); }
-          50% { filter: drop-shadow(0 0 60px rgba(255, 255, 200, 0.8)); transform: scale(1.02); }
-        }
-        .animate-arceus {
-          animation: pulse-glow-arceus 6s ease-in-out infinite;
-        }
-        @keyframes egg-hatch {
-          0% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-          50% { box-shadow: 0 0 50px rgba(255,255,255,0.8), 0 0 100px rgba(255,255,255,0.4); }
-          100% { box-shadow: 0 0 200px rgba(255,255,255,1), 0 0 300px rgba(255,255,255,0.8); opacity: 0; }
-        }
-        .egg-glow {
-          background: radial-gradient(ellipse at center, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1) 70%, transparent 100%);
-        }
-
-        /* Region Pins */
-        .region-pin {
-          position: absolute;
-          width: 16px; height: 16px;
-          background: var(--text-primary);
-          border-radius: 50%;
-          cursor: pointer;
-          box-shadow: 0 0 10px var(--text-primary);
-          transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .region-pin:hover {
-          transform: scale(1.5);
-          box-shadow: 0 0 20px var(--accent);
-        }
-        .region-pin-selected {
-          transform: scale(1.5);
-          box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
-          animation: purple-pulse-border 1.6s ease-in-out infinite;
-        }
-      `,
-        }}
-      />
+      {/* Origins styles loaded via CSS module: origins.module.css */}
 
       {/* Navigation */}
       <nav className="fixed bottom-0 md:bottom-auto md:top-1/2 md:-translate-y-1/2 left-0 w-full md:w-auto md:left-8 z-50 p-4 md:p-0 bg-black/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-t md:border-t-0 border-white/10 flex md:flex-col justify-between md:justify-center gap-2 md:gap-4 overflow-x-auto md:overflow-visible no-scrollbar">

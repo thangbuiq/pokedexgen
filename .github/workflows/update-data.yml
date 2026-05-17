@@ -1,0 +1,47 @@
+name: Weekly Data Update
+
+on:
+  schedule:
+    # Run every Monday at 00:00 UTC
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+    description: 'Manually trigger weekly data update'
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Install just
+        uses: extractions/setup-just@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
+
+      - name: Install project dependencies
+        run: just install
+
+      - name: Run full data pipeline (dlt -> dbt -> export)
+        run: just data
+
+      - name: Configure git as GitHub Actions bot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit updated data files
+        run: |
+          git add --all
+          git diff --cached --quiet || git commit -m "chore(data): weekly data update - $(date -u +%Y-%m-%d)"
+
+      - name: Push changes
+        run: git push origin main

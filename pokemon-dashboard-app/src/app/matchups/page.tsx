@@ -9,6 +9,9 @@ import { PokemonSprite } from '@/components/ui/PokemonSprite'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { getSpriteUrl, isSpriteMissing } from '@/lib/sprites'
+import { parseTypes } from '@/lib/utils/pokemon'
+import { useJSONQuery } from '@/lib/hooks/useJSONQuery'
+import { ALL_TYPES, getEffectiveness } from '@/lib/type-effectiveness'
 import styles from '../team/team-builder.module.css'
 
 interface PokemonData {
@@ -26,16 +29,7 @@ interface PokemonData {
 
 const COMPARISON_COLORS = ['#ff6b35', '#3b82f6', '#22c55e', '#facc15', '#ec4899', '#67e8f9']
 
-function parseTypes(type_names: string): PokemonType[] {
-  return [
-    ...new Set(
-      type_names
-        .split(',')
-        .map((t) => t.trim().toLowerCase())
-        .filter((t): t is PokemonType => ALL_TYPES.includes(t as PokemonType))
-    ),
-  ]
-}
+// parseTypes imported from @/lib/utils/pokemon
 
 function getTotalStats(p: PokemonData): number {
   return p.hp + p.attack + p.defense + p.special_attack + p.special_defense + p.speed
@@ -114,114 +108,7 @@ function inferRole(p: PokemonData): string {
   return 'Support/Utility'
 }
 
-function useJSONQuery<T>(jsonFile: string) {
-  const [data, setData] = useState<T[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<Error | null>(null)
-
-  const fetchData = useCallback(async () => {
-    try {
-      setLoading(true)
-      setError(null)
-      const response = await fetch(`/data/${jsonFile}`)
-      if (!response.ok) {
-        throw new Error(`Failed to load ${jsonFile}: ${response.status}`)
-      }
-      const json = await response.json()
-      setData(json as T[])
-    } catch (err) {
-      setError(err instanceof Error ? err : new Error(String(err)))
-    } finally {
-      setLoading(false)
-    }
-  }, [jsonFile])
-
-  useEffect(() => {
-    fetchData()
-  }, [fetchData])
-
-  return { data, loading, error, refetch: fetchData }
-}
-
-const ALL_TYPES: PokemonType[] = [
-  'normal',
-  'fire',
-  'water',
-  'electric',
-  'grass',
-  'ice',
-  'fighting',
-  'poison',
-  'ground',
-  'flying',
-  'psychic',
-  'bug',
-  'rock',
-  'ghost',
-  'dragon',
-  'dark',
-  'steel',
-  'fairy',
-]
-
-const TYPE_EFFECTIVENESS: Partial<Record<PokemonType, Partial<Record<PokemonType, number>>>> = {
-  normal: { rock: 0.5, ghost: 0, steel: 0.5 },
-  fire: { fire: 0.5, water: 0.5, grass: 2, ice: 2, bug: 2, rock: 0.5, dragon: 0.5, steel: 2 },
-  water: { fire: 2, water: 0.5, grass: 0.5, ground: 2, rock: 2, dragon: 0.5 },
-  electric: { water: 2, electric: 0.5, grass: 0.5, ground: 0, flying: 2, dragon: 0.5 },
-  grass: {
-    fire: 0.5,
-    water: 2,
-    grass: 0.5,
-    poison: 0.5,
-    ground: 2,
-    flying: 0.5,
-    bug: 0.5,
-    rock: 2,
-    dragon: 0.5,
-    steel: 0.5,
-  },
-  ice: { fire: 0.5, water: 0.5, grass: 2, ground: 2, flying: 2, dragon: 2, steel: 0.5 },
-  fighting: {
-    normal: 2,
-    ice: 2,
-    poison: 0.5,
-    flying: 0.5,
-    psychic: 0.5,
-    bug: 0.5,
-    rock: 2,
-    ghost: 0,
-    dark: 2,
-    steel: 2,
-    fairy: 0.5,
-  },
-  poison: { grass: 2, poison: 0.5, ground: 0.5, rock: 0.5, ghost: 0.5, steel: 0, fairy: 2 },
-  ground: { fire: 2, electric: 2, grass: 0.5, poison: 2, flying: 0, bug: 0.5, rock: 2, steel: 2 },
-  flying: { electric: 0.5, grass: 2, fighting: 2, bug: 2, rock: 0.5, steel: 0.5 },
-  psychic: { fighting: 2, poison: 2, psychic: 0.5, dark: 0, steel: 0.5 },
-  bug: {
-    fire: 0.5,
-    grass: 2,
-    fighting: 0.5,
-    poison: 0.5,
-    flying: 0.5,
-    psychic: 2,
-    ghost: 0.5,
-    dark: 2,
-    steel: 0.5,
-    fairy: 0.5,
-  },
-  rock: { fire: 2, ice: 2, fighting: 0.5, ground: 0.5, flying: 2, bug: 2, steel: 0.5 },
-  ghost: { normal: 0, psychic: 2, ghost: 2, dark: 0.5 },
-  dragon: { dragon: 2, steel: 0.5, fairy: 0 },
-  dark: { fighting: 0.5, psychic: 2, ghost: 2, dark: 0.5, fairy: 0.5 },
-  steel: { fire: 0.5, water: 0.5, electric: 0.5, ice: 2, rock: 2, steel: 0.5, fairy: 2 },
-  fairy: { fire: 0.5, fighting: 2, poison: 0.5, dragon: 2, dark: 2, steel: 0.5 },
-}
-
-function getEffectiveness(attacker: PokemonType, defender: PokemonType): number {
-  return TYPE_EFFECTIVENESS[attacker]?.[defender] ?? 1
-}
+// useJSONQuery, ALL_TYPES, getEffectiveness imported from shared lib modules
 
 function getCoverageTypes(pokemonList: PokemonData[]): PokemonType[] {
   const covered = new Set<PokemonType>()
@@ -776,10 +663,17 @@ export default function MatchupsPage() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768)
+    let timeout: ReturnType<typeof setTimeout>
+    const check = () => {
+      clearTimeout(timeout)
+      timeout = setTimeout(() => setIsMobile(window.innerWidth < 768), 100)
+    }
     check()
     window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
+    return () => {
+      window.removeEventListener('resize', check)
+      clearTimeout(timeout)
+    }
   }, [])
 
   const {

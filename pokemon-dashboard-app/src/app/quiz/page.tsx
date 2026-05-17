@@ -7,6 +7,8 @@ import { HowToGuide } from '@/components/ui/HowToGuide'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { type PokemonType, typeColorMap } from '@/lib/design-tokens'
 import { getSpriteUrl, isSpriteMissing } from '@/lib/sprites'
+import { parseTypes, formatName } from '@/lib/utils/pokemon'
+import { useJSONQuery } from '@/lib/hooks/useJSONQuery'
 
 // ===== Types =====================================================================
 
@@ -20,6 +22,19 @@ interface PokemonRow {
 type Difficulty = 'easy' | 'hard'
 type GameState = 'guessing' | 'revealed'
 
+// ===== Constants ===============================================================
+
+const CONFETTI_COLORS = [
+  'var(--type-fire)',
+  'var(--type-electric)',
+  'var(--type-water)',
+  'var(--type-grass)',
+  'var(--type-psychic)',
+  'var(--type-dragon)',
+  '#ffffff',
+  '#facc15',
+] as const
+
 // ===== Helpers ===================================================================
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -31,53 +46,19 @@ function shuffleArray<T>(arr: T[]): T[] {
   return shuffled
 }
 
-function formatName(slug: string): string {
-  return slug
-    .split('-')
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ')
-}
-
-function parseTypes(typeStr: string): PokemonType[] {
-  return typeStr
-    .split(',')
-    .map((t) => t.trim().toLowerCase())
-    .filter((t): t is PokemonType => t in typeColorMap)
-}
-
-function useJSONQuery<T>(jsonFile: string) {
-  const [data, setData] = useState<T[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<Error | null>(null)
-
-  const fetchData = useCallback(async () => {
-    try {
-      setLoading(true)
-      setError(null)
-      const response = await fetch(`/data/${jsonFile}`)
-      if (!response.ok) {
-        throw new Error(`Failed to load ${jsonFile}: ${response.status}`)
-      }
-      const json = await response.json()
-      setData(json as T[])
-    } catch (err) {
-      setError(err instanceof Error ? err : new Error(String(err)))
-    } finally {
-      setLoading(false)
-    }
-  }, [jsonFile])
-
-  useEffect(() => {
-    fetchData()
-  }, [fetchData])
-
-  return { data, loading, error, refetch: fetchData }
-}
-
 // ===== Confetti Particle ========================================================
 
-function ConfettiParticle({ delay, color, left }: { delay: number; color: string; left: number }) {
-  const yOffset = -80 - Math.random() * 120
+function ConfettiParticle({
+  delay,
+  color,
+  left,
+  yOffset,
+}: {
+  delay: number
+  color: string
+  left: number
+  yOffset: number
+}) {
   return (
     <div
       className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full animate-[confetti-burst_0.8s_ease-out_forwards]"
@@ -147,7 +128,12 @@ export default function QuizPage() {
   const [difficulty, setDifficulty] = useState<Difficulty>('easy')
   const [score, setScore] = useState(0)
   const [streak, setStreak] = useState(0)
-  const [bestStreak, setBestStreak] = useState(0)
+  const [bestStreak, setBestStreak] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return parseInt(localStorage.getItem('quiz_best_streak') ?? '0', 10) || 0
+    }
+    return 0
+  })
   const [totalGuesses, setTotalGuesses] = useState(0)
   const [gameState, setGameState] = useState<GameState>('guessing')
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null)
@@ -155,6 +141,18 @@ export default function QuizPage() {
   const [showConfetti, setShowConfetti] = useState(false)
   const [shakeWrong, setShakeWrong] = useState(false)
   const [revealAnimation, setRevealAnimation] = useState(false)
+
+  // Pre-generate confetti particles once (avoids random values during render in React 19 Strict Mode)
+  const confettiParticles = useMemo(
+    () =>
+      Array.from({ length: 24 }).map((_, i) => ({
+        delay: i * 30,
+        color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+        left: 10 + (i * 80) / 24,
+        yOffset: -80 - Math.random() * 120,
+      })),
+    []
+  )
 
   // Queue of Pokemon indices - no repeats until all shown
   const [queue, setQueue] = useState<number[]>([])
@@ -222,7 +220,13 @@ export default function QuizPage() {
         setScore((s) => s + 1)
         setStreak((s) => {
           const newStreak = s + 1
-          setBestStreak((b) => Math.max(b, newStreak))
+          setBestStreak((b) => {
+            const newBest = Math.max(b, newStreak)
+            try {
+              localStorage.setItem('quiz_best_streak', String(newBest))
+            } catch {}
+            return newBest
+          })
           return newStreak
         })
         setShowConfetti(true)
@@ -312,19 +316,6 @@ export default function QuizPage() {
   const primaryType = pokemonTypes[0] ?? 'normal'
   const primaryColor = typeColorMap[primaryType]
   const accuracy = totalGuesses > 0 ? Math.round((score / totalGuesses) * 100) : 0
-
-  // ===== Confetti colors ====================================================
-
-  const confettiColors = [
-    'var(--type-fire)',
-    'var(--type-electric)',
-    'var(--type-water)',
-    'var(--type-grass)',
-    'var(--type-psychic)',
-    'var(--type-dragon)',
-    '#ffffff',
-    '#facc15',
-  ]
 
   // ===== Render ==============================================================
 
@@ -488,12 +479,13 @@ export default function QuizPage() {
           {/* Confetti overlay */}
           {showConfetti && (
             <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
-              {Array.from({ length: 24 }).map((_, i) => (
+              {confettiParticles.map((p, i) => (
                 <ConfettiParticle
                   key={i}
-                  delay={i * 30}
-                  color={confettiColors[i % confettiColors.length]}
-                  left={10 + (i * 80) / 24}
+                  delay={p.delay}
+                  color={p.color}
+                  left={p.left}
+                  yOffset={p.yOffset}
                 />
               ))}
             </div>
