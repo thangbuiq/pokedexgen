@@ -1306,21 +1306,21 @@
   },
   {
     "chain_id": 58,
-    "species_name": "kleavor",
-    "stage": 2,
-    "evolves_from": "scyther",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "black-augurite"
-  },
-  {
-    "chain_id": 58,
     "species_name": "scizor",
     "stage": 2,
     "evolves_from": "scyther",
     "evolution_trigger": "trade",
     "min_level": null,
     "item_required": null
+  },
+  {
+    "chain_id": 58,
+    "species_name": "kleavor",
+    "stage": 2,
+    "evolves_from": "scyther",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "black-augurite"
   },
   {
     "chain_id": 59,
@@ -1459,12 +1459,12 @@
   },
   {
     "chain_id": 67,
-    "species_name": "jolteon",
+    "species_name": "umbreon",
     "stage": 2,
     "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
+    "evolution_trigger": "level-up",
     "min_level": null,
-    "item_required": "thunder-stone"
+    "item_required": null
   },
   {
     "chain_id": 67,
@@ -1477,12 +1477,12 @@
   },
   {
     "chain_id": 67,
-    "species_name": "umbreon",
+    "species_name": "jolteon",
     "stage": 2,
     "evolves_from": "eevee",
-    "evolution_trigger": "level-up",
+    "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": null
+    "item_required": "thunder-stone"
   },
   {
     "chain_id": 67,
@@ -1492,6 +1492,15 @@
     "evolution_trigger": "level-up",
     "min_level": null,
     "item_required": null
+  },
+  {
+    "chain_id": 67,
+    "species_name": "flareon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "fire-stone"
   },
   {
     "chain_id": 67,
@@ -1510,15 +1519,6 @@
     "evolution_trigger": "level-up",
     "min_level": null,
     "item_required": null
-  },
-  {
-    "chain_id": 67,
-    "species_name": "flareon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "fire-stone"
   },
   {
     "chain_id": 67,
@@ -2071,7 +2071,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "clodsire",
+    "species_name": "quagsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2080,7 +2080,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "quagsire",
+    "species_name": "clodsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2737,7 +2737,7 @@
   },
   {
     "chain_id": 135,
-    "species_name": "cascoon",
+    "species_name": "silcoon",
     "stage": 2,
     "evolves_from": "wurmple",
     "evolution_trigger": "level-up",
@@ -2746,7 +2746,7 @@
   },
   {
     "chain_id": 135,
-    "species_name": "silcoon",
+    "species_name": "cascoon",
     "stage": 2,
     "evolves_from": "wurmple",
     "evolution_trigger": "level-up",
@@ -2881,21 +2881,21 @@
   },
   {
     "chain_id": 140,
-    "species_name": "gardevoir",
-    "stage": 3,
-    "evolves_from": "kirlia",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null
-  },
-  {
-    "chain_id": 140,
     "species_name": "gallade",
     "stage": 3,
     "evolves_from": "kirlia",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "dawn-stone"
+  },
+  {
+    "chain_id": 140,
+    "species_name": "gardevoir",
+    "stage": 3,
+    "evolves_from": "kirlia",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null
   },
   {
     "chain_id": 141,
@@ -2971,20 +2971,20 @@
   },
   {
     "chain_id": 144,
-    "species_name": "ninjask",
-    "stage": 2,
-    "evolves_from": "nincada",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null
-  },
-  {
-    "chain_id": 144,
     "species_name": "shedinja",
     "stage": 2,
     "evolves_from": "nincada",
     "evolution_trigger": "shed",
     "min_level": null,
+    "item_required": null
+  },
+  {
+    "chain_id": 144,
+    "species_name": "ninjask",
+    "stage": 2,
+    "evolves_from": "nincada",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
     "item_required": null
   },
   {
@@ -3523,7 +3523,7 @@
     "species_name": "milotic",
     "stage": 2,
     "evolves_from": "feebas",
-    "evolution_trigger": "level-up",
+    "evolution_trigger": "trade",
     "min_level": null,
     "item_required": null
   },
@@ -7264,7 +7264,7 @@
   },
   {
     "chain_id": 413,
-    "species_name": "solgaleo",
+    "species_name": "lunala",
     "stage": 3,
     "evolves_from": "cosmoem",
     "evolution_trigger": "level-up",
@@ -7273,7 +7273,7 @@
   },
   {
     "chain_id": 413,
-    "species_name": "lunala",
+    "species_name": "solgaleo",
     "stage": 3,
     "evolves_from": "cosmoem",
     "evolution_trigger": "level-up",
@@ -8151,7 +8151,7 @@
     "evolves_from": "kubfu",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "scroll-of-darkness"
+    "item_required": "scroll-of-waters"
   },
   {
     "chain_id": 471,
@@ -8488,21 +8488,21 @@
   },
   {
     "chain_id": 490,
-    "species_name": "armarouge",
-    "stage": 2,
-    "evolves_from": "charcadet",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "auspicious-armor"
-  },
-  {
-    "chain_id": 490,
     "species_name": "ceruledge",
     "stage": 2,
     "evolves_from": "charcadet",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "malicious-armor"
+  },
+  {
+    "chain_id": 490,
+    "species_name": "armarouge",
+    "stage": 2,
+    "evolves_from": "charcadet",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "auspicious-armor"
   },
   {
     "chain_id": 491,
@@ -9132,7 +9132,7 @@
     "evolves_from": "poltchageist",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "unremarkable-teacup"
+    "item_required": "masterpiece-teacup"
   },
   {
     "chain_id": 540,
