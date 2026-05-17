@@ -368,7 +368,7 @@ export function PokemonDetailModal({
       <div className="absolute inset-0 bg-black/50 backdrop-blur-lg" />
 
       <div
-        className="relative glass bg-white/95 dark:bg-[var(--surface)] !rounded-none sm:!rounded-2xl p-0 sm:p-6 sm:w-[75vw] max-w-[1400px] w-full h-full sm:h-auto sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
+        className="relative glass bg-white/95 dark:bg-[var(--surface)] !rounded-none sm:!rounded-2xl p-0 sm:p-6 sm:w-[60vw] max-w-[800px] w-full h-full sm:h-auto sm:max-h-[90vh] overflow-hidden animate-[slide-in_0.3s_ease-out] custom-scrollbar flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Sticky Header (mobile) + Close button */}

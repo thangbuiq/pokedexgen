@@ -30,6 +30,9 @@ jobs:
       - name: Install project dependencies
         run: just install
 
+      - name: Create data directory
+        run: mkdir -p data
+
       - name: Run full data pipeline (dlt -> dbt -> export)
         run: just data
 
