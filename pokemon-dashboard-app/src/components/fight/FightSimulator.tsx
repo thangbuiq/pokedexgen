@@ -196,7 +196,7 @@ function PokemonSelector({
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search Pokemon..."
+          placeholder="Search Pokemon"
           className={styles.searchInput}
           autoFocus
         />

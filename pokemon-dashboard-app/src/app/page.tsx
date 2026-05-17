@@ -235,7 +235,7 @@ function HomeContent() {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search Pokemon..."
+            placeholder="Search Pokemon"
             className="w-full pl-10 pr-10 py-2.5 rounded-lg glass text-[16px] sm:text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-[var(--card-border)] transition-all"
             aria-label="Search Pokemon by name"
           />
