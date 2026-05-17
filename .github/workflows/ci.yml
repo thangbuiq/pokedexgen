@@ -27,7 +27,7 @@ jobs:
         run: uv tool install prek
 
       - name: Run prek checks on all files
-        run: uv run prek run --all-files
+        run: prek run --all-files
 
   build-frontend:
     runs-on: ubuntu-latest

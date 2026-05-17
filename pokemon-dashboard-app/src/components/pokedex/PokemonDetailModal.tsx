@@ -478,7 +478,7 @@ export function PokemonDetailModal({
               </div>
 
               {/* Row 2: Type matchups (left) | Moves button + Evolution (right) */}
-              <div className="grid grid-cols-[1fr_220px] gap-6 mt-4 border-t border-[var(--card-border)] pt-4">
+              <div className="grid grid-cols-[1fr_260px] gap-6 mt-4 border-t border-[var(--card-border)] pt-4">
                 <div>{matchupsContent}</div>
                 <div className="space-y-4">
                   {movesButton}

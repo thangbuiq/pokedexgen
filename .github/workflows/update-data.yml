@@ -5,7 +5,6 @@ on:
     # Run every Monday at 00:00 UTC
     - cron: '0 0 * * 1'
   workflow_dispatch:
-    description: 'Manually trigger weekly data update'
 
 permissions:
   contents: write
@@ -36,6 +35,9 @@ jobs:
       - name: Run full data pipeline (dlt -> dbt -> export)
         run: just data
 
+      - name: Install prek
+        run: uv tool install prek
+
       - name: Run prek format on all files
         run: uv run prek run --all-files
 
@@ -52,4 +54,4 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(data): weekly data update - $(date -u +%Y-%m-%d)"
 
       - name: Push changes
-        run: git push origin main
+        run: git push origin main || true

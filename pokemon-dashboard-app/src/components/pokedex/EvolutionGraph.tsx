@@ -112,16 +112,16 @@ export function EvolutionGraph({ nodes, selectedName, onSelect }: EvolutionGraph
   }
 
   return (
-    <div className="flex flex-col items-stretch gap-2 overflow-y-auto max-h-[60vh] pr-2 custom-scrollbar">
+    <div className="flex flex-col items-stretch gap-1.5 overflow-y-auto max-h-[280px] pr-1 custom-scrollbar">
       {stages.map((stage, stageIdx) => {
         const stageNodes = stageMap.get(stage) ?? []
         const isLast = stageIdx === stages.length - 1
         return (
-          <div key={stage} className="flex flex-col items-stretch gap-2 w-full">
+          <div key={stage} className="flex flex-col items-stretch gap-1.5 w-full">
             <div
-              className="grid gap-2"
+              className="grid gap-1.5"
               style={{
-                gridTemplateColumns: `repeat(${Math.min(stageNodes.length, 3)}, minmax(0, 1fr))`,
+                gridTemplateColumns: `repeat(${Math.min(stageNodes.length, 2)}, minmax(0, 1fr))`,
               }}
             >
               {stageNodes.map((node) => {
@@ -135,7 +135,7 @@ export function EvolutionGraph({ nodes, selectedName, onSelect }: EvolutionGraph
                     onClick={() => onSelect(node.pokemon)}
                     disabled={!node.pokemon}
                     className={[
-                      'flex items-center gap-2 px-2 py-1.5 rounded-lg border transition-all duration-300',
+                      'flex items-center gap-1.5 px-1.5 py-1 rounded-lg border transition-all duration-300',
                       node.pokemon
                         ? 'hover:border-[var(--text-secondary)] hover:bg-[var(--surface)]'
                         : 'opacity-70 cursor-default',
@@ -151,7 +151,7 @@ export function EvolutionGraph({ nodes, selectedName, onSelect }: EvolutionGraph
                         src={sprite}
                         alt={`${node.name} sprite`}
                         className={[
-                          'w-8 h-8 object-contain shrink-0',
+                          'w-7 h-7 object-contain shrink-0',
                           node.pokemon && isSpriteMissing(node.pokemon.id)
                             ? 'brightness-0 opacity-50'
                             : '',
@@ -159,15 +159,15 @@ export function EvolutionGraph({ nodes, selectedName, onSelect }: EvolutionGraph
                         loading="lazy"
                       />
                     ) : (
-                      <div className="w-8 h-8 rounded-full bg-[var(--card-border)] shrink-0" />
+                      <div className="w-7 h-7 rounded-full bg-[var(--card-border)] shrink-0" />
                     )}
                     <div className="flex flex-col items-start min-w-0">
-                      <span className="text-[10px] text-[var(--text-primary)] capitalize font-semibold truncate">
+                      <span className="text-[9px] text-[var(--text-primary)] capitalize font-semibold truncate leading-tight">
                         {node.name}
                       </span>
                       {triggerInfo && (
                         <span
-                          className="text-[9px] font-semibold truncate px-1.5 py-0.5 rounded-md mt-0.5"
+                          className="text-[8px] font-semibold truncate px-1 py-0.5 rounded-md mt-0.5"
                           style={{
                             color: triggerInfo.color,
                             backgroundColor: `${triggerInfo.color}18`,
