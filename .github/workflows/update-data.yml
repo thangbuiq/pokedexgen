@@ -33,14 +33,19 @@ jobs:
       - name: Run full data pipeline (dlt -> dbt -> export)
         run: just data
 
+      - name: Run prek format on all files
+        run: uv run prek run --all-files
+
       - name: Configure git as GitHub Actions bot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit updated data files
+      - name: Stage all changes
+        run: git add --all
+
+      - name: Commit updated files
         run: |
-          git add --all
           git diff --cached --quiet || git commit -m "chore(data): weekly data update - $(date -u +%Y-%m-%d)"
 
       - name: Push changes
