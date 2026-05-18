@@ -30,16 +30,6 @@ import { PokemonFightSim } from '@/components/fight/PokemonFightSim'
 
 // ===== Constants ==============================================================
 
-type MobileTabId = 'stats' | 'matchups' | 'moves' | 'evolution' | 'fight'
-
-const MOBILE_TABS: { id: MobileTabId; label: string; icon: string }[] = [
-  { id: 'stats', label: 'Stats', icon: '📊' },
-  { id: 'matchups', label: 'Types', icon: '⚔️' },
-  { id: 'moves', label: 'Moves', icon: '💥' },
-  { id: 'evolution', label: 'Evolve', icon: '🔄' },
-  { id: 'fight', label: 'Fight', icon: '🥊' },
-]
-
 const STAT_META: {
   key: keyof Pick<
     PokemonRow,
@@ -110,7 +100,6 @@ export function PokemonDetailModal({
   onClose,
   onSelectPokemon,
 }: PokemonDetailModalProps) {
-  const [activeTab, setActiveTab] = useState<MobileTabId>('stats')
   const [detailReady, setDetailReady] = useState(false)
   const [moveSearch, setMoveSearch] = useState('')
   const [showMovesModal, setShowMovesModal] = useState(false)
@@ -304,15 +293,6 @@ export function PokemonDetailModal({
     </div>
   )
 
-  const statsContent = (
-    <StatsTab
-      selected={selected}
-      primaryColor={primaryColor}
-      primary={primary}
-      radarData={radarData}
-      detailReady={detailReady}
-    />
-  )
   const matchupsContent = (
     <TypeMatchupPills defenderTypes={types} pokemonName={capitalize(selected.name)} />
   )
@@ -398,62 +378,43 @@ export function PokemonDetailModal({
 
         <ErrorBoundary>
           {isMobile ? (
-            /* ===== MOBILE: Tab-based layout ===== */
-            <>
+            /* ===== MOBILE: Simple scrollable list ===== */
+            <div className="flex-1 overflow-y-auto overscroll-none custom-scrollbar">
+              {/* Sprite + info at top */}
               {heroSection}
-              <div className="grid grid-cols-5 gap-1 px-3 pb-3 shrink-0">
-                {MOBILE_TABS.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={[
-                      'flex flex-col items-center justify-center gap-1 py-3 rounded-xl text-center transition-all duration-200 min-h-[56px]',
-                      activeTab === tab.id
-                        ? 'bg-[var(--surface-light)] shadow-sm'
-                        : 'bg-[var(--surface)] hover:bg-[var(--surface-light)]',
-                    ].join(' ')}
-                    style={
-                      activeTab === tab.id
-                        ? {
-                            boxShadow: `0 0 12px ${primaryColor}40`,
-                            borderBottom: `3px solid ${primaryColor}`,
-                          }
-                        : undefined
-                    }
-                  >
-                    <span className="text-lg leading-none">{tab.icon}</span>
-                    <span
-                      className={[
-                        'text-[10px] font-bold tracking-wider',
-                        activeTab === tab.id
-                          ? 'text-[var(--text-primary)]'
-                          : 'text-[var(--text-muted)]',
-                      ].join(' ')}
-                    >
-                      {tab.label}
-                    </span>
-                  </button>
-                ))}
+
+              {/* Stat bars */}
+              <div className="px-4 pb-4 border-b border-[var(--card-border)]">
+                <StatBarsSection
+                  selected={selected}
+                  primaryColor={primaryColor}
+                  detailReady={detailReady}
+                />
               </div>
-              <div
-                className="flex-1 overflow-y-auto overscroll-none p-4"
-                role="tabpanel"
-                aria-live="polite"
-              >
-                {activeTab === 'stats' && statsContent}
-                {activeTab === 'matchups' && matchupsContent}
-                {activeTab === 'moves' && (
-                  <MovesTab
-                    filteredMoves={filteredMoves}
-                    selectedMoves={selectedMoves}
-                    moveSearch={moveSearch}
-                    onMoveSearchChange={setMoveSearch}
-                  />
-                )}
-                {activeTab === 'evolution' && evolutionContent}
-                {activeTab === 'fight' && fightContent}
+
+              {/* Type matchups */}
+              <div className="px-4 py-4 border-b border-[var(--card-border)]">
+                {matchupsContent}
               </div>
-            </>
+
+              {/* Moves */}
+              <div className="px-4 py-4 border-b border-[var(--card-border)]">
+                <MovesTab
+                  filteredMoves={filteredMoves}
+                  selectedMoves={selectedMoves}
+                  moveSearch={moveSearch}
+                  onMoveSearchChange={setMoveSearch}
+                />
+              </div>
+
+              {/* Evolution */}
+              <div className="px-4 py-4 border-b border-[var(--card-border)]">
+                {evolutionContent}
+              </div>
+
+              {/* Fight sim */}
+              <div className="px-4 py-4">{fightContent}</div>
+            </div>
           ) : (
             /* ===== DESKTOP: Radar | Sprite | Stat Bars ===== */
             <div className="flex-1 overflow-y-auto overscroll-none custom-scrollbar px-2">
@@ -684,28 +645,6 @@ function StatBarsSection({
           </span>
         </div>
       </div>
-    </div>
-  )
-}
-
-/** Combined radar + bars — used in mobile Stats tab */
-function StatsTab({
-  selected,
-  primaryColor,
-  primary,
-  radarData,
-  detailReady,
-}: {
-  selected: PokemonRow
-  primaryColor: string
-  primary: PokemonType
-  radarData: { stat: string; value: number; fullMark: number }[]
-  detailReady: boolean
-}) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-      <RadarSection selected={selected} primary={primary} radarData={radarData} />
-      <StatBarsSection selected={selected} primaryColor={primaryColor} detailReady={detailReady} />
     </div>
   )
 }
