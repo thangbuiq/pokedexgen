@@ -48,12 +48,28 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
 
   useEffect(() => {
     if (isOpen) {
+      // On mobile, use position: fixed to truly lock scroll (overflow:hidden alone fails on iOS)
+      const scrollY = window.scrollY
       document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
     } else {
+      const scrollY = document.body.style.top
       document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY.replace('-', ''), 10))
+      }
     }
     return () => {
       document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
     }
   }, [isOpen])
 
@@ -98,14 +114,14 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
           'border border-[var(--card-border)] shadow-2xl',
           'transition-all duration-300 ease-in-out',
           isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none',
-          'inset-0 m-0 !rounded-none',
+          'inset-0 m-0 !rounded-none h-dvh',
           'sm:inset-auto sm:bottom-5 sm:right-5 sm:w-[400px] sm:max-h-[560px] sm:h-auto sm:!rounded-2xl',
         ].join(' ')}
         role="complementary"
         aria-label="AI Pokemon Assistant"
         onKeyDown={handleKeyDown}
       >
-        <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 sm:!rounded-t-2xl !rounded-none">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--card-border)] shrink-0 sm:!rounded-t-2xl !rounded-none sticky top-0 z-10 bg-[var(--background)]">
           <div className="flex items-center gap-2.5">
             <div className="relative">
               <div className="w-9 h-9 flex items-center justify-center">
@@ -232,7 +248,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
           <div className="h-4" />
         </div>
 
-        <div className="shrink-0 px-4 py-3 border-t border-[var(--card-border)] bg-transparent">
+        <div className="shrink-0 px-4 py-3 border-t border-[var(--card-border)] bg-[var(--background)] safe-area-bottom">
           <ChatInput onSend={handleSend} isLoading={isLoading} />
         </div>
       </div>
