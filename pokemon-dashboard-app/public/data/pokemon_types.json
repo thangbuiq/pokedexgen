@@ -10,38 +10,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 606,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 605,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 604,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 603,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 602,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 610,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 615,
-    "type_name": "ice",
+    "pokemon_id": 620,
+    "type_name": "fighting",
     "slot": 1
   },
   {
@@ -70,7 +40,17 @@
     "slot": 1
   },
   {
+    "pokemon_id": 615,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
     "pokemon_id": 614,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 613,
     "type_name": "ice",
     "slot": 1
   },
@@ -80,12 +60,17 @@
     "slot": 1
   },
   {
-    "pokemon_id": 613,
-    "type_name": "ice",
+    "pokemon_id": 604,
+    "type_name": "electric",
     "slot": 1
   },
   {
     "pokemon_id": 611,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 610,
     "type_name": "dragon",
     "slot": 1
   },
@@ -110,11 +95,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 601,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
     "pokemon_id": 607,
     "type_name": "ghost",
     "slot": 1
@@ -125,8 +105,28 @@
     "slot": 2
   },
   {
-    "pokemon_id": 620,
-    "type_name": "fighting",
+    "pokemon_id": 605,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 606,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 603,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 602,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 601,
+    "type_name": "steel",
     "slot": 1
   },
   {
@@ -145,13 +145,128 @@
     "slot": 2
   },
   {
-    "pokemon_id": 623,
-    "type_name": "ground",
+    "pokemon_id": 637,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 623,
-    "type_name": "ghost",
+    "pokemon_id": 637,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 640,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 640,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 639,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 639,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 638,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 638,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 636,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 636,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 635,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 635,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 634,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 634,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 633,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 633,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 632,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 632,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 625,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 625,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 631,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 630,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 630,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 629,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 629,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -180,91 +295,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 638,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 638,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 637,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 637,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 636,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 636,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 635,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 635,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 634,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 634,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 632,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 632,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 633,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 633,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 631,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 625,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 625,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
     "pokemon_id": 624,
     "type_name": "dark",
     "slot": 1
@@ -275,33 +305,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 630,
-    "type_name": "dark",
+    "pokemon_id": 623,
+    "type_name": "ground",
     "slot": 1
   },
   {
-    "pokemon_id": 630,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 629,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 629,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 640,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 640,
-    "type_name": "fighting",
+    "pokemon_id": 623,
+    "type_name": "ghost",
     "slot": 2
   },
   {
@@ -320,26 +330,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 639,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 639,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 644,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 644,
-    "type_name": "electric",
-    "slot": 2
-  },
-  {
     "pokemon_id": 643,
     "type_name": "dragon",
     "slot": 1
@@ -350,39 +340,24 @@
     "slot": 2
   },
   {
-    "pokemon_id": 647,
-    "type_name": "water",
+    "pokemon_id": 662,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 647,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 645,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 645,
+    "pokemon_id": 662,
     "type_name": "flying",
     "slot": 2
   },
   {
-    "pokemon_id": 646,
-    "type_name": "dragon",
+    "pokemon_id": 661,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 646,
-    "type_name": "ice",
+    "pokemon_id": 661,
+    "type_name": "flying",
     "slot": 2
-  },
-  {
-    "pokemon_id": 651,
-    "type_name": "grass",
-    "slot": 1
   },
   {
     "pokemon_id": 660,
@@ -393,11 +368,6 @@
     "pokemon_id": 660,
     "type_name": "ground",
     "slot": 2
-  },
-  {
-    "pokemon_id": 659,
-    "type_name": "normal",
-    "slot": 1
   },
   {
     "pokemon_id": 658,
@@ -408,6 +378,11 @@
     "pokemon_id": 658,
     "type_name": "dark",
     "slot": 2
+  },
+  {
+    "pokemon_id": 659,
+    "type_name": "normal",
+    "slot": 1
   },
   {
     "pokemon_id": 657,
@@ -425,8 +400,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 656,
-    "type_name": "water",
+    "pokemon_id": 654,
+    "type_name": "fire",
     "slot": 1
   },
   {
@@ -435,19 +410,24 @@
     "slot": 1
   },
   {
-    "pokemon_id": 650,
+    "pokemon_id": 652,
     "type_name": "grass",
     "slot": 1
   },
   {
-    "pokemon_id": 648,
-    "type_name": "normal",
+    "pokemon_id": 652,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 651,
+    "type_name": "grass",
     "slot": 1
   },
   {
-    "pokemon_id": 648,
-    "type_name": "psychic",
-    "slot": 2
+    "pokemon_id": 650,
+    "type_name": "grass",
+    "slot": 1
   },
   {
     "pokemon_id": 649,
@@ -460,23 +440,53 @@
     "slot": 2
   },
   {
-    "pokemon_id": 661,
+    "pokemon_id": 648,
     "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 661,
+    "pokemon_id": 648,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 647,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 647,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 646,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 646,
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 645,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 645,
     "type_name": "flying",
     "slot": 2
   },
   {
-    "pokemon_id": 662,
-    "type_name": "fire",
+    "pokemon_id": 644,
+    "type_name": "dragon",
     "slot": 1
   },
   {
-    "pokemon_id": 662,
-    "type_name": "flying",
+    "pokemon_id": 644,
+    "type_name": "electric",
     "slot": 2
   },
   {
@@ -488,6 +498,11 @@
     "pokemon_id": 663,
     "type_name": "flying",
     "slot": 2
+  },
+  {
+    "pokemon_id": 656,
+    "type_name": "water",
+    "slot": 1
   },
   {
     "pokemon_id": 665,
@@ -500,26 +515,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 668,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 668,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 667,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 667,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
     "pokemon_id": 666,
     "type_name": "bug",
     "slot": 1
@@ -530,14 +525,29 @@
     "slot": 2
   },
   {
-    "pokemon_id": 669,
-    "type_name": "fairy",
+    "pokemon_id": 678,
+    "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 677,
-    "type_name": "psychic",
+    "pokemon_id": 681,
+    "type_name": "steel",
     "slot": 1
+  },
+  {
+    "pokemon_id": 681,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 680,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 680,
+    "type_name": "ghost",
+    "slot": 2
   },
   {
     "pokemon_id": 679,
@@ -550,8 +560,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 678,
+    "pokemon_id": 677,
     "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 676,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -563,11 +578,6 @@
     "pokemon_id": 675,
     "type_name": "dark",
     "slot": 2
-  },
-  {
-    "pokemon_id": 676,
-    "type_name": "normal",
-    "slot": 1
   },
   {
     "pokemon_id": 674,
@@ -595,37 +605,32 @@
     "slot": 1
   },
   {
-    "pokemon_id": 652,
-    "type_name": "grass",
+    "pokemon_id": 668,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 652,
-    "type_name": "fighting",
+    "pokemon_id": 668,
+    "type_name": "normal",
     "slot": 2
   },
   {
-    "pokemon_id": 680,
-    "type_name": "steel",
+    "pokemon_id": 669,
+    "type_name": "fairy",
     "slot": 1
   },
   {
-    "pokemon_id": 680,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 681,
-    "type_name": "steel",
+    "pokemon_id": 667,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 681,
-    "type_name": "ghost",
+    "pokemon_id": 667,
+    "type_name": "normal",
     "slot": 2
   },
   {
-    "pokemon_id": 683,
+    "pokemon_id": 684,
     "type_name": "fairy",
     "slot": 1
   },
@@ -633,6 +638,56 @@
     "pokemon_id": 682,
     "type_name": "fairy",
     "slot": 1
+  },
+  {
+    "pokemon_id": 683,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 685,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 686,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 686,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 687,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 687,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 690,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 690,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 689,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 689,
+    "type_name": "water",
+    "slot": 2
   },
   {
     "pokemon_id": 688,
@@ -645,34 +700,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 686,
-    "type_name": "dark",
+    "pokemon_id": 699,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 686,
-    "type_name": "psychic",
+    "pokemon_id": 699,
+    "type_name": "ice",
     "slot": 2
-  },
-  {
-    "pokemon_id": 687,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 687,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 685,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 684,
-    "type_name": "fairy",
-    "slot": 1
   },
   {
     "pokemon_id": 698,
@@ -682,6 +717,16 @@
   {
     "pokemon_id": 698,
     "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 697,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 697,
+    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -720,64 +765,24 @@
     "slot": 1
   },
   {
+    "pokemon_id": 691,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 691,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
     "pokemon_id": 692,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 691,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 691,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 690,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 690,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 689,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 689,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 697,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 697,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
     "pokemon_id": 700,
     "type_name": "fairy",
     "slot": 1
-  },
-  {
-    "pokemon_id": 699,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 699,
-    "type_name": "ice",
-    "slot": 2
   },
   {
     "pokemon_id": 701,
@@ -787,36 +792,6 @@
   {
     "pokemon_id": 701,
     "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 654,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 703,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 703,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 705,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 708,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 708,
-    "type_name": "grass",
     "slot": 2
   },
   {
@@ -830,6 +805,31 @@
     "slot": 2
   },
   {
+    "pokemon_id": 703,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 703,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 704,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 705,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 706,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
     "pokemon_id": 707,
     "type_name": "steel",
     "slot": 1
@@ -840,9 +840,94 @@
     "slot": 2
   },
   {
-    "pokemon_id": 706,
+    "pokemon_id": 712,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 713,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 711,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 711,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 709,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 709,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 710,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 710,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 708,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 708,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 720,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 720,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 719,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 719,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 718,
     "type_name": "dragon",
     "slot": 1
+  },
+  {
+    "pokemon_id": 718,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 714,
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 714,
+    "type_name": "dragon",
+    "slot": 2
   },
   {
     "pokemon_id": 717,
@@ -870,83 +955,23 @@
     "slot": 2
   },
   {
-    "pokemon_id": 714,
+    "pokemon_id": 723,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 723,
     "type_name": "flying",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 714,
-    "type_name": "dragon",
     "slot": 2
   },
   {
-    "pokemon_id": 713,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 712,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 711,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 711,
+    "pokemon_id": 722,
     "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 710,
-    "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 710,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 709,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 709,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 719,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 719,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 718,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 718,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 720,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 720,
-    "type_name": "ghost",
+    "pokemon_id": 722,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -960,31 +985,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 704,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 722,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 722,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 723,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 723,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
     "pokemon_id": 724,
     "type_name": "grass",
     "slot": 1
@@ -993,6 +993,21 @@
     "pokemon_id": 724,
     "type_name": "ghost",
     "slot": 2
+  },
+  {
+    "pokemon_id": 725,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 726,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 729,
+    "type_name": "water",
+    "slot": 1
   },
   {
     "pokemon_id": 728,
@@ -1010,14 +1025,19 @@
     "slot": 2
   },
   {
-    "pokemon_id": 726,
-    "type_name": "fire",
+    "pokemon_id": 735,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 725,
-    "type_name": "fire",
+    "pokemon_id": 733,
+    "type_name": "normal",
     "slot": 1
+  },
+  {
+    "pokemon_id": 733,
+    "type_name": "flying",
+    "slot": 2
   },
   {
     "pokemon_id": 732,
@@ -1026,6 +1046,26 @@
   },
   {
     "pokemon_id": 732,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 731,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 731,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 741,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 741,
     "type_name": "flying",
     "slot": 2
   },
@@ -1033,71 +1073,6 @@
     "pokemon_id": 736,
     "type_name": "bug",
     "slot": 1
-  },
-  {
-    "pokemon_id": 735,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 734,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 731,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 731,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 730,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 730,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 729,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 738,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 738,
-    "type_name": "electric",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 733,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 733,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 737,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 737,
-    "type_name": "electric",
-    "slot": 2
   },
   {
     "pokemon_id": 740,
@@ -1110,13 +1085,58 @@
     "slot": 2
   },
   {
-    "pokemon_id": 741,
-    "type_name": "fire",
+    "pokemon_id": 730,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 741,
-    "type_name": "flying",
+    "pokemon_id": 730,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 738,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 738,
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 737,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 737,
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 734,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 743,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 743,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 742,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 742,
+    "type_name": "fairy",
     "slot": 2
   },
   {
@@ -1125,14 +1145,9 @@
     "slot": 1
   },
   {
-    "pokemon_id": 742,
-    "type_name": "bug",
+    "pokemon_id": 745,
+    "type_name": "rock",
     "slot": 1
-  },
-  {
-    "pokemon_id": 742,
-    "type_name": "fairy",
-    "slot": 2
   },
   {
     "pokemon_id": 746,
@@ -1140,84 +1155,9 @@
     "slot": 1
   },
   {
-    "pokemon_id": 745,
+    "pokemon_id": 744,
     "type_name": "rock",
     "slot": 1
-  },
-  {
-    "pokemon_id": 743,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 743,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 757,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 757,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 756,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 756,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 749,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 755,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 755,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 754,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 753,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 752,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 752,
-    "type_name": "bug",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 748,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 748,
-    "type_name": "water",
-    "slot": 2
   },
   {
     "pokemon_id": 747,
@@ -1235,6 +1175,21 @@
     "slot": 1
   },
   {
+    "pokemon_id": 749,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 752,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 752,
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
     "pokemon_id": 751,
     "type_name": "water",
     "slot": 1
@@ -1245,9 +1200,44 @@
     "slot": 2
   },
   {
-    "pokemon_id": 744,
-    "type_name": "rock",
+    "pokemon_id": 754,
+    "type_name": "grass",
     "slot": 1
+  },
+  {
+    "pokemon_id": 748,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 748,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 753,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 756,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 756,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 755,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 755,
+    "type_name": "fairy",
+    "slot": 2
   },
   {
     "pokemon_id": 760,
@@ -1280,12 +1270,17 @@
     "slot": 2
   },
   {
-    "pokemon_id": 762,
-    "type_name": "grass",
+    "pokemon_id": 757,
+    "type_name": "poison",
     "slot": 1
   },
   {
-    "pokemon_id": 761,
+    "pokemon_id": 757,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 762,
     "type_name": "grass",
     "slot": 1
   },
@@ -1295,8 +1290,13 @@
     "slot": 1
   },
   {
-    "pokemon_id": 766,
-    "type_name": "fighting",
+    "pokemon_id": 761,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 764,
+    "type_name": "fairy",
     "slot": 1
   },
   {
@@ -1310,9 +1310,29 @@
     "slot": 2
   },
   {
-    "pokemon_id": 764,
-    "type_name": "fairy",
+    "pokemon_id": 766,
+    "type_name": "fighting",
     "slot": 1
+  },
+  {
+    "pokemon_id": 767,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 767,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 768,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 768,
+    "type_name": "water",
+    "slot": 2
   },
   {
     "pokemon_id": 769,
@@ -1325,6 +1345,76 @@
     "slot": 2
   },
   {
+    "pokemon_id": 770,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 770,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 772,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 771,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 775,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 773,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 774,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 774,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 781,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 781,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 780,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 780,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 779,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 779,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
     "pokemon_id": 778,
     "type_name": "ghost",
     "slot": 1
@@ -1332,16 +1422,6 @@
   {
     "pokemon_id": 778,
     "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 776,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 776,
-    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -1355,88 +1435,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 774,
-    "type_name": "rock",
+    "pokemon_id": 776,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 774,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 773,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 772,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 770,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 770,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 771,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 768,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 768,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 767,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 767,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 780,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 780,
+    "pokemon_id": 776,
     "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 779,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 779,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 781,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 781,
-    "type_name": "grass",
     "slot": 2
   },
   {
@@ -1455,9 +1460,14 @@
     "slot": 1
   },
   {
-    "pokemon_id": 775,
-    "type_name": "normal",
+    "pokemon_id": 785,
+    "type_name": "electric",
     "slot": 1
+  },
+  {
+    "pokemon_id": 785,
+    "type_name": "fairy",
+    "slot": 2
   },
   {
     "pokemon_id": 784,
@@ -1470,12 +1480,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 785,
-    "type_name": "electric",
+    "pokemon_id": 786,
+    "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 785,
+    "pokemon_id": 786,
     "type_name": "fairy",
     "slot": 2
   },
@@ -1500,14 +1510,59 @@
     "slot": 2
   },
   {
+    "pokemon_id": 789,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
     "pokemon_id": 201,
     "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 789,
-    "type_name": "psychic",
+    "pokemon_id": 1,
+    "type_name": "grass",
     "slot": 1
+  },
+  {
+    "pokemon_id": 1,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 795,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 795,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 796,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 794,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 794,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 799,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 799,
+    "type_name": "dragon",
+    "slot": 2
   },
   {
     "pokemon_id": 798,
@@ -1518,11 +1573,6 @@
     "pokemon_id": 798,
     "type_name": "steel",
     "slot": 2
-  },
-  {
-    "pokemon_id": 790,
-    "type_name": "psychic",
-    "slot": 1
   },
   {
     "pokemon_id": 797,
@@ -1535,31 +1585,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 796,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 795,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 795,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 794,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 794,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
     "pokemon_id": 793,
     "type_name": "rock",
     "slot": 1
@@ -1567,36 +1592,6 @@
   {
     "pokemon_id": 793,
     "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 792,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 792,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 791,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 791,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 786,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 786,
-    "type_name": "fairy",
     "slot": 2
   },
   {
@@ -1605,127 +1600,37 @@
     "slot": 1
   },
   {
-    "pokemon_id": 1,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 3,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 3,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 202,
+    "pokemon_id": 792,
     "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 805,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 805,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 804,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 804,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 802,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 802,
+    "pokemon_id": 792,
     "type_name": "ghost",
     "slot": 2
   },
   {
-    "pokemon_id": 803,
-    "type_name": "poison",
+    "pokemon_id": 203,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 801,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 801,
-    "type_name": "fairy",
+    "pokemon_id": 203,
+    "type_name": "psychic",
     "slot": 2
   },
   {
-    "pokemon_id": 820,
-    "type_name": "normal",
+    "pokemon_id": 402,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 817,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 819,
-    "type_name": "normal",
+    "pokemon_id": 4,
+    "type_name": "fire",
     "slot": 1
   },
   {
     "pokemon_id": 810,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 815,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 818,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 816,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 814,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 812,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 813,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 811,
     "type_name": "grass",
     "slot": 1
   },
@@ -1755,6 +1660,101 @@
     "slot": 2
   },
   {
+    "pokemon_id": 805,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 805,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 804,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 804,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 803,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 802,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 802,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 801,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 801,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 813,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 817,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 814,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 812,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 811,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 819,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 818,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 815,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 816,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 820,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
     "pokemon_id": 821,
     "type_name": "flying",
     "slot": 1
@@ -1775,83 +1775,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 822,
-    "type_name": "flying",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 825,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 825,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 840,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 840,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
     "pokemon_id": 829,
     "type_name": "grass",
     "slot": 1
   },
   {
-    "pokemon_id": 839,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 839,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 838,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 838,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 837,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 836,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 834,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 834,
-    "type_name": "rock",
-    "slot": 2
-  },
-  {
     "pokemon_id": 833,
     "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 832,
-    "type_name": "normal",
     "slot": 1
   },
   {
@@ -1865,16 +1795,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 828,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 827,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
     "pokemon_id": 826,
     "type_name": "bug",
     "slot": 1
@@ -1885,33 +1805,128 @@
     "slot": 2
   },
   {
-    "pokemon_id": 842,
-    "type_name": "grass",
+    "pokemon_id": 827,
+    "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 842,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 841,
-    "type_name": "grass",
+    "pokemon_id": 828,
+    "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 841,
-    "type_name": "dragon",
+    "pokemon_id": 825,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 825,
+    "type_name": "psychic",
     "slot": 2
   },
   {
-    "pokemon_id": 846,
+    "pokemon_id": 822,
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 837,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 836,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 835,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 832,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 834,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 844,
-    "type_name": "ground",
+    "pokemon_id": 834,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 839,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 839,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 838,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 838,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 840,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 840,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 841,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 841,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 842,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 842,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 848,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 848,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 847,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 846,
+    "type_name": "water",
     "slot": 1
   },
   {
@@ -1925,12 +1940,67 @@
     "slot": 2
   },
   {
+    "pokemon_id": 844,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 843,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 849,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 849,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
     "pokemon_id": 850,
     "type_name": "fire",
     "slot": 1
   },
   {
     "pokemon_id": 850,
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 856,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 854,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 855,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 853,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 852,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 851,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 851,
     "type_name": "bug",
     "slot": 2
   },
@@ -1970,76 +2040,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 856,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 835,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 855,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 854,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 853,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 852,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 849,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 849,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 851,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 851,
-    "type_name": "bug",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 843,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 848,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 848,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 847,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
     "pokemon_id": 861,
     "type_name": "dark",
     "slot": 1
@@ -2057,6 +2057,31 @@
   {
     "pokemon_id": 862,
     "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 863,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 868,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 869,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 867,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 867,
+    "type_name": "ghost",
     "slot": 2
   },
   {
@@ -2080,14 +2105,29 @@
     "slot": 1
   },
   {
-    "pokemon_id": 863,
-    "type_name": "steel",
+    "pokemon_id": 877,
+    "type_name": "electric",
     "slot": 1
+  },
+  {
+    "pokemon_id": 877,
+    "type_name": "dark",
+    "slot": 2
   },
   {
     "pokemon_id": 875,
     "type_name": "ice",
     "slot": 1
+  },
+  {
+    "pokemon_id": 876,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 876,
+    "type_name": "normal",
+    "slot": 2
   },
   {
     "pokemon_id": 874,
@@ -2115,8 +2155,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 869,
-    "type_name": "fairy",
+    "pokemon_id": 871,
+    "type_name": "electric",
     "slot": 1
   },
   {
@@ -2125,19 +2165,24 @@
     "slot": 1
   },
   {
-    "pokemon_id": 868,
-    "type_name": "fairy",
+    "pokemon_id": 880,
+    "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 867,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 867,
-    "type_name": "ghost",
+    "pokemon_id": 880,
+    "type_name": "dragon",
     "slot": 2
+  },
+  {
+    "pokemon_id": 879,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 878,
+    "type_name": "steel",
+    "slot": 1
   },
   {
     "pokemon_id": 881,
@@ -2150,43 +2195,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 878,
-    "type_name": "steel",
+    "pokemon_id": 883,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 879,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 876,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 876,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 877,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 877,
-    "type_name": "dark",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 880,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 880,
-    "type_name": "dragon",
+    "pokemon_id": 883,
+    "type_name": "ice",
     "slot": 2
   },
   {
@@ -2200,16 +2215,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 884,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 884,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
     "pokemon_id": 885,
     "type_name": "dragon",
     "slot": 1
@@ -2220,9 +2225,44 @@
     "slot": 2
   },
   {
-    "pokemon_id": 871,
-    "type_name": "electric",
+    "pokemon_id": 884,
+    "type_name": "steel",
     "slot": 1
+  },
+  {
+    "pokemon_id": 884,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 890,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 890,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 888,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 889,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 887,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 887,
+    "type_name": "ghost",
+    "slot": 2
   },
   {
     "pokemon_id": 886,
@@ -2242,6 +2282,16 @@
   {
     "pokemon_id": 899,
     "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 898,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 898,
+    "type_name": "grass",
     "slot": 2
   },
   {
@@ -2260,11 +2310,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 894,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
     "pokemon_id": 893,
     "type_name": "dark",
     "slot": 1
@@ -2273,6 +2318,11 @@
     "pokemon_id": 893,
     "type_name": "grass",
     "slot": 2
+  },
+  {
+    "pokemon_id": 894,
+    "type_name": "electric",
+    "slot": 1
   },
   {
     "pokemon_id": 892,
@@ -2290,46 +2340,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 890,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 890,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 883,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 883,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 889,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 888,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 887,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 887,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
     "pokemon_id": 900,
     "type_name": "bug",
     "slot": 1
@@ -2337,6 +2347,16 @@
   {
     "pokemon_id": 900,
     "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 902,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 902,
+    "type_name": "ghost",
     "slot": 2
   },
   {
@@ -2350,23 +2370,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 902,
-    "type_name": "water",
+    "pokemon_id": 904,
+    "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 902,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 898,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 898,
-    "type_name": "grass",
+    "pokemon_id": 904,
+    "type_name": "poison",
     "slot": 2
   },
   {
@@ -2390,23 +2400,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 904,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 904,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
     "pokemon_id": 909,
     "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 906,
-    "type_name": "grass",
     "slot": 1
   },
   {
@@ -2425,28 +2420,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 911,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 911,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 913,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 916,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 918,
-    "type_name": "bug",
+    "pokemon_id": 906,
+    "type_name": "grass",
     "slot": 1
   },
   {
@@ -2455,7 +2430,17 @@
     "slot": 1
   },
   {
-    "pokemon_id": 915,
+    "pokemon_id": 919,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 918,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 916,
     "type_name": "normal",
     "slot": 1
   },
@@ -2470,8 +2455,58 @@
     "slot": 2
   },
   {
+    "pokemon_id": 915,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 913,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
     "pokemon_id": 912,
     "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 911,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 911,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 910,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 922,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 922,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 923,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 923,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 921,
+    "type_name": "electric",
     "slot": 1
   },
   {
@@ -2485,43 +2520,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 919,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 921,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 922,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 922,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 923,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 923,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
     "pokemon_id": 924,
     "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 927,
-    "type_name": "fairy",
+    "pokemon_id": 925,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -2530,8 +2535,38 @@
     "slot": 1
   },
   {
-    "pokemon_id": 925,
+    "pokemon_id": 930,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 930,
     "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 928,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 928,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 929,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 929,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 927,
+    "type_name": "fairy",
     "slot": 1
   },
   {
@@ -2545,44 +2580,29 @@
     "slot": 2
   },
   {
-    "pokemon_id": 933,
-    "type_name": "rock",
+    "pokemon_id": 940,
+    "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 932,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 930,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 930,
-    "type_name": "normal",
+    "pokemon_id": 940,
+    "type_name": "flying",
     "slot": 2
   },
   {
-    "pokemon_id": 929,
-    "type_name": "grass",
+    "pokemon_id": 939,
+    "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 929,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 928,
-    "type_name": "grass",
+    "pokemon_id": 938,
+    "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 928,
-    "type_name": "normal",
-    "slot": 2
+    "pokemon_id": 935,
+    "type_name": "fire",
+    "slot": 1
   },
   {
     "pokemon_id": 937,
@@ -2605,38 +2625,23 @@
     "slot": 2
   },
   {
-    "pokemon_id": 935,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
     "pokemon_id": 934,
     "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 939,
-    "type_name": "electric",
+    "pokemon_id": 933,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 910,
-    "type_name": "fire",
+    "pokemon_id": 932,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 940,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 940,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 938,
-    "type_name": "electric",
+    "pokemon_id": 943,
+    "type_name": "dark",
     "slot": 1
   },
   {
@@ -2655,21 +2660,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 943,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 944,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 944,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
     "pokemon_id": 945,
     "type_name": "poison",
     "slot": 1
@@ -2680,13 +2670,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 948,
-    "type_name": "ground",
+    "pokemon_id": 944,
+    "type_name": "poison",
     "slot": 1
   },
   {
-    "pokemon_id": 948,
-    "type_name": "grass",
+    "pokemon_id": 944,
+    "type_name": "normal",
     "slot": 2
   },
   {
@@ -2700,9 +2690,44 @@
     "slot": 2
   },
   {
-    "pokemon_id": 953,
-    "type_name": "bug",
+    "pokemon_id": 947,
+    "type_name": "grass",
     "slot": 1
+  },
+  {
+    "pokemon_id": 947,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 951,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 950,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 949,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 949,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 948,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 948,
+    "type_name": "grass",
+    "slot": 2
   },
   {
     "pokemon_id": 952,
@@ -2715,18 +2740,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 951,
-    "type_name": "grass",
+    "pokemon_id": 960,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 949,
-    "type_name": "ground",
+    "pokemon_id": 959,
+    "type_name": "fairy",
     "slot": 1
   },
   {
-    "pokemon_id": 949,
-    "type_name": "grass",
+    "pokemon_id": 959,
+    "type_name": "steel",
     "slot": 2
   },
   {
@@ -2740,14 +2765,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 950,
-    "type_name": "rock",
+    "pokemon_id": 958,
+    "type_name": "fairy",
     "slot": 1
   },
   {
-    "pokemon_id": 955,
-    "type_name": "psychic",
-    "slot": 1
+    "pokemon_id": 958,
+    "type_name": "steel",
+    "slot": 2
   },
   {
     "pokemon_id": 956,
@@ -2755,14 +2780,9 @@
     "slot": 1
   },
   {
-    "pokemon_id": 947,
-    "type_name": "grass",
+    "pokemon_id": 955,
+    "type_name": "psychic",
     "slot": 1
-  },
-  {
-    "pokemon_id": 947,
-    "type_name": "ghost",
-    "slot": 2
   },
   {
     "pokemon_id": 954,
@@ -2775,54 +2795,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 959,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 959,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 958,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 958,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 961,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 960,
-    "type_name": "water",
+    "pokemon_id": 953,
+    "type_name": "bug",
     "slot": 1
   },
   {
     "pokemon_id": 963,
     "type_name": "water",
     "slot": 1
-  },
-  {
-    "pokemon_id": 964,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 965,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 965,
-    "type_name": "poison",
-    "slot": 2
   },
   {
     "pokemon_id": 962,
@@ -2835,28 +2815,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 966,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 966,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 969,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 969,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 968,
-    "type_name": "steel",
+    "pokemon_id": 961,
+    "type_name": "water",
     "slot": 1
   },
   {
@@ -2870,8 +2830,33 @@
     "slot": 2
   },
   {
-    "pokemon_id": 972,
-    "type_name": "ghost",
+    "pokemon_id": 966,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 966,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 965,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 965,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 964,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 968,
+    "type_name": "steel",
     "slot": 1
   },
   {
@@ -2890,28 +2875,33 @@
     "slot": 2
   },
   {
-    "pokemon_id": 974,
-    "type_name": "ice",
+    "pokemon_id": 969,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 973,
-    "type_name": "flying",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 973,
-    "type_name": "fighting",
+    "pokemon_id": 969,
+    "type_name": "poison",
     "slot": 2
   },
   {
-    "pokemon_id": 978,
-    "type_name": "dragon",
+    "pokemon_id": 976,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 978,
-    "type_name": "water",
+    "pokemon_id": 976,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 981,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 981,
+    "type_name": "psychic",
     "slot": 2
   },
   {
@@ -2930,21 +2920,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 975,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 976,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 976,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
     "pokemon_id": 980,
     "type_name": "poison",
     "slot": 1
@@ -2955,13 +2930,38 @@
     "slot": 2
   },
   {
-    "pokemon_id": 981,
-    "type_name": "normal",
+    "pokemon_id": 978,
+    "type_name": "dragon",
     "slot": 1
   },
   {
-    "pokemon_id": 981,
-    "type_name": "psychic",
+    "pokemon_id": 978,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 974,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 975,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 972,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 973,
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 973,
+    "type_name": "fighting",
     "slot": 2
   },
   {
@@ -2980,46 +2980,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 984,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 984,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 403,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 402,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 799,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 799,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 989,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 989,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
     "pokemon_id": 988,
     "type_name": "bug",
     "slot": 1
@@ -3040,14 +3000,74 @@
     "slot": 2
   },
   {
-    "pokemon_id": 992,
-    "type_name": "fighting",
+    "pokemon_id": 987,
+    "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 992,
-    "type_name": "electric",
+    "pokemon_id": 987,
+    "type_name": "fairy",
     "slot": 2
+  },
+  {
+    "pokemon_id": 986,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 986,
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 984,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 984,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 989,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 989,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 3,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 3,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 202,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 791,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 791,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 790,
+    "type_name": "psychic",
+    "slot": 1
   },
   {
     "pokemon_id": 991,
@@ -3060,6 +3080,16 @@
     "slot": 2
   },
   {
+    "pokemon_id": 992,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 992,
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
     "pokemon_id": 990,
     "type_name": "ground",
     "slot": 1
@@ -3067,16 +3097,6 @@
   {
     "pokemon_id": 990,
     "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 986,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 986,
-    "type_name": "dark",
     "slot": 2
   },
   {
@@ -3085,6 +3105,11 @@
     "slot": 1
   },
   {
+    "pokemon_id": 999,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
     "pokemon_id": 1000,
     "type_name": "steel",
     "slot": 1
@@ -3095,21 +3120,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 999,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 993,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 993,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
     "pokemon_id": 997,
     "type_name": "dragon",
     "slot": 1
@@ -3120,128 +3130,43 @@
     "slot": 2
   },
   {
-    "pokemon_id": 405,
-    "type_name": "electric",
+    "pokemon_id": 998,
+    "type_name": "dragon",
     "slot": 1
   },
   {
-    "pokemon_id": 203,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 203,
-    "type_name": "psychic",
+    "pokemon_id": 998,
+    "type_name": "ice",
     "slot": 2
   },
   {
-    "pokemon_id": 204,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 4,
+    "pokemon_id": 5,
     "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 1002,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1002,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1001,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1001,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1006,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1006,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1013,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1013,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1009,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1009,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1012,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1012,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1011,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1011,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1008,
+    "pokemon_id": 404,
     "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 1008,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1007,
-    "type_name": "fighting",
+    "pokemon_id": 205,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 1007,
-    "type_name": "dragon",
+    "pokemon_id": 205,
+    "type_name": "steel",
     "slot": 2
   },
   {
-    "pokemon_id": 1005,
-    "type_name": "dragon",
+    "pokemon_id": 6,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 1005,
-    "type_name": "dark",
+    "pokemon_id": 6,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -3255,6 +3180,116 @@
     "slot": 2
   },
   {
+    "pokemon_id": 1002,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1002,
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1001,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1001,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1012,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1012,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1013,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1013,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1010,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1010,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1011,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1011,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1009,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1009,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1008,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1008,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1007,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1007,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1006,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1006,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1005,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1005,
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
     "pokemon_id": 1004,
     "type_name": "dark",
     "slot": 1
@@ -3275,21 +3310,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 1017,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1015,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1015,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
     "pokemon_id": 1016,
     "type_name": "poison",
     "slot": 1
@@ -3300,6 +3320,21 @@
     "slot": 2
   },
   {
+    "pokemon_id": 1015,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1015,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1017,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
     "pokemon_id": 1018,
     "type_name": "steel",
     "slot": 1
@@ -3307,16 +3342,6 @@
   {
     "pokemon_id": 1018,
     "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1010,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1010,
-    "type_name": "psychic",
     "slot": 2
   },
   {
@@ -3336,16 +3361,6 @@
   },
   {
     "pokemon_id": 1020,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 1021,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1021,
     "type_name": "dragon",
     "slot": 2
   },
@@ -3360,63 +3375,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 1023,
-    "type_name": "steel",
+    "pokemon_id": 1021,
+    "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 1023,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10006,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10006,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10005,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10005,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10002,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10003,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10001,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1024,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1025,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 1025,
-    "type_name": "ghost",
+    "pokemon_id": 1021,
+    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -3440,13 +3405,28 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10009,
-    "type_name": "electric",
+    "pokemon_id": 10006,
+    "type_name": "grass",
     "slot": 1
   },
   {
-    "pokemon_id": 10009,
-    "type_name": "water",
+    "pokemon_id": 10006,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10002,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10005,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10005,
+    "type_name": "steel",
     "slot": 2
   },
   {
@@ -3457,6 +3437,61 @@
   {
     "pokemon_id": 10004,
     "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10003,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10001,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1025,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1025,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 1024,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1023,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 1023,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10009,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10009,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10012,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10012,
+    "type_name": "grass",
     "slot": 2
   },
   {
@@ -3490,23 +3525,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10012,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10012,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10015,
     "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10016,
-    "type_name": "water",
     "slot": 1
   },
   {
@@ -3520,6 +3540,11 @@
     "slot": 2
   },
   {
+    "pokemon_id": 10019,
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
     "pokemon_id": 10018,
     "type_name": "normal",
     "slot": 1
@@ -3530,18 +3555,28 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10019,
+    "pokemon_id": 10016,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10020,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10020,
     "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10028,
+    "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 10023,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10023,
-    "type_name": "ice",
+    "pokemon_id": 10028,
+    "type_name": "grass",
     "slot": 2
   },
   {
@@ -3551,26 +3586,6 @@
   },
   {
     "pokemon_id": 10021,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10022,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10022,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10020,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10020,
     "type_name": "flying",
     "slot": 2
   },
@@ -3590,22 +3605,32 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10028,
-    "type_name": "ghost",
+    "pokemon_id": 10023,
+    "type_name": "dragon",
     "slot": 1
   },
   {
-    "pokemon_id": 10028,
-    "type_name": "grass",
+    "pokemon_id": 10023,
+    "type_name": "ice",
     "slot": 2
   },
   {
-    "pokemon_id": 10027,
+    "pokemon_id": 10022,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10022,
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10029,
     "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 10027,
+    "pokemon_id": 10029,
     "type_name": "grass",
     "slot": 2
   },
@@ -3620,22 +3645,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10029,
+    "pokemon_id": 10027,
     "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 10029,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10031,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10031,
+    "pokemon_id": 10027,
     "type_name": "grass",
     "slot": 2
   },
@@ -3650,38 +3665,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10033,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10033,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10030,
+    "pokemon_id": 10031,
     "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 10030,
+    "pokemon_id": 10031,
     "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10036,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10035,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10035,
-    "type_name": "flying",
     "slot": 2
   },
   {
@@ -3695,13 +3685,38 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10037,
-    "type_name": "psychic",
+    "pokemon_id": 10030,
+    "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 10039,
-    "type_name": "normal",
+    "pokemon_id": 10030,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10033,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10033,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10035,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10035,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10036,
+    "type_name": "water",
     "slot": 1
   },
   {
@@ -3715,16 +3730,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10041,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10041,
-    "type_name": "dark",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10040,
     "type_name": "bug",
     "slot": 1
@@ -3735,13 +3740,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10043,
+    "pokemon_id": 10037,
     "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 10043,
-    "type_name": "fighting",
+    "pokemon_id": 10041,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10041,
+    "type_name": "dark",
     "slot": 2
   },
   {
@@ -3770,6 +3780,16 @@
     "slot": 1
   },
   {
+    "pokemon_id": 10043,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10043,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10042,
     "type_name": "rock",
     "slot": 1
@@ -3777,6 +3797,21 @@
   {
     "pokemon_id": 10042,
     "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10039,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10050,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10050,
+    "type_name": "fighting",
     "slot": 2
   },
   {
@@ -3810,22 +3845,32 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10050,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10050,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10051,
     "type_name": "psychic",
     "slot": 1
   },
   {
     "pokemon_id": 10051,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10054,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10054,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10052,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10052,
     "type_name": "fairy",
     "slot": 2
   },
@@ -3833,26 +3878,6 @@
     "pokemon_id": 10053,
     "type_name": "steel",
     "slot": 1
-  },
-  {
-    "pokemon_id": 10054,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10054,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10052,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10052,
-    "type_name": "fairy",
-    "slot": 2
   },
   {
     "pokemon_id": 10055,
@@ -3900,16 +3925,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10059,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10059,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10063,
     "type_name": "dragon",
     "slot": 1
@@ -3920,23 +3935,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10066,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10066,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10067,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10067,
+    "pokemon_id": 10061,
     "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10059,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10059,
+    "type_name": "steel",
     "slot": 2
   },
   {
@@ -3970,6 +3980,16 @@
     "slot": 2
   },
   {
+    "pokemon_id": 10069,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10069,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10068,
     "type_name": "psychic",
     "slot": 1
@@ -3977,6 +3997,16 @@
   {
     "pokemon_id": 10068,
     "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10067,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10067,
+    "type_name": "fairy",
     "slot": 2
   },
   {
@@ -4000,14 +4030,19 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10069,
-    "type_name": "normal",
+    "pokemon_id": 10066,
+    "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 10069,
-    "type_name": "fairy",
+    "pokemon_id": 10066,
+    "type_name": "ghost",
     "slot": 2
+  },
+  {
+    "pokemon_id": 10074,
+    "type_name": "ice",
+    "slot": 1
   },
   {
     "pokemon_id": 10073,
@@ -4018,11 +4053,6 @@
     "pokemon_id": 10073,
     "type_name": "flying",
     "slot": 2
-  },
-  {
-    "pokemon_id": 10074,
-    "type_name": "ice",
-    "slot": 1
   },
   {
     "pokemon_id": 10075,
@@ -4035,11 +4065,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10077,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
     "pokemon_id": 10076,
     "type_name": "steel",
     "slot": 1
@@ -4050,13 +4075,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10081,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10080,
-    "type_name": "electric",
+    "pokemon_id": 10077,
+    "type_name": "water",
     "slot": 1
   },
   {
@@ -4070,7 +4090,7 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10082,
+    "pokemon_id": 10080,
     "type_name": "electric",
     "slot": 1
   },
@@ -4085,24 +4105,29 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10084,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
     "pokemon_id": 10083,
     "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 10087,
-    "type_name": "fire",
+    "pokemon_id": 10082,
+    "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 10087,
-    "type_name": "ground",
-    "slot": 2
+    "pokemon_id": 10081,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10085,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10084,
+    "type_name": "electric",
+    "slot": 1
   },
   {
     "pokemon_id": 10086,
@@ -4115,9 +4140,24 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10085,
-    "type_name": "electric",
+    "pokemon_id": 10087,
+    "type_name": "fire",
     "slot": 1
+  },
+  {
+    "pokemon_id": 10087,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10092,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10092,
+    "type_name": "normal",
+    "slot": 2
   },
   {
     "pokemon_id": 10090,
@@ -4127,6 +4167,26 @@
   {
     "pokemon_id": 10090,
     "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10091,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10091,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10089,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10089,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -4140,22 +4200,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10089,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10089,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10091,
+    "pokemon_id": 10093,
     "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 10091,
+    "pokemon_id": 10093,
     "type_name": "normal",
     "slot": 2
   },
@@ -4165,32 +4215,12 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10092,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10092,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10093,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10093,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10061,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
     "pokemon_id": 10095,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10097,
     "type_name": "electric",
     "slot": 1
   },
@@ -4200,9 +4230,34 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10097,
+    "pokemon_id": 10098,
     "type_name": "electric",
     "slot": 1
+  },
+  {
+    "pokemon_id": 10099,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10101,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10101,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10102,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10102,
+    "type_name": "steel",
+    "slot": 2
   },
   {
     "pokemon_id": 10100,
@@ -4215,38 +4270,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10101,
-    "type_name": "ice",
+    "pokemon_id": 10108,
+    "type_name": "dark",
     "slot": 1
-  },
-  {
-    "pokemon_id": 10101,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10099,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10102,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10102,
-    "type_name": "steel",
-    "slot": 2
   },
   {
     "pokemon_id": 10103,
     "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10107,
-    "type_name": "dark",
     "slot": 1
   },
   {
@@ -4260,11 +4290,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10098,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
     "pokemon_id": 10106,
     "type_name": "ground",
     "slot": 1
@@ -4275,39 +4300,29 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10105,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10105,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10111,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10111,
-    "type_name": "electric",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10110,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10110,
-    "type_name": "electric",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10108,
+    "pokemon_id": 10107,
     "type_name": "dark",
     "slot": 1
+  },
+  {
+    "pokemon_id": 10105,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10105,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10110,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10110,
+    "type_name": "electric",
+    "slot": 2
   },
   {
     "pokemon_id": 10109,
@@ -4326,16 +4341,6 @@
   },
   {
     "pokemon_id": 10113,
-    "type_name": "dark",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10112,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10112,
     "type_name": "dark",
     "slot": 2
   },
@@ -4350,6 +4355,26 @@
     "slot": 2
   },
   {
+    "pokemon_id": 10112,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10112,
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10111,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10111,
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10115,
     "type_name": "fire",
     "slot": 1
@@ -4357,6 +4382,26 @@
   {
     "pokemon_id": 10115,
     "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10116,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10116,
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10117,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10117,
+    "type_name": "dark",
     "slot": 2
   },
   {
@@ -4368,31 +4413,6 @@
     "pokemon_id": 10118,
     "type_name": "ground",
     "slot": 2
-  },
-  {
-    "pokemon_id": 10117,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10117,
-    "type_name": "dark",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10116,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10116,
-    "type_name": "dark",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10121,
-    "type_name": "normal",
-    "slot": 1
   },
   {
     "pokemon_id": 10119,
@@ -4413,6 +4433,36 @@
     "pokemon_id": 10122,
     "type_name": "electric",
     "slot": 2
+  },
+  {
+    "pokemon_id": 10121,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10120,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10120,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10124,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10124,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10127,
+    "type_name": "water",
+    "slot": 1
   },
   {
     "pokemon_id": 10126,
@@ -4430,23 +4480,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10124,
-    "type_name": "psychic",
+    "pokemon_id": 10129,
+    "type_name": "poison",
     "slot": 1
   },
   {
-    "pokemon_id": 10124,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10120,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10120,
-    "type_name": "ground",
+    "pokemon_id": 10129,
+    "type_name": "fire",
     "slot": 2
   },
   {
@@ -4455,22 +4495,22 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10132,
+    "pokemon_id": 10131,
     "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 10132,
+    "pokemon_id": 10131,
     "type_name": "flying",
     "slot": 2
   },
   {
-    "pokemon_id": 10131,
+    "pokemon_id": 10130,
     "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 10131,
+    "pokemon_id": 10130,
     "type_name": "flying",
     "slot": 2
   },
@@ -4485,51 +4525,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10130,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10130,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10129,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10129,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10127,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10134,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10134,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10136,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10136,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10135,
     "type_name": "rock",
     "slot": 1
@@ -4546,6 +4541,46 @@
   },
   {
     "pokemon_id": 10133,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10134,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10134,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10132,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10132,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10136,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10136,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10138,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10138,
     "type_name": "flying",
     "slot": 2
   },
@@ -4580,26 +4615,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10141,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10141,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10138,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10138,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10142,
     "type_name": "rock",
     "slot": 1
@@ -4610,22 +4625,22 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10145,
-    "type_name": "ghost",
+    "pokemon_id": 10146,
+    "type_name": "dragon",
     "slot": 1
   },
   {
-    "pokemon_id": 10145,
-    "type_name": "fairy",
+    "pokemon_id": 10146,
+    "type_name": "fighting",
     "slot": 2
   },
   {
-    "pokemon_id": 10144,
+    "pokemon_id": 10145,
     "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 10144,
+    "pokemon_id": 10145,
     "type_name": "fairy",
     "slot": 2
   },
@@ -4640,27 +4655,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10152,
-    "type_name": "rock",
+    "pokemon_id": 10144,
+    "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 10153,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10153,
-    "type_name": "bug",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10150,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10150,
+    "pokemon_id": 10144,
     "type_name": "fairy",
     "slot": 2
   },
@@ -4690,19 +4690,29 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10146,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10146,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10151,
     "type_name": "rock",
     "slot": 1
+  },
+  {
+    "pokemon_id": 10150,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10150,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10155,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10155,
+    "type_name": "steel",
+    "slot": 2
   },
   {
     "pokemon_id": 10154,
@@ -4713,6 +4723,21 @@
     "pokemon_id": 10154,
     "type_name": "steel",
     "slot": 2
+  },
+  {
+    "pokemon_id": 10153,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10153,
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10152,
+    "type_name": "rock",
+    "slot": 1
   },
   {
     "pokemon_id": 10156,
@@ -4725,21 +4750,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10155,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10155,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10158,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
     "pokemon_id": 10157,
     "type_name": "psychic",
     "slot": 1
@@ -4750,8 +4760,18 @@
     "slot": 2
   },
   {
+    "pokemon_id": 10158,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
     "pokemon_id": 10159,
     "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10160,
+    "type_name": "electric",
     "slot": 1
   },
   {
@@ -4765,28 +4785,13 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10160,
-    "type_name": "electric",
+    "pokemon_id": 204,
+    "type_name": "bug",
     "slot": 1
-  },
-  {
-    "pokemon_id": 10163,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10163,
-    "type_name": "fairy",
-    "slot": 2
   },
   {
     "pokemon_id": 10166,
     "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10164,
-    "type_name": "psychic",
     "slot": 1
   },
   {
@@ -4800,7 +4805,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 404,
+    "pokemon_id": 10164,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 403,
     "type_name": "electric",
     "slot": 1
   },
@@ -4825,16 +4835,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 987,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 987,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
     "pokemon_id": 994,
     "type_name": "fire",
     "slot": 1
@@ -4845,12 +4845,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10171,
+    "pokemon_id": 993,
     "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 10171,
+    "pokemon_id": 993,
     "type_name": "flying",
     "slot": 2
   },
@@ -4865,13 +4865,23 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10170,
-    "type_name": "fighting",
+    "pokemon_id": 10168,
+    "type_name": "ice",
     "slot": 1
   },
   {
-    "pokemon_id": 10170,
-    "type_name": "flying",
+    "pokemon_id": 10168,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10163,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10163,
+    "type_name": "fairy",
     "slot": 2
   },
   {
@@ -4885,158 +4895,28 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10168,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10168,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 998,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 998,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 5,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 205,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 205,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 406,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 406,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10177,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10194,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10194,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10193,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10193,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10191,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10191,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10190,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10190,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10189,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10189,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10187,
+    "pokemon_id": 405,
     "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 10187,
-    "type_name": "dark",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10178,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10178,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10184,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10184,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10186,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10186,
+    "pokemon_id": 206,
     "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10185,
-    "type_name": "ice",
     "slot": 1
   },
   {
-    "pokemon_id": 10183,
-    "type_name": "flying",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10183,
+    "pokemon_id": 7,
     "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10141,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10141,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -5045,6 +4925,16 @@
     "slot": 1
   },
   {
+    "pokemon_id": 10183,
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10183,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10182,
     "type_name": "flying",
     "slot": 1
@@ -5052,6 +4942,16 @@
   {
     "pokemon_id": 10182,
     "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10178,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10178,
+    "type_name": "fire",
     "slot": 2
   },
   {
@@ -5085,24 +4985,79 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10196,
-    "type_name": "fire",
+    "pokemon_id": 10185,
+    "type_name": "ice",
     "slot": 1
   },
   {
-    "pokemon_id": 10196,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10195,
-    "type_name": "grass",
+    "pokemon_id": 10177,
+    "type_name": "ice",
     "slot": 1
   },
   {
-    "pokemon_id": 10195,
+    "pokemon_id": 10184,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10184,
     "type_name": "poison",
     "slot": 2
+  },
+  {
+    "pokemon_id": 10186,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10186,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10189,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10189,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10187,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10187,
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10191,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10191,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10190,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10190,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10173,
+    "type_name": "ghost",
+    "slot": 1
   },
   {
     "pokemon_id": 10192,
@@ -5115,13 +5070,63 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10188,
-    "type_name": "fairy",
+    "pokemon_id": 10193,
+    "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 10188,
-    "type_name": "steel",
+    "pokemon_id": 10193,
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10194,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10194,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10196,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10196,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10195,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10195,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10198,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10198,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10202,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10202,
+    "type_name": "poison",
     "slot": 2
   },
   {
@@ -5130,53 +5135,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10206,
+    "pokemon_id": 10200,
     "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10213,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10213,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10210,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10212,
-    "type_name": "flying",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10212,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10211,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10209,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10199,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10208,
-    "type_name": "steel",
     "slot": 1
   },
   {
@@ -5185,13 +5145,23 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10207,
-    "type_name": "poison",
+    "pokemon_id": 10205,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 10205,
-    "type_name": "normal",
+    "pokemon_id": 10199,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10203,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10207,
+    "type_name": "poison",
     "slot": 1
   },
   {
@@ -5205,53 +5175,58 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10203,
-    "type_name": "water",
+    "pokemon_id": 10208,
+    "type_name": "steel",
     "slot": 1
   },
   {
-    "pokemon_id": 10202,
-    "type_name": "ghost",
+    "pokemon_id": 10210,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 10202,
-    "type_name": "poison",
-    "slot": 2
+    "pokemon_id": 10209,
+    "type_name": "grass",
+    "slot": 1
   },
   {
-    "pokemon_id": 10200,
+    "pokemon_id": 10206,
     "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 10198,
+    "pokemon_id": 10211,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10188,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10188,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10212,
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10212,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10213,
     "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 10198,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10217,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10217,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10216,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10216,
-    "type_name": "dragon",
+    "pokemon_id": 10213,
+    "type_name": "psychic",
     "slot": 2
   },
   {
@@ -5262,6 +5237,16 @@
   {
     "pokemon_id": 10214,
     "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10216,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10216,
+    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -5272,6 +5257,26 @@
   {
     "pokemon_id": 10215,
     "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10217,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10217,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10220,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10220,
+    "type_name": "bug",
     "slot": 2
   },
   {
@@ -5290,6 +5295,31 @@
     "slot": 2
   },
   {
+    "pokemon_id": 10223,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10222,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10222,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10221,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10221,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10226,
     "type_name": "fighting",
     "slot": 1
@@ -5297,76 +5327,6 @@
   {
     "pokemon_id": 10226,
     "type_name": "dark",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10232,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10232,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10233,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10233,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10231,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10231,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10220,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10220,
-    "type_name": "bug",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10230,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10230,
-    "type_name": "rock",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10228,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10228,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10227,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10227,
-    "type_name": "water",
     "slot": 2
   },
   {
@@ -5385,28 +5345,83 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10222,
+    "pokemon_id": 10227,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10227,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10229,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10229,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10228,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10228,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10231,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10231,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10230,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10230,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10232,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10232,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10233,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10233,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10234,
     "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 10222,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10223,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10221,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10221,
-    "type_name": "fairy",
+    "pokemon_id": 10234,
+    "type_name": "poison",
     "slot": 2
   },
   {
@@ -5426,16 +5441,6 @@
   },
   {
     "pokemon_id": 10235,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10234,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10234,
     "type_name": "poison",
     "slot": 2
   },
@@ -5460,23 +5465,23 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10229,
-    "type_name": "fire",
+    "pokemon_id": 10242,
+    "type_name": "steel",
     "slot": 1
   },
   {
-    "pokemon_id": 10229,
-    "type_name": "rock",
+    "pokemon_id": 10242,
+    "type_name": "dragon",
     "slot": 2
   },
   {
-    "pokemon_id": 10239,
-    "type_name": "normal",
+    "pokemon_id": 10241,
+    "type_name": "steel",
     "slot": 1
   },
   {
-    "pokemon_id": 10239,
-    "type_name": "ghost",
+    "pokemon_id": 10241,
+    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -5490,54 +5495,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10250,
-    "type_name": "fighting",
+    "pokemon_id": 10239,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 10251,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10251,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10249,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10249,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10248,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10248,
+    "pokemon_id": 10239,
     "type_name": "ghost",
     "slot": 2
-  },
-  {
-    "pokemon_id": 10246,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10246,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10247,
-    "type_name": "water",
-    "slot": 1
   },
   {
     "pokemon_id": 10245,
@@ -5557,6 +5522,36 @@
   {
     "pokemon_id": 10244,
     "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10249,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10249,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10248,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10248,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10246,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10246,
+    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -5570,49 +5565,34 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10242,
-    "type_name": "steel",
+    "pokemon_id": 10247,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 10242,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10241,
-    "type_name": "steel",
+    "pokemon_id": 10250,
+    "type_name": "fighting",
     "slot": 1
   },
   {
-    "pokemon_id": 10241,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10258,
-    "type_name": "dragon",
+    "pokemon_id": 10252,
+    "type_name": "fighting",
     "slot": 1
   },
   {
-    "pokemon_id": 10258,
+    "pokemon_id": 10252,
     "type_name": "water",
     "slot": 2
   },
   {
-    "pokemon_id": 10257,
-    "type_name": "normal",
+    "pokemon_id": 10251,
+    "type_name": "fighting",
     "slot": 1
   },
   {
-    "pokemon_id": 10255,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10256,
-    "type_name": "water",
-    "slot": 1
+    "pokemon_id": 10251,
+    "type_name": "fire",
+    "slot": 2
   },
   {
     "pokemon_id": 10253,
@@ -5630,14 +5610,14 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10252,
-    "type_name": "fighting",
+    "pokemon_id": 10256,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 10252,
-    "type_name": "water",
-    "slot": 2
+    "pokemon_id": 10255,
+    "type_name": "normal",
+    "slot": 1
   },
   {
     "pokemon_id": 10259,
@@ -5650,13 +5630,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10260,
+    "pokemon_id": 10257,
     "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 10260,
-    "type_name": "flying",
+    "pokemon_id": 10258,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10258,
+    "type_name": "water",
     "slot": 2
   },
   {
@@ -5667,76 +5652,6 @@
   {
     "pokemon_id": 10262,
     "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10271,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10271,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10270,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10270,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10269,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10269,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10268,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10268,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10265,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10265,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10266,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10266,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10264,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10264,
-    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -5751,6 +5666,141 @@
   },
   {
     "pokemon_id": 10261,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10260,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10260,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10268,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10268,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10267,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10267,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10264,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10264,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10265,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10265,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10271,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10271,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10270,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10270,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10266,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10266,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10269,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10269,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10272,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10272,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10273,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10273,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10276,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10274,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10274,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10281,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10281,
     "type_name": "flying",
     "slot": 2
   },
@@ -5780,41 +5830,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10272,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10272,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10276,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10267,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10267,
-    "type_name": "dragon",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10273,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10273,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10275,
     "type_name": "grass",
     "slot": 1
@@ -5825,16 +5840,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10274,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10274,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10279,
     "type_name": "grass",
     "slot": 1
@@ -5842,16 +5847,6 @@
   {
     "pokemon_id": 10279,
     "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10281,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10281,
-    "type_name": "flying",
     "slot": 2
   },
   {
@@ -5875,41 +5870,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10289,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10289,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10292,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10292,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10290,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10291,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10291,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
     "pokemon_id": 10288,
     "type_name": "bug",
     "slot": 1
@@ -5917,26 +5877,6 @@
   {
     "pokemon_id": 10288,
     "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10285,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10285,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10286,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10286,
-    "type_name": "fighting",
     "slot": 2
   },
   {
@@ -5950,6 +5890,41 @@
     "slot": 2
   },
   {
+    "pokemon_id": 10286,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10286,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10285,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10285,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10290,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10289,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10289,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10284,
     "type_name": "steel",
     "slot": 1
@@ -5957,6 +5932,26 @@
   {
     "pokemon_id": 10284,
     "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10291,
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10291,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10292,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10292,
+    "type_name": "fighting",
     "slot": 2
   },
   {
@@ -5985,6 +5980,16 @@
     "slot": 1
   },
   {
+    "pokemon_id": 10295,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10295,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10298,
     "type_name": "rock",
     "slot": 1
@@ -6005,6 +6010,16 @@
     "slot": 2
   },
   {
+    "pokemon_id": 10301,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10301,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10300,
     "type_name": "fighting",
     "slot": 1
@@ -6012,16 +6027,6 @@
   {
     "pokemon_id": 10300,
     "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10295,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10295,
-    "type_name": "normal",
     "slot": 2
   },
   {
@@ -6035,14 +6040,9 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10301,
-    "type_name": "dragon",
+    "pokemon_id": 10303,
+    "type_name": "fighting",
     "slot": 1
-  },
-  {
-    "pokemon_id": 10301,
-    "type_name": "ground",
-    "slot": 2
   },
   {
     "pokemon_id": 10302,
@@ -6060,23 +6060,38 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10303,
-    "type_name": "fighting",
+    "pokemon_id": 10306,
+    "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 10312,
+    "pokemon_id": 10306,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10305,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10307,
     "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 10311,
-    "type_name": "fire",
+    "pokemon_id": 10307,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10308,
+    "type_name": "fighting",
     "slot": 1
   },
   {
-    "pokemon_id": 10311,
-    "type_name": "steel",
+    "pokemon_id": 10308,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -6095,38 +6110,18 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10307,
-    "type_name": "dark",
+    "pokemon_id": 10311,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 10307,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10308,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10308,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10306,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10306,
+    "pokemon_id": 10311,
     "type_name": "steel",
     "slot": 2
   },
   {
-    "pokemon_id": 10305,
-    "type_name": "electric",
+    "pokemon_id": 10312,
+    "type_name": "dark",
     "slot": 1
   },
   {
@@ -6137,6 +6132,16 @@
   {
     "pokemon_id": 10313,
     "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10315,
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10315,
+    "type_name": "ice",
     "slot": 2
   },
   {
@@ -6145,13 +6150,23 @@
     "slot": 1
   },
   {
-    "pokemon_id": 10315,
+    "pokemon_id": 10175,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10175,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10170,
     "type_name": "fighting",
     "slot": 1
   },
   {
-    "pokemon_id": 10315,
-    "type_name": "ice",
+    "pokemon_id": 10170,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -6165,13 +6180,63 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10317,
-    "type_name": "steel",
+    "pokemon_id": 10174,
+    "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 10317,
-    "type_name": "fairy",
+    "pokemon_id": 10174,
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10321,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10321,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10322,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10322,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10320,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10320,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10324,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10324,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10323,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10323,
+    "type_name": "water",
     "slot": 2
   },
   {
@@ -6180,6 +6245,16 @@
     "slot": 1
   },
   {
+    "pokemon_id": 10325,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10325,
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
     "pokemon_id": 10318,
     "type_name": "steel",
     "slot": 1
@@ -6187,31 +6262,6 @@
   {
     "pokemon_id": 10318,
     "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10173,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10175,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10175,
-    "type_name": "normal",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10174,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10174,
-    "type_name": "normal",
     "slot": 2
   },
   {
@@ -6225,52 +6275,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 10322,
-    "type_name": "dragon",
+    "pokemon_id": 10171,
+    "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 10322,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10320,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10320,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10321,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10321,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 407,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 407,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 6,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 6,
+    "pokemon_id": 10171,
     "type_name": "flying",
     "slot": 2
   },
@@ -6285,58 +6295,53 @@
     "slot": 2
   },
   {
-    "pokemon_id": 409,
-    "type_name": "rock",
+    "pokemon_id": 407,
+    "type_name": "grass",
     "slot": 1
+  },
+  {
+    "pokemon_id": 407,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 406,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 406,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 10317,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 10317,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 8,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 208,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 208,
+    "type_name": "ground",
+    "slot": 2
   },
   {
     "pokemon_id": 408,
     "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10325,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10325,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10323,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10323,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10324,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 10324,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 410,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 410,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 206,
-    "type_name": "normal",
     "slot": 1
   },
   {
@@ -6345,22 +6350,32 @@
     "slot": 1
   },
   {
-    "pokemon_id": 210,
-    "type_name": "fairy",
+    "pokemon_id": 409,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 412,
+    "pokemon_id": 10,
     "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 8,
-    "type_name": "water",
+    "pokemon_id": 209,
+    "type_name": "fairy",
     "slot": 1
   },
   {
-    "pokemon_id": 209,
+    "pokemon_id": 410,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 410,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 210,
     "type_name": "fairy",
     "slot": 1
   },
@@ -6371,56 +6386,6 @@
   },
   {
     "pokemon_id": 411,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 7,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 413,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 413,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 208,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 208,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 10,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 211,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 211,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 212,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 212,
     "type_name": "steel",
     "slot": 2
   },
@@ -6430,44 +6395,29 @@
     "slot": 1
   },
   {
-    "pokemon_id": 414,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 414,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 415,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 415,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 416,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 416,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 420,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 419,
+    "pokemon_id": 211,
     "type_name": "water",
     "slot": 1
+  },
+  {
+    "pokemon_id": 211,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 412,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 413,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 413,
+    "type_name": "grass",
+    "slot": 2
   },
   {
     "pokemon_id": 418,
@@ -6475,18 +6425,58 @@
     "slot": 1
   },
   {
+    "pokemon_id": 416,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 416,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
     "pokemon_id": 417,
     "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 422,
+    "pokemon_id": 414,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 414,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 415,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 415,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 419,
     "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 420,
+    "type_name": "grass",
     "slot": 1
   },
   {
     "pokemon_id": 421,
     "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 422,
+    "type_name": "water",
     "slot": 1
   },
   {
@@ -6500,6 +6490,11 @@
     "slot": 2
   },
   {
+    "pokemon_id": 424,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
     "pokemon_id": 425,
     "type_name": "ghost",
     "slot": 1
@@ -6510,8 +6505,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 424,
-    "type_name": "normal",
+    "pokemon_id": 430,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 430,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 429,
+    "type_name": "ghost",
     "slot": 1
   },
   {
@@ -6535,18 +6540,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 430,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 430,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 429,
-    "type_name": "ghost",
+    "pokemon_id": 433,
+    "type_name": "psychic",
     "slot": 1
   },
   {
@@ -6560,11 +6555,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 433,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
     "pokemon_id": 434,
     "type_name": "poison",
     "slot": 1
@@ -6595,33 +6585,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 437,
-    "type_name": "steel",
+    "pokemon_id": 442,
+    "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 437,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 438,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 440,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 439,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 439,
-    "type_name": "fairy",
+    "pokemon_id": 442,
+    "type_name": "dark",
     "slot": 2
   },
   {
@@ -6635,13 +6605,43 @@
     "slot": 2
   },
   {
-    "pokemon_id": 442,
-    "type_name": "ghost",
+    "pokemon_id": 440,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 442,
-    "type_name": "dark",
+    "pokemon_id": 438,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 439,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 439,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 437,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 437,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 445,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 445,
+    "type_name": "ground",
     "slot": 2
   },
   {
@@ -6670,16 +6670,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 445,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 445,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
     "pokemon_id": 447,
     "type_name": "fighting",
     "slot": 1
@@ -6693,11 +6683,6 @@
     "pokemon_id": 448,
     "type_name": "steel",
     "slot": 2
-  },
-  {
-    "pokemon_id": 449,
-    "type_name": "ground",
-    "slot": 1
   },
   {
     "pokemon_id": 451,
@@ -6715,13 +6700,18 @@
     "slot": 1
   },
   {
-    "pokemon_id": 452,
+    "pokemon_id": 449,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 453,
     "type_name": "poison",
     "slot": 1
   },
   {
-    "pokemon_id": 452,
-    "type_name": "dark",
+    "pokemon_id": 453,
+    "type_name": "fighting",
     "slot": 2
   },
   {
@@ -6732,6 +6722,16 @@
   {
     "pokemon_id": 454,
     "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 452,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 452,
+    "type_name": "dark",
     "slot": 2
   },
   {
@@ -6745,14 +6745,9 @@
     "slot": 1
   },
   {
-    "pokemon_id": 453,
-    "type_name": "poison",
+    "pokemon_id": 457,
+    "type_name": "water",
     "slot": 1
-  },
-  {
-    "pokemon_id": 453,
-    "type_name": "fighting",
-    "slot": 2
   },
   {
     "pokemon_id": 458,
@@ -6765,21 +6760,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 457,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 459,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 459,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
     "pokemon_id": 460,
     "type_name": "grass",
     "slot": 1
@@ -6790,13 +6770,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 464,
-    "type_name": "ground",
+    "pokemon_id": 459,
+    "type_name": "grass",
     "slot": 1
   },
   {
-    "pokemon_id": 464,
-    "type_name": "rock",
+    "pokemon_id": 459,
+    "type_name": "ice",
     "slot": 2
   },
   {
@@ -6807,6 +6787,21 @@
   {
     "pokemon_id": 461,
     "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 465,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 464,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 464,
+    "type_name": "rock",
     "slot": 2
   },
   {
@@ -6825,34 +6820,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 465,
-    "type_name": "grass",
+    "pokemon_id": 466,
+    "type_name": "electric",
     "slot": 1
   },
   {
     "pokemon_id": 467,
     "type_name": "fire",
     "slot": 1
-  },
-  {
-    "pokemon_id": 466,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 470,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 469,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 469,
-    "type_name": "flying",
-    "slot": 2
   },
   {
     "pokemon_id": 468,
@@ -6865,8 +6840,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 471,
-    "type_name": "ice",
+    "pokemon_id": 469,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 469,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 470,
+    "type_name": "grass",
     "slot": 1
   },
   {
@@ -6880,6 +6865,11 @@
     "slot": 2
   },
   {
+    "pokemon_id": 471,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
     "pokemon_id": 473,
     "type_name": "ice",
     "slot": 1
@@ -6888,6 +6878,21 @@
     "pokemon_id": 473,
     "type_name": "ground",
     "slot": 2
+  },
+  {
+    "pokemon_id": 478,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 478,
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 477,
+    "type_name": "ghost",
+    "slot": 1
   },
   {
     "pokemon_id": 476,
@@ -6925,21 +6930,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 478,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 478,
-    "type_name": "ghost",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 477,
-    "type_name": "ghost",
-    "slot": 1
-  },
-  {
     "pokemon_id": 480,
     "type_name": "psychic",
     "slot": 1
@@ -6955,23 +6945,13 @@
     "slot": 1
   },
   {
-    "pokemon_id": 12,
+    "pokemon_id": 212,
     "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 12,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 213,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 213,
-    "type_name": "rock",
+    "pokemon_id": 212,
+    "type_name": "steel",
     "slot": 2
   },
   {
@@ -6985,6 +6965,26 @@
     "slot": 2
   },
   {
+    "pokemon_id": 213,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 213,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 12,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 12,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
     "pokemon_id": 13,
     "type_name": "bug",
     "slot": 1
@@ -6992,6 +6992,16 @@
   {
     "pokemon_id": 13,
     "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 484,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 484,
+    "type_name": "dragon",
     "slot": 2
   },
   {
@@ -7005,13 +7015,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 484,
-    "type_name": "water",
+    "pokemon_id": 485,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 484,
-    "type_name": "dragon",
+    "pokemon_id": 485,
+    "type_name": "steel",
     "slot": 2
   },
   {
@@ -7025,28 +7035,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 485,
-    "type_name": "fire",
+    "pokemon_id": 14,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 485,
-    "type_name": "steel",
+    "pokemon_id": 14,
+    "type_name": "poison",
     "slot": 2
   },
   {
-    "pokemon_id": 216,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 486,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 217,
-    "type_name": "normal",
+    "pokemon_id": 488,
+    "type_name": "psychic",
     "slot": 1
   },
   {
@@ -7060,43 +7060,18 @@
     "slot": 2
   },
   {
-    "pokemon_id": 218,
-    "type_name": "fire",
+    "pokemon_id": 486,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 489,
-    "type_name": "water",
+    "pokemon_id": 493,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 488,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 14,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 14,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 219,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 219,
-    "type_name": "rock",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 490,
-    "type_name": "water",
+    "pokemon_id": 491,
+    "type_name": "dark",
     "slot": 1
   },
   {
@@ -7105,39 +7080,14 @@
     "slot": 1
   },
   {
-    "pokemon_id": 220,
-    "type_name": "ice",
+    "pokemon_id": 490,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 220,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 491,
-    "type_name": "dark",
+    "pokemon_id": 489,
+    "type_name": "water",
     "slot": 1
-  },
-  {
-    "pokemon_id": 15,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 15,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 221,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 221,
-    "type_name": "ground",
-    "slot": 2
   },
   {
     "pokemon_id": 494,
@@ -7155,8 +7105,13 @@
     "slot": 1
   },
   {
-    "pokemon_id": 493,
-    "type_name": "normal",
+    "pokemon_id": 496,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 495,
+    "type_name": "grass",
     "slot": 1
   },
   {
@@ -7165,13 +7120,33 @@
     "slot": 1
   },
   {
-    "pokemon_id": 496,
-    "type_name": "grass",
+    "pokemon_id": 499,
+    "type_name": "fire",
     "slot": 1
   },
   {
-    "pokemon_id": 495,
-    "type_name": "grass",
+    "pokemon_id": 499,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 500,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 500,
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 504,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 503,
+    "type_name": "water",
     "slot": 1
   },
   {
@@ -7185,37 +7160,7 @@
     "slot": 1
   },
   {
-    "pokemon_id": 500,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 500,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 499,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 499,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 503,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 504,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 507,
+    "pokemon_id": 505,
     "type_name": "normal",
     "slot": 1
   },
@@ -7230,8 +7175,23 @@
     "slot": 1
   },
   {
-    "pokemon_id": 505,
+    "pokemon_id": 508,
     "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 507,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 510,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 512,
+    "type_name": "grass",
     "slot": 1
   },
   {
@@ -7240,13 +7200,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 508,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 510,
-    "type_name": "dark",
+    "pokemon_id": 515,
+    "type_name": "water",
     "slot": 1
   },
   {
@@ -7260,47 +7215,7 @@
     "slot": 1
   },
   {
-    "pokemon_id": 512,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 515,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 520,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 520,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 521,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 521,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 519,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 519,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 518,
+    "pokemon_id": 517,
     "type_name": "psychic",
     "slot": 1
   },
@@ -7310,12 +7225,82 @@
     "slot": 1
   },
   {
-    "pokemon_id": 517,
+    "pokemon_id": 518,
     "type_name": "psychic",
     "slot": 1
   },
   {
+    "pokemon_id": 520,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 520,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 521,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 521,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 519,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 519,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 216,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 15,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 15,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 217,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 16,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 16,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
     "pokemon_id": 522,
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 218,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 523,
     "type_name": "electric",
     "slot": 1
   },
@@ -7325,13 +7310,73 @@
     "slot": 1
   },
   {
+    "pokemon_id": 18,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 18,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 219,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 219,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 17,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 17,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
     "pokemon_id": 525,
     "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 523,
-    "type_name": "electric",
+    "pokemon_id": 19,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 526,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 220,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 220,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 221,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 221,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 20,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -7345,9 +7390,24 @@
     "slot": 2
   },
   {
-    "pokemon_id": 526,
-    "type_name": "rock",
+    "pokemon_id": 528,
+    "type_name": "psychic",
     "slot": 1
+  },
+  {
+    "pokemon_id": 528,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 21,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 21,
+    "type_name": "flying",
+    "slot": 2
   },
   {
     "pokemon_id": 527,
@@ -7360,28 +7420,48 @@
     "slot": 2
   },
   {
-    "pokemon_id": 16,
+    "pokemon_id": 529,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 22,
     "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 16,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 17,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 17,
+    "pokemon_id": 22,
     "type_name": "flying",
     "slot": 2
   },
   {
     "pokemon_id": 223,
     "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 530,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 530,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 224,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 531,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 532,
+    "type_name": "fighting",
     "slot": 1
   },
   {
@@ -7395,89 +7475,9 @@
     "slot": 2
   },
   {
-    "pokemon_id": 529,
-    "type_name": "ground",
+    "pokemon_id": 23,
+    "type_name": "poison",
     "slot": 1
-  },
-  {
-    "pokemon_id": 18,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 18,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 528,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 528,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 224,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 226,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 226,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 19,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 530,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 530,
-    "type_name": "steel",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 531,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 227,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 227,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 20,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 228,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 228,
-    "type_name": "fire",
-    "slot": 2
   },
   {
     "pokemon_id": 533,
@@ -7485,39 +7485,19 @@
     "slot": 1
   },
   {
-    "pokemon_id": 21,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 21,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 229,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 229,
-    "type_name": "fire",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 532,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 230,
+    "pokemon_id": 226,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 230,
-    "type_name": "dragon",
+    "pokemon_id": 226,
+    "type_name": "flying",
     "slot": 2
+  },
+  {
+    "pokemon_id": 535,
+    "type_name": "water",
+    "slot": 1
   },
   {
     "pokemon_id": 534,
@@ -7525,48 +7505,53 @@
     "slot": 1
   },
   {
-    "pokemon_id": 536,
-    "type_name": "water",
+    "pokemon_id": 227,
+    "type_name": "steel",
     "slot": 1
   },
   {
-    "pokemon_id": 536,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 231,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 22,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 22,
+    "pokemon_id": 227,
     "type_name": "flying",
     "slot": 2
   },
   {
-    "pokemon_id": 232,
-    "type_name": "ground",
+    "pokemon_id": 24,
+    "type_name": "poison",
     "slot": 1
   },
   {
-    "pokemon_id": 537,
+    "pokemon_id": 536,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 537,
+    "pokemon_id": 536,
     "type_name": "ground",
     "slot": 2
   },
   {
-    "pokemon_id": 23,
-    "type_name": "poison",
+    "pokemon_id": 541,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 541,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 540,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 540,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 539,
+    "type_name": "fighting",
     "slot": 1
   },
   {
@@ -7575,43 +7560,13 @@
     "slot": 1
   },
   {
-    "pokemon_id": 233,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 535,
+    "pokemon_id": 537,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 539,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 24,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 540,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 540,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 541,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 541,
-    "type_name": "grass",
+    "pokemon_id": 537,
+    "type_name": "ground",
     "slot": 2
   },
   {
@@ -7635,28 +7590,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 234,
-    "type_name": "normal",
+    "pokemon_id": 544,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 25,
-    "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 548,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 547,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 547,
-    "type_name": "fairy",
+    "pokemon_id": 544,
+    "type_name": "poison",
     "slot": 2
   },
   {
@@ -7680,24 +7620,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 544,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 544,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 549,
+    "pokemon_id": 547,
     "type_name": "grass",
     "slot": 1
   },
   {
-    "pokemon_id": 550,
-    "type_name": "water",
-    "slot": 1
+    "pokemon_id": 547,
+    "type_name": "fairy",
+    "slot": 2
   },
   {
     "pokemon_id": 551,
@@ -7708,6 +7638,21 @@
     "pokemon_id": 551,
     "type_name": "dark",
     "slot": 2
+  },
+  {
+    "pokemon_id": 550,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 548,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 549,
+    "type_name": "grass",
+    "slot": 1
   },
   {
     "pokemon_id": 552,
@@ -7740,6 +7685,21 @@
     "slot": 1
   },
   {
+    "pokemon_id": 556,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 557,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 557,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
     "pokemon_id": 558,
     "type_name": "bug",
     "slot": 1
@@ -7750,9 +7710,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 556,
-    "type_name": "grass",
+    "pokemon_id": 559,
+    "type_name": "dark",
     "slot": 1
+  },
+  {
+    "pokemon_id": 559,
+    "type_name": "fighting",
+    "slot": 2
   },
   {
     "pokemon_id": 560,
@@ -7765,14 +7730,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 557,
-    "type_name": "bug",
+    "pokemon_id": 563,
+    "type_name": "ghost",
     "slot": 1
   },
   {
-    "pokemon_id": 557,
-    "type_name": "rock",
-    "slot": 2
+    "pokemon_id": 562,
+    "type_name": "ghost",
+    "slot": 1
   },
   {
     "pokemon_id": 561,
@@ -7795,24 +7760,24 @@
     "slot": 2
   },
   {
-    "pokemon_id": 559,
-    "type_name": "dark",
+    "pokemon_id": 566,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 559,
-    "type_name": "fighting",
+    "pokemon_id": 566,
+    "type_name": "flying",
     "slot": 2
   },
   {
-    "pokemon_id": 562,
-    "type_name": "ghost",
+    "pokemon_id": 567,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 563,
-    "type_name": "ghost",
-    "slot": 1
+    "pokemon_id": 567,
+    "type_name": "flying",
+    "slot": 2
   },
   {
     "pokemon_id": 565,
@@ -7825,24 +7790,9 @@
     "slot": 2
   },
   {
-    "pokemon_id": 566,
-    "type_name": "rock",
+    "pokemon_id": 569,
+    "type_name": "poison",
     "slot": 1
-  },
-  {
-    "pokemon_id": 566,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 567,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 567,
-    "type_name": "flying",
-    "slot": 2
   },
   {
     "pokemon_id": 568,
@@ -7850,8 +7800,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 569,
-    "type_name": "poison",
+    "pokemon_id": 570,
+    "type_name": "dark",
     "slot": 1
   },
   {
@@ -7865,22 +7815,7 @@
     "slot": 1
   },
   {
-    "pokemon_id": 570,
-    "type_name": "dark",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 576,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
     "pokemon_id": 575,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 574,
     "type_name": "psychic",
     "slot": 1
   },
@@ -7890,7 +7825,17 @@
     "slot": 1
   },
   {
+    "pokemon_id": 574,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
     "pokemon_id": 577,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 576,
     "type_name": "psychic",
     "slot": 1
   },
@@ -7930,12 +7875,32 @@
     "slot": 1
   },
   {
-    "pokemon_id": 584,
+    "pokemon_id": 583,
     "type_name": "ice",
     "slot": 1
   },
   {
-    "pokemon_id": 583,
+    "pokemon_id": 586,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 586,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 585,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 585,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 584,
     "type_name": "ice",
     "slot": 1
   },
@@ -7950,29 +7915,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 585,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 585,
+    "pokemon_id": 591,
     "type_name": "grass",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 586,
-    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 586,
-    "type_name": "grass",
+    "pokemon_id": 591,
+    "type_name": "poison",
     "slot": 2
-  },
-  {
-    "pokemon_id": 588,
-    "type_name": "bug",
-    "slot": 1
   },
   {
     "pokemon_id": 590,
@@ -7995,32 +7945,27 @@
     "slot": 2
   },
   {
-    "pokemon_id": 591,
-    "type_name": "grass",
+    "pokemon_id": 588,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 591,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 592,
+    "pokemon_id": 593,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 592,
+    "pokemon_id": 593,
     "type_name": "ghost",
     "slot": 2
   },
   {
-    "pokemon_id": 593,
+    "pokemon_id": 592,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 593,
+    "pokemon_id": 592,
     "type_name": "ghost",
     "slot": 2
   },
@@ -8028,6 +7973,26 @@
     "pokemon_id": 594,
     "type_name": "water",
     "slot": 1
+  },
+  {
+    "pokemon_id": 597,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 597,
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 598,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 598,
+    "type_name": "steel",
+    "slot": 2
   },
   {
     "pokemon_id": 596,
@@ -8060,19 +8025,39 @@
     "slot": 1
   },
   {
-    "pokemon_id": 597,
-    "type_name": "grass",
+    "pokemon_id": 228,
+    "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 597,
-    "type_name": "steel",
+    "pokemon_id": 228,
+    "type_name": "fire",
     "slot": 2
   },
   {
-    "pokemon_id": 235,
-    "type_name": "normal",
+    "pokemon_id": 25,
+    "type_name": "electric",
     "slot": 1
+  },
+  {
+    "pokemon_id": 229,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 229,
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 230,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 230,
+    "type_name": "dragon",
+    "slot": 2
   },
   {
     "pokemon_id": 26,
@@ -8080,18 +8065,28 @@
     "slot": 1
   },
   {
-    "pokemon_id": 598,
-    "type_name": "grass",
+    "pokemon_id": 231,
+    "type_name": "ground",
     "slot": 1
   },
   {
-    "pokemon_id": 598,
-    "type_name": "steel",
-    "slot": 2
+    "pokemon_id": 233,
+    "type_name": "normal",
+    "slot": 1
   },
   {
-    "pokemon_id": 27,
+    "pokemon_id": 232,
     "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 234,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 235,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -8100,18 +8095,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 28,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
     "pokemon_id": 237,
     "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 239,
-    "type_name": "electric",
     "slot": 1
   },
   {
@@ -8125,8 +8110,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 242,
-    "type_name": "normal",
+    "pokemon_id": 239,
+    "type_name": "electric",
     "slot": 1
   },
   {
@@ -8140,6 +8125,11 @@
     "slot": 1
   },
   {
+    "pokemon_id": 242,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
     "pokemon_id": 243,
     "type_name": "electric",
     "slot": 1
@@ -8150,37 +8140,27 @@
     "slot": 1
   },
   {
-    "pokemon_id": 29,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
     "pokemon_id": 245,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 30,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 246,
+    "pokemon_id": 247,
     "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 246,
+    "pokemon_id": 247,
     "type_name": "ground",
     "slot": 2
   },
   {
-    "pokemon_id": 247,
+    "pokemon_id": 246,
     "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 247,
+    "pokemon_id": 246,
     "type_name": "ground",
     "slot": 2
   },
@@ -8205,16 +8185,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 252,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 253,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
     "pokemon_id": 250,
     "type_name": "fire",
     "slot": 1
@@ -8223,6 +8193,11 @@
     "pokemon_id": 250,
     "type_name": "flying",
     "slot": 2
+  },
+  {
+    "pokemon_id": 27,
+    "type_name": "ground",
+    "slot": 1
   },
   {
     "pokemon_id": 251,
@@ -8235,9 +8210,19 @@
     "slot": 2
   },
   {
-    "pokemon_id": 254,
+    "pokemon_id": 252,
     "type_name": "grass",
     "slot": 1
+  },
+  {
+    "pokemon_id": 256,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 256,
+    "type_name": "fighting",
+    "slot": 2
   },
   {
     "pokemon_id": 255,
@@ -8245,22 +8230,22 @@
     "slot": 1
   },
   {
+    "pokemon_id": 254,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 253,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
     "pokemon_id": 257,
     "type_name": "fire",
     "slot": 1
   },
   {
     "pokemon_id": 257,
-    "type_name": "fighting",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 256,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 256,
     "type_name": "fighting",
     "slot": 2
   },
@@ -8280,14 +8265,9 @@
     "slot": 2
   },
   {
-    "pokemon_id": 31,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 31,
+    "pokemon_id": 28,
     "type_name": "ground",
-    "slot": 2
+    "slot": 1
   },
   {
     "pokemon_id": 260,
@@ -8300,22 +8280,22 @@
     "slot": 2
   },
   {
-    "pokemon_id": 264,
-    "type_name": "normal",
+    "pokemon_id": 29,
+    "type_name": "poison",
     "slot": 1
   },
   {
-    "pokemon_id": 263,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 262,
-    "type_name": "dark",
+    "pokemon_id": 30,
+    "type_name": "poison",
     "slot": 1
   },
   {
     "pokemon_id": 261,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 262,
     "type_name": "dark",
     "slot": 1
   },
@@ -8325,8 +8305,18 @@
     "slot": 1
   },
   {
+    "pokemon_id": 264,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
     "pokemon_id": 265,
     "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 263,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -8365,6 +8355,16 @@
     "slot": 2
   },
   {
+    "pokemon_id": 274,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 274,
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
     "pokemon_id": 273,
     "type_name": "grass",
     "slot": 1
@@ -8390,16 +8390,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 274,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 274,
-    "type_name": "dark",
-    "slot": 2
-  },
-  {
     "pokemon_id": 275,
     "type_name": "grass",
     "slot": 1
@@ -8440,16 +8430,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 32,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 33,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
     "pokemon_id": 279,
     "type_name": "water",
     "slot": 1
@@ -8460,6 +8440,16 @@
     "slot": 2
   },
   {
+    "pokemon_id": 281,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 281,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
     "pokemon_id": 280,
     "type_name": "psychic",
     "slot": 1
@@ -8470,23 +8460,23 @@
     "slot": 2
   },
   {
-    "pokemon_id": 34,
-    "type_name": "poison",
+    "pokemon_id": 283,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 34,
-    "type_name": "ground",
+    "pokemon_id": 283,
+    "type_name": "water",
     "slot": 2
   },
   {
-    "pokemon_id": 281,
-    "type_name": "psychic",
+    "pokemon_id": 284,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 281,
-    "type_name": "fairy",
+    "pokemon_id": 284,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -8500,13 +8490,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 287,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 288,
-    "type_name": "normal",
+    "pokemon_id": 285,
+    "type_name": "grass",
     "slot": 1
   },
   {
@@ -8520,28 +8505,23 @@
     "slot": 2
   },
   {
-    "pokemon_id": 284,
+    "pokemon_id": 287,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 288,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 291,
     "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 284,
+    "pokemon_id": 291,
     "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 285,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 283,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 283,
-    "type_name": "water",
     "slot": 2
   },
   {
@@ -8560,21 +8540,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 291,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 291,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 294,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
     "pokemon_id": 293,
     "type_name": "normal",
     "slot": 1
@@ -8590,13 +8555,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 297,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 296,
-    "type_name": "fighting",
+    "pokemon_id": 294,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -8605,18 +8565,18 @@
     "slot": 1
   },
   {
-    "pokemon_id": 298,
-    "type_name": "normal",
+    "pokemon_id": 296,
+    "type_name": "fighting",
     "slot": 1
   },
   {
-    "pokemon_id": 298,
-    "type_name": "fairy",
-    "slot": 2
+    "pokemon_id": 297,
+    "type_name": "fighting",
+    "slot": 1
   },
   {
-    "pokemon_id": 299,
-    "type_name": "rock",
+    "pokemon_id": 301,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -8625,33 +8585,18 @@
     "slot": 1
   },
   {
-    "pokemon_id": 303,
-    "type_name": "steel",
+    "pokemon_id": 299,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 303,
+    "pokemon_id": 298,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 298,
     "type_name": "fairy",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 305,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 305,
-    "type_name": "rock",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 304,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 304,
-    "type_name": "rock",
     "slot": 2
   },
   {
@@ -8665,9 +8610,34 @@
     "slot": 2
   },
   {
-    "pokemon_id": 301,
-    "type_name": "normal",
+    "pokemon_id": 303,
+    "type_name": "steel",
     "slot": 1
+  },
+  {
+    "pokemon_id": 303,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 304,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 304,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 305,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 305,
+    "type_name": "rock",
+    "slot": 2
   },
   {
     "pokemon_id": 306,
@@ -8700,17 +8670,12 @@
     "slot": 2
   },
   {
-    "pokemon_id": 309,
+    "pokemon_id": 310,
     "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 313,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 312,
+    "pokemon_id": 309,
     "type_name": "electric",
     "slot": 1
   },
@@ -8720,17 +8685,12 @@
     "slot": 1
   },
   {
-    "pokemon_id": 310,
+    "pokemon_id": 312,
     "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 35,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 314,
+    "pokemon_id": 313,
     "type_name": "bug",
     "slot": 1
   },
@@ -8745,13 +8705,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 36,
-    "type_name": "fairy",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 37,
-    "type_name": "fire",
+    "pokemon_id": 317,
+    "type_name": "poison",
     "slot": 1
   },
   {
@@ -8760,7 +8715,32 @@
     "slot": 1
   },
   {
-    "pokemon_id": 317,
+    "pokemon_id": 314,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 318,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 318,
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 31,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 31,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 32,
     "type_name": "poison",
     "slot": 1
   },
@@ -8775,14 +8755,9 @@
     "slot": 2
   },
   {
-    "pokemon_id": 318,
-    "type_name": "water",
+    "pokemon_id": 33,
+    "type_name": "poison",
     "slot": 1
-  },
-  {
-    "pokemon_id": 318,
-    "type_name": "dark",
-    "slot": 2
   },
   {
     "pokemon_id": 320,
@@ -8790,21 +8765,21 @@
     "slot": 1
   },
   {
+    "pokemon_id": 34,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 34,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
     "pokemon_id": 321,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 322,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 322,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
     "pokemon_id": 323,
     "type_name": "fire",
     "slot": 1
@@ -8815,9 +8790,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 38,
+    "pokemon_id": 322,
     "type_name": "fire",
     "slot": 1
+  },
+  {
+    "pokemon_id": 322,
+    "type_name": "ground",
+    "slot": 2
   },
   {
     "pokemon_id": 324,
@@ -8825,29 +8805,9 @@
     "slot": 1
   },
   {
-    "pokemon_id": 39,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 39,
-    "type_name": "fairy",
-    "slot": 2
-  },
-  {
     "pokemon_id": 325,
     "type_name": "psychic",
     "slot": 1
-  },
-  {
-    "pokemon_id": 329,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 329,
-    "type_name": "dragon",
-    "slot": 2
   },
   {
     "pokemon_id": 327,
@@ -8860,6 +8820,21 @@
     "slot": 1
   },
   {
+    "pokemon_id": 328,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 329,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 329,
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
     "pokemon_id": 330,
     "type_name": "ground",
     "slot": 1
@@ -8870,14 +8845,34 @@
     "slot": 2
   },
   {
-    "pokemon_id": 328,
-    "type_name": "ground",
+    "pokemon_id": 35,
+    "type_name": "fairy",
     "slot": 1
   },
   {
     "pokemon_id": 331,
     "type_name": "grass",
     "slot": 1
+  },
+  {
+    "pokemon_id": 334,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 334,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 333,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 333,
+    "type_name": "flying",
+    "slot": 2
   },
   {
     "pokemon_id": 332,
@@ -8890,34 +8885,9 @@
     "slot": 2
   },
   {
-    "pokemon_id": 334,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 334,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 333,
+    "pokemon_id": 335,
     "type_name": "normal",
     "slot": 1
-  },
-  {
-    "pokemon_id": 333,
-    "type_name": "flying",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 40,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 40,
-    "type_name": "fairy",
-    "slot": 2
   },
   {
     "pokemon_id": 336,
@@ -8925,8 +8895,33 @@
     "slot": 1
   },
   {
-    "pokemon_id": 335,
-    "type_name": "normal",
+    "pokemon_id": 337,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 337,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 36,
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 338,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 338,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 37,
+    "type_name": "fire",
     "slot": 1
   },
   {
@@ -8940,14 +8935,9 @@
     "slot": 2
   },
   {
-    "pokemon_id": 337,
-    "type_name": "rock",
+    "pokemon_id": 38,
+    "type_name": "fire",
     "slot": 1
-  },
-  {
-    "pokemon_id": 337,
-    "type_name": "psychic",
-    "slot": 2
   },
   {
     "pokemon_id": 340,
@@ -8957,16 +8947,6 @@
   {
     "pokemon_id": 340,
     "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 338,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 338,
-    "type_name": "psychic",
     "slot": 2
   },
   {
@@ -8985,16 +8965,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 345,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 345,
-    "type_name": "grass",
-    "slot": 2
-  },
-  {
     "pokemon_id": 344,
     "type_name": "ground",
     "slot": 1
@@ -9002,26 +8972,6 @@
   {
     "pokemon_id": 344,
     "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 347,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 347,
-    "type_name": "bug",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 346,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 346,
-    "type_name": "grass",
     "slot": 2
   },
   {
@@ -9035,23 +8985,33 @@
     "slot": 2
   },
   {
-    "pokemon_id": 348,
+    "pokemon_id": 345,
     "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 348,
-    "type_name": "bug",
+    "pokemon_id": 345,
+    "type_name": "grass",
     "slot": 2
   },
   {
-    "pokemon_id": 41,
-    "type_name": "poison",
+    "pokemon_id": 346,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 41,
-    "type_name": "flying",
+    "pokemon_id": 346,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 347,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 347,
+    "type_name": "bug",
     "slot": 2
   },
   {
@@ -9060,19 +9020,14 @@
     "slot": 1
   },
   {
-    "pokemon_id": 42,
-    "type_name": "poison",
+    "pokemon_id": 348,
+    "type_name": "rock",
     "slot": 1
   },
   {
-    "pokemon_id": 42,
-    "type_name": "flying",
+    "pokemon_id": 348,
+    "type_name": "bug",
     "slot": 2
-  },
-  {
-    "pokemon_id": 351,
-    "type_name": "normal",
-    "slot": 1
   },
   {
     "pokemon_id": 350,
@@ -9080,28 +9035,13 @@
     "slot": 1
   },
   {
-    "pokemon_id": 43,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 43,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 44,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 44,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 352,
+    "pokemon_id": 351,
     "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 354,
+    "type_name": "ghost",
     "slot": 1
   },
   {
@@ -9110,18 +9050,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 45,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 45,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 354,
-    "type_name": "ghost",
+    "pokemon_id": 352,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -9135,13 +9065,23 @@
     "slot": 1
   },
   {
-    "pokemon_id": 46,
-    "type_name": "bug",
+    "pokemon_id": 39,
+    "type_name": "normal",
     "slot": 1
   },
   {
-    "pokemon_id": 46,
-    "type_name": "grass",
+    "pokemon_id": 39,
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 40,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 40,
+    "type_name": "fairy",
     "slot": 2
   },
   {
@@ -9160,18 +9100,28 @@
     "slot": 1
   },
   {
+    "pokemon_id": 41,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 41,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
     "pokemon_id": 359,
     "type_name": "dark",
     "slot": 1
   },
   {
-    "pokemon_id": 360,
-    "type_name": "psychic",
+    "pokemon_id": 361,
+    "type_name": "ice",
     "slot": 1
   },
   {
-    "pokemon_id": 361,
-    "type_name": "ice",
+    "pokemon_id": 360,
+    "type_name": "psychic",
     "slot": 1
   },
   {
@@ -9215,24 +9165,14 @@
     "slot": 1
   },
   {
-    "pokemon_id": 368,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
     "pokemon_id": 367,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 47,
-    "type_name": "bug",
+    "pokemon_id": 368,
+    "type_name": "water",
     "slot": 1
-  },
-  {
-    "pokemon_id": 47,
-    "type_name": "grass",
-    "slot": 2
   },
   {
     "pokemon_id": 369,
@@ -9245,19 +9185,19 @@
     "slot": 2
   },
   {
-    "pokemon_id": 48,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 48,
-    "type_name": "poison",
-    "slot": 2
-  },
-  {
     "pokemon_id": 370,
     "type_name": "water",
     "slot": 1
+  },
+  {
+    "pokemon_id": 42,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 42,
+    "type_name": "flying",
+    "slot": 2
   },
   {
     "pokemon_id": 371,
@@ -9265,19 +9205,29 @@
     "slot": 1
   },
   {
+    "pokemon_id": 43,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 43,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 44,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 44,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
     "pokemon_id": 372,
     "type_name": "dragon",
     "slot": 1
-  },
-  {
-    "pokemon_id": 49,
-    "type_name": "bug",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 49,
-    "type_name": "poison",
-    "slot": 2
   },
   {
     "pokemon_id": 373,
@@ -9290,9 +9240,14 @@
     "slot": 2
   },
   {
-    "pokemon_id": 50,
-    "type_name": "ground",
+    "pokemon_id": 45,
+    "type_name": "grass",
     "slot": 1
+  },
+  {
+    "pokemon_id": 45,
+    "type_name": "poison",
+    "slot": 2
   },
   {
     "pokemon_id": 374,
@@ -9301,6 +9256,26 @@
   },
   {
     "pokemon_id": 374,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 376,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 376,
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 375,
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 375,
     "type_name": "psychic",
     "slot": 2
   },
@@ -9310,42 +9285,22 @@
     "slot": 1
   },
   {
-    "pokemon_id": 376,
-    "type_name": "steel",
+    "pokemon_id": 46,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 376,
-    "type_name": "psychic",
+    "pokemon_id": 46,
+    "type_name": "grass",
     "slot": 2
   },
   {
-    "pokemon_id": 375,
-    "type_name": "steel",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 375,
-    "type_name": "psychic",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 378,
-    "type_name": "ice",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 51,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 381,
+    "pokemon_id": 380,
     "type_name": "dragon",
     "slot": 1
   },
   {
-    "pokemon_id": 381,
+    "pokemon_id": 380,
     "type_name": "psychic",
     "slot": 2
   },
@@ -9355,19 +9310,19 @@
     "slot": 1
   },
   {
-    "pokemon_id": 380,
+    "pokemon_id": 378,
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 381,
     "type_name": "dragon",
     "slot": 1
   },
   {
-    "pokemon_id": 380,
+    "pokemon_id": 381,
     "type_name": "psychic",
     "slot": 2
-  },
-  {
-    "pokemon_id": 383,
-    "type_name": "ground",
-    "slot": 1
   },
   {
     "pokemon_id": 382,
@@ -9375,19 +9330,9 @@
     "slot": 1
   },
   {
-    "pokemon_id": 52,
-    "type_name": "normal",
+    "pokemon_id": 383,
+    "type_name": "ground",
     "slot": 1
-  },
-  {
-    "pokemon_id": 384,
-    "type_name": "dragon",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 384,
-    "type_name": "flying",
-    "slot": 2
   },
   {
     "pokemon_id": 385,
@@ -9397,6 +9342,16 @@
   {
     "pokemon_id": 385,
     "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 384,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 384,
+    "type_name": "flying",
     "slot": 2
   },
   {
@@ -9410,16 +9365,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 389,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 389,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
     "pokemon_id": 388,
     "type_name": "grass",
     "slot": 1
@@ -9430,6 +9375,16 @@
     "slot": 1
   },
   {
+    "pokemon_id": 389,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 389,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
     "pokemon_id": 391,
     "type_name": "fire",
     "slot": 1
@@ -9450,14 +9405,24 @@
     "slot": 2
   },
   {
-    "pokemon_id": 393,
-    "type_name": "water",
+    "pokemon_id": 47,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 394,
-    "type_name": "water",
+    "pokemon_id": 47,
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 396,
+    "type_name": "normal",
     "slot": 1
+  },
+  {
+    "pokemon_id": 396,
+    "type_name": "flying",
+    "slot": 2
   },
   {
     "pokemon_id": 395,
@@ -9470,19 +9435,24 @@
     "slot": 2
   },
   {
-    "pokemon_id": 396,
-    "type_name": "normal",
+    "pokemon_id": 394,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 396,
-    "type_name": "flying",
+    "pokemon_id": 393,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 48,
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 48,
+    "type_name": "poison",
     "slot": 2
-  },
-  {
-    "pokemon_id": 53,
-    "type_name": "normal",
-    "slot": 1
   },
   {
     "pokemon_id": 398,
@@ -9503,6 +9473,11 @@
     "pokemon_id": 397,
     "type_name": "flying",
     "slot": 2
+  },
+  {
+    "pokemon_id": 50,
+    "type_name": "ground",
+    "slot": 1
   },
   {
     "pokemon_id": 399,
@@ -9510,13 +9485,38 @@
     "slot": 1
   },
   {
-    "pokemon_id": 54,
-    "type_name": "water",
+    "pokemon_id": 49,
+    "type_name": "bug",
     "slot": 1
   },
   {
-    "pokemon_id": 57,
-    "type_name": "fighting",
+    "pokemon_id": 49,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 51,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 400,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 400,
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 52,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 53,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -9525,14 +9525,9 @@
     "slot": 1
   },
   {
-    "pokemon_id": 400,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 400,
+    "pokemon_id": 54,
     "type_name": "water",
-    "slot": 2
+    "slot": 1
   },
   {
     "pokemon_id": 56,
@@ -9540,12 +9535,17 @@
     "slot": 1
   },
   {
-    "pokemon_id": 58,
-    "type_name": "fire",
+    "pokemon_id": 57,
+    "type_name": "fighting",
     "slot": 1
   },
   {
     "pokemon_id": 59,
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 58,
     "type_name": "fire",
     "slot": 1
   },
@@ -9570,21 +9570,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 67,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 66,
-    "type_name": "fighting",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 65,
-    "type_name": "psychic",
-    "slot": 1
-  },
-  {
     "pokemon_id": 64,
     "type_name": "psychic",
     "slot": 1
@@ -9595,14 +9580,19 @@
     "slot": 1
   },
   {
-    "pokemon_id": 69,
-    "type_name": "grass",
+    "pokemon_id": 67,
+    "type_name": "fighting",
     "slot": 1
   },
   {
-    "pokemon_id": 69,
-    "type_name": "poison",
-    "slot": 2
+    "pokemon_id": 65,
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 66,
+    "type_name": "fighting",
+    "slot": 1
   },
   {
     "pokemon_id": 68,
@@ -9610,6 +9600,16 @@
     "slot": 1
   },
   {
+    "pokemon_id": 69,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 69,
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
     "pokemon_id": 70,
     "type_name": "grass",
     "slot": 1
@@ -9656,26 +9656,6 @@
   },
   {
     "pokemon_id": 74,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 75,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 75,
-    "type_name": "ground",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 76,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 76,
     "type_name": "ground",
     "slot": 2
   },
@@ -9690,6 +9670,26 @@
     "slot": 1
   },
   {
+    "pokemon_id": 76,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 76,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 75,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 75,
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
     "pokemon_id": 79,
     "type_name": "water",
     "slot": 1
@@ -9740,6 +9740,16 @@
     "slot": 2
   },
   {
+    "pokemon_id": 85,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 85,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
     "pokemon_id": 84,
     "type_name": "normal",
     "slot": 1
@@ -9750,13 +9760,13 @@
     "slot": 2
   },
   {
-    "pokemon_id": 85,
-    "type_name": "normal",
+    "pokemon_id": 87,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 85,
-    "type_name": "flying",
+    "pokemon_id": 87,
+    "type_name": "ice",
     "slot": 2
   },
   {
@@ -9765,29 +9775,14 @@
     "slot": 1
   },
   {
-    "pokemon_id": 87,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 87,
-    "type_name": "ice",
-    "slot": 2
-  },
-  {
     "pokemon_id": 88,
     "type_name": "poison",
     "slot": 1
   },
   {
-    "pokemon_id": 91,
-    "type_name": "water",
+    "pokemon_id": 89,
+    "type_name": "poison",
     "slot": 1
-  },
-  {
-    "pokemon_id": 91,
-    "type_name": "ice",
-    "slot": 2
   },
   {
     "pokemon_id": 90,
@@ -9795,9 +9790,14 @@
     "slot": 1
   },
   {
-    "pokemon_id": 89,
-    "type_name": "poison",
+    "pokemon_id": 91,
+    "type_name": "water",
     "slot": 1
+  },
+  {
+    "pokemon_id": 91,
+    "type_name": "ice",
+    "slot": 2
   },
   {
     "pokemon_id": 92,
@@ -9850,13 +9850,13 @@
     "slot": 1
   },
   {
-    "pokemon_id": 97,
-    "type_name": "psychic",
+    "pokemon_id": 99,
+    "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 99,
-    "type_name": "water",
+    "pokemon_id": 97,
+    "type_name": "psychic",
     "slot": 1
   },
   {
@@ -9867,11 +9867,6 @@
   {
     "pokemon_id": 101,
     "type_name": "electric",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 104,
-    "type_name": "ground",
     "slot": 1
   },
   {
@@ -9900,6 +9895,11 @@
     "slot": 1
   },
   {
+    "pokemon_id": 104,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
     "pokemon_id": 106,
     "type_name": "fighting",
     "slot": 1
@@ -9920,29 +9920,29 @@
     "slot": 1
   },
   {
-    "pokemon_id": 111,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 111,
-    "type_name": "rock",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 112,
-    "type_name": "ground",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 112,
-    "type_name": "rock",
-    "slot": 2
-  },
-  {
     "pokemon_id": 110,
     "type_name": "poison",
     "slot": 1
+  },
+  {
+    "pokemon_id": 111,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 111,
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 112,
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 112,
+    "type_name": "rock",
+    "slot": 2
   },
   {
     "pokemon_id": 114,
@@ -10025,8 +10025,8 @@
     "slot": 2
   },
   {
-    "pokemon_id": 127,
-    "type_name": "bug",
+    "pokemon_id": 125,
+    "type_name": "electric",
     "slot": 1
   },
   {
@@ -10035,8 +10035,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 125,
-    "type_name": "electric",
+    "pokemon_id": 127,
+    "type_name": "bug",
     "slot": 1
   },
   {
@@ -10130,21 +10130,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 141,
-    "type_name": "rock",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 141,
-    "type_name": "water",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 143,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
     "pokemon_id": 142,
     "type_name": "rock",
     "slot": 1
@@ -10152,6 +10137,16 @@
   {
     "pokemon_id": 142,
     "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 141,
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 141,
+    "type_name": "water",
     "slot": 2
   },
   {
@@ -10165,6 +10160,11 @@
     "slot": 2
   },
   {
+    "pokemon_id": 143,
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
     "pokemon_id": 145,
     "type_name": "electric",
     "slot": 1
@@ -10173,11 +10173,6 @@
     "pokemon_id": 145,
     "type_name": "flying",
     "slot": 2
-  },
-  {
-    "pokemon_id": 147,
-    "type_name": "dragon",
-    "slot": 1
   },
   {
     "pokemon_id": 146,
@@ -10190,8 +10185,18 @@
     "slot": 2
   },
   {
+    "pokemon_id": 147,
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
     "pokemon_id": 148,
     "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 150,
+    "type_name": "psychic",
     "slot": 1
   },
   {
@@ -10203,11 +10208,6 @@
     "pokemon_id": 149,
     "type_name": "flying",
     "slot": 2
-  },
-  {
-    "pokemon_id": 150,
-    "type_name": "psychic",
-    "slot": 1
   },
   {
     "pokemon_id": 151,
@@ -10225,17 +10225,12 @@
     "slot": 1
   },
   {
-    "pokemon_id": 155,
-    "type_name": "fire",
-    "slot": 1
-  },
-  {
     "pokemon_id": 154,
     "type_name": "grass",
     "slot": 1
   },
   {
-    "pokemon_id": 156,
+    "pokemon_id": 155,
     "type_name": "fire",
     "slot": 1
   },
@@ -10245,8 +10240,8 @@
     "slot": 1
   },
   {
-    "pokemon_id": 158,
-    "type_name": "water",
+    "pokemon_id": 156,
+    "type_name": "fire",
     "slot": 1
   },
   {
@@ -10255,8 +10250,18 @@
     "slot": 1
   },
   {
+    "pokemon_id": 158,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
     "pokemon_id": 160,
     "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 161,
+    "type_name": "normal",
     "slot": 1
   },
   {
@@ -10275,11 +10280,6 @@
     "slot": 2
   },
   {
-    "pokemon_id": 161,
-    "type_name": "normal",
-    "slot": 1
-  },
-  {
     "pokemon_id": 164,
     "type_name": "normal",
     "slot": 1
@@ -10327,16 +10327,6 @@
   {
     "pokemon_id": 168,
     "type_name": "poison",
-    "slot": 2
-  },
-  {
-    "pokemon_id": 169,
-    "type_name": "poison",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 169,
-    "type_name": "flying",
     "slot": 2
   },
   {
@@ -10346,6 +10336,26 @@
   },
   {
     "pokemon_id": 170,
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 169,
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 169,
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_id": 171,
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 171,
     "type_name": "electric",
     "slot": 2
   },
@@ -10353,16 +10363,6 @@
     "pokemon_id": 172,
     "type_name": "electric",
     "slot": 1
-  },
-  {
-    "pokemon_id": 171,
-    "type_name": "water",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 171,
-    "type_name": "electric",
-    "slot": 2
   },
   {
     "pokemon_id": 173,
@@ -10385,22 +10385,22 @@
     "slot": 1
   },
   {
-    "pokemon_id": 177,
-    "type_name": "psychic",
+    "pokemon_id": 176,
+    "type_name": "fairy",
     "slot": 1
   },
   {
-    "pokemon_id": 177,
+    "pokemon_id": 176,
     "type_name": "flying",
     "slot": 2
   },
   {
-    "pokemon_id": 178,
+    "pokemon_id": 177,
     "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 178,
+    "pokemon_id": 177,
     "type_name": "flying",
     "slot": 2
   },
@@ -10410,12 +10410,12 @@
     "slot": 1
   },
   {
-    "pokemon_id": 176,
-    "type_name": "fairy",
+    "pokemon_id": 178,
+    "type_name": "psychic",
     "slot": 1
   },
   {
-    "pokemon_id": 176,
+    "pokemon_id": 178,
     "type_name": "flying",
     "slot": 2
   },
@@ -10425,32 +10425,32 @@
     "slot": 1
   },
   {
-    "pokemon_id": 182,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
     "pokemon_id": 181,
     "type_name": "electric",
     "slot": 1
   },
   {
-    "pokemon_id": 184,
+    "pokemon_id": 182,
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_id": 183,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 184,
+    "pokemon_id": 183,
     "type_name": "fairy",
     "slot": 2
   },
   {
-    "pokemon_id": 183,
+    "pokemon_id": 184,
     "type_name": "water",
     "slot": 1
   },
   {
-    "pokemon_id": 183,
+    "pokemon_id": 184,
     "type_name": "fairy",
     "slot": 2
   },
@@ -10505,11 +10505,6 @@
     "slot": 1
   },
   {
-    "pokemon_id": 192,
-    "type_name": "grass",
-    "slot": 1
-  },
-  {
     "pokemon_id": 193,
     "type_name": "bug",
     "slot": 1
@@ -10518,6 +10513,11 @@
     "pokemon_id": 193,
     "type_name": "flying",
     "slot": 2
+  },
+  {
+    "pokemon_id": 192,
+    "type_name": "grass",
+    "slot": 1
   },
   {
     "pokemon_id": 194,
@@ -10545,6 +10545,11 @@
     "slot": 1
   },
   {
+    "pokemon_id": 197,
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
     "pokemon_id": 198,
     "type_name": "dark",
     "slot": 1
@@ -10567,11 +10572,6 @@
   {
     "pokemon_id": 200,
     "type_name": "ghost",
-    "slot": 1
-  },
-  {
-    "pokemon_id": 197,
-    "type_name": "dark",
     "slot": 1
   }
 ]
