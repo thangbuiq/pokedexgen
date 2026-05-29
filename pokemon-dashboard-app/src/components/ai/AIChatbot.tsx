@@ -41,7 +41,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   const { displayedText, isComplete, isStreaming, stop } = useStreamingText(
     streamingContent || '',
     {
-      speed: 16,
+      speed: 40,
     }
   )
 
@@ -222,18 +222,15 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         {/* Header */}
         <div className="flex items-center justify-between px-4 py-3.5 border-b border-[var(--card-border)] shrink-0 sm:!rounded-t-2xl !rounded-none sticky top-0 z-10 bg-[var(--background)]/80 backdrop-blur-md">
           <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-lg shadow-red-500/25">
-                <Image
-                  src="/pokeball.png"
-                  alt="Pokeball"
-                  width={22}
-                  height={22}
-                  className="object-contain drop-shadow-sm"
-                  unoptimized
-                />
-              </div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-green-400 border-2 border-[var(--background)] animate-pulse" />
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-lg shadow-red-500/25">
+              <Image
+                src="/pokeball.png"
+                alt="Pokeball"
+                width={22}
+                height={22}
+                className="object-contain drop-shadow-sm"
+                unoptimized
+              />
             </div>
             <div>
               <h3 className="text-sm font-bold text-[var(--text-primary)] tracking-tight">
@@ -314,27 +311,20 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
           {/* Loading indicator (before streaming starts) */}
           {isLoading && !streamingContent && (
             <div className="flex justify-start mb-4 animate-[slide-in_0.2s_ease-out]">
-              <div className="flex items-end gap-2">
-                <div className="shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-md shadow-red-500/20">
-                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-                  </svg>
-                </div>
-                <div className="bg-[var(--surface)] border border-[var(--card-border)] rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
-                  <div className="flex items-center gap-1.5">
-                    <span
-                      className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] animate-bounce"
-                      style={{ animationDelay: '0ms' }}
-                    />
-                    <span
-                      className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] animate-bounce"
-                      style={{ animationDelay: '150ms' }}
-                    />
-                    <span
-                      className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] animate-bounce"
-                      style={{ animationDelay: '300ms' }}
-                    />
-                  </div>
+              <div className="bg-[var(--surface)] border border-[var(--card-border)] rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
+                <div className="flex items-center gap-1.5">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] animate-bounce"
+                    style={{ animationDelay: '0ms' }}
+                  />
+                  <span
+                    className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] animate-bounce"
+                    style={{ animationDelay: '150ms' }}
+                  />
+                  <span
+                    className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] animate-bounce"
+                    style={{ animationDelay: '300ms' }}
+                  />
                 </div>
               </div>
             </div>
@@ -385,7 +375,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         </div>
 
         {/* Input */}
-        <div className="shrink-0 px-4 py-3 border-t border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md safe-area-bottom">
+        <div className="shrink-0 px-4 py-3 mb-4 border-t border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md safe-area-bottom">
           <ChatInput onSend={handleSend} isLoading={isLoading || isStreaming} />
         </div>
       </div>

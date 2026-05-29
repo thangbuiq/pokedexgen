@@ -14,16 +14,16 @@ interface UseStreamingTextReturn {
   stop: () => void
 }
 
-const DEFAULT_SPEED = 18
+const DEFAULT_SPEED = 45
 const PAUSE_CHARS = new Set(['.', '!', '?', ':', ';', '…'])
-const COMMA_PAUSE = 60
-const SENTENCE_PAUSE = 180
+const COMMA_PAUSE = 220
+const SENTENCE_PAUSE = 500
 
 function getDelayForChar(char: string, baseSpeed: number): number {
   if (PAUSE_CHARS.has(char)) return SENTENCE_PAUSE
   if (char === ',') return COMMA_PAUSE
-  if (char === ' ') return baseSpeed * 0.4
-  return baseSpeed + Math.random() * 8 - 4
+  if (char === ' ') return baseSpeed * 0.5
+  return baseSpeed + Math.random() * 20 - 10
 }
 
 export function useStreamingText(
