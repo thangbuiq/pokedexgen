@@ -2,8 +2,8 @@ name: Weekly Data Update
 
 on:
   schedule:
-    # Run every Monday at 00:00 UTC
-    - cron: '0 0 * * 1'
+    # Run on the first day of every month at 00:00 UTC
+    - cron: '0 0 1 * *'
   workflow_dispatch:
 
 permissions:
@@ -49,7 +49,7 @@ jobs:
       - name: Commit updated files
         run: |
           git add --all
-          git diff --cached --quiet || git commit -m "chore(data): weekly data update - $(date -u +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "chore(data): data update - $(date -u +%Y-%m-%d)"
 
       - name: Push changes
         run: git push origin main || true

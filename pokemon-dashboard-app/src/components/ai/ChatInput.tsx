@@ -19,6 +19,7 @@ const SUGGESTED_PROMPTS = [
 export function ChatInput({ onSend, isLoading }: ChatInputProps) {
   const [input, setInput] = useState('')
   const [showSuggestions, setShowSuggestions] = useState(false)
+  const [isFocused, setIsFocused] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -62,15 +63,19 @@ export function ChatInput({ onSend, isLoading }: ChatInputProps) {
 
   return (
     <div ref={containerRef} className="relative">
+      {/* Suggestions */}
       {showSuggestions && (
-        <div className="absolute bottom-full left-0 right-0 mb-2 p-2 rounded-xl glass border border-[var(--card-border)] shadow-lg z-30 animate-[slide-in_0.15s_ease-out]">
+        <div className="absolute bottom-full left-0 right-0 mb-2 p-2.5 rounded-xl glass border border-[var(--card-border)] shadow-lg z-30 animate-[slide-in_0.15s_ease-out]">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2 px-1">
+            Suggested questions
+          </p>
           <div className="flex flex-wrap gap-1.5">
             {SUGGESTED_PROMPTS.map((prompt) => (
               <button
                 key={prompt}
                 type="button"
                 onClick={() => handleSuggestionClick(prompt)}
-                className="px-2.5 py-1 rounded-full text-[11px] bg-[var(--surface)] text-[var(--text-secondary)] border border-[var(--card-border)] hover:border-[var(--accent)] hover:text-[var(--text-primary)] transition-all duration-200 whitespace-nowrap"
+                className="px-3 py-1.5 rounded-full text-[11px] bg-[var(--surface)] text-[var(--text-secondary)] border border-[var(--card-border)] hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-all duration-200 whitespace-nowrap"
               >
                 {prompt}
               </button>
@@ -79,11 +84,26 @@ export function ChatInput({ onSend, isLoading }: ChatInputProps) {
         </div>
       )}
 
-      <div className="flex items-center gap-2 bg-[var(--surface-hover)] rounded-xl px-3 py-1.5">
+      {/* Input container */}
+      <div
+        className={[
+          'flex items-center gap-2 rounded-xl px-3 py-2 transition-all duration-200',
+          'bg-[var(--surface-hover)] border',
+          isFocused
+            ? 'border-[var(--accent)] shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
+            : 'border-[var(--card-border)]',
+        ].join(' ')}
+      >
+        {/* Sparkle / suggestions button */}
         <button
           type="button"
           onClick={() => setShowSuggestions(!showSuggestions)}
-          className="shrink-0 w-7 h-7 flex items-center justify-center rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-all duration-200"
+          className={[
+            'shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200',
+            showSuggestions
+              ? 'text-[var(--accent)] bg-red-500/10'
+              : 'text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]',
+          ].join(' ')}
           aria-label="Show suggested prompts"
           title="Suggested questions"
         >
@@ -102,42 +122,53 @@ export function ChatInput({ onSend, isLoading }: ChatInputProps) {
           </svg>
         </button>
 
+        {/* Text input */}
         <input
           ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={isLoading ? 'Thinking...' : 'Ask about Pokemon...'}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          placeholder={isLoading ? 'Generating response...' : 'Ask about Pokemon...'}
           disabled={isLoading}
           maxLength={800}
-          className="flex-1 border-none outline-none text-[16px] sm:text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] py-2 min-w-0 select-none selection:bg-transparent"
+          className="flex-1 border-none outline-none text-[16px] sm:text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] py-2 min-w-0 select-none selection:bg-transparent bg-transparent"
           style={{ background: 'none', border: 'none', boxShadow: 'none', borderRadius: 0 }}
           aria-label="Chat message input"
           autoComplete="off"
         />
 
+        {/* Character count */}
+        {input.length > 0 && (
+          <span className="text-[10px] text-[var(--text-muted)] tabular-nums shrink-0">
+            {input.length}/800
+          </span>
+        )}
+
+        {/* Send button */}
         <button
           type="button"
           onClick={handleSend}
           disabled={isLoading || !input.trim()}
           className={[
-            'shrink-0 w-7 h-7 flex items-center justify-center rounded-lg transition-all duration-200',
+            'shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200',
             input.trim() && !isLoading
-              ? 'bg-[var(--accent)] text-white hover:scale-110 hover:shadow-[0_0_12px_var(--accent-glow)]'
+              ? 'bg-gradient-to-br from-[var(--accent)] to-red-600 text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(239,68,68,0.3)]'
               : 'bg-[var(--surface-hover)] text-[var(--text-muted)]',
           ].join(' ')}
           aria-label="Send message"
         >
           {isLoading ? (
-            <svg className="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
               <circle
                 className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
+                cx={12}
+                cy={12}
+                r={10}
                 stroke="currentColor"
-                strokeWidth="4"
+                strokeWidth={4}
               />
               <path
                 className="opacity-75"
@@ -147,7 +178,7 @@ export function ChatInput({ onSend, isLoading }: ChatInputProps) {
             </svg>
           ) : (
             <svg
-              className="w-3.5 h-3.5"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               strokeWidth={2.5}

@@ -1,14 +1,25 @@
 export interface UserMessage {
   role: 'user'
   content: string
+  timestamp?: number
+  toolsUsed?: string[]
 }
 
 export interface AssistantMessage {
   role: 'assistant'
   content: string
+  timestamp?: number
+  toolsUsed?: string[]
 }
 
 export type ChatMessage = UserMessage | AssistantMessage
+
+export interface StreamingState {
+  isStreaming: boolean
+  displayedText: string
+  isComplete: boolean
+  stop: () => void
+}
 
 export interface ChatRequest {
   messages: ChatMessage[]

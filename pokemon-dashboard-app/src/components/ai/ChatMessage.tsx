@@ -7,6 +7,9 @@ import { getPokemonId, getPokemonInfo, loadPokemonLookup } from '@/lib/pokemon-l
 interface ChatMessageProps {
   role: 'user' | 'assistant'
   content: string
+  timestamp?: number
+  toolsUsed?: string[]
+  isStreaming?: boolean
 }
 
 const SCALING_PATTERN = /(\d*\.?\d+x)/gi
@@ -25,7 +28,7 @@ function getScalingBadgeStyle(mult: string): { bg: string; text: string; label: 
 function renderMarkdown(text: string): string {
   let html = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-  // Bold — RED for Pokemon theme
+  // Bold
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-red-500">$1</strong>')
   html = html.replace(/\*(.+?)\*/g, '<em class="italic text-purple-500/80">$1</em>')
   html = html.replace(
@@ -51,8 +54,6 @@ function renderMarkdown(text: string): string {
 }
 
 function linkifyPokemonNames(html: string): string {
-  // Find Pokemon names in the already-rendered HTML and wrap them in links
-  // We operate on the text content, not the HTML tags
   const tempDiv = document.createElement('div')
   tempDiv.innerHTML = html
 
@@ -61,7 +62,6 @@ function linkifyPokemonNames(html: string): string {
       const text = node.textContent || ''
       let result = text
 
-      // Find all Pokemon names and replace with links
       const names = new Map<string, number>()
       const words = text.split(/(\s+)/)
       for (const word of words) {
@@ -73,7 +73,6 @@ function linkifyPokemonNames(html: string): string {
         }
       }
 
-      // Replace from longest to shortest to avoid partial matches
       const sorted = [...names.entries()].sort((a, b) => b[0].length - a[0].length)
       for (const [name, id] of sorted) {
         const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -120,7 +119,6 @@ function extractPokemonFromContent(content: string): Array<{
 }> {
   const found = new Map<number, ReturnType<typeof getPokemonInfo>>()
 
-  // Try to find Pokemon names in the text
   const words = content.split(/\s+/)
   for (const word of words) {
     const clean = word.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()
@@ -132,7 +130,6 @@ function extractPokemonFromContent(content: string): Array<{
     }
   }
 
-  // Also try to parse any JSON blocks that might contain structured Pokemon data
   try {
     const jsonMatches = content.match(/\{[\s\S]*?"name"[\s\S]*?\}/g)
     if (jsonMatches) {
@@ -182,18 +179,35 @@ function extractPokemonFromContent(content: string): Array<{
   }>
 }
 
-export function ChatMessage({ role, content }: ChatMessageProps) {
+function formatTime(ts: number): string {
+  const d = new Date(ts)
+  return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+}
+
+const TOOL_LABELS: Record<string, string> = {
+  search_pokemon: 'Searched Pokemon',
+  get_pokemon_details: 'Fetched Details',
+  get_type_effectiveness: 'Checked Types',
+  get_evolution_chain: 'Found Evolution',
+  compare_pokemon: 'Compared Stats',
+}
+
+export function ChatMessage({
+  role,
+  content,
+  timestamp,
+  toolsUsed,
+  isStreaming = false,
+}: ChatMessageProps) {
   const isUser = role === 'user'
   const [linkedHtml, setLinkedHtml] = useState('')
 
-  // Load Pokemon lookup on mount
   useEffect(() => {
     loadPokemonLookup().catch(() => {})
   }, [])
 
   const baseHtml = useMemo(() => renderMarkdown(content), [content])
 
-  // Client-side only: linkify Pokemon names
   useEffect(() => {
     setLinkedHtml(linkifyPokemonNames(baseHtml))
   }, [baseHtml])
@@ -203,41 +217,115 @@ export function ChatMessage({ role, content }: ChatMessageProps) {
     return extractPokemonFromContent(content)
   }, [content, isUser])
 
+  const timeStr = timestamp ? formatTime(timestamp) : null
+
   return (
     <div
-      className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-3 animate-[slide-in_0.2s_ease-out]`}
+      className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4 animate-[slide-in_0.25s_ease-out]`}
       role="listitem"
     >
       <div
-        className={[
-          'max-w-[90%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed break-words',
-          isUser
-            ? 'bg-[var(--accent)] text-white rounded-br-md'
-            : 'bg-[var(--surface-hover)] text-[var(--text-secondary)] rounded-bl-md border border-[var(--card-border)]',
-        ].join(' ')}
+        className={`flex ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end gap-2 max-w-[92%]`}
       >
-        {isUser ? (
-          <p className="whitespace-pre-wrap">{content}</p>
-        ) : (
-          <>
-            <div
-              className="text-[13px] leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: linkedHtml || baseHtml }}
-            />
-            {mentionedPokemon.length > 0 && (
-              <div className="mt-3 pt-2 border-t border-[var(--card-border)]">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-1.5">
-                  Related Pokemon
-                </p>
-                <div className="space-y-2">
-                  {mentionedPokemon.map((p) => (
-                    <PokemonCard key={p.id} {...p} />
-                  ))}
-                </div>
+        {/* Avatar */}
+        {!isUser && (
+          <div className="shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-md shadow-red-500/20">
+            <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+            </svg>
+          </div>
+        )}
+
+        <div className="flex flex-col gap-1">
+          {/* Bubble */}
+          <div
+            className={[
+              'rounded-2xl px-4 py-3 text-sm leading-relaxed break-words shadow-sm',
+              isUser
+                ? 'bg-gradient-to-br from-[var(--accent)] to-red-600 text-white rounded-br-md'
+                : 'bg-[var(--surface)] text-[var(--text-secondary)] rounded-bl-md border border-[var(--card-border)]',
+            ].join(' ')}
+          >
+            {isUser ? (
+              <p className="whitespace-pre-wrap">{content}</p>
+            ) : (
+              <>
+                <div
+                  className="text-[13px] leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: linkedHtml || baseHtml }}
+                />
+                {isStreaming && (
+                  <span className="inline-block w-[2px] h-[1.1em] bg-[var(--accent)] ml-0.5 align-middle animate-stream-cursor" />
+                )}
+              </>
+            )}
+          </div>
+
+          {/* Meta row: time + tools */}
+          <div className={`flex items-center gap-2 ${isUser ? 'justify-end' : 'justify-start'}`}>
+            {timeStr && (
+              <span className="text-[10px] text-[var(--text-muted)] opacity-70">{timeStr}</span>
+            )}
+            {!isUser && toolsUsed && toolsUsed.length > 0 && (
+              <div className="flex items-center gap-1">
+                {toolsUsed.map((tool) => (
+                  <span
+                    key={tool}
+                    className="inline-flex items-center gap-1 px-1.5 py-px rounded-full bg-green-500/10 border border-green-500/20 text-[9px] text-green-600 font-medium"
+                    title={`Used tool: ${tool}`}
+                  >
+                    <svg
+                      className="w-2.5 h-2.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    {TOOL_LABELS[tool] || tool}
+                  </span>
+                ))}
               </div>
             )}
-          </>
-        )}
+            {!isUser && !isStreaming && (
+              <span className="inline-flex items-center gap-1 px-1.5 py-px rounded-full bg-blue-500/10 border border-blue-500/20 text-[9px] text-blue-600 font-medium">
+                <svg
+                  className="w-2.5 h-2.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Verified
+              </span>
+            )}
+          </div>
+
+          {/* Related Pokemon cards */}
+          {!isUser && mentionedPokemon.length > 0 && (
+            <div className="mt-2 pt-2 border-t border-[var(--card-border)]">
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-1.5">
+                Related Pokemon
+              </p>
+              <div className="space-y-2">
+                {mentionedPokemon.map((p) => (
+                  <PokemonCard key={p.id} {...p} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
