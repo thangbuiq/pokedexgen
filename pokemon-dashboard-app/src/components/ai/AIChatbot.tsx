@@ -37,6 +37,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   const hasAutoScrolled = useRef(false)
   const messagesRef = useRef<ChatMessageType[]>([WELCOME_MESSAGE])
   const thinkingIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const streamingKeyRef = useRef<string>('')
 
   const { displayedText, isComplete, isStreaming, stop } = useStreamingText(
     streamingContent || '',
@@ -144,6 +145,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
       const result = await fetchChatResponse([...history, userMessage])
       setIsLoading(false)
       if (result.ok) {
+        streamingKeyRef.current = `streaming-${Date.now()}`
         setStreamingContent(result.response)
       } else {
         setError(result.error)
@@ -295,18 +297,23 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
           role="log"
           aria-live="polite"
         >
-          {visibleMessages.map((msg, i) => (
-            <ChatMessage
-              key={`${msg.role}-${i}-${msg.timestamp || i}`}
-              role={msg.role}
-              content={msg.content}
-              timestamp={msg.timestamp}
-              toolsUsed={msg.toolsUsed}
-              isStreaming={
-                msg.role === 'assistant' && i === visibleMessages.length - 1 && isStreaming
-              }
-            />
-          ))}
+          {visibleMessages.map((msg, i) => {
+            const isStreamingMsg =
+              msg.role === 'assistant' && i === visibleMessages.length - 1 && isStreaming
+            const key = isStreamingMsg
+              ? streamingKeyRef.current
+              : `${msg.role}-${i}-${msg.timestamp || i}`
+            return (
+              <ChatMessage
+                key={key}
+                role={msg.role}
+                content={msg.content}
+                timestamp={msg.timestamp}
+                toolsUsed={msg.toolsUsed}
+                isStreaming={isStreamingMsg}
+              />
+            )
+          })}
 
           {/* Loading indicator (before streaming starts) */}
           {isLoading && !streamingContent && (
@@ -408,7 +415,6 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
               style={{ animationDuration: '1.5s' }}
               unoptimized
             />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-green-400 border-2 border-[var(--accent)] animate-pulse" />
           </div>
           <span className="font-semibold whitespace-nowrap">Ask &rsquo;em all</span>
         </button>
