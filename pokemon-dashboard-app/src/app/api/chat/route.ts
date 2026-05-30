@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { ChatOpenAI } from '@langchain/openai'
+import { AIMessageChunk } from '@langchain/core/messages'
 import {
   HumanMessage,
   AIMessage,
@@ -49,7 +50,7 @@ function buildLangChainMessages(clientMessages: ClientMessage[]): BaseMessage[] 
   return messages
 }
 
-function createModel() {
+function createBaseModel() {
   return new ChatOpenAI({
     model: OPENAI_MODEL,
     temperature: 0.4,
@@ -57,7 +58,11 @@ function createModel() {
     apiKey: OPENAI_API_KEY,
     configuration: { baseURL: OPENAI_BASE_URL },
     timeout: TIMEOUT_MS,
-  }).bindTools(pokemonTools)
+  })
+}
+
+function createModelWithTools() {
+  return createBaseModel().bindTools(pokemonTools)
 }
 
 function extractErrorInfo(err: unknown): { message: string; status?: number } {
@@ -76,6 +81,41 @@ function extractErrorInfo(err: unknown): { message: string; status?: number } {
     return { message: err.message }
   }
   return { message: 'Unknown error occurred' }
+}
+
+function extractContent(token: AIMessageChunk['content']): string {
+  if (typeof token === 'string') return token
+  return ''
+}
+
+function createStreamResponse(stream: AsyncIterable<AIMessageChunk>): NextResponse {
+  const encoder = new TextEncoder()
+
+  const readable = new ReadableStream({
+    async start(controller) {
+      try {
+        for await (const chunk of stream) {
+          const text = extractContent(chunk.content)
+          if (text) {
+            controller.enqueue(encoder.encode(text))
+          }
+        }
+      } catch (err) {
+        console.error('[chat] stream error:', err instanceof Error ? err.message : err)
+      } finally {
+        controller.close()
+      }
+    },
+  })
+
+  return new NextResponse(readable, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'no-cache',
+      Connection: 'keep-alive',
+      'X-Content-Type-Options': 'nosniff',
+    },
+  })
 }
 
 const ipRateLimit = new Map<string, { count: number; resetTime: number }>()
@@ -129,22 +169,30 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const model = createModel()
+    const modelWithTools = createModelWithTools()
     let messages = buildLangChainMessages(clientMessages)
 
     // Pass 1: Ask the model (it may decide to call tools)
-    const firstResponse = await model.invoke(messages)
+    const firstResponse = await modelWithTools.invoke(messages)
     console.log(
       '[chat] first response finish_reason:',
       firstResponse.response_metadata?.finish_reason
     )
 
-    // If no tool calls, return the response directly
+    // If no tool calls, re-invoke with streaming and stream to client
     const toolCalls = firstResponse.tool_calls
     if (!toolCalls || toolCalls.length === 0) {
-      const answer = String(firstResponse.content || 'I am not sure how to answer that.')
-      console.log('[chat] direct response:', answer.slice(0, 200))
-      return NextResponse.json({ response: answer })
+      const directAnswer = String(firstResponse.content || '')
+      console.log('[chat] direct response (streaming):', directAnswer.slice(0, 200))
+
+      if (!directAnswer) {
+        return NextResponse.json({ error: 'No response generated.' }, { status: 500 })
+      }
+
+      // Re-invoke with streaming so tokens flow to client in real-time
+      const streamModel = createBaseModel()
+      const stream = await streamModel.stream(messages)
+      return createStreamResponse(stream)
     }
 
     // Execute tool calls
@@ -169,13 +217,12 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Pass 2: Send tool results back to the model
+    // Pass 2: Stream final response with tool results
     messages = [...messages, firstResponse, ...toolMessages]
-    const finalResponse = await model.invoke(messages)
-
-    const answer = String(finalResponse.content || 'I am not sure how to answer that.')
-    console.log('[chat] tool response:', answer.slice(0, 200))
-    return NextResponse.json({ response: answer })
+    const streamModel = createBaseModel()
+    const stream = await streamModel.stream(messages)
+    console.log('[chat] streaming tool response...')
+    return createStreamResponse(stream)
   } catch (err) {
     const { message, status } = extractErrorInfo(err)
     console.error('[chat] error:', message)

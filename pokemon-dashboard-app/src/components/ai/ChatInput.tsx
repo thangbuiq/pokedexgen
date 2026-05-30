@@ -65,7 +65,7 @@ export function ChatInput({ onSend, isLoading }: ChatInputProps) {
     <div ref={containerRef} className="relative">
       {/* Suggestions */}
       {showSuggestions && (
-        <div className="absolute bottom-full left-0 right-0 mb-2 p-2.5 rounded-xl glass border border-[var(--card-border)] shadow-lg z-30 animate-[slide-in_0.15s_ease-out]">
+        <div className="absolute bottom-full left-0 right-0 mb-2 p-2.5 rounded-xl bg-[var(--surface)] border border-[var(--card-border)] shadow-lg z-30 animate-[slide-in_0.15s_ease-out]">
           <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2 px-1">
             Suggested questions
           </p>

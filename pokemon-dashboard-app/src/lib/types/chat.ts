@@ -39,5 +39,5 @@ export interface ChatErrorResponse {
 }
 
 export type ChatResult =
-  | { ok: true; response: string; usage?: ChatSuccessResponse['usage'] }
+  | { ok: true; response?: string; usage?: ChatSuccessResponse['usage'] }
   | { ok: false; error: string; status?: number }

@@ -4,8 +4,7 @@ import { useState, useCallback, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { ChatMessage } from '@/components/ai/ChatMessage'
 import { ChatInput } from '@/components/ai/ChatInput'
-import { useStreamingText } from '@/hooks/useStreamingText'
-import { fetchChatResponse, type ChatMessage as ChatMessageType } from '@/lib/ai-client'
+import { streamChatResponse, type ChatMessage as ChatMessageType } from '@/lib/ai-client'
 
 interface AIChatbotProps {
   isOpen: boolean
@@ -29,6 +28,7 @@ const THINKING_STEPS = [
 export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   const [messages, setMessages] = useState<ChatMessageType[]>([WELCOME_MESSAGE])
   const [isLoading, setIsLoading] = useState(false)
+  const [isStreaming, setIsStreaming] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [thinkingStep, setThinkingStep] = useState(0)
   const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null)
@@ -38,13 +38,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   const messagesRef = useRef<ChatMessageType[]>([WELCOME_MESSAGE])
   const thinkingIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const streamingKeyRef = useRef<string>('')
-
-  const { displayedText, isComplete, isStreaming, stop } = useStreamingText(
-    streamingContent || '',
-    {
-      speed: 40,
-    }
-  )
+  const abortRef = useRef<AbortController | null>(null)
 
   useEffect(() => {
     messagesRef.current = messages
@@ -58,7 +52,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
 
   useEffect(() => {
     scrollToBottom()
-  }, [messages, displayedText, scrollToBottom])
+  }, [messages, streamingContent, scrollToBottom])
 
   useEffect(() => {
     if (isOpen && !hasAutoScrolled.current) {
@@ -86,22 +80,6 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
       }
     }
   }, [isLoading])
-
-  // When streaming completes, add the full message to the list
-  useEffect(() => {
-    if (isComplete && streamingContent && !isLoading) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: streamingContent,
-          timestamp: Date.now(),
-          toolsUsed: ['search_pokemon'],
-        },
-      ])
-      setStreamingContent(null)
-    }
-  }, [isComplete, streamingContent, isLoading])
 
   useEffect(() => {
     if (isOpen) {
@@ -131,6 +109,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   const handleSend = useCallback(async (message: string) => {
     setError(null)
     setLastFailedMessage(null)
+
     const userMessage: ChatMessageType = {
       role: 'user',
       content: message,
@@ -138,21 +117,63 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
     }
     setMessages((prev) => [...prev, userMessage])
     setIsLoading(true)
+    setIsStreaming(false)
 
     const history = messagesRef.current.filter((m) => m !== WELCOME_MESSAGE)
+    const controller = new AbortController()
+    abortRef.current = controller
+
+    // Ref to accumulate chunks — avoids stale closure (blog post pattern)
+    const accumulated = { current: '' }
+
+    const onChunk = (text: string) => {
+      accumulated.current += text
+
+      // On first chunk, flip from loading to streaming
+      if (accumulated.current.length === text.length) {
+        setIsLoading(false)
+        setIsStreaming(true)
+        streamingKeyRef.current = `streaming-${Date.now()}`
+      }
+
+      // Trigger re-render with accumulated text (the key insight from the blog post)
+      setStreamingContent(accumulated.current)
+    }
 
     try {
-      const result = await fetchChatResponse([...history, userMessage])
-      setIsLoading(false)
-      if (result.ok) {
-        streamingKeyRef.current = `streaming-${Date.now()}`
-        setStreamingContent(result.response)
+      const result = await streamChatResponse([...history, userMessage], onChunk, {
+        signal: controller.signal,
+      })
+
+      setIsStreaming(false)
+      abortRef.current = null
+
+      if (result.ok && accumulated.current) {
+        setStreamingContent(null)
+        streamingKeyRef.current = `done-${Date.now()}`
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: accumulated.current,
+            timestamp: Date.now(),
+          },
+        ])
+      } else if (result.ok) {
+        setStreamingContent(null)
       } else {
         setError(result.error)
         setLastFailedMessage(message)
+        setStreamingContent(null)
       }
-    } catch {
+    } catch (err) {
+      // AbortError means user pressed Stop — handleStop takes care of it
+      if (err instanceof Error && err.name === 'AbortError') return
+
       setIsLoading(false)
+      setIsStreaming(false)
+      setStreamingContent(null)
+      abortRef.current = null
       setError('Something went wrong. Please try again.')
       setLastFailedMessage(message)
     }
@@ -166,21 +187,23 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   }, [lastFailedMessage, handleSend])
 
   const handleStop = useCallback(() => {
-    stop()
+    abortRef.current?.abort()
+    setIsStreaming(false)
     setIsLoading(false)
+
     if (streamingContent) {
+      const persisted = streamingContent
+      setStreamingContent(null)
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: streamingContent,
+          content: persisted,
           timestamp: Date.now(),
-          toolsUsed: ['search_pokemon'],
         },
       ])
-      setStreamingContent(null)
     }
-  }, [stop, streamingContent])
+  }, [streamingContent])
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -191,14 +214,13 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
     [isOpen, onToggle]
   )
 
-  // Build the visible message list: include streaming message if active
+  // Build the visible message list: include streaming message if tokens are flowing
   const visibleMessages = [...messages]
-  if (isStreaming || (streamingContent && !isComplete)) {
+  if (streamingContent !== null) {
     visibleMessages.push({
       role: 'assistant',
-      content: displayedText,
+      content: streamingContent,
       timestamp: Date.now(),
-      toolsUsed: ['search_pokemon'],
     })
   }
 
