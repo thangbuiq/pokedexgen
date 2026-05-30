@@ -38,7 +38,15 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
   const messagesRef = useRef<ChatMessageType[]>([WELCOME_MESSAGE])
   const thinkingIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const streamingKeyRef = useRef<string>('')
+  const streamingTimestampRef = useRef(0)
   const abortRef = useRef<AbortController | null>(null)
+
+  // Character-by-character drip system
+  const accumulatedRef = useRef('')
+  const displayIndexRef = useRef(0)
+  const dripTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const streamEndedRef = useRef(false)
+  const CHAR_DELAY = 8
 
   useEffect(() => {
     messagesRef.current = messages
@@ -106,78 +114,122 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
     }
   }, [isOpen])
 
-  const handleSend = useCallback(async (message: string) => {
-    setError(null)
-    setLastFailedMessage(null)
-
-    const userMessage: ChatMessageType = {
-      role: 'user',
-      content: message,
-      timestamp: Date.now(),
-    }
-    setMessages((prev) => [...prev, userMessage])
-    setIsLoading(true)
-    setIsStreaming(false)
-
-    const history = messagesRef.current.filter((m) => m !== WELCOME_MESSAGE)
-    const controller = new AbortController()
-    abortRef.current = controller
-
-    // Ref to accumulate chunks — avoids stale closure (blog post pattern)
-    const accumulated = { current: '' }
-
-    const onChunk = (text: string) => {
-      accumulated.current += text
-
-      // On first chunk, flip from loading to streaming
-      if (accumulated.current.length === text.length) {
-        setIsLoading(false)
-        setIsStreaming(true)
-        streamingKeyRef.current = `streaming-${Date.now()}`
-      }
-
-      // Trigger re-render with accumulated text (the key insight from the blog post)
-      setStreamingContent(accumulated.current)
-    }
-
-    try {
-      const result = await streamChatResponse([...history, userMessage], onChunk, {
-        signal: controller.signal,
-      })
-
-      setIsStreaming(false)
-      abortRef.current = null
-
-      if (result.ok && accumulated.current) {
-        setStreamingContent(null)
-        streamingKeyRef.current = `done-${Date.now()}`
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: 'assistant',
-            content: accumulated.current,
-            timestamp: Date.now(),
-          },
-        ])
-      } else if (result.ok) {
-        setStreamingContent(null)
-      } else {
-        setError(result.error)
-        setLastFailedMessage(message)
-        setStreamingContent(null)
-      }
-    } catch (err) {
-      // AbortError means user pressed Stop — handleStop takes care of it
-      if (err instanceof Error && err.name === 'AbortError') return
-
-      setIsLoading(false)
-      setIsStreaming(false)
-      setStreamingContent(null)
-      abortRef.current = null
-      setError('Something went wrong. Please try again.')
-      setLastFailedMessage(message)
+  const stopDrip = useCallback(() => {
+    if (dripTimeoutRef.current) {
+      clearTimeout(dripTimeoutRef.current)
+      dripTimeoutRef.current = null
     }
   }, [])
+
+  const handleSend = useCallback(
+    async (message: string) => {
+      setError(null)
+      setLastFailedMessage(null)
+
+      // Reset drip state
+      stopDrip()
+      accumulatedRef.current = ''
+      displayIndexRef.current = 0
+      streamEndedRef.current = false
+
+      const userMessage: ChatMessageType = {
+        role: 'user',
+        content: message,
+        timestamp: Date.now(),
+      }
+      setMessages((prev) => [...prev, userMessage])
+      setIsLoading(true)
+      setIsStreaming(false)
+
+      const history = messagesRef.current.filter((m) => m !== WELCOME_MESSAGE)
+      const controller = new AbortController()
+      abortRef.current = controller
+
+      /**
+       * Drip one character at a time from the accumulated buffer.
+       * When the stream has ended and all characters are shown, persist the message.
+       */
+      const drip = () => {
+        const bufLen = accumulatedRef.current.length
+        const idx = displayIndexRef.current
+
+        if (idx < bufLen) {
+          displayIndexRef.current = idx + 1
+          setStreamingContent(accumulatedRef.current.slice(0, idx + 1))
+          dripTimeoutRef.current = setTimeout(drip, CHAR_DELAY)
+        } else if (streamEndedRef.current && bufLen > 0) {
+          // All characters shown and stream ended → persist
+          const full = accumulatedRef.current
+          accumulatedRef.current = ''
+          displayIndexRef.current = 0
+          setStreamingContent(null)
+          setIsStreaming(false)
+          abortRef.current = null
+          streamingKeyRef.current = `done-${Date.now()}`
+          setMessages((prev) => [
+            ...prev,
+            { role: 'assistant', content: full, timestamp: Date.now() },
+          ])
+        }
+        // else: buffer temporarily exhausted; onChunk will restart drip when new data arrives
+      }
+
+      const onChunk = (text: string) => {
+        const wasEmpty = accumulatedRef.current.length === 0
+        accumulatedRef.current += text
+
+        if (wasEmpty) {
+          setIsLoading(false)
+          setIsStreaming(true)
+          streamingKeyRef.current = `streaming-${Date.now()}`
+          streamingTimestampRef.current = Date.now()
+        }
+
+        // Restart drip if it stopped (buffer was temporarily exhausted)
+        if (!dripTimeoutRef.current) {
+          drip()
+        }
+      }
+
+      try {
+        const result = await streamChatResponse([...history, userMessage], onChunk, {
+          signal: controller.signal,
+        })
+
+        // Stream ended — let drip finish showing remaining characters
+        streamEndedRef.current = true
+
+        if (!result.ok) {
+          stopDrip()
+          accumulatedRef.current = ''
+          displayIndexRef.current = 0
+          setIsStreaming(false)
+          setStreamingContent(null)
+          setError(result.error)
+          setLastFailedMessage(message)
+          return
+        }
+
+        // If drip already finished, trigger completion now
+        if (!dripTimeoutRef.current) {
+          drip()
+        }
+      } catch (err) {
+        if (err instanceof Error && err.name === 'AbortError') return
+
+        stopDrip()
+        accumulatedRef.current = ''
+        displayIndexRef.current = 0
+        setIsLoading(false)
+        setIsStreaming(false)
+        setStreamingContent(null)
+        abortRef.current = null
+        setError('Something went wrong. Please try again.')
+        setLastFailedMessage(message)
+      }
+    },
+    [stopDrip]
+  )
 
   const handleRetry = useCallback(() => {
     if (lastFailedMessage) {
@@ -188,11 +240,15 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
 
   const handleStop = useCallback(() => {
     abortRef.current?.abort()
+    stopDrip()
+    streamEndedRef.current = true
     setIsStreaming(false)
     setIsLoading(false)
 
-    if (streamingContent) {
-      const persisted = streamingContent
+    if (accumulatedRef.current) {
+      const persisted = accumulatedRef.current
+      accumulatedRef.current = ''
+      displayIndexRef.current = 0
       setStreamingContent(null)
       setMessages((prev) => [
         ...prev,
@@ -203,7 +259,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         },
       ])
     }
-  }, [streamingContent])
+  }, [stopDrip])
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -220,7 +276,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
     visibleMessages.push({
       role: 'assistant',
       content: streamingContent,
-      timestamp: Date.now(),
+      timestamp: streamingTimestampRef.current,
     })
   }
 
@@ -404,7 +460,7 @@ export function AIChatbot({ isOpen, onToggle }: AIChatbotProps) {
         </div>
 
         {/* Input */}
-        <div className="shrink-0 px-4 py-3 mb-4 border-t border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md safe-area-bottom">
+        <div className="shrink-0 relative z-10 px-4 py-3 mb-4 border-t border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md safe-area-bottom">
           <ChatInput onSend={handleSend} isLoading={isLoading || isStreaming} />
         </div>
       </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useEffect, useState } from 'react'
+import { useMemo, useEffect, useState, memo } from 'react'
 import { PokemonCard } from './PokemonCard'
 import { getPokemonId, getPokemonInfo, loadPokemonLookup } from '@/lib/pokemon-lookup'
 
@@ -192,7 +192,7 @@ const TOOL_LABELS: Record<string, string> = {
   compare_pokemon: 'Compared Stats',
 }
 
-export function ChatMessage({
+export const ChatMessage = memo(function ChatMessage({
   role,
   content,
   timestamp,
@@ -303,8 +303,8 @@ export function ChatMessage({
             )}
           </div>
 
-          {/* Related Pokemon cards */}
-          {!isUser && mentionedPokemon.length > 0 && (
+          {/* Related Pokemon cards — deferred until streaming completes */}
+          {!isUser && !isStreaming && mentionedPokemon.length > 0 && (
             <div className="mt-2 pt-2 border-t border-[var(--card-border)]">
               <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-1.5">
                 Related Pokemon
@@ -320,4 +320,4 @@ export function ChatMessage({
       </div>
     </div>
   )
-}
+})
