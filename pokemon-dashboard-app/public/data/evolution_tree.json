@@ -357,7 +357,7 @@
     "evolves_from": "vulpix",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "fire-stone"
+    "item_required": "ice-stone"
   },
   {
     "chain_id": 16,
@@ -433,21 +433,21 @@
   },
   {
     "chain_id": 18,
-    "species_name": "bellossom",
-    "stage": 3,
-    "evolves_from": "gloom",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "sun-stone"
-  },
-  {
-    "chain_id": 18,
     "species_name": "vileplume",
     "stage": 3,
     "evolves_from": "gloom",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "leaf-stone"
+  },
+  {
+    "chain_id": 18,
+    "species_name": "bellossom",
+    "stage": 3,
+    "evolves_from": "gloom",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "sun-stone"
   },
   {
     "chain_id": 19,
@@ -613,21 +613,21 @@
   },
   {
     "chain_id": 26,
-    "species_name": "politoed",
-    "stage": 3,
-    "evolves_from": "poliwhirl",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 26,
     "species_name": "poliwrath",
     "stage": 3,
     "evolves_from": "poliwhirl",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "water-stone"
+  },
+  {
+    "chain_id": 26,
+    "species_name": "politoed",
+    "stage": 3,
+    "evolves_from": "poliwhirl",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null
   },
   {
     "chain_id": 27,
@@ -784,21 +784,21 @@
   },
   {
     "chain_id": 33,
-    "species_name": "slowking",
-    "stage": 2,
-    "evolves_from": "slowpoke",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "galarica-wreath"
-  },
-  {
-    "chain_id": 33,
     "species_name": "slowbro",
     "stage": 2,
     "evolves_from": "slowpoke",
     "evolution_trigger": "level-up",
     "min_level": 37,
     "item_required": null
+  },
+  {
+    "chain_id": 33,
+    "species_name": "slowking",
+    "stage": 2,
+    "evolves_from": "slowpoke",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "galarica-wreath"
   },
   {
     "chain_id": 34,
@@ -1063,7 +1063,7 @@
   },
   {
     "chain_id": 47,
-    "species_name": "hitmonlee",
+    "species_name": "hitmontop",
     "stage": 2,
     "evolves_from": "tyrogue",
     "evolution_trigger": "level-up",
@@ -1072,7 +1072,7 @@
   },
   {
     "chain_id": 47,
-    "species_name": "hitmontop",
+    "species_name": "hitmonlee",
     "stage": 2,
     "evolves_from": "tyrogue",
     "evolution_trigger": "level-up",
@@ -1459,30 +1459,12 @@
   },
   {
     "chain_id": 67,
-    "species_name": "leafeon",
+    "species_name": "umbreon",
     "stage": 2,
     "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
+    "evolution_trigger": "level-up",
     "min_level": null,
-    "item_required": "leaf-stone"
-  },
-  {
-    "chain_id": 67,
-    "species_name": "vaporeon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "water-stone"
-  },
-  {
-    "chain_id": 67,
-    "species_name": "glaceon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "ice-stone"
+    "item_required": null
   },
   {
     "chain_id": 67,
@@ -1495,7 +1477,34 @@
   },
   {
     "chain_id": 67,
-    "species_name": "sylveon",
+    "species_name": "leafeon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "leaf-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "glaceon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "ice-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "vaporeon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "water-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "espeon",
     "stage": 2,
     "evolves_from": "eevee",
     "evolution_trigger": "level-up",
@@ -1513,16 +1522,7 @@
   },
   {
     "chain_id": 67,
-    "species_name": "umbreon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 67,
-    "species_name": "espeon",
+    "species_name": "sylveon",
     "stage": 2,
     "evolves_from": "eevee",
     "evolution_trigger": "level-up",
@@ -2071,7 +2071,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "clodsire",
+    "species_name": "quagsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2080,7 +2080,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "quagsire",
+    "species_name": "clodsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2254,7 +2254,7 @@
     "species_name": "overqwil",
     "stage": 2,
     "evolves_from": "qwilfish",
-    "evolution_trigger": "strong-style-move",
+    "evolution_trigger": "use-move",
     "min_level": null,
     "item_required": null
   },
@@ -2737,7 +2737,7 @@
   },
   {
     "chain_id": 135,
-    "species_name": "silcoon",
+    "species_name": "cascoon",
     "stage": 2,
     "evolves_from": "wurmple",
     "evolution_trigger": "level-up",
@@ -2746,7 +2746,7 @@
   },
   {
     "chain_id": 135,
-    "species_name": "cascoon",
+    "species_name": "silcoon",
     "stage": 2,
     "evolves_from": "wurmple",
     "evolution_trigger": "level-up",
@@ -2971,20 +2971,20 @@
   },
   {
     "chain_id": 144,
-    "species_name": "shedinja",
-    "stage": 2,
-    "evolves_from": "nincada",
-    "evolution_trigger": "shed",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 144,
     "species_name": "ninjask",
     "stage": 2,
     "evolves_from": "nincada",
     "evolution_trigger": "level-up",
     "min_level": 20,
+    "item_required": null
+  },
+  {
+    "chain_id": 144,
+    "species_name": "shedinja",
+    "stage": 2,
+    "evolves_from": "nincada",
+    "evolution_trigger": "shed",
+    "min_level": null,
     "item_required": null
   },
   {
@@ -3691,7 +3691,7 @@
   },
   {
     "chain_id": 188,
-    "species_name": "huntail",
+    "species_name": "gorebyss",
     "stage": 2,
     "evolves_from": "clamperl",
     "evolution_trigger": "trade",
@@ -3700,7 +3700,7 @@
   },
   {
     "chain_id": 188,
-    "species_name": "gorebyss",
+    "species_name": "huntail",
     "stage": 2,
     "evolves_from": "clamperl",
     "evolution_trigger": "trade",
@@ -5203,20 +5203,20 @@
   },
   {
     "chain_id": 287,
-    "species_name": "runerigus",
-    "stage": 2,
-    "evolves_from": "yamask",
-    "evolution_trigger": "take-damage",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 287,
     "species_name": "cofagrigus",
     "stage": 2,
     "evolves_from": "yamask",
     "evolution_trigger": "level-up",
     "min_level": 34,
+    "item_required": null
+  },
+  {
+    "chain_id": 287,
+    "species_name": "runerigus",
+    "stage": 2,
+    "evolves_from": "yamask",
+    "evolution_trigger": "take-damage",
+    "min_level": null,
     "item_required": null
   },
   {
@@ -7264,7 +7264,7 @@
   },
   {
     "chain_id": 413,
-    "species_name": "solgaleo",
+    "species_name": "lunala",
     "stage": 3,
     "evolves_from": "cosmoem",
     "evolution_trigger": "level-up",
@@ -7273,7 +7273,7 @@
   },
   {
     "chain_id": 413,
-    "species_name": "lunala",
+    "species_name": "solgaleo",
     "stage": 3,
     "evolves_from": "cosmoem",
     "evolution_trigger": "level-up",
@@ -7863,7 +7863,7 @@
     "evolves_from": "sinistea",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "cracked-pot"
+    "item_required": "chipped-pot"
   },
   {
     "chain_id": 450,
@@ -8151,7 +8151,7 @@
     "evolves_from": "kubfu",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "scroll-of-darkness"
+    "item_required": "scroll-of-waters"
   },
   {
     "chain_id": 471,
@@ -8488,21 +8488,21 @@
   },
   {
     "chain_id": 490,
-    "species_name": "armarouge",
-    "stage": 2,
-    "evolves_from": "charcadet",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "auspicious-armor"
-  },
-  {
-    "chain_id": 490,
     "species_name": "ceruledge",
     "stage": 2,
     "evolves_from": "charcadet",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "malicious-armor"
+  },
+  {
+    "chain_id": 490,
+    "species_name": "armarouge",
+    "stage": 2,
+    "evolves_from": "charcadet",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "auspicious-armor"
   },
   {
     "chain_id": 491,
@@ -9132,7 +9132,7 @@
     "evolves_from": "poltchageist",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "unremarkable-teacup"
+    "item_required": "masterpiece-teacup"
   },
   {
     "chain_id": 540,
