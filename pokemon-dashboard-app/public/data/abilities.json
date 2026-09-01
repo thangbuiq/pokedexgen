@@ -1,102 +1,102 @@
 [
   {
     "id": 1,
-    "is_main_series": true,
-    "name": "stench"
+    "name": "stench",
+    "is_main_series": true
   },
   {
     "id": 2,
-    "is_main_series": true,
-    "name": "drizzle"
+    "name": "drizzle",
+    "is_main_series": true
   },
   {
     "id": 3,
-    "is_main_series": true,
-    "name": "speed-boost"
+    "name": "speed-boost",
+    "is_main_series": true
   },
   {
     "id": 4,
-    "is_main_series": true,
-    "name": "battle-armor"
+    "name": "battle-armor",
+    "is_main_series": true
   },
   {
     "id": 5,
-    "is_main_series": true,
-    "name": "sturdy"
+    "name": "sturdy",
+    "is_main_series": true
   },
   {
     "id": 6,
-    "is_main_series": true,
-    "name": "damp"
+    "name": "damp",
+    "is_main_series": true
   },
   {
     "id": 7,
-    "is_main_series": true,
-    "name": "limber"
+    "name": "limber",
+    "is_main_series": true
   },
   {
     "id": 8,
-    "is_main_series": true,
-    "name": "sand-veil"
+    "name": "sand-veil",
+    "is_main_series": true
   },
   {
     "id": 9,
-    "is_main_series": true,
-    "name": "static"
+    "name": "static",
+    "is_main_series": true
   },
   {
     "id": 10,
-    "is_main_series": true,
-    "name": "volt-absorb"
+    "name": "volt-absorb",
+    "is_main_series": true
   },
   {
     "id": 11,
-    "is_main_series": true,
-    "name": "water-absorb"
+    "name": "water-absorb",
+    "is_main_series": true
   },
   {
     "id": 12,
-    "is_main_series": true,
-    "name": "oblivious"
+    "name": "oblivious",
+    "is_main_series": true
   },
   {
     "id": 13,
-    "is_main_series": true,
-    "name": "cloud-nine"
+    "name": "cloud-nine",
+    "is_main_series": true
   },
   {
     "id": 14,
-    "is_main_series": true,
-    "name": "compound-eyes"
+    "name": "compound-eyes",
+    "is_main_series": true
   },
   {
     "id": 15,
-    "is_main_series": true,
-    "name": "insomnia"
+    "name": "insomnia",
+    "is_main_series": true
   },
   {
     "id": 16,
-    "is_main_series": true,
-    "name": "color-change"
+    "name": "color-change",
+    "is_main_series": true
   },
   {
     "id": 17,
-    "is_main_series": true,
-    "name": "immunity"
+    "name": "immunity",
+    "is_main_series": true
   },
   {
     "id": 18,
-    "is_main_series": true,
-    "name": "flash-fire"
+    "name": "flash-fire",
+    "is_main_series": true
   },
   {
     "id": 19,
-    "is_main_series": true,
-    "name": "shield-dust"
+    "name": "shield-dust",
+    "is_main_series": true
   },
   {
     "id": 20,
-    "is_main_series": true,
-    "name": "own-tempo"
+    "name": "own-tempo",
+    "is_main_series": true
   }
 ]

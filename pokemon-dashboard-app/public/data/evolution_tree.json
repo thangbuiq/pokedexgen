@@ -433,21 +433,21 @@
   },
   {
     "chain_id": 18,
-    "species_name": "vileplume",
-    "stage": 3,
-    "evolves_from": "gloom",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "leaf-stone"
-  },
-  {
-    "chain_id": 18,
     "species_name": "bellossom",
     "stage": 3,
     "evolves_from": "gloom",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "sun-stone"
+  },
+  {
+    "chain_id": 18,
+    "species_name": "vileplume",
+    "stage": 3,
+    "evolves_from": "gloom",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "leaf-stone"
   },
   {
     "chain_id": 19,
@@ -1063,6 +1063,15 @@
   },
   {
     "chain_id": 47,
+    "species_name": "hitmonchan",
+    "stage": 2,
+    "evolves_from": "tyrogue",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null
+  },
+  {
+    "chain_id": 47,
     "species_name": "hitmontop",
     "stage": 2,
     "evolves_from": "tyrogue",
@@ -1073,15 +1082,6 @@
   {
     "chain_id": 47,
     "species_name": "hitmonlee",
-    "stage": 2,
-    "evolves_from": "tyrogue",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null
-  },
-  {
-    "chain_id": 47,
-    "species_name": "hitmonchan",
     "stage": 2,
     "evolves_from": "tyrogue",
     "evolution_trigger": "level-up",
@@ -1459,6 +1459,60 @@
   },
   {
     "chain_id": 67,
+    "species_name": "glaceon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "ice-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "leafeon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "leaf-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "sylveon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null
+  },
+  {
+    "chain_id": 67,
+    "species_name": "vaporeon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "water-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "jolteon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "thunder-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "espeon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null
+  },
+  {
+    "chain_id": 67,
     "species_name": "umbreon",
     "stage": 2,
     "evolves_from": "eevee",
@@ -1474,60 +1528,6 @@
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "fire-stone"
-  },
-  {
-    "chain_id": 67,
-    "species_name": "leafeon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "leaf-stone"
-  },
-  {
-    "chain_id": 67,
-    "species_name": "glaceon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "ice-stone"
-  },
-  {
-    "chain_id": 67,
-    "species_name": "vaporeon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "water-stone"
-  },
-  {
-    "chain_id": 67,
-    "species_name": "espeon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 67,
-    "species_name": "jolteon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "thunder-stone"
-  },
-  {
-    "chain_id": 67,
-    "species_name": "sylveon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null
   },
   {
     "chain_id": 68,
@@ -2071,7 +2071,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "quagsire",
+    "species_name": "clodsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2080,7 +2080,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "clodsire",
+    "species_name": "quagsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2287,7 +2287,7 @@
   },
   {
     "chain_id": 109,
-    "species_name": "sneasler",
+    "species_name": "weavile",
     "stage": 2,
     "evolves_from": "sneasel",
     "evolution_trigger": "level-up",
@@ -2296,7 +2296,7 @@
   },
   {
     "chain_id": 109,
-    "species_name": "weavile",
+    "species_name": "sneasler",
     "stage": 2,
     "evolves_from": "sneasel",
     "evolution_trigger": "level-up",
@@ -2755,18 +2755,18 @@
   },
   {
     "chain_id": 135,
-    "species_name": "dustox",
+    "species_name": "beautifly",
     "stage": 3,
-    "evolves_from": "cascoon",
+    "evolves_from": "silcoon",
     "evolution_trigger": "level-up",
     "min_level": 10,
     "item_required": null
   },
   {
     "chain_id": 135,
-    "species_name": "beautifly",
+    "species_name": "dustox",
     "stage": 3,
-    "evolves_from": "silcoon",
+    "evolves_from": "cascoon",
     "evolution_trigger": "level-up",
     "min_level": 10,
     "item_required": null
@@ -2881,21 +2881,21 @@
   },
   {
     "chain_id": 140,
-    "species_name": "gardevoir",
-    "stage": 3,
-    "evolves_from": "kirlia",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null
-  },
-  {
-    "chain_id": 140,
     "species_name": "gallade",
     "stage": 3,
     "evolves_from": "kirlia",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "dawn-stone"
+  },
+  {
+    "chain_id": 140,
+    "species_name": "gardevoir",
+    "stage": 3,
+    "evolves_from": "kirlia",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null
   },
   {
     "chain_id": 141,
@@ -2971,20 +2971,20 @@
   },
   {
     "chain_id": 144,
-    "species_name": "ninjask",
-    "stage": 2,
-    "evolves_from": "nincada",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null
-  },
-  {
-    "chain_id": 144,
     "species_name": "shedinja",
     "stage": 2,
     "evolves_from": "nincada",
     "evolution_trigger": "shed",
     "min_level": null,
+    "item_required": null
+  },
+  {
+    "chain_id": 144,
+    "species_name": "ninjask",
+    "stage": 2,
+    "evolves_from": "nincada",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
     "item_required": null
   },
   {
@@ -4087,7 +4087,7 @@
   },
   {
     "chain_id": 213,
-    "species_name": "wormadam",
+    "species_name": "mothim",
     "stage": 2,
     "evolves_from": "burmy",
     "evolution_trigger": "level-up",
@@ -4096,7 +4096,7 @@
   },
   {
     "chain_id": 213,
-    "species_name": "mothim",
+    "species_name": "wormadam",
     "stage": 2,
     "evolves_from": "burmy",
     "evolution_trigger": "level-up",
@@ -5203,20 +5203,20 @@
   },
   {
     "chain_id": 287,
-    "species_name": "cofagrigus",
-    "stage": 2,
-    "evolves_from": "yamask",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null
-  },
-  {
-    "chain_id": 287,
     "species_name": "runerigus",
     "stage": 2,
     "evolves_from": "yamask",
     "evolution_trigger": "take-damage",
     "min_level": null,
+    "item_required": null
+  },
+  {
+    "chain_id": 287,
+    "species_name": "cofagrigus",
+    "stage": 2,
+    "evolves_from": "yamask",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
     "item_required": null
   },
   {
@@ -7264,7 +7264,7 @@
   },
   {
     "chain_id": 413,
-    "species_name": "lunala",
+    "species_name": "solgaleo",
     "stage": 3,
     "evolves_from": "cosmoem",
     "evolution_trigger": "level-up",
@@ -7273,7 +7273,7 @@
   },
   {
     "chain_id": 413,
-    "species_name": "solgaleo",
+    "species_name": "lunala",
     "stage": 3,
     "evolves_from": "cosmoem",
     "evolution_trigger": "level-up",

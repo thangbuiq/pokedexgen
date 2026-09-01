@@ -1,1651 +1,155 @@
 [
   {
-    "from_pokemon": "poliwag",
-    "to_pokemon": "poliwhirl",
+    "from_pokemon": "pidgey",
+    "to_pokemon": "pidgeotto",
     "evolution_trigger": "level-up",
-    "min_level": 25,
+    "min_level": 18,
     "item_required": null,
-    "chain_id": 26
+    "chain_id": 6
   },
   {
-    "from_pokemon": "doduo",
-    "to_pokemon": "dodrio",
-    "evolution_trigger": "level-up",
-    "min_level": 31,
-    "item_required": null,
-    "chain_id": 36
+    "from_pokemon": "scyther",
+    "to_pokemon": "kleavor",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "black-augurite",
+    "chain_id": 58
   },
   {
-    "from_pokemon": "krabby",
-    "to_pokemon": "kingler",
-    "evolution_trigger": "level-up",
-    "min_level": 28,
-    "item_required": null,
-    "chain_id": 43
-  },
-  {
-    "from_pokemon": "munchlax",
-    "to_pokemon": "snorlax",
+    "from_pokemon": "eevee",
+    "to_pokemon": "espeon",
     "evolution_trigger": "level-up",
     "min_level": null,
     "item_required": null,
-    "chain_id": 72
+    "chain_id": 67
   },
   {
-    "from_pokemon": "murkrow",
-    "to_pokemon": "honchkrow",
+    "from_pokemon": "misdreavus",
+    "to_pokemon": "mismagius",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "dusk-stone",
-    "chain_id": 97
+    "chain_id": 98
   },
   {
-    "from_pokemon": "seedot",
-    "to_pokemon": "nuzleaf",
+    "from_pokemon": "slugma",
+    "to_pokemon": "magcargo",
     "evolution_trigger": "level-up",
-    "min_level": 14,
+    "min_level": 38,
     "item_required": null,
-    "chain_id": 137
+    "chain_id": 111
   },
   {
-    "from_pokemon": "spoink",
-    "to_pokemon": "grumpig",
+    "from_pokemon": "trapinch",
+    "to_pokemon": "vibrava",
     "evolution_trigger": "level-up",
-    "min_level": 32,
+    "min_level": 35,
     "item_required": null,
-    "chain_id": 164
+    "chain_id": 166
   },
   {
-    "from_pokemon": "lileep",
-    "to_pokemon": "cradily",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 176
-  },
-  {
-    "from_pokemon": "snorunt",
-    "to_pokemon": "glalie",
-    "evolution_trigger": "level-up",
-    "min_level": 42,
-    "item_required": null,
-    "chain_id": 186
-  },
-  {
-    "from_pokemon": "skorupi",
-    "to_pokemon": "drapion",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 234
-  },
-  {
-    "from_pokemon": "purrloin",
-    "to_pokemon": "liepard",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 261
-  },
-  {
-    "from_pokemon": "trubbish",
-    "to_pokemon": "garbodor",
+    "from_pokemon": "baltoy",
+    "to_pokemon": "claydol",
     "evolution_trigger": "level-up",
     "min_level": 36,
     "item_required": null,
-    "chain_id": 290
+    "chain_id": 175
   },
   {
-    "from_pokemon": "minccino",
-    "to_pokemon": "cinccino",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "shiny-stone",
-    "chain_id": 292
-  },
-  {
-    "from_pokemon": "frillish",
-    "to_pokemon": "jellicent",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 301
-  },
-  {
-    "from_pokemon": "deino",
-    "to_pokemon": "zweilous",
-    "evolution_trigger": "level-up",
-    "min_level": 50,
-    "item_required": null,
-    "chain_id": 323
-  },
-  {
-    "from_pokemon": "fletchling",
-    "to_pokemon": "fletchinder",
-    "evolution_trigger": "level-up",
-    "min_level": 17,
-    "item_required": null,
-    "chain_id": 341
-  },
-  {
-    "from_pokemon": "helioptile",
-    "to_pokemon": "heliolisk",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "sun-stone",
-    "chain_id": 356
-  },
-  {
-    "from_pokemon": "phantump",
-    "to_pokemon": "trevenant",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 364
-  },
-  {
-    "from_pokemon": "sizzlipede",
-    "to_pokemon": "centiskorch",
-    "evolution_trigger": "level-up",
-    "min_level": 28,
-    "item_required": null,
-    "chain_id": 447
-  },
-  {
-    "from_pokemon": "tarountula",
-    "to_pokemon": "spidops",
-    "evolution_trigger": "level-up",
-    "min_level": 15,
-    "item_required": null,
-    "chain_id": 482
-  },
-  {
-    "from_pokemon": "fidough",
-    "to_pokemon": "dachsbun",
-    "evolution_trigger": "level-up",
-    "min_level": 26,
-    "item_required": null,
-    "chain_id": 486
-  },
-  {
-    "from_pokemon": "frigibax",
-    "to_pokemon": "arctibax",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 527
-  },
-  {
-    "from_pokemon": "magnemite",
-    "to_pokemon": "magneton",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 34
-  },
-  {
-    "from_pokemon": "seel",
-    "to_pokemon": "dewgong",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 37
-  },
-  {
-    "from_pokemon": "cubone",
-    "to_pokemon": "marowak",
-    "evolution_trigger": "level-up",
-    "min_level": 28,
-    "item_required": null,
-    "chain_id": 46
-  },
-  {
-    "from_pokemon": "tangela",
-    "to_pokemon": "tangrowth",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 52
-  },
-  {
-    "from_pokemon": "kabuto",
-    "to_pokemon": "kabutops",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 70
-  },
-  {
-    "from_pokemon": "natu",
-    "to_pokemon": "xatu",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 88
-  },
-  {
-    "from_pokemon": "girafarig",
-    "to_pokemon": "farigiraf",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 101
-  },
-  {
-    "from_pokemon": "sneasel",
-    "to_pokemon": "sneasler",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 109
-  },
-  {
-    "from_pokemon": "teddiursa",
-    "to_pokemon": "ursaring",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 110
-  },
-  {
-    "from_pokemon": "wurmple",
-    "to_pokemon": "cascoon",
-    "evolution_trigger": "level-up",
-    "min_level": 7,
-    "item_required": null,
-    "chain_id": 135
-  },
-  {
-    "from_pokemon": "wingull",
-    "to_pokemon": "pelipper",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 139
-  },
-  {
-    "from_pokemon": "nincada",
-    "to_pokemon": "ninjask",
+    "from_pokemon": "beldum",
+    "to_pokemon": "metang",
     "evolution_trigger": "level-up",
     "min_level": 20,
     "item_required": null,
-    "chain_id": 144
+    "chain_id": 192
   },
   {
-    "from_pokemon": "makuhita",
-    "to_pokemon": "hariyama",
-    "evolution_trigger": "level-up",
-    "min_level": 24,
-    "item_required": null,
-    "chain_id": 146
-  },
-  {
-    "from_pokemon": "meditite",
-    "to_pokemon": "medicham",
-    "evolution_trigger": "level-up",
-    "min_level": 37,
-    "item_required": null,
-    "chain_id": 152
-  },
-  {
-    "from_pokemon": "cacnea",
-    "to_pokemon": "cacturne",
-    "evolution_trigger": "level-up",
-    "min_level": 32,
-    "item_required": null,
-    "chain_id": 167
-  },
-  {
-    "from_pokemon": "patrat",
-    "to_pokemon": "watchog",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 259
-  },
-  {
-    "from_pokemon": "skwovet",
-    "to_pokemon": "greedent",
-    "evolution_trigger": "level-up",
-    "min_level": 24,
-    "item_required": null,
-    "chain_id": 433
-  },
-  {
-    "from_pokemon": "greavard",
-    "to_pokemon": "houndstone",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 509
-  },
-  {
-    "from_pokemon": "bulbasaur",
-    "to_pokemon": "ivysaur",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 1
-  },
-  {
-    "from_pokemon": "rattata",
-    "to_pokemon": "raticate",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 7
-  },
-  {
-    "from_pokemon": "spearow",
-    "to_pokemon": "fearow",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 8
-  },
-  {
-    "from_pokemon": "paras",
-    "to_pokemon": "parasect",
-    "evolution_trigger": "level-up",
-    "min_level": 24,
-    "item_required": null,
-    "chain_id": 19
-  },
-  {
-    "from_pokemon": "wooper",
-    "to_pokemon": "quagsire",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 96
-  },
-  {
-    "from_pokemon": "wurmple",
-    "to_pokemon": "silcoon",
-    "evolution_trigger": "level-up",
-    "min_level": 7,
-    "item_required": null,
-    "chain_id": 135
-  },
-  {
-    "from_pokemon": "budew",
-    "to_pokemon": "roselia",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 158
-  },
-  {
-    "from_pokemon": "lillipup",
-    "to_pokemon": "herdier",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 260
-  },
-  {
-    "from_pokemon": "venipede",
-    "to_pokemon": "whirlipede",
-    "evolution_trigger": "level-up",
-    "min_level": 22,
-    "item_required": null,
-    "chain_id": 277
-  },
-  {
-    "from_pokemon": "ferroseed",
-    "to_pokemon": "ferrothorn",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 304
-  },
-  {
-    "from_pokemon": "axew",
-    "to_pokemon": "fraxure",
-    "evolution_trigger": "level-up",
-    "min_level": 38,
-    "item_required": null,
-    "chain_id": 309
-  },
-  {
-    "from_pokemon": "noibat",
-    "to_pokemon": "noivern",
-    "evolution_trigger": "level-up",
-    "min_level": 48,
-    "item_required": null,
-    "chain_id": 367
-  },
-  {
-    "from_pokemon": "morelull",
-    "to_pokemon": "shiinotic",
-    "evolution_trigger": "level-up",
-    "min_level": 24,
-    "item_required": null,
-    "chain_id": 389
-  },
-  {
-    "from_pokemon": "scorbunny",
-    "to_pokemon": "raboot",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 431
-  },
-  {
-    "from_pokemon": "pichu",
-    "to_pokemon": "pikachu",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 10
-  },
-  {
-    "from_pokemon": "nidoran-m",
-    "to_pokemon": "nidorino",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 13
-  },
-  {
-    "from_pokemon": "drowzee",
-    "to_pokemon": "hypno",
-    "evolution_trigger": "level-up",
-    "min_level": 26,
-    "item_required": null,
-    "chain_id": 42
-  },
-  {
-    "from_pokemon": "omanyte",
-    "to_pokemon": "omastar",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 69
-  },
-  {
-    "from_pokemon": "cyndaquil",
-    "to_pokemon": "quilava",
+    "from_pokemon": "starly",
+    "to_pokemon": "staravia",
     "evolution_trigger": "level-up",
     "min_level": 14,
     "item_required": null,
-    "chain_id": 80
+    "chain_id": 206
   },
   {
-    "from_pokemon": "sunkern",
-    "to_pokemon": "sunflora",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "sun-stone",
-    "chain_id": 94
-  },
-  {
-    "from_pokemon": "zigzagoon",
-    "to_pokemon": "linoone",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 134
-  },
-  {
-    "from_pokemon": "whismur",
-    "to_pokemon": "loudred",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 145
-  },
-  {
-    "from_pokemon": "bagon",
-    "to_pokemon": "shelgon",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 191
-  },
-  {
-    "from_pokemon": "piplup",
-    "to_pokemon": "prinplup",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 205
-  },
-  {
-    "from_pokemon": "cranidos",
-    "to_pokemon": "rampardos",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 211
-  },
-  {
-    "from_pokemon": "shieldon",
-    "to_pokemon": "bastiodon",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 212
-  },
-  {
-    "from_pokemon": "shellos",
-    "to_pokemon": "gastrodon",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 218
-  },
-  {
-    "from_pokemon": "gible",
-    "to_pokemon": "gabite",
-    "evolution_trigger": "level-up",
-    "min_level": 24,
-    "item_required": null,
-    "chain_id": 230
-  },
-  {
-    "from_pokemon": "croagunk",
-    "to_pokemon": "toxicroak",
-    "evolution_trigger": "level-up",
-    "min_level": 37,
-    "item_required": null,
-    "chain_id": 235
-  },
-  {
-    "from_pokemon": "finneon",
-    "to_pokemon": "lumineon",
-    "evolution_trigger": "level-up",
-    "min_level": 31,
-    "item_required": null,
-    "chain_id": 237
-  },
-  {
-    "from_pokemon": "basculin",
-    "to_pokemon": "basculegion",
-    "evolution_trigger": "recoil-damage",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 280
-  },
-  {
-    "from_pokemon": "solosis",
-    "to_pokemon": "duosion",
-    "evolution_trigger": "level-up",
-    "min_level": 32,
-    "item_required": null,
-    "chain_id": 294
-  },
-  {
-    "from_pokemon": "deerling",
-    "to_pokemon": "sawsbuck",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 297
-  },
-  {
-    "from_pokemon": "klink",
-    "to_pokemon": "klang",
-    "evolution_trigger": "level-up",
-    "min_level": 38,
-    "item_required": null,
-    "chain_id": 305
-  },
-  {
-    "from_pokemon": "yungoos",
-    "to_pokemon": "gumshoos",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 378
-  },
-  {
-    "from_pokemon": "rockruff",
-    "to_pokemon": "lycanroc",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 383
-  },
-  {
-    "from_pokemon": "salandit",
-    "to_pokemon": "salazzle",
-    "evolution_trigger": "level-up",
-    "min_level": 33,
-    "item_required": null,
-    "chain_id": 390
-  },
-  {
-    "from_pokemon": "poipole",
-    "to_pokemon": "naganadel",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 424
-  },
-  {
-    "from_pokemon": "nickit",
-    "to_pokemon": "thievul",
-    "evolution_trigger": "level-up",
-    "min_level": 18,
-    "item_required": null,
-    "chain_id": 436
-  },
-  {
-    "from_pokemon": "duraludon",
-    "to_pokemon": "archaludon",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "metal-alloy",
-    "chain_id": 465
-  },
-  {
-    "from_pokemon": "fuecoco",
-    "to_pokemon": "crocalor",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 479
-  },
-  {
-    "from_pokemon": "tandemaus",
-    "to_pokemon": "maushold",
-    "evolution_trigger": "other",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 485
-  },
-  {
-    "from_pokemon": "bramblin",
-    "to_pokemon": "brambleghast",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 495
-  },
-  {
-    "from_pokemon": "meowth",
-    "to_pokemon": "persian",
-    "evolution_trigger": "level-up",
-    "min_level": 28,
-    "item_required": null,
-    "chain_id": 22
-  },
-  {
-    "from_pokemon": "onix",
-    "to_pokemon": "steelix",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 41
-  },
-  {
-    "from_pokemon": "voltorb",
-    "to_pokemon": "electrode",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 44
-  },
-  {
-    "from_pokemon": "tyrogue",
-    "to_pokemon": "hitmonchan",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 47
-  },
-  {
-    "from_pokemon": "magikarp",
-    "to_pokemon": "gyarados",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 64
-  },
-  {
-    "from_pokemon": "hoothoot",
-    "to_pokemon": "noctowl",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 83
-  },
-  {
-    "from_pokemon": "phanpy",
-    "to_pokemon": "donphan",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 119
-  },
-  {
-    "from_pokemon": "lotad",
-    "to_pokemon": "lombre",
-    "evolution_trigger": "level-up",
-    "min_level": 14,
-    "item_required": null,
-    "chain_id": 136
-  },
-  {
-    "from_pokemon": "taillow",
-    "to_pokemon": "swellow",
-    "evolution_trigger": "level-up",
-    "min_level": 22,
-    "item_required": null,
-    "chain_id": 138
-  },
-  {
-    "from_pokemon": "electrike",
-    "to_pokemon": "manectric",
-    "evolution_trigger": "level-up",
-    "min_level": 26,
-    "item_required": null,
-    "chain_id": 153
-  },
-  {
-    "from_pokemon": "snorunt",
-    "to_pokemon": "froslass",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "dawn-stone",
-    "chain_id": 186
-  },
-  {
-    "from_pokemon": "stunky",
-    "to_pokemon": "skuntank",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 223
-  },
-  {
-    "from_pokemon": "pidove",
-    "to_pokemon": "tranquill",
+    "from_pokemon": "combee",
+    "to_pokemon": "vespiquen",
     "evolution_trigger": "level-up",
     "min_level": 21,
     "item_required": null,
-    "chain_id": 266
+    "chain_id": 214
   },
   {
-    "from_pokemon": "scraggy",
-    "to_pokemon": "scrafty",
-    "evolution_trigger": "level-up",
-    "min_level": 39,
-    "item_required": null,
-    "chain_id": 285
-  },
-  {
-    "from_pokemon": "fennekin",
-    "to_pokemon": "braixen",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 338
-  },
-  {
-    "from_pokemon": "litleo",
-    "to_pokemon": "pyroar",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 343
-  },
-  {
-    "from_pokemon": "swirlix",
-    "to_pokemon": "slurpuff",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 351
-  },
-  {
-    "from_pokemon": "rookidee",
-    "to_pokemon": "corvisquire",
-    "evolution_trigger": "level-up",
-    "min_level": 18,
-    "item_required": null,
-    "chain_id": 434
-  },
-  {
-    "from_pokemon": "gossifleur",
-    "to_pokemon": "eldegoss",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 437
-  },
-  {
-    "from_pokemon": "applin",
-    "to_pokemon": "appletun",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "sweet-apple",
-    "chain_id": 442
-  },
-  {
-    "from_pokemon": "applin",
-    "to_pokemon": "dipplin",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "syrupy-apple",
-    "chain_id": 442
-  },
-  {
-    "from_pokemon": "arrokuda",
-    "to_pokemon": "barraskewda",
-    "evolution_trigger": "level-up",
-    "min_level": 26,
-    "item_required": null,
-    "chain_id": 445
-  },
-  {
-    "from_pokemon": "quaxly",
-    "to_pokemon": "quaxwell",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 480
-  },
-  {
-    "from_pokemon": "charcadet",
-    "to_pokemon": "ceruledge",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "malicious-armor",
-    "chain_id": 490
-  },
-  {
-    "from_pokemon": "toedscool",
-    "to_pokemon": "toedscruel",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 496
-  },
-  {
-    "from_pokemon": "flittle",
-    "to_pokemon": "espathra",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 500
-  },
-  {
-    "from_pokemon": "varoom",
-    "to_pokemon": "revavroom",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 505
-  },
-  {
-    "from_pokemon": "weedle",
-    "to_pokemon": "kakuna",
-    "evolution_trigger": "level-up",
-    "min_level": 7,
-    "item_required": null,
-    "chain_id": 5
-  },
-  {
-    "from_pokemon": "cleffa",
-    "to_pokemon": "clefairy",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 14
-  },
-  {
-    "from_pokemon": "machop",
-    "to_pokemon": "machoke",
-    "evolution_trigger": "level-up",
-    "min_level": 28,
-    "item_required": null,
-    "chain_id": 28
-  },
-  {
-    "from_pokemon": "rhyhorn",
-    "to_pokemon": "rhydon",
-    "evolution_trigger": "level-up",
-    "min_level": 42,
-    "item_required": null,
-    "chain_id": 50
-  },
-  {
-    "from_pokemon": "mime-jr",
-    "to_pokemon": "mr-mime",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 57
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "jolteon",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "thunder-stone",
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "sylveon",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "torchic",
-    "to_pokemon": "combusken",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 131
-  },
-  {
-    "from_pokemon": "shuppet",
-    "to_pokemon": "banette",
-    "evolution_trigger": "level-up",
-    "min_level": 37,
-    "item_required": null,
-    "chain_id": 181
-  },
-  {
-    "from_pokemon": "duskull",
-    "to_pokemon": "dusclops",
-    "evolution_trigger": "level-up",
-    "min_level": 37,
-    "item_required": null,
-    "chain_id": 182
-  },
-  {
-    "from_pokemon": "buneary",
-    "to_pokemon": "lopunny",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 220
-  },
-  {
-    "from_pokemon": "riolu",
-    "to_pokemon": "lucario",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 232
-  },
-  {
-    "from_pokemon": "snover",
-    "to_pokemon": "abomasnow",
-    "evolution_trigger": "level-up",
-    "min_level": 40,
-    "item_required": null,
-    "chain_id": 239
-  },
-  {
-    "from_pokemon": "munna",
-    "to_pokemon": "musharna",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "moon-stone",
-    "chain_id": 265
-  },
-  {
-    "from_pokemon": "woobat",
-    "to_pokemon": "swoobat",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 269
-  },
-  {
-    "from_pokemon": "petilil",
-    "to_pokemon": "lilligant",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "sun-stone",
-    "chain_id": 279
-  },
-  {
-    "from_pokemon": "tynamo",
-    "to_pokemon": "eelektrik",
-    "evolution_trigger": "level-up",
-    "min_level": 39,
-    "item_required": null,
-    "chain_id": 306
-  },
-  {
-    "from_pokemon": "elgyem",
-    "to_pokemon": "beheeyem",
-    "evolution_trigger": "level-up",
-    "min_level": 42,
-    "item_required": null,
-    "chain_id": 307
-  },
-  {
-    "from_pokemon": "pancham",
-    "to_pokemon": "pangoro",
-    "evolution_trigger": "level-up",
-    "min_level": 32,
-    "item_required": null,
-    "chain_id": 346
-  },
-  {
-    "from_pokemon": "binacle",
-    "to_pokemon": "barbaracle",
-    "evolution_trigger": "level-up",
-    "min_level": 39,
-    "item_required": null,
-    "chain_id": 353
-  },
-  {
-    "from_pokemon": "litten",
-    "to_pokemon": "torracat",
+    "from_pokemon": "snivy",
+    "to_pokemon": "servine",
     "evolution_trigger": "level-up",
     "min_level": 17,
     "item_required": null,
-    "chain_id": 375
+    "chain_id": 256
   },
   {
-    "from_pokemon": "mareanie",
-    "to_pokemon": "toxapex",
-    "evolution_trigger": "level-up",
-    "min_level": 38,
-    "item_required": null,
-    "chain_id": 385
-  },
-  {
-    "from_pokemon": "sobble",
-    "to_pokemon": "drizzile",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 432
-  },
-  {
-    "from_pokemon": "silicobra",
-    "to_pokemon": "sandaconda",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 443
-  },
-  {
-    "from_pokemon": "shroodle",
-    "to_pokemon": "grafaiai",
-    "evolution_trigger": "level-up",
-    "min_level": 28,
-    "item_required": null,
-    "chain_id": 494
-  },
-  {
-    "from_pokemon": "charmander",
-    "to_pokemon": "charmeleon",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 2
-  },
-  {
-    "from_pokemon": "geodude",
-    "to_pokemon": "graveler",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 31
-  },
-  {
-    "from_pokemon": "farfetchd",
-    "to_pokemon": "sirfetchd",
-    "evolution_trigger": "three-critical-hits",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 35
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "glaceon",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "ice-stone",
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "snubbull",
-    "to_pokemon": "granbull",
-    "evolution_trigger": "level-up",
-    "min_level": 23,
-    "item_required": null,
-    "chain_id": 105
-  },
-  {
-    "from_pokemon": "ralts",
-    "to_pokemon": "kirlia",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 140
-  },
-  {
-    "from_pokemon": "surskit",
-    "to_pokemon": "masquerain",
-    "evolution_trigger": "level-up",
-    "min_level": 22,
-    "item_required": null,
-    "chain_id": 141
-  },
-  {
-    "from_pokemon": "skitty",
-    "to_pokemon": "delcatty",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "moon-stone",
-    "chain_id": 148
-  },
-  {
-    "from_pokemon": "barboach",
-    "to_pokemon": "whiscash",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 173
-  },
-  {
-    "from_pokemon": "spheal",
-    "to_pokemon": "sealeo",
-    "evolution_trigger": "level-up",
-    "min_level": 32,
-    "item_required": null,
-    "chain_id": 187
-  },
-  {
-    "from_pokemon": "clamperl",
-    "to_pokemon": "gorebyss",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 188
-  },
-  {
-    "from_pokemon": "hippopotas",
-    "to_pokemon": "hippowdon",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 233
-  },
-  {
-    "from_pokemon": "blitzle",
-    "to_pokemon": "zebstrika",
-    "evolution_trigger": "level-up",
-    "min_level": 27,
-    "item_required": null,
-    "chain_id": 267
-  },
-  {
-    "from_pokemon": "drilbur",
-    "to_pokemon": "excadrill",
-    "evolution_trigger": "level-up",
-    "min_level": 31,
-    "item_required": null,
-    "chain_id": 270
-  },
-  {
-    "from_pokemon": "tympole",
-    "to_pokemon": "palpitoad",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 273
-  },
-  {
-    "from_pokemon": "larvesta",
-    "to_pokemon": "volcarona",
-    "evolution_trigger": "level-up",
-    "min_level": 59,
-    "item_required": null,
-    "chain_id": 324
-  },
-  {
-    "from_pokemon": "honedge",
-    "to_pokemon": "doublade",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 349
-  },
-  {
-    "from_pokemon": "tyrunt",
-    "to_pokemon": "tyrantrum",
-    "evolution_trigger": "level-up",
-    "min_level": 39,
-    "item_required": null,
-    "chain_id": 357
-  },
-  {
-    "from_pokemon": "bergmite",
-    "to_pokemon": "avalugg",
-    "evolution_trigger": "level-up",
-    "min_level": 37,
-    "item_required": null,
-    "chain_id": 366
-  },
-  {
-    "from_pokemon": "pikipek",
-    "to_pokemon": "trumbeak",
-    "evolution_trigger": "level-up",
-    "min_level": 14,
-    "item_required": null,
-    "chain_id": 377
-  },
-  {
-    "from_pokemon": "grookey",
-    "to_pokemon": "thwackey",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 430
-  },
-  {
-    "from_pokemon": "clobbopus",
-    "to_pokemon": "grapploct",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 448
-  },
-  {
-    "from_pokemon": "sinistea",
-    "to_pokemon": "polteageist",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "chipped-pot",
-    "chain_id": 449
-  },
-  {
-    "from_pokemon": "nymble",
-    "to_pokemon": "lokix",
-    "evolution_trigger": "level-up",
-    "min_level": 24,
-    "item_required": null,
-    "chain_id": 483
-  },
-  {
-    "from_pokemon": "smoliv",
-    "to_pokemon": "dolliv",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 487
-  },
-  {
-    "from_pokemon": "capsakid",
-    "to_pokemon": "scovillain",
+    "from_pokemon": "pansear",
+    "to_pokemon": "simisear",
     "evolution_trigger": "use-item",
     "min_level": null,
     "item_required": "fire-stone",
-    "chain_id": 498
+    "chain_id": 263
   },
   {
-    "from_pokemon": "cetoddle",
-    "to_pokemon": "cetitan",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "ice-stone",
-    "chain_id": 511
-  },
-  {
-    "from_pokemon": "oddish",
-    "to_pokemon": "gloom",
+    "from_pokemon": "goomy",
+    "to_pokemon": "sliggoo",
     "evolution_trigger": "level-up",
-    "min_level": 21,
+    "min_level": 40,
     "item_required": null,
-    "chain_id": 18
+    "chain_id": 362
   },
   {
-    "from_pokemon": "growlithe",
-    "to_pokemon": "arcanine",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "fire-stone",
-    "chain_id": 25
-  },
-  {
-    "from_pokemon": "abra",
-    "to_pokemon": "kadabra",
+    "from_pokemon": "cosmog",
+    "to_pokemon": "cosmoem",
     "evolution_trigger": "level-up",
-    "min_level": 16,
+    "min_level": 43,
     "item_required": null,
-    "chain_id": 27
+    "chain_id": 413
   },
   {
-    "from_pokemon": "gastly",
-    "to_pokemon": "haunter",
-    "evolution_trigger": "level-up",
-    "min_level": 25,
-    "item_required": null,
-    "chain_id": 40
-  },
-  {
-    "from_pokemon": "exeggcute",
-    "to_pokemon": "exeggutor",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "leaf-stone",
-    "chain_id": 45
-  },
-  {
-    "from_pokemon": "tyrogue",
-    "to_pokemon": "hitmontop",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 47
-  },
-  {
-    "from_pokemon": "koffing",
-    "to_pokemon": "weezing",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 49
-  },
-  {
-    "from_pokemon": "staryu",
-    "to_pokemon": "starmie",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "water-stone",
-    "chain_id": 56
-  },
-  {
-    "from_pokemon": "porygon",
-    "to_pokemon": "porygon2",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 68
-  },
-  {
-    "from_pokemon": "ledyba",
-    "to_pokemon": "ledian",
-    "evolution_trigger": "level-up",
-    "min_level": 18,
-    "item_required": null,
-    "chain_id": 84
-  },
-  {
-    "from_pokemon": "hoppip",
-    "to_pokemon": "skiploom",
-    "evolution_trigger": "level-up",
-    "min_level": 18,
-    "item_required": null,
-    "chain_id": 92
-  },
-  {
-    "from_pokemon": "qwilfish",
-    "to_pokemon": "overqwil",
-    "evolution_trigger": "use-move",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 106
-  },
-  {
-    "from_pokemon": "poochyena",
-    "to_pokemon": "mightyena",
-    "evolution_trigger": "level-up",
-    "min_level": 18,
-    "item_required": null,
-    "chain_id": 133
-  },
-  {
-    "from_pokemon": "oshawott",
-    "to_pokemon": "dewott",
-    "evolution_trigger": "level-up",
-    "min_level": 17,
-    "item_required": null,
-    "chain_id": 258
-  },
-  {
-    "from_pokemon": "panpour",
-    "to_pokemon": "simipour",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "water-stone",
-    "chain_id": 264
-  },
-  {
-    "from_pokemon": "tirtouga",
-    "to_pokemon": "carracosta",
-    "evolution_trigger": "level-up",
-    "min_level": 37,
-    "item_required": null,
-    "chain_id": 288
-  },
-  {
-    "from_pokemon": "ducklett",
-    "to_pokemon": "swanna",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 295
-  },
-  {
-    "from_pokemon": "foongus",
-    "to_pokemon": "amoonguss",
-    "evolution_trigger": "level-up",
-    "min_level": 39,
-    "item_required": null,
-    "chain_id": 300
-  },
-  {
-    "from_pokemon": "shelmet",
-    "to_pokemon": "accelgor",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 312
-  },
-  {
-    "from_pokemon": "rufflet",
-    "to_pokemon": "braviary",
-    "evolution_trigger": "level-up",
-    "min_level": 54,
-    "item_required": null,
-    "chain_id": 319
-  },
-  {
-    "from_pokemon": "dewpider",
-    "to_pokemon": "araquanid",
+    "from_pokemon": "chewtle",
+    "to_pokemon": "drednaw",
     "evolution_trigger": "level-up",
     "min_level": 22,
     "item_required": null,
-    "chain_id": 387
+    "chain_id": 439
   },
   {
-    "from_pokemon": "blipbug",
-    "to_pokemon": "dottler",
-    "evolution_trigger": "level-up",
-    "min_level": 10,
-    "item_required": null,
-    "chain_id": 435
-  },
-  {
-    "from_pokemon": "kubfu",
-    "to_pokemon": "urshifu",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "scroll-of-waters",
-    "chain_id": 470
-  },
-  {
-    "from_pokemon": "maschiff",
-    "to_pokemon": "mabosstiff",
+    "from_pokemon": "toxel",
+    "to_pokemon": "toxtricity",
     "evolution_trigger": "level-up",
     "min_level": 30,
     "item_required": null,
-    "chain_id": 493
+    "chain_id": 446
   },
   {
-    "from_pokemon": "rellor",
-    "to_pokemon": "rabsca",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 499
-  },
-  {
-    "from_pokemon": "glimmet",
-    "to_pokemon": "glimmora",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 508
-  },
-  {
-    "from_pokemon": "vulpix",
-    "to_pokemon": "ninetales",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "ice-stone",
-    "chain_id": 15
-  },
-  {
-    "from_pokemon": "zubat",
-    "to_pokemon": "golbat",
-    "evolution_trigger": "level-up",
-    "min_level": 22,
-    "item_required": null,
-    "chain_id": 17
-  },
-  {
-    "from_pokemon": "psyduck",
-    "to_pokemon": "golduck",
-    "evolution_trigger": "level-up",
-    "min_level": 33,
-    "item_required": null,
-    "chain_id": 23
-  },
-  {
-    "from_pokemon": "bellsprout",
-    "to_pokemon": "weepinbell",
-    "evolution_trigger": "level-up",
-    "min_level": 21,
-    "item_required": null,
-    "chain_id": 29
-  },
-  {
-    "from_pokemon": "happiny",
-    "to_pokemon": "chansey",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 51
-  },
-  {
-    "from_pokemon": "eevee",
-    "to_pokemon": "umbreon",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 67
-  },
-  {
-    "from_pokemon": "togepi",
-    "to_pokemon": "togetic",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 87
-  },
-  {
-    "from_pokemon": "wooper",
-    "to_pokemon": "clodsire",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 96
-  },
-  {
-    "from_pokemon": "stantler",
-    "to_pokemon": "wyrdeer",
-    "evolution_trigger": "agile-style-move",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 120
-  },
-  {
-    "from_pokemon": "sewaddle",
-    "to_pokemon": "swadloon",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 276
-  },
-  {
-    "from_pokemon": "pawniard",
-    "to_pokemon": "bisharp",
-    "evolution_trigger": "level-up",
-    "min_level": 52,
-    "item_required": null,
-    "chain_id": 317
-  },
-  {
-    "from_pokemon": "chespin",
-    "to_pokemon": "quilladin",
-    "evolution_trigger": "level-up",
-    "min_level": 16,
-    "item_required": null,
-    "chain_id": 337
-  },
-  {
-    "from_pokemon": "spritzee",
-    "to_pokemon": "aromatisse",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 350
-  },
-  {
-    "from_pokemon": "fomantis",
-    "to_pokemon": "lurantis",
+    "from_pokemon": "cufant",
+    "to_pokemon": "copperajah",
     "evolution_trigger": "level-up",
     "min_level": 34,
     "item_required": null,
-    "chain_id": 388
+    "chain_id": 460
   },
   {
-    "from_pokemon": "stufful",
-    "to_pokemon": "bewear",
+    "from_pokemon": "pawmi",
+    "to_pokemon": "pawmo",
     "evolution_trigger": "level-up",
-    "min_level": 27,
+    "min_level": 18,
     "item_required": null,
-    "chain_id": 391
+    "chain_id": 484
   },
   {
-    "from_pokemon": "tadbulb",
-    "to_pokemon": "bellibolt",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "thunder-stone",
-    "chain_id": 491
-  },
-  {
-    "from_pokemon": "finizen",
-    "to_pokemon": "palafin",
+    "from_pokemon": "wiglett",
+    "to_pokemon": "wugtrio",
     "evolution_trigger": "level-up",
-    "min_level": 38,
+    "min_level": 26,
     "item_required": null,
-    "chain_id": 504
-  },
-  {
-    "from_pokemon": "poltchageist",
-    "to_pokemon": "sinistcha",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "masterpiece-teacup",
-    "chain_id": 539
+    "chain_id": 502
   },
   {
     "from_pokemon": "squirtle",
@@ -2030,6 +534,918 @@
     "min_level": null,
     "item_required": "auspicious-armor",
     "chain_id": 490
+  },
+  {
+    "from_pokemon": "magnemite",
+    "to_pokemon": "magneton",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 34
+  },
+  {
+    "from_pokemon": "seel",
+    "to_pokemon": "dewgong",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 37
+  },
+  {
+    "from_pokemon": "cubone",
+    "to_pokemon": "marowak",
+    "evolution_trigger": "level-up",
+    "min_level": 28,
+    "item_required": null,
+    "chain_id": 46
+  },
+  {
+    "from_pokemon": "tangela",
+    "to_pokemon": "tangrowth",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 52
+  },
+  {
+    "from_pokemon": "kabuto",
+    "to_pokemon": "kabutops",
+    "evolution_trigger": "level-up",
+    "min_level": 40,
+    "item_required": null,
+    "chain_id": 70
+  },
+  {
+    "from_pokemon": "natu",
+    "to_pokemon": "xatu",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 88
+  },
+  {
+    "from_pokemon": "girafarig",
+    "to_pokemon": "farigiraf",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 101
+  },
+  {
+    "from_pokemon": "sneasel",
+    "to_pokemon": "sneasler",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 109
+  },
+  {
+    "from_pokemon": "teddiursa",
+    "to_pokemon": "ursaring",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 110
+  },
+  {
+    "from_pokemon": "wurmple",
+    "to_pokemon": "cascoon",
+    "evolution_trigger": "level-up",
+    "min_level": 7,
+    "item_required": null,
+    "chain_id": 135
+  },
+  {
+    "from_pokemon": "wingull",
+    "to_pokemon": "pelipper",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 139
+  },
+  {
+    "from_pokemon": "nincada",
+    "to_pokemon": "ninjask",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 144
+  },
+  {
+    "from_pokemon": "makuhita",
+    "to_pokemon": "hariyama",
+    "evolution_trigger": "level-up",
+    "min_level": 24,
+    "item_required": null,
+    "chain_id": 146
+  },
+  {
+    "from_pokemon": "meditite",
+    "to_pokemon": "medicham",
+    "evolution_trigger": "level-up",
+    "min_level": 37,
+    "item_required": null,
+    "chain_id": 152
+  },
+  {
+    "from_pokemon": "cacnea",
+    "to_pokemon": "cacturne",
+    "evolution_trigger": "level-up",
+    "min_level": 32,
+    "item_required": null,
+    "chain_id": 167
+  },
+  {
+    "from_pokemon": "patrat",
+    "to_pokemon": "watchog",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 259
+  },
+  {
+    "from_pokemon": "skwovet",
+    "to_pokemon": "greedent",
+    "evolution_trigger": "level-up",
+    "min_level": 24,
+    "item_required": null,
+    "chain_id": 433
+  },
+  {
+    "from_pokemon": "greavard",
+    "to_pokemon": "houndstone",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 509
+  },
+  {
+    "from_pokemon": "pichu",
+    "to_pokemon": "pikachu",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 10
+  },
+  {
+    "from_pokemon": "nidoran-m",
+    "to_pokemon": "nidorino",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 13
+  },
+  {
+    "from_pokemon": "drowzee",
+    "to_pokemon": "hypno",
+    "evolution_trigger": "level-up",
+    "min_level": 26,
+    "item_required": null,
+    "chain_id": 42
+  },
+  {
+    "from_pokemon": "omanyte",
+    "to_pokemon": "omastar",
+    "evolution_trigger": "level-up",
+    "min_level": 40,
+    "item_required": null,
+    "chain_id": 69
+  },
+  {
+    "from_pokemon": "cyndaquil",
+    "to_pokemon": "quilava",
+    "evolution_trigger": "level-up",
+    "min_level": 14,
+    "item_required": null,
+    "chain_id": 80
+  },
+  {
+    "from_pokemon": "sunkern",
+    "to_pokemon": "sunflora",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "sun-stone",
+    "chain_id": 94
+  },
+  {
+    "from_pokemon": "zigzagoon",
+    "to_pokemon": "linoone",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 134
+  },
+  {
+    "from_pokemon": "whismur",
+    "to_pokemon": "loudred",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 145
+  },
+  {
+    "from_pokemon": "bagon",
+    "to_pokemon": "shelgon",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 191
+  },
+  {
+    "from_pokemon": "piplup",
+    "to_pokemon": "prinplup",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 205
+  },
+  {
+    "from_pokemon": "cranidos",
+    "to_pokemon": "rampardos",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 211
+  },
+  {
+    "from_pokemon": "shieldon",
+    "to_pokemon": "bastiodon",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 212
+  },
+  {
+    "from_pokemon": "shellos",
+    "to_pokemon": "gastrodon",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 218
+  },
+  {
+    "from_pokemon": "gible",
+    "to_pokemon": "gabite",
+    "evolution_trigger": "level-up",
+    "min_level": 24,
+    "item_required": null,
+    "chain_id": 230
+  },
+  {
+    "from_pokemon": "croagunk",
+    "to_pokemon": "toxicroak",
+    "evolution_trigger": "level-up",
+    "min_level": 37,
+    "item_required": null,
+    "chain_id": 235
+  },
+  {
+    "from_pokemon": "finneon",
+    "to_pokemon": "lumineon",
+    "evolution_trigger": "level-up",
+    "min_level": 31,
+    "item_required": null,
+    "chain_id": 237
+  },
+  {
+    "from_pokemon": "basculin",
+    "to_pokemon": "basculegion",
+    "evolution_trigger": "recoil-damage",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 280
+  },
+  {
+    "from_pokemon": "solosis",
+    "to_pokemon": "duosion",
+    "evolution_trigger": "level-up",
+    "min_level": 32,
+    "item_required": null,
+    "chain_id": 294
+  },
+  {
+    "from_pokemon": "deerling",
+    "to_pokemon": "sawsbuck",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 297
+  },
+  {
+    "from_pokemon": "klink",
+    "to_pokemon": "klang",
+    "evolution_trigger": "level-up",
+    "min_level": 38,
+    "item_required": null,
+    "chain_id": 305
+  },
+  {
+    "from_pokemon": "yungoos",
+    "to_pokemon": "gumshoos",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 378
+  },
+  {
+    "from_pokemon": "rockruff",
+    "to_pokemon": "lycanroc",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 383
+  },
+  {
+    "from_pokemon": "salandit",
+    "to_pokemon": "salazzle",
+    "evolution_trigger": "level-up",
+    "min_level": 33,
+    "item_required": null,
+    "chain_id": 390
+  },
+  {
+    "from_pokemon": "poipole",
+    "to_pokemon": "naganadel",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 424
+  },
+  {
+    "from_pokemon": "nickit",
+    "to_pokemon": "thievul",
+    "evolution_trigger": "level-up",
+    "min_level": 18,
+    "item_required": null,
+    "chain_id": 436
+  },
+  {
+    "from_pokemon": "duraludon",
+    "to_pokemon": "archaludon",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "metal-alloy",
+    "chain_id": 465
+  },
+  {
+    "from_pokemon": "fuecoco",
+    "to_pokemon": "crocalor",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 479
+  },
+  {
+    "from_pokemon": "tandemaus",
+    "to_pokemon": "maushold",
+    "evolution_trigger": "other",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 485
+  },
+  {
+    "from_pokemon": "bramblin",
+    "to_pokemon": "brambleghast",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 495
+  },
+  {
+    "from_pokemon": "vulpix",
+    "to_pokemon": "ninetales",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "ice-stone",
+    "chain_id": 15
+  },
+  {
+    "from_pokemon": "zubat",
+    "to_pokemon": "golbat",
+    "evolution_trigger": "level-up",
+    "min_level": 22,
+    "item_required": null,
+    "chain_id": 17
+  },
+  {
+    "from_pokemon": "psyduck",
+    "to_pokemon": "golduck",
+    "evolution_trigger": "level-up",
+    "min_level": 33,
+    "item_required": null,
+    "chain_id": 23
+  },
+  {
+    "from_pokemon": "bellsprout",
+    "to_pokemon": "weepinbell",
+    "evolution_trigger": "level-up",
+    "min_level": 21,
+    "item_required": null,
+    "chain_id": 29
+  },
+  {
+    "from_pokemon": "happiny",
+    "to_pokemon": "chansey",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 51
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "umbreon",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "togepi",
+    "to_pokemon": "togetic",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 87
+  },
+  {
+    "from_pokemon": "wooper",
+    "to_pokemon": "clodsire",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 96
+  },
+  {
+    "from_pokemon": "stantler",
+    "to_pokemon": "wyrdeer",
+    "evolution_trigger": "agile-style-move",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 120
+  },
+  {
+    "from_pokemon": "sewaddle",
+    "to_pokemon": "swadloon",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 276
+  },
+  {
+    "from_pokemon": "pawniard",
+    "to_pokemon": "bisharp",
+    "evolution_trigger": "level-up",
+    "min_level": 52,
+    "item_required": null,
+    "chain_id": 317
+  },
+  {
+    "from_pokemon": "chespin",
+    "to_pokemon": "quilladin",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 337
+  },
+  {
+    "from_pokemon": "spritzee",
+    "to_pokemon": "aromatisse",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 350
+  },
+  {
+    "from_pokemon": "fomantis",
+    "to_pokemon": "lurantis",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 388
+  },
+  {
+    "from_pokemon": "stufful",
+    "to_pokemon": "bewear",
+    "evolution_trigger": "level-up",
+    "min_level": 27,
+    "item_required": null,
+    "chain_id": 391
+  },
+  {
+    "from_pokemon": "tadbulb",
+    "to_pokemon": "bellibolt",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "thunder-stone",
+    "chain_id": 491
+  },
+  {
+    "from_pokemon": "finizen",
+    "to_pokemon": "palafin",
+    "evolution_trigger": "level-up",
+    "min_level": 38,
+    "item_required": null,
+    "chain_id": 504
+  },
+  {
+    "from_pokemon": "poltchageist",
+    "to_pokemon": "sinistcha",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "masterpiece-teacup",
+    "chain_id": 539
+  },
+  {
+    "from_pokemon": "charmander",
+    "to_pokemon": "charmeleon",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 2
+  },
+  {
+    "from_pokemon": "geodude",
+    "to_pokemon": "graveler",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 31
+  },
+  {
+    "from_pokemon": "farfetchd",
+    "to_pokemon": "sirfetchd",
+    "evolution_trigger": "three-critical-hits",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 35
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "glaceon",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "ice-stone",
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "snubbull",
+    "to_pokemon": "granbull",
+    "evolution_trigger": "level-up",
+    "min_level": 23,
+    "item_required": null,
+    "chain_id": 105
+  },
+  {
+    "from_pokemon": "ralts",
+    "to_pokemon": "kirlia",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 140
+  },
+  {
+    "from_pokemon": "surskit",
+    "to_pokemon": "masquerain",
+    "evolution_trigger": "level-up",
+    "min_level": 22,
+    "item_required": null,
+    "chain_id": 141
+  },
+  {
+    "from_pokemon": "skitty",
+    "to_pokemon": "delcatty",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "moon-stone",
+    "chain_id": 148
+  },
+  {
+    "from_pokemon": "barboach",
+    "to_pokemon": "whiscash",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 173
+  },
+  {
+    "from_pokemon": "spheal",
+    "to_pokemon": "sealeo",
+    "evolution_trigger": "level-up",
+    "min_level": 32,
+    "item_required": null,
+    "chain_id": 187
+  },
+  {
+    "from_pokemon": "clamperl",
+    "to_pokemon": "gorebyss",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 188
+  },
+  {
+    "from_pokemon": "hippopotas",
+    "to_pokemon": "hippowdon",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 233
+  },
+  {
+    "from_pokemon": "blitzle",
+    "to_pokemon": "zebstrika",
+    "evolution_trigger": "level-up",
+    "min_level": 27,
+    "item_required": null,
+    "chain_id": 267
+  },
+  {
+    "from_pokemon": "drilbur",
+    "to_pokemon": "excadrill",
+    "evolution_trigger": "level-up",
+    "min_level": 31,
+    "item_required": null,
+    "chain_id": 270
+  },
+  {
+    "from_pokemon": "tympole",
+    "to_pokemon": "palpitoad",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 273
+  },
+  {
+    "from_pokemon": "larvesta",
+    "to_pokemon": "volcarona",
+    "evolution_trigger": "level-up",
+    "min_level": 59,
+    "item_required": null,
+    "chain_id": 324
+  },
+  {
+    "from_pokemon": "honedge",
+    "to_pokemon": "doublade",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 349
+  },
+  {
+    "from_pokemon": "tyrunt",
+    "to_pokemon": "tyrantrum",
+    "evolution_trigger": "level-up",
+    "min_level": 39,
+    "item_required": null,
+    "chain_id": 357
+  },
+  {
+    "from_pokemon": "bergmite",
+    "to_pokemon": "avalugg",
+    "evolution_trigger": "level-up",
+    "min_level": 37,
+    "item_required": null,
+    "chain_id": 366
+  },
+  {
+    "from_pokemon": "pikipek",
+    "to_pokemon": "trumbeak",
+    "evolution_trigger": "level-up",
+    "min_level": 14,
+    "item_required": null,
+    "chain_id": 377
+  },
+  {
+    "from_pokemon": "grookey",
+    "to_pokemon": "thwackey",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 430
+  },
+  {
+    "from_pokemon": "clobbopus",
+    "to_pokemon": "grapploct",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 448
+  },
+  {
+    "from_pokemon": "sinistea",
+    "to_pokemon": "polteageist",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "chipped-pot",
+    "chain_id": 449
+  },
+  {
+    "from_pokemon": "nymble",
+    "to_pokemon": "lokix",
+    "evolution_trigger": "level-up",
+    "min_level": 24,
+    "item_required": null,
+    "chain_id": 483
+  },
+  {
+    "from_pokemon": "smoliv",
+    "to_pokemon": "dolliv",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 487
+  },
+  {
+    "from_pokemon": "capsakid",
+    "to_pokemon": "scovillain",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "fire-stone",
+    "chain_id": 498
+  },
+  {
+    "from_pokemon": "cetoddle",
+    "to_pokemon": "cetitan",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "ice-stone",
+    "chain_id": 511
+  },
+  {
+    "from_pokemon": "poliwag",
+    "to_pokemon": "poliwhirl",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 26
+  },
+  {
+    "from_pokemon": "doduo",
+    "to_pokemon": "dodrio",
+    "evolution_trigger": "level-up",
+    "min_level": 31,
+    "item_required": null,
+    "chain_id": 36
+  },
+  {
+    "from_pokemon": "krabby",
+    "to_pokemon": "kingler",
+    "evolution_trigger": "level-up",
+    "min_level": 28,
+    "item_required": null,
+    "chain_id": 43
+  },
+  {
+    "from_pokemon": "munchlax",
+    "to_pokemon": "snorlax",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 72
+  },
+  {
+    "from_pokemon": "murkrow",
+    "to_pokemon": "honchkrow",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "dusk-stone",
+    "chain_id": 97
+  },
+  {
+    "from_pokemon": "seedot",
+    "to_pokemon": "nuzleaf",
+    "evolution_trigger": "level-up",
+    "min_level": 14,
+    "item_required": null,
+    "chain_id": 137
+  },
+  {
+    "from_pokemon": "spoink",
+    "to_pokemon": "grumpig",
+    "evolution_trigger": "level-up",
+    "min_level": 32,
+    "item_required": null,
+    "chain_id": 164
+  },
+  {
+    "from_pokemon": "lileep",
+    "to_pokemon": "cradily",
+    "evolution_trigger": "level-up",
+    "min_level": 40,
+    "item_required": null,
+    "chain_id": 176
+  },
+  {
+    "from_pokemon": "snorunt",
+    "to_pokemon": "glalie",
+    "evolution_trigger": "level-up",
+    "min_level": 42,
+    "item_required": null,
+    "chain_id": 186
+  },
+  {
+    "from_pokemon": "skorupi",
+    "to_pokemon": "drapion",
+    "evolution_trigger": "level-up",
+    "min_level": 40,
+    "item_required": null,
+    "chain_id": 234
+  },
+  {
+    "from_pokemon": "purrloin",
+    "to_pokemon": "liepard",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 261
+  },
+  {
+    "from_pokemon": "trubbish",
+    "to_pokemon": "garbodor",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 290
+  },
+  {
+    "from_pokemon": "minccino",
+    "to_pokemon": "cinccino",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "shiny-stone",
+    "chain_id": 292
+  },
+  {
+    "from_pokemon": "frillish",
+    "to_pokemon": "jellicent",
+    "evolution_trigger": "level-up",
+    "min_level": 40,
+    "item_required": null,
+    "chain_id": 301
+  },
+  {
+    "from_pokemon": "deino",
+    "to_pokemon": "zweilous",
+    "evolution_trigger": "level-up",
+    "min_level": 50,
+    "item_required": null,
+    "chain_id": 323
+  },
+  {
+    "from_pokemon": "fletchling",
+    "to_pokemon": "fletchinder",
+    "evolution_trigger": "level-up",
+    "min_level": 17,
+    "item_required": null,
+    "chain_id": 341
+  },
+  {
+    "from_pokemon": "helioptile",
+    "to_pokemon": "heliolisk",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "sun-stone",
+    "chain_id": 356
+  },
+  {
+    "from_pokemon": "phantump",
+    "to_pokemon": "trevenant",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 364
+  },
+  {
+    "from_pokemon": "sizzlipede",
+    "to_pokemon": "centiskorch",
+    "evolution_trigger": "level-up",
+    "min_level": 28,
+    "item_required": null,
+    "chain_id": 447
+  },
+  {
+    "from_pokemon": "tarountula",
+    "to_pokemon": "spidops",
+    "evolution_trigger": "level-up",
+    "min_level": 15,
+    "item_required": null,
+    "chain_id": 482
+  },
+  {
+    "from_pokemon": "fidough",
+    "to_pokemon": "dachsbun",
+    "evolution_trigger": "level-up",
+    "min_level": 26,
+    "item_required": null,
+    "chain_id": 486
+  },
+  {
+    "from_pokemon": "frigibax",
+    "to_pokemon": "arctibax",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 527
   },
   {
     "from_pokemon": "ponyta",
@@ -2576,156 +1992,420 @@
     "chain_id": 528
   },
   {
-    "from_pokemon": "pidgey",
-    "to_pokemon": "pidgeotto",
+    "from_pokemon": "meowth",
+    "to_pokemon": "persian",
+    "evolution_trigger": "level-up",
+    "min_level": 28,
+    "item_required": null,
+    "chain_id": 22
+  },
+  {
+    "from_pokemon": "onix",
+    "to_pokemon": "steelix",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 41
+  },
+  {
+    "from_pokemon": "voltorb",
+    "to_pokemon": "electrode",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 44
+  },
+  {
+    "from_pokemon": "tyrogue",
+    "to_pokemon": "hitmonchan",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 47
+  },
+  {
+    "from_pokemon": "magikarp",
+    "to_pokemon": "gyarados",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 64
+  },
+  {
+    "from_pokemon": "hoothoot",
+    "to_pokemon": "noctowl",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 83
+  },
+  {
+    "from_pokemon": "phanpy",
+    "to_pokemon": "donphan",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 119
+  },
+  {
+    "from_pokemon": "lotad",
+    "to_pokemon": "lombre",
+    "evolution_trigger": "level-up",
+    "min_level": 14,
+    "item_required": null,
+    "chain_id": 136
+  },
+  {
+    "from_pokemon": "taillow",
+    "to_pokemon": "swellow",
+    "evolution_trigger": "level-up",
+    "min_level": 22,
+    "item_required": null,
+    "chain_id": 138
+  },
+  {
+    "from_pokemon": "electrike",
+    "to_pokemon": "manectric",
+    "evolution_trigger": "level-up",
+    "min_level": 26,
+    "item_required": null,
+    "chain_id": 153
+  },
+  {
+    "from_pokemon": "snorunt",
+    "to_pokemon": "froslass",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "dawn-stone",
+    "chain_id": 186
+  },
+  {
+    "from_pokemon": "stunky",
+    "to_pokemon": "skuntank",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 223
+  },
+  {
+    "from_pokemon": "pidove",
+    "to_pokemon": "tranquill",
+    "evolution_trigger": "level-up",
+    "min_level": 21,
+    "item_required": null,
+    "chain_id": 266
+  },
+  {
+    "from_pokemon": "scraggy",
+    "to_pokemon": "scrafty",
+    "evolution_trigger": "level-up",
+    "min_level": 39,
+    "item_required": null,
+    "chain_id": 285
+  },
+  {
+    "from_pokemon": "fennekin",
+    "to_pokemon": "braixen",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 338
+  },
+  {
+    "from_pokemon": "litleo",
+    "to_pokemon": "pyroar",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 343
+  },
+  {
+    "from_pokemon": "swirlix",
+    "to_pokemon": "slurpuff",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 351
+  },
+  {
+    "from_pokemon": "rookidee",
+    "to_pokemon": "corvisquire",
     "evolution_trigger": "level-up",
     "min_level": 18,
     "item_required": null,
-    "chain_id": 6
+    "chain_id": 434
   },
   {
-    "from_pokemon": "scyther",
-    "to_pokemon": "kleavor",
+    "from_pokemon": "gossifleur",
+    "to_pokemon": "eldegoss",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 437
+  },
+  {
+    "from_pokemon": "applin",
+    "to_pokemon": "appletun",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "black-augurite",
-    "chain_id": 58
+    "item_required": "sweet-apple",
+    "chain_id": 442
+  },
+  {
+    "from_pokemon": "applin",
+    "to_pokemon": "dipplin",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "syrupy-apple",
+    "chain_id": 442
+  },
+  {
+    "from_pokemon": "arrokuda",
+    "to_pokemon": "barraskewda",
+    "evolution_trigger": "level-up",
+    "min_level": 26,
+    "item_required": null,
+    "chain_id": 445
+  },
+  {
+    "from_pokemon": "quaxly",
+    "to_pokemon": "quaxwell",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 480
+  },
+  {
+    "from_pokemon": "charcadet",
+    "to_pokemon": "ceruledge",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "malicious-armor",
+    "chain_id": 490
+  },
+  {
+    "from_pokemon": "toedscool",
+    "to_pokemon": "toedscruel",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 496
+  },
+  {
+    "from_pokemon": "flittle",
+    "to_pokemon": "espathra",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 500
+  },
+  {
+    "from_pokemon": "varoom",
+    "to_pokemon": "revavroom",
+    "evolution_trigger": "level-up",
+    "min_level": 40,
+    "item_required": null,
+    "chain_id": 505
+  },
+  {
+    "from_pokemon": "weedle",
+    "to_pokemon": "kakuna",
+    "evolution_trigger": "level-up",
+    "min_level": 7,
+    "item_required": null,
+    "chain_id": 5
+  },
+  {
+    "from_pokemon": "cleffa",
+    "to_pokemon": "clefairy",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 14
+  },
+  {
+    "from_pokemon": "machop",
+    "to_pokemon": "machoke",
+    "evolution_trigger": "level-up",
+    "min_level": 28,
+    "item_required": null,
+    "chain_id": 28
+  },
+  {
+    "from_pokemon": "rhyhorn",
+    "to_pokemon": "rhydon",
+    "evolution_trigger": "level-up",
+    "min_level": 42,
+    "item_required": null,
+    "chain_id": 50
+  },
+  {
+    "from_pokemon": "mime-jr",
+    "to_pokemon": "mr-mime",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 57
   },
   {
     "from_pokemon": "eevee",
-    "to_pokemon": "espeon",
+    "to_pokemon": "jolteon",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "thunder-stone",
+    "chain_id": 67
+  },
+  {
+    "from_pokemon": "eevee",
+    "to_pokemon": "sylveon",
     "evolution_trigger": "level-up",
     "min_level": null,
     "item_required": null,
     "chain_id": 67
   },
   {
-    "from_pokemon": "misdreavus",
-    "to_pokemon": "mismagius",
-    "evolution_trigger": "use-item",
+    "from_pokemon": "torchic",
+    "to_pokemon": "combusken",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 131
+  },
+  {
+    "from_pokemon": "shuppet",
+    "to_pokemon": "banette",
+    "evolution_trigger": "level-up",
+    "min_level": 37,
+    "item_required": null,
+    "chain_id": 181
+  },
+  {
+    "from_pokemon": "duskull",
+    "to_pokemon": "dusclops",
+    "evolution_trigger": "level-up",
+    "min_level": 37,
+    "item_required": null,
+    "chain_id": 182
+  },
+  {
+    "from_pokemon": "buneary",
+    "to_pokemon": "lopunny",
+    "evolution_trigger": "level-up",
     "min_level": null,
-    "item_required": "dusk-stone",
-    "chain_id": 98
-  },
-  {
-    "from_pokemon": "slugma",
-    "to_pokemon": "magcargo",
-    "evolution_trigger": "level-up",
-    "min_level": 38,
     "item_required": null,
-    "chain_id": 111
+    "chain_id": 220
   },
   {
-    "from_pokemon": "trapinch",
-    "to_pokemon": "vibrava",
+    "from_pokemon": "riolu",
+    "to_pokemon": "lucario",
     "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 166
-  },
-  {
-    "from_pokemon": "baltoy",
-    "to_pokemon": "claydol",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 175
-  },
-  {
-    "from_pokemon": "beldum",
-    "to_pokemon": "metang",
-    "evolution_trigger": "level-up",
-    "min_level": 20,
-    "item_required": null,
-    "chain_id": 192
-  },
-  {
-    "from_pokemon": "starly",
-    "to_pokemon": "staravia",
-    "evolution_trigger": "level-up",
-    "min_level": 14,
-    "item_required": null,
-    "chain_id": 206
-  },
-  {
-    "from_pokemon": "combee",
-    "to_pokemon": "vespiquen",
-    "evolution_trigger": "level-up",
-    "min_level": 21,
-    "item_required": null,
-    "chain_id": 214
-  },
-  {
-    "from_pokemon": "snivy",
-    "to_pokemon": "servine",
-    "evolution_trigger": "level-up",
-    "min_level": 17,
-    "item_required": null,
-    "chain_id": 256
-  },
-  {
-    "from_pokemon": "pansear",
-    "to_pokemon": "simisear",
-    "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "fire-stone",
-    "chain_id": 263
+    "item_required": null,
+    "chain_id": 232
   },
   {
-    "from_pokemon": "goomy",
-    "to_pokemon": "sliggoo",
+    "from_pokemon": "snover",
+    "to_pokemon": "abomasnow",
     "evolution_trigger": "level-up",
     "min_level": 40,
     "item_required": null,
-    "chain_id": 362
+    "chain_id": 239
   },
   {
-    "from_pokemon": "cosmog",
-    "to_pokemon": "cosmoem",
-    "evolution_trigger": "level-up",
-    "min_level": 43,
-    "item_required": null,
-    "chain_id": 413
+    "from_pokemon": "munna",
+    "to_pokemon": "musharna",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "moon-stone",
+    "chain_id": 265
   },
   {
-    "from_pokemon": "chewtle",
-    "to_pokemon": "drednaw",
+    "from_pokemon": "woobat",
+    "to_pokemon": "swoobat",
     "evolution_trigger": "level-up",
-    "min_level": 22,
+    "min_level": null,
     "item_required": null,
-    "chain_id": 439
+    "chain_id": 269
   },
   {
-    "from_pokemon": "toxel",
-    "to_pokemon": "toxtricity",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 446
+    "from_pokemon": "petilil",
+    "to_pokemon": "lilligant",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "sun-stone",
+    "chain_id": 279
   },
   {
-    "from_pokemon": "cufant",
-    "to_pokemon": "copperajah",
+    "from_pokemon": "tynamo",
+    "to_pokemon": "eelektrik",
     "evolution_trigger": "level-up",
-    "min_level": 34,
+    "min_level": 39,
     "item_required": null,
-    "chain_id": 460
+    "chain_id": 306
   },
   {
-    "from_pokemon": "pawmi",
-    "to_pokemon": "pawmo",
+    "from_pokemon": "elgyem",
+    "to_pokemon": "beheeyem",
     "evolution_trigger": "level-up",
-    "min_level": 18,
+    "min_level": 42,
     "item_required": null,
-    "chain_id": 484
+    "chain_id": 307
   },
   {
-    "from_pokemon": "wiglett",
-    "to_pokemon": "wugtrio",
+    "from_pokemon": "pancham",
+    "to_pokemon": "pangoro",
     "evolution_trigger": "level-up",
-    "min_level": 26,
+    "min_level": 32,
     "item_required": null,
-    "chain_id": 502
+    "chain_id": 346
+  },
+  {
+    "from_pokemon": "binacle",
+    "to_pokemon": "barbaracle",
+    "evolution_trigger": "level-up",
+    "min_level": 39,
+    "item_required": null,
+    "chain_id": 353
+  },
+  {
+    "from_pokemon": "litten",
+    "to_pokemon": "torracat",
+    "evolution_trigger": "level-up",
+    "min_level": 17,
+    "item_required": null,
+    "chain_id": 375
+  },
+  {
+    "from_pokemon": "mareanie",
+    "to_pokemon": "toxapex",
+    "evolution_trigger": "level-up",
+    "min_level": 38,
+    "item_required": null,
+    "chain_id": 385
+  },
+  {
+    "from_pokemon": "sobble",
+    "to_pokemon": "drizzile",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 432
+  },
+  {
+    "from_pokemon": "silicobra",
+    "to_pokemon": "sandaconda",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 443
+  },
+  {
+    "from_pokemon": "shroodle",
+    "to_pokemon": "grafaiai",
+    "evolution_trigger": "level-up",
+    "min_level": 28,
+    "item_required": null,
+    "chain_id": 494
   },
   {
     "from_pokemon": "venonat",
@@ -2904,6 +2584,398 @@
     "chain_id": 478
   },
   {
+    "from_pokemon": "oddish",
+    "to_pokemon": "gloom",
+    "evolution_trigger": "level-up",
+    "min_level": 21,
+    "item_required": null,
+    "chain_id": 18
+  },
+  {
+    "from_pokemon": "growlithe",
+    "to_pokemon": "arcanine",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "fire-stone",
+    "chain_id": 25
+  },
+  {
+    "from_pokemon": "abra",
+    "to_pokemon": "kadabra",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 27
+  },
+  {
+    "from_pokemon": "gastly",
+    "to_pokemon": "haunter",
+    "evolution_trigger": "level-up",
+    "min_level": 25,
+    "item_required": null,
+    "chain_id": 40
+  },
+  {
+    "from_pokemon": "exeggcute",
+    "to_pokemon": "exeggutor",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "leaf-stone",
+    "chain_id": 45
+  },
+  {
+    "from_pokemon": "tyrogue",
+    "to_pokemon": "hitmontop",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 47
+  },
+  {
+    "from_pokemon": "koffing",
+    "to_pokemon": "weezing",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 49
+  },
+  {
+    "from_pokemon": "staryu",
+    "to_pokemon": "starmie",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "water-stone",
+    "chain_id": 56
+  },
+  {
+    "from_pokemon": "porygon",
+    "to_pokemon": "porygon2",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 68
+  },
+  {
+    "from_pokemon": "ledyba",
+    "to_pokemon": "ledian",
+    "evolution_trigger": "level-up",
+    "min_level": 18,
+    "item_required": null,
+    "chain_id": 84
+  },
+  {
+    "from_pokemon": "hoppip",
+    "to_pokemon": "skiploom",
+    "evolution_trigger": "level-up",
+    "min_level": 18,
+    "item_required": null,
+    "chain_id": 92
+  },
+  {
+    "from_pokemon": "qwilfish",
+    "to_pokemon": "overqwil",
+    "evolution_trigger": "use-move",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 106
+  },
+  {
+    "from_pokemon": "poochyena",
+    "to_pokemon": "mightyena",
+    "evolution_trigger": "level-up",
+    "min_level": 18,
+    "item_required": null,
+    "chain_id": 133
+  },
+  {
+    "from_pokemon": "oshawott",
+    "to_pokemon": "dewott",
+    "evolution_trigger": "level-up",
+    "min_level": 17,
+    "item_required": null,
+    "chain_id": 258
+  },
+  {
+    "from_pokemon": "panpour",
+    "to_pokemon": "simipour",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "water-stone",
+    "chain_id": 264
+  },
+  {
+    "from_pokemon": "tirtouga",
+    "to_pokemon": "carracosta",
+    "evolution_trigger": "level-up",
+    "min_level": 37,
+    "item_required": null,
+    "chain_id": 288
+  },
+  {
+    "from_pokemon": "ducklett",
+    "to_pokemon": "swanna",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 295
+  },
+  {
+    "from_pokemon": "foongus",
+    "to_pokemon": "amoonguss",
+    "evolution_trigger": "level-up",
+    "min_level": 39,
+    "item_required": null,
+    "chain_id": 300
+  },
+  {
+    "from_pokemon": "shelmet",
+    "to_pokemon": "accelgor",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 312
+  },
+  {
+    "from_pokemon": "rufflet",
+    "to_pokemon": "braviary",
+    "evolution_trigger": "level-up",
+    "min_level": 54,
+    "item_required": null,
+    "chain_id": 319
+  },
+  {
+    "from_pokemon": "dewpider",
+    "to_pokemon": "araquanid",
+    "evolution_trigger": "level-up",
+    "min_level": 22,
+    "item_required": null,
+    "chain_id": 387
+  },
+  {
+    "from_pokemon": "blipbug",
+    "to_pokemon": "dottler",
+    "evolution_trigger": "level-up",
+    "min_level": 10,
+    "item_required": null,
+    "chain_id": 435
+  },
+  {
+    "from_pokemon": "kubfu",
+    "to_pokemon": "urshifu",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "scroll-of-waters",
+    "chain_id": 470
+  },
+  {
+    "from_pokemon": "maschiff",
+    "to_pokemon": "mabosstiff",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 493
+  },
+  {
+    "from_pokemon": "rellor",
+    "to_pokemon": "rabsca",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 499
+  },
+  {
+    "from_pokemon": "glimmet",
+    "to_pokemon": "glimmora",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 508
+  },
+  {
+    "from_pokemon": "bulbasaur",
+    "to_pokemon": "ivysaur",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 1
+  },
+  {
+    "from_pokemon": "rattata",
+    "to_pokemon": "raticate",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 7
+  },
+  {
+    "from_pokemon": "spearow",
+    "to_pokemon": "fearow",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 8
+  },
+  {
+    "from_pokemon": "paras",
+    "to_pokemon": "parasect",
+    "evolution_trigger": "level-up",
+    "min_level": 24,
+    "item_required": null,
+    "chain_id": 19
+  },
+  {
+    "from_pokemon": "wooper",
+    "to_pokemon": "quagsire",
+    "evolution_trigger": "level-up",
+    "min_level": 20,
+    "item_required": null,
+    "chain_id": 96
+  },
+  {
+    "from_pokemon": "wurmple",
+    "to_pokemon": "silcoon",
+    "evolution_trigger": "level-up",
+    "min_level": 7,
+    "item_required": null,
+    "chain_id": 135
+  },
+  {
+    "from_pokemon": "budew",
+    "to_pokemon": "roselia",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 158
+  },
+  {
+    "from_pokemon": "lillipup",
+    "to_pokemon": "herdier",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 260
+  },
+  {
+    "from_pokemon": "venipede",
+    "to_pokemon": "whirlipede",
+    "evolution_trigger": "level-up",
+    "min_level": 22,
+    "item_required": null,
+    "chain_id": 277
+  },
+  {
+    "from_pokemon": "ferroseed",
+    "to_pokemon": "ferrothorn",
+    "evolution_trigger": "level-up",
+    "min_level": 40,
+    "item_required": null,
+    "chain_id": 304
+  },
+  {
+    "from_pokemon": "axew",
+    "to_pokemon": "fraxure",
+    "evolution_trigger": "level-up",
+    "min_level": 38,
+    "item_required": null,
+    "chain_id": 309
+  },
+  {
+    "from_pokemon": "noibat",
+    "to_pokemon": "noivern",
+    "evolution_trigger": "level-up",
+    "min_level": 48,
+    "item_required": null,
+    "chain_id": 367
+  },
+  {
+    "from_pokemon": "morelull",
+    "to_pokemon": "shiinotic",
+    "evolution_trigger": "level-up",
+    "min_level": 24,
+    "item_required": null,
+    "chain_id": 389
+  },
+  {
+    "from_pokemon": "scorbunny",
+    "to_pokemon": "raboot",
+    "evolution_trigger": "level-up",
+    "min_level": 16,
+    "item_required": null,
+    "chain_id": 431
+  },
+  {
+    "from_pokemon": "ivysaur",
+    "to_pokemon": "venusaur",
+    "evolution_trigger": "level-up",
+    "min_level": 32,
+    "item_required": null,
+    "chain_id": 1
+  },
+  {
+    "from_pokemon": "dragonair",
+    "to_pokemon": "dragonite",
+    "evolution_trigger": "level-up",
+    "min_level": 55,
+    "item_required": null,
+    "chain_id": 76
+  },
+  {
+    "from_pokemon": "bayleef",
+    "to_pokemon": "meganium",
+    "evolution_trigger": "level-up",
+    "min_level": 32,
+    "item_required": null,
+    "chain_id": 79
+  },
+  {
+    "from_pokemon": "lombre",
+    "to_pokemon": "ludicolo",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "water-stone",
+    "chain_id": 136
+  },
+  {
+    "from_pokemon": "vigoroth",
+    "to_pokemon": "slaking",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 143
+  },
+  {
+    "from_pokemon": "monferno",
+    "to_pokemon": "infernape",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 204
+  },
+  {
+    "from_pokemon": "bisharp",
+    "to_pokemon": "kingambit",
+    "evolution_trigger": "three-defeated-bisharp",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 317
+  },
+  {
+    "from_pokemon": "cosmoem",
+    "to_pokemon": "solgaleo",
+    "evolution_trigger": "level-up",
+    "min_level": 53,
+    "item_required": null,
+    "chain_id": 413
+  },
+  {
+    "from_pokemon": "pawmo",
+    "to_pokemon": "pawmot",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 484
+  },
+  {
     "from_pokemon": "wartortle",
     "to_pokemon": "blastoise",
     "evolution_trigger": "level-up",
@@ -2950,6 +3022,294 @@
     "min_level": 36,
     "item_required": null,
     "chain_id": 480
+  },
+  {
+    "from_pokemon": "primeape",
+    "to_pokemon": "annihilape",
+    "evolution_trigger": "use-move",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 24
+  },
+  {
+    "from_pokemon": "staravia",
+    "to_pokemon": "staraptor",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 206
+  },
+  {
+    "from_pokemon": "luxio",
+    "to_pokemon": "luxray",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 209
+  },
+  {
+    "from_pokemon": "pignite",
+    "to_pokemon": "emboar",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 257
+  },
+  {
+    "from_pokemon": "klang",
+    "to_pokemon": "klinklang",
+    "evolution_trigger": "level-up",
+    "min_level": 49,
+    "item_required": null,
+    "chain_id": 305
+  },
+  {
+    "from_pokemon": "torracat",
+    "to_pokemon": "incineroar",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 375
+  },
+  {
+    "from_pokemon": "trumbeak",
+    "to_pokemon": "toucannon",
+    "evolution_trigger": "level-up",
+    "min_level": 28,
+    "item_required": null,
+    "chain_id": 377
+  },
+  {
+    "from_pokemon": "cosmoem",
+    "to_pokemon": "lunala",
+    "evolution_trigger": "level-up",
+    "min_level": 53,
+    "item_required": null,
+    "chain_id": 413
+  },
+  {
+    "from_pokemon": "corvisquire",
+    "to_pokemon": "corviknight",
+    "evolution_trigger": "level-up",
+    "min_level": 38,
+    "item_required": null,
+    "chain_id": 434
+  },
+  {
+    "from_pokemon": "carkol",
+    "to_pokemon": "coalossal",
+    "evolution_trigger": "level-up",
+    "min_level": 34,
+    "item_required": null,
+    "chain_id": 441
+  },
+  {
+    "from_pokemon": "floragato",
+    "to_pokemon": "meowscarada",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 478
+  },
+  {
+    "from_pokemon": "naclstack",
+    "to_pokemon": "garganacl",
+    "evolution_trigger": "level-up",
+    "min_level": 38,
+    "item_required": null,
+    "chain_id": 489
+  },
+  {
+    "from_pokemon": "pupitar",
+    "to_pokemon": "tyranitar",
+    "evolution_trigger": "level-up",
+    "min_level": 55,
+    "item_required": null,
+    "chain_id": 126
+  },
+  {
+    "from_pokemon": "combusken",
+    "to_pokemon": "blaziken",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 131
+  },
+  {
+    "from_pokemon": "vibrava",
+    "to_pokemon": "flygon",
+    "evolution_trigger": "level-up",
+    "min_level": 45,
+    "item_required": null,
+    "chain_id": 166
+  },
+  {
+    "from_pokemon": "sealeo",
+    "to_pokemon": "walrein",
+    "evolution_trigger": "level-up",
+    "min_level": 44,
+    "item_required": null,
+    "chain_id": 187
+  },
+  {
+    "from_pokemon": "gurdurr",
+    "to_pokemon": "conkeldurr",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 272
+  },
+  {
+    "from_pokemon": "lampent",
+    "to_pokemon": "chandelure",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "dusk-stone",
+    "chain_id": 308
+  },
+  {
+    "from_pokemon": "dottler",
+    "to_pokemon": "orbeetle",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 435
+  },
+  {
+    "from_pokemon": "morgrem",
+    "to_pokemon": "grimmsnarl",
+    "evolution_trigger": "level-up",
+    "min_level": 42,
+    "item_required": null,
+    "chain_id": 451
+  },
+  {
+    "from_pokemon": "rhydon",
+    "to_pokemon": "rhyperior",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 50
+  },
+  {
+    "from_pokemon": "herdier",
+    "to_pokemon": "stoutland",
+    "evolution_trigger": "level-up",
+    "min_level": 32,
+    "item_required": null,
+    "chain_id": 260
+  },
+  {
+    "from_pokemon": "palpitoad",
+    "to_pokemon": "seismitoad",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 273
+  },
+  {
+    "from_pokemon": "fraxure",
+    "to_pokemon": "haxorus",
+    "evolution_trigger": "level-up",
+    "min_level": 48,
+    "item_required": null,
+    "chain_id": 309
+  },
+  {
+    "from_pokemon": "metapod",
+    "to_pokemon": "butterfree",
+    "evolution_trigger": "level-up",
+    "min_level": 10,
+    "item_required": null,
+    "chain_id": 4
+  },
+  {
+    "from_pokemon": "clefairy",
+    "to_pokemon": "clefable",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "moon-stone",
+    "chain_id": 14
+  },
+  {
+    "from_pokemon": "graveler",
+    "to_pokemon": "golem",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 31
+  },
+  {
+    "from_pokemon": "togetic",
+    "to_pokemon": "togekiss",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "shiny-stone",
+    "chain_id": 87
+  },
+  {
+    "from_pokemon": "marill",
+    "to_pokemon": "azumarill",
+    "evolution_trigger": "level-up",
+    "min_level": 18,
+    "item_required": null,
+    "chain_id": 90
+  },
+  {
+    "from_pokemon": "grovyle",
+    "to_pokemon": "sceptile",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 130
+  },
+  {
+    "from_pokemon": "dusclops",
+    "to_pokemon": "dusknoir",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 182
+  },
+  {
+    "from_pokemon": "metang",
+    "to_pokemon": "metagross",
+    "evolution_trigger": "level-up",
+    "min_level": 45,
+    "item_required": null,
+    "chain_id": 192
+  },
+  {
+    "from_pokemon": "eelektrik",
+    "to_pokemon": "eelektross",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "thunder-stone",
+    "chain_id": 306
+  },
+  {
+    "from_pokemon": "quilladin",
+    "to_pokemon": "chesnaught",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 337
+  },
+  {
+    "from_pokemon": "floette",
+    "to_pokemon": "florges",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "shiny-stone",
+    "chain_id": 344
+  },
+  {
+    "from_pokemon": "arctibax",
+    "to_pokemon": "baxcalibur",
+    "evolution_trigger": "level-up",
+    "min_level": 54,
+    "item_required": null,
+    "chain_id": 527
   },
   {
     "from_pokemon": "charmeleon",
@@ -3054,358 +3414,6 @@
     "min_level": 38,
     "item_required": null,
     "chain_id": 501
-  },
-  {
-    "from_pokemon": "primeape",
-    "to_pokemon": "annihilape",
-    "evolution_trigger": "use-move",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 24
-  },
-  {
-    "from_pokemon": "staravia",
-    "to_pokemon": "staraptor",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 206
-  },
-  {
-    "from_pokemon": "luxio",
-    "to_pokemon": "luxray",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 209
-  },
-  {
-    "from_pokemon": "pignite",
-    "to_pokemon": "emboar",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 257
-  },
-  {
-    "from_pokemon": "klang",
-    "to_pokemon": "klinklang",
-    "evolution_trigger": "level-up",
-    "min_level": 49,
-    "item_required": null,
-    "chain_id": 305
-  },
-  {
-    "from_pokemon": "torracat",
-    "to_pokemon": "incineroar",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 375
-  },
-  {
-    "from_pokemon": "trumbeak",
-    "to_pokemon": "toucannon",
-    "evolution_trigger": "level-up",
-    "min_level": 28,
-    "item_required": null,
-    "chain_id": 377
-  },
-  {
-    "from_pokemon": "cosmoem",
-    "to_pokemon": "lunala",
-    "evolution_trigger": "level-up",
-    "min_level": 53,
-    "item_required": null,
-    "chain_id": 413
-  },
-  {
-    "from_pokemon": "corvisquire",
-    "to_pokemon": "corviknight",
-    "evolution_trigger": "level-up",
-    "min_level": 38,
-    "item_required": null,
-    "chain_id": 434
-  },
-  {
-    "from_pokemon": "carkol",
-    "to_pokemon": "coalossal",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 441
-  },
-  {
-    "from_pokemon": "floragato",
-    "to_pokemon": "meowscarada",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 478
-  },
-  {
-    "from_pokemon": "naclstack",
-    "to_pokemon": "garganacl",
-    "evolution_trigger": "level-up",
-    "min_level": 38,
-    "item_required": null,
-    "chain_id": 489
-  },
-  {
-    "from_pokemon": "ivysaur",
-    "to_pokemon": "venusaur",
-    "evolution_trigger": "level-up",
-    "min_level": 32,
-    "item_required": null,
-    "chain_id": 1
-  },
-  {
-    "from_pokemon": "dragonair",
-    "to_pokemon": "dragonite",
-    "evolution_trigger": "level-up",
-    "min_level": 55,
-    "item_required": null,
-    "chain_id": 76
-  },
-  {
-    "from_pokemon": "bayleef",
-    "to_pokemon": "meganium",
-    "evolution_trigger": "level-up",
-    "min_level": 32,
-    "item_required": null,
-    "chain_id": 79
-  },
-  {
-    "from_pokemon": "lombre",
-    "to_pokemon": "ludicolo",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "water-stone",
-    "chain_id": 136
-  },
-  {
-    "from_pokemon": "vigoroth",
-    "to_pokemon": "slaking",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 143
-  },
-  {
-    "from_pokemon": "monferno",
-    "to_pokemon": "infernape",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 204
-  },
-  {
-    "from_pokemon": "bisharp",
-    "to_pokemon": "kingambit",
-    "evolution_trigger": "three-defeated-bisharp",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 317
-  },
-  {
-    "from_pokemon": "cosmoem",
-    "to_pokemon": "solgaleo",
-    "evolution_trigger": "level-up",
-    "min_level": 53,
-    "item_required": null,
-    "chain_id": 413
-  },
-  {
-    "from_pokemon": "zweilous",
-    "to_pokemon": "hydreigon",
-    "evolution_trigger": "level-up",
-    "min_level": 64,
-    "item_required": null,
-    "chain_id": 323
-  },
-  {
-    "from_pokemon": "doublade",
-    "to_pokemon": "aegislash",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "dusk-stone",
-    "chain_id": 349
-  },
-  {
-    "from_pokemon": "dartrix",
-    "to_pokemon": "decidueye",
-    "evolution_trigger": "level-up",
-    "min_level": 34,
-    "item_required": null,
-    "chain_id": 374
-  },
-  {
-    "from_pokemon": "thwackey",
-    "to_pokemon": "rillaboom",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 430
-  },
-  {
-    "from_pokemon": "rhydon",
-    "to_pokemon": "rhyperior",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 50
-  },
-  {
-    "from_pokemon": "herdier",
-    "to_pokemon": "stoutland",
-    "evolution_trigger": "level-up",
-    "min_level": 32,
-    "item_required": null,
-    "chain_id": 260
-  },
-  {
-    "from_pokemon": "palpitoad",
-    "to_pokemon": "seismitoad",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 273
-  },
-  {
-    "from_pokemon": "fraxure",
-    "to_pokemon": "haxorus",
-    "evolution_trigger": "level-up",
-    "min_level": 48,
-    "item_required": null,
-    "chain_id": 309
-  },
-  {
-    "from_pokemon": "nidorino",
-    "to_pokemon": "nidoking",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "moon-stone",
-    "chain_id": 13
-  },
-  {
-    "from_pokemon": "haunter",
-    "to_pokemon": "gengar",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 40
-  },
-  {
-    "from_pokemon": "flaaffy",
-    "to_pokemon": "ampharos",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 89
-  },
-  {
-    "from_pokemon": "silcoon",
-    "to_pokemon": "beautifly",
-    "evolution_trigger": "level-up",
-    "min_level": 10,
-    "item_required": null,
-    "chain_id": 135
-  },
-  {
-    "from_pokemon": "dewott",
-    "to_pokemon": "samurott",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 258
-  },
-  {
-    "from_pokemon": "fletchinder",
-    "to_pokemon": "talonflame",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 341
-  },
-  {
-    "from_pokemon": "spewpa",
-    "to_pokemon": "vivillon",
-    "evolution_trigger": "level-up",
-    "min_level": 12,
-    "item_required": null,
-    "chain_id": 342
-  },
-  {
-    "from_pokemon": "steenee",
-    "to_pokemon": "tsareena",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 392
-  },
-  {
-    "from_pokemon": "pupitar",
-    "to_pokemon": "tyranitar",
-    "evolution_trigger": "level-up",
-    "min_level": 55,
-    "item_required": null,
-    "chain_id": 126
-  },
-  {
-    "from_pokemon": "combusken",
-    "to_pokemon": "blaziken",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 131
-  },
-  {
-    "from_pokemon": "vibrava",
-    "to_pokemon": "flygon",
-    "evolution_trigger": "level-up",
-    "min_level": 45,
-    "item_required": null,
-    "chain_id": 166
-  },
-  {
-    "from_pokemon": "sealeo",
-    "to_pokemon": "walrein",
-    "evolution_trigger": "level-up",
-    "min_level": 44,
-    "item_required": null,
-    "chain_id": 187
-  },
-  {
-    "from_pokemon": "gurdurr",
-    "to_pokemon": "conkeldurr",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 272
-  },
-  {
-    "from_pokemon": "lampent",
-    "to_pokemon": "chandelure",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "dusk-stone",
-    "chain_id": 308
-  },
-  {
-    "from_pokemon": "dottler",
-    "to_pokemon": "orbeetle",
-    "evolution_trigger": "level-up",
-    "min_level": 30,
-    "item_required": null,
-    "chain_id": 435
-  },
-  {
-    "from_pokemon": "morgrem",
-    "to_pokemon": "grimmsnarl",
-    "evolution_trigger": "level-up",
-    "min_level": 42,
-    "item_required": null,
-    "chain_id": 451
   },
   {
     "from_pokemon": "poliwhirl",
@@ -3544,62 +3552,6 @@
     "chain_id": 339
   },
   {
-    "from_pokemon": "pawmo",
-    "to_pokemon": "pawmot",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 484
-  },
-  {
-    "from_pokemon": "gloom",
-    "to_pokemon": "vileplume",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "leaf-stone",
-    "chain_id": 18
-  },
-  {
-    "from_pokemon": "quilava",
-    "to_pokemon": "typhlosion",
-    "evolution_trigger": "level-up",
-    "min_level": 36,
-    "item_required": null,
-    "chain_id": 80
-  },
-  {
-    "from_pokemon": "ursaring",
-    "to_pokemon": "ursaluna",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "peat-block",
-    "chain_id": 110
-  },
-  {
-    "from_pokemon": "lairon",
-    "to_pokemon": "aggron",
-    "evolution_trigger": "level-up",
-    "min_level": 42,
-    "item_required": null,
-    "chain_id": 151
-  },
-  {
-    "from_pokemon": "drizzile",
-    "to_pokemon": "inteleon",
-    "evolution_trigger": "level-up",
-    "min_level": 35,
-    "item_required": null,
-    "chain_id": 432
-  },
-  {
-    "from_pokemon": "hattrem",
-    "to_pokemon": "hatterene",
-    "evolution_trigger": "level-up",
-    "min_level": 42,
-    "item_required": null,
-    "chain_id": 450
-  },
-  {
     "from_pokemon": "pidgeotto",
     "to_pokemon": "pidgeot",
     "evolution_trigger": "level-up",
@@ -3680,100 +3632,84 @@
     "chain_id": 376
   },
   {
-    "from_pokemon": "metapod",
-    "to_pokemon": "butterfree",
-    "evolution_trigger": "level-up",
-    "min_level": 10,
-    "item_required": null,
-    "chain_id": 4
-  },
-  {
-    "from_pokemon": "clefairy",
-    "to_pokemon": "clefable",
+    "from_pokemon": "gloom",
+    "to_pokemon": "vileplume",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "moon-stone",
-    "chain_id": 14
+    "item_required": "leaf-stone",
+    "chain_id": 18
   },
   {
-    "from_pokemon": "graveler",
-    "to_pokemon": "golem",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 31
-  },
-  {
-    "from_pokemon": "togetic",
-    "to_pokemon": "togekiss",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "shiny-stone",
-    "chain_id": 87
-  },
-  {
-    "from_pokemon": "marill",
-    "to_pokemon": "azumarill",
-    "evolution_trigger": "level-up",
-    "min_level": 18,
-    "item_required": null,
-    "chain_id": 90
-  },
-  {
-    "from_pokemon": "grovyle",
-    "to_pokemon": "sceptile",
+    "from_pokemon": "quilava",
+    "to_pokemon": "typhlosion",
     "evolution_trigger": "level-up",
     "min_level": 36,
     "item_required": null,
-    "chain_id": 130
+    "chain_id": 80
   },
   {
-    "from_pokemon": "dusclops",
-    "to_pokemon": "dusknoir",
-    "evolution_trigger": "trade",
-    "min_level": null,
-    "item_required": null,
-    "chain_id": 182
-  },
-  {
-    "from_pokemon": "metang",
-    "to_pokemon": "metagross",
-    "evolution_trigger": "level-up",
-    "min_level": 45,
-    "item_required": null,
-    "chain_id": 192
-  },
-  {
-    "from_pokemon": "eelektrik",
-    "to_pokemon": "eelektross",
+    "from_pokemon": "ursaring",
+    "to_pokemon": "ursaluna",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "thunder-stone",
-    "chain_id": 306
+    "item_required": "peat-block",
+    "chain_id": 110
   },
   {
-    "from_pokemon": "quilladin",
-    "to_pokemon": "chesnaught",
+    "from_pokemon": "lairon",
+    "to_pokemon": "aggron",
     "evolution_trigger": "level-up",
-    "min_level": 36,
+    "min_level": 42,
     "item_required": null,
-    "chain_id": 337
+    "chain_id": 151
   },
   {
-    "from_pokemon": "floette",
-    "to_pokemon": "florges",
+    "from_pokemon": "drizzile",
+    "to_pokemon": "inteleon",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 432
+  },
+  {
+    "from_pokemon": "hattrem",
+    "to_pokemon": "hatterene",
+    "evolution_trigger": "level-up",
+    "min_level": 42,
+    "item_required": null,
+    "chain_id": 450
+  },
+  {
+    "from_pokemon": "zweilous",
+    "to_pokemon": "hydreigon",
+    "evolution_trigger": "level-up",
+    "min_level": 64,
+    "item_required": null,
+    "chain_id": 323
+  },
+  {
+    "from_pokemon": "doublade",
+    "to_pokemon": "aegislash",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "shiny-stone",
-    "chain_id": 344
+    "item_required": "dusk-stone",
+    "chain_id": 349
   },
   {
-    "from_pokemon": "arctibax",
-    "to_pokemon": "baxcalibur",
+    "from_pokemon": "dartrix",
+    "to_pokemon": "decidueye",
     "evolution_trigger": "level-up",
-    "min_level": 54,
+    "min_level": 34,
     "item_required": null,
-    "chain_id": 527
+    "chain_id": 374
+  },
+  {
+    "from_pokemon": "thwackey",
+    "to_pokemon": "rillaboom",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 430
   },
   {
     "from_pokemon": "poliwhirl",
@@ -3838,6 +3774,70 @@
     "min_level": 30,
     "item_required": null,
     "chain_id": 277
+  },
+  {
+    "from_pokemon": "nidorino",
+    "to_pokemon": "nidoking",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "moon-stone",
+    "chain_id": 13
+  },
+  {
+    "from_pokemon": "haunter",
+    "to_pokemon": "gengar",
+    "evolution_trigger": "trade",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 40
+  },
+  {
+    "from_pokemon": "flaaffy",
+    "to_pokemon": "ampharos",
+    "evolution_trigger": "level-up",
+    "min_level": 30,
+    "item_required": null,
+    "chain_id": 89
+  },
+  {
+    "from_pokemon": "silcoon",
+    "to_pokemon": "beautifly",
+    "evolution_trigger": "level-up",
+    "min_level": 10,
+    "item_required": null,
+    "chain_id": 135
+  },
+  {
+    "from_pokemon": "dewott",
+    "to_pokemon": "samurott",
+    "evolution_trigger": "level-up",
+    "min_level": 36,
+    "item_required": null,
+    "chain_id": 258
+  },
+  {
+    "from_pokemon": "fletchinder",
+    "to_pokemon": "talonflame",
+    "evolution_trigger": "level-up",
+    "min_level": 35,
+    "item_required": null,
+    "chain_id": 341
+  },
+  {
+    "from_pokemon": "spewpa",
+    "to_pokemon": "vivillon",
+    "evolution_trigger": "level-up",
+    "min_level": 12,
+    "item_required": null,
+    "chain_id": 342
+  },
+  {
+    "from_pokemon": "steenee",
+    "to_pokemon": "tsareena",
+    "evolution_trigger": "level-up",
+    "min_level": null,
+    "item_required": null,
+    "chain_id": 392
   },
   {
     "from_pokemon": "mr-mime",
