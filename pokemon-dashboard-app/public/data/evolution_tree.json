@@ -357,7 +357,7 @@
     "evolves_from": "vulpix",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "ice-stone"
+    "item_required": "fire-stone"
   },
   {
     "chain_id": 16,
@@ -514,7 +514,7 @@
   },
   {
     "chain_id": 22,
-    "species_name": "persian",
+    "species_name": "perrserker",
     "stage": 2,
     "evolves_from": "meowth",
     "evolution_trigger": "level-up",
@@ -523,7 +523,7 @@
   },
   {
     "chain_id": 22,
-    "species_name": "perrserker",
+    "species_name": "persian",
     "stage": 2,
     "evolves_from": "meowth",
     "evolution_trigger": "level-up",
@@ -613,21 +613,21 @@
   },
   {
     "chain_id": 26,
-    "species_name": "poliwrath",
-    "stage": 3,
-    "evolves_from": "poliwhirl",
-    "evolution_trigger": "use-item",
-    "min_level": null,
-    "item_required": "water-stone"
-  },
-  {
-    "chain_id": 26,
     "species_name": "politoed",
     "stage": 3,
     "evolves_from": "poliwhirl",
     "evolution_trigger": "trade",
     "min_level": null,
     "item_required": null
+  },
+  {
+    "chain_id": 26,
+    "species_name": "poliwrath",
+    "stage": 3,
+    "evolves_from": "poliwhirl",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "water-stone"
   },
   {
     "chain_id": 27,
@@ -1063,7 +1063,7 @@
   },
   {
     "chain_id": 47,
-    "species_name": "hitmonchan",
+    "species_name": "hitmontop",
     "stage": 2,
     "evolves_from": "tyrogue",
     "evolution_trigger": "level-up",
@@ -1072,7 +1072,7 @@
   },
   {
     "chain_id": 47,
-    "species_name": "hitmontop",
+    "species_name": "hitmonchan",
     "stage": 2,
     "evolves_from": "tyrogue",
     "evolution_trigger": "level-up",
@@ -1459,12 +1459,12 @@
   },
   {
     "chain_id": 67,
-    "species_name": "glaceon",
+    "species_name": "sylveon",
     "stage": 2,
     "evolves_from": "eevee",
-    "evolution_trigger": "use-item",
+    "evolution_trigger": "level-up",
     "min_level": null,
-    "item_required": "ice-stone"
+    "item_required": null
   },
   {
     "chain_id": 67,
@@ -1477,15 +1477,6 @@
   },
   {
     "chain_id": 67,
-    "species_name": "sylveon",
-    "stage": 2,
-    "evolves_from": "eevee",
-    "evolution_trigger": "level-up",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 67,
     "species_name": "vaporeon",
     "stage": 2,
     "evolves_from": "eevee",
@@ -1495,12 +1486,21 @@
   },
   {
     "chain_id": 67,
-    "species_name": "jolteon",
+    "species_name": "glaceon",
     "stage": 2,
     "evolves_from": "eevee",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "thunder-stone"
+    "item_required": "ice-stone"
+  },
+  {
+    "chain_id": 67,
+    "species_name": "flareon",
+    "stage": 2,
+    "evolves_from": "eevee",
+    "evolution_trigger": "use-item",
+    "min_level": null,
+    "item_required": "fire-stone"
   },
   {
     "chain_id": 67,
@@ -1522,12 +1522,12 @@
   },
   {
     "chain_id": 67,
-    "species_name": "flareon",
+    "species_name": "jolteon",
     "stage": 2,
     "evolves_from": "eevee",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "fire-stone"
+    "item_required": "thunder-stone"
   },
   {
     "chain_id": 68,
@@ -2071,7 +2071,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "clodsire",
+    "species_name": "quagsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2080,7 +2080,7 @@
   },
   {
     "chain_id": 96,
-    "species_name": "quagsire",
+    "species_name": "clodsire",
     "stage": 2,
     "evolves_from": "wooper",
     "evolution_trigger": "level-up",
@@ -2254,7 +2254,7 @@
     "species_name": "overqwil",
     "stage": 2,
     "evolves_from": "qwilfish",
-    "evolution_trigger": "use-move",
+    "evolution_trigger": "strong-style-move",
     "min_level": null,
     "item_required": null
   },
@@ -2971,20 +2971,20 @@
   },
   {
     "chain_id": 144,
-    "species_name": "shedinja",
-    "stage": 2,
-    "evolves_from": "nincada",
-    "evolution_trigger": "shed",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 144,
     "species_name": "ninjask",
     "stage": 2,
     "evolves_from": "nincada",
     "evolution_trigger": "level-up",
     "min_level": 20,
+    "item_required": null
+  },
+  {
+    "chain_id": 144,
+    "species_name": "shedinja",
+    "stage": 2,
+    "evolves_from": "nincada",
+    "evolution_trigger": "shed",
+    "min_level": null,
     "item_required": null
   },
   {
@@ -5203,20 +5203,20 @@
   },
   {
     "chain_id": 287,
-    "species_name": "runerigus",
-    "stage": 2,
-    "evolves_from": "yamask",
-    "evolution_trigger": "take-damage",
-    "min_level": null,
-    "item_required": null
-  },
-  {
-    "chain_id": 287,
     "species_name": "cofagrigus",
     "stage": 2,
     "evolves_from": "yamask",
     "evolution_trigger": "level-up",
     "min_level": 34,
+    "item_required": null
+  },
+  {
+    "chain_id": 287,
+    "species_name": "runerigus",
+    "stage": 2,
+    "evolves_from": "yamask",
+    "evolution_trigger": "take-damage",
+    "min_level": null,
     "item_required": null
   },
   {
@@ -7425,11 +7425,11 @@
     "item_required": null
   },
   {
-    "chain_id": 429,
+    "chain_id": 428,
     "species_name": "melmetal",
-    "stage": 1,
-    "evolves_from": null,
-    "evolution_trigger": null,
+    "stage": 2,
+    "evolves_from": "meltan",
+    "evolution_trigger": "meltan-candies",
     "min_level": null,
     "item_required": null
   },
@@ -7714,12 +7714,12 @@
   },
   {
     "chain_id": 442,
-    "species_name": "appletun",
+    "species_name": "flapple",
     "stage": 2,
     "evolves_from": "applin",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "sweet-apple"
+    "item_required": "tart-apple"
   },
   {
     "chain_id": 442,
@@ -7732,12 +7732,12 @@
   },
   {
     "chain_id": 442,
-    "species_name": "flapple",
+    "species_name": "appletun",
     "stage": 2,
     "evolves_from": "applin",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "tart-apple"
+    "item_required": "sweet-apple"
   },
   {
     "chain_id": 442,
@@ -7863,7 +7863,7 @@
     "evolves_from": "sinistea",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "chipped-pot"
+    "item_required": "cracked-pot"
   },
   {
     "chain_id": 450,
@@ -8151,7 +8151,7 @@
     "evolves_from": "kubfu",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "scroll-of-waters"
+    "item_required": "scroll-of-darkness"
   },
   {
     "chain_id": 471,
@@ -8392,7 +8392,7 @@
     "species_name": "maushold",
     "stage": 2,
     "evolves_from": "tandemaus",
-    "evolution_trigger": "other",
+    "evolution_trigger": "in-battle-level-up",
     "min_level": 25,
     "item_required": null
   },
@@ -9132,7 +9132,7 @@
     "evolves_from": "poltchageist",
     "evolution_trigger": "use-item",
     "min_level": null,
-    "item_required": "masterpiece-teacup"
+    "item_required": "unremarkable-teacup"
   },
   {
     "chain_id": 540,
